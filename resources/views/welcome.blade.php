@@ -8,7 +8,7 @@
      @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-    <h1>Hello</h1>
+    <h1 class="text-red-500 p-10 text-4xl">Hello world</h1>
 
 
     <script >
