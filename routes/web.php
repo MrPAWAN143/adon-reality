@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('frontend.homepage.homepage');
 });
+Route::get('/faq', function () {
+    return view('frontend.FaqPage.faq');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
