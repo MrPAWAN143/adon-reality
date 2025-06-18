@@ -1,9 +1,9 @@
-<section class="py-12 bg-white text-center">
-    <div class="container mx-auto text-center">
+<section class="py-8 bg-white text-center">
+    <div class="container max-w-7xl mx-auto text-center">
         <h2 class="heading">Featured Investment Opportunities</h2>
         <p class="subheading">Explore high-return investment options with trusted developers.</p>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto">
             <div class="featured-investment-card">
                 <img src="{{ asset('assets/images/allImages/DlfCyberCity.png') }}" alt="DLF Cyber City Tower" class="featured-investment-img" />
                 <h3>DLF Cyber City Tower</h3>

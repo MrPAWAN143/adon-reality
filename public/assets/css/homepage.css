@@ -166,36 +166,25 @@
 .contact-form-button{
     @apply bg-primary text-white px-8 py-4 block w-full rounded-full text-xl font-normal hover:bg-white hover:text-primary border-2 hover:border-primary transition;
 }
-
-.testimonial-slider .slick-slide {
-    opacity: 0.5;
-    transform: scale(0.92);
-    transition: all 0.4s ease;
+.slick-track {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.slick-slider{
+    position: relative;
+    opacity: 0.8;
+}
+.slick-center{
+    transform: scale(1.2);
     z-index: 1;
-}
-
-.testimonial-slider .slick-center {
-    transform: scale(1.05);
+    height: 220px;
+    width: 300px;
     opacity: 1;
-    z-index: 10;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
-.testimonial-slider .testimonial-card {
-    transition: transform 0.4s ease, opacity 0.4s ease;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-/* Dots customization */
-.slick-dots {
+.testimonial-slider{
     margin-top: 30px;
-    text-align: center;
-}
-.slick-dots li button:before {
-    font-size: 10px;
-    color: #710000;
-}
-.slick-dots li.slick-active button:before {
-    color: #b30000;
 }

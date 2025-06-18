@@ -21,6 +21,7 @@
     "dependencies": {
         "jquery": "^3.7.1",
         "slick-carousel": "^1.8.1",
-        "slick-slider": "^1.8.2"
+        "slick-slider": "^1.8.2",
+        "swiper": "^11.2.8"
     }
 }

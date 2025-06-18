@@ -15,10 +15,16 @@
     @include('frontend.layouts.footer')
     <!-- javaScript for all pages -->
     <script type="module">
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-        });
+        
+    $(document).ready(function () {
+    $('.mobile-menu-button').click(function () {
+      $('#mobileNav').removeClass('-translate-x-full').addClass('translate-x-0');
+    });
+
+    $('.close-mobile-menu, #mobileNav a').click(function () {
+      $('#mobileNav').removeClass('translate-x-0').addClass('-translate-x-full');
+    });
+  });
     </script>
 @yield('scripts')
 </body>

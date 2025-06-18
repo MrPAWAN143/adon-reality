@@ -1,5 +1,5 @@
-<section class="py-16 bg-white">
-  <div class="container mx-auto px-4 text-center">
+<section class="py-8 pt-16 bg-white">
+  <div class="container max-w-7xl mx-auto text-center">
     <!-- Heading -->
     <h2 class="heading ">Why Invest with us</h2>
     <p class="subheading">
@@ -57,7 +57,6 @@
         <img src="{{ asset('assets/images/icons/global.png') }}" alt="NRI" class="w-12 h-12" />
       </div>
 
-      <!-- Card 5 -->
       <div class="investCard">
         <div>
           <h3>Data-Driven ROI Projections</h3>
@@ -65,10 +64,8 @@
             Make smarter investment decisions using predictive analytics and accurate, data-driven ROI forecasts.
           </p>
         </div>
-        <img src="{{ asset('assets/images/icons/dara-driven.png') }}" alt="Data" class="w-12 h-12" />
+        <img src="{{ asset('assets/images/icons/data-driven.png') }}" alt="Data" class="w-12 h-12" />
       </div>
-
-      <!-- Card 6 -->
       <div class="investCard">
         <div>
           <h3>Exit & Rental Support</h3>

@@ -1,5 +1,5 @@
-<section class="py-16 bg-white text-center">
-    <div class="container mx-auto">
+<section class="py-8 bg-white text-center">
+    <div class="container max-w-7xl mx-auto">
         <h2 class="heading">Explore Our Properties Virtually</h2>
         <p class="subheading">Take a digital walkthrough of our premium property listings.</p>
 

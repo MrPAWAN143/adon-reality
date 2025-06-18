@@ -1,4 +1,4 @@
-<footer class=" text-white text-sm" style="background-image: url('{{ asset('assets/images/allImages/footerbackground.webp') }}');
+<footer class="text-white text-sm" style="background-image: url('{{ asset('assets/images/allImages/footerbackground.webp') }}');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;">

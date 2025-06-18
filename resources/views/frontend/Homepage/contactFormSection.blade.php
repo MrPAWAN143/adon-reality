@@ -1,4 +1,4 @@
-<section class="py-16 bg-white text-center">
+<section class="py-8 bg-white text-center">
     <div class="container max-w-5xl mx-auto">
         <h2 class="heading">
             Let’s Make Your Property Journey Effortless

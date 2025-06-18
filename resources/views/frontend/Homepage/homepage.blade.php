@@ -21,26 +21,26 @@
 
 @section('scripts')
 <script type="module">
-    $(document).ready(function(){
+    $(document).ready(function() {
         $('.testimonial-slider').slick({
             centerMode: true,
-            centerPadding: '150px',
+            centerPadding: '60px',
             slidesToShow: 3,
-            arrows: false,
-            dots: true,
-            speed: 500,
-            responsive: [
-                {
-                    breakpoint: 1280,
+            responsive: [{
+                    breakpoint: 768,
                     settings: {
-                        centerPadding: '80px',
-                        slidesToShow: 2
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 3
                     }
                 },
                 {
-                    breakpoint: 768,
+                    breakpoint: 480,
                     settings: {
-                        centerPadding: '30px',
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
                         slidesToShow: 1
                     }
                 }
@@ -50,4 +50,3 @@
 </script>
 
 @endsection
-
