@@ -4,7 +4,7 @@
         <h2 class="heading text-center">Hear From Our Investors</h2>
         <p class="subheading text-center">
             Genuine testimonials and success stories from our valued investors.
-        </p>
+        </p>  
     </div>
 
 
