@@ -9,6 +9,25 @@ Route::get('/', function () {
 Route::get('/faq', function () {
     return view('frontend.FaqPage.faq');
 });
+Route::get('/single-product', function () {
+    return view('frontend.SingleProductPage.single-product');
+});
+Route::get('/contact', function () {
+    return view('frontend.ContactUsPage.contact-us');
+});
+Route::get('/blog', function () {
+    return view('frontend.BlogPage.blog');
+});
+Route::get('/project' , function () {
+    return view('frontend.ProjectPage.project');
+});
+
+Route::get('/developer', function () {
+    return view('frontend.DeveloperPage.developer');
+});
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

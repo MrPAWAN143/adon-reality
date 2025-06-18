@@ -13,6 +13,7 @@
     @include('frontend.layouts.header')
     @yield('homepage')
     @yield('faqpage')
+    @yield('content')
     @include('frontend.layouts.footer')
     <!-- javaScript for all pages -->
     <script type="module">
