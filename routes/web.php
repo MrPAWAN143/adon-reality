@@ -4,7 +4,10 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.homepage.homepage');
+});
+Route::get('/faq', function () {
+    return view('frontend.FaqPage.faq');
 });
 
 Route::get('/dashboard', function () {

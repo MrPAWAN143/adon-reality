@@ -1,47 +1,109 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+@extends('layouts.app')
+@section('content')
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+<div class="h-screen w-screen flex items-center justify-center px-4 bg-gray-200">
+    <div class="bg-white rounded-3xl mx-24 shadow-lg flex flex-col md:flex-row  w-full overflow-hidden h-full md:h-auto">
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        <!-- Left Side Image -->
+        <div class="w-full md:w-2/3 relative h-60 md:h-auto">
+            <img src="{{ asset('assets/images/bannerImages/hero-banner.webp') }}"
+                 alt="House"
+                 class="w-full h-full object-cover">
+
+            <div class="absolute top-4 left-4 bg-white px-4 py-2 rounded-full text-sm font-semibold shadow">
+                🏠 Adon Reality
+            </div>
+
+            <div class="absolute bottom-6 left-6 text-white">
+                <h2 class="text-xl font-bold">Manage Properties Efficiently</h2>
+                <p class="text-sm mt-1 max-w-sm">Track rent, maintenance & communication in one place. Say goodbye to manual work.</p>
+            </div>
         </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+        <!-- Right Side Form -->
+        <div class="w-full md:w-1/3 p-10 flex flex-col justify-center">
+            <div class="flex justify-end">
+                <button class="bg-black text-white px-5 py-2 rounded-full text-sm">Login</button>
+            </div>
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
+            <h2 class="text-2xl font-bold mt-6 mb-2 text-gray-800">Welcome Back to Adon Reality!</h2>
+            <p class="text-gray-500 mb-6 text-sm">Sign in to your account</p>
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
+            <!-- Display Session Status -->
+            @if (session('status'))
+                <div class="mb-4 text-green-600 text-sm font-medium">
+                    {{ session('status') }}
+                </div>
             @endif
 
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+
+                <!-- Email -->
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus
+                           class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-full focus:ring-blue-500 focus:border-blue-500" />
+                    @error('email')
+                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <!-- Password -->
+                <div class="mb-4">
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input id="password" type="password" name="password" required
+                           class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-full focus:ring-blue-500 focus:border-blue-500" />
+                    @error('password')
+                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <!-- Remember Me -->
+                <div class="flex items-center justify-between mb-4 text-sm">
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" name="remember" class="form-checkbox text-blue-600 rounded">
+                        <span class="ml-2 text-gray-600">Remember Me</span>
+                    </label>
+                    @if (Route::has('password.request'))
+                        <a href="{{ route('password.request') }}" class="text-blue-500 hover:underline">
+                            Forgot Password?
+                        </a>
+                    @endif
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-full">
+                    Login
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <!-- <div class="flex items-center my-6">
+                <hr class="flex-grow border-t border-gray-300">
+                <span class="mx-4 text-gray-400 text-sm">Instant Login</span>
+                <hr class="flex-grow border-t border-gray-300">
+            </div> -->
+
+            <!-- Social Login -->
+            <!-- <div class="flex flex-col space-y-3 md:flex-row md:space-y-0 md:space-x-4">
+                <a href="#" class="flex items-center justify-center w-full border border-gray-300 py-2 rounded-full hover:bg-gray-100">
+                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5 mr-2" />
+                    Sign in with Google
+                </a>
+                <a href="#" class="flex items-center justify-center w-full border border-gray-300 py-2 rounded-full hover:bg-gray-100">
+                    <img src="https://www.svgrepo.com/show/303128/apple-logo.svg" class="w-5 h-5 mr-2" />
+                    Sign in with Apple
+                </a>
+            </div> -->
+
+            <!-- Register Link -->
+            <p class="text-center text-sm mt-6 text-gray-600">
+                Don’t have an account?
+                <a href="{{ route('register') }}" class="text-blue-500 hover:underline">Register</a>
+            </p>
         </div>
-    </form>
-</x-guest-layout>
+    </div>
+</div>
+
+@endsection
