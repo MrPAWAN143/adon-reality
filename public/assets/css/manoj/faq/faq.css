@@ -1,0 +1,17 @@
+/* input-styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.form-inp{
+    border: none !important;
+    outline: none !important;
+    border-bottom: 2px solid gray !important;
+    
+}
+
+.form-inp:focus{
+    border: none !important;
+    outline: none !important;
+    border-bottom: 1px solid brown !important;
+}

@@ -129,6 +129,8 @@
 
 
 
+
+
 /* Form Card */
 .contact-form {
     border: 1px solid #60011E;
@@ -145,6 +147,8 @@
 }
 
 /* Inputs and Textarea */
+
+
 .contact-form input,
 .contact-form textarea {
     border: none;
@@ -156,6 +160,8 @@
     color: #000;
     resize: none;
 }
+
+
 
 .contact-form textarea {
     margin-bottom: 10px;
