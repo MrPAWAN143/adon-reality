@@ -9,7 +9,7 @@
 <div class="container max-w-6xl mx-auto">
     <x-page-path class="path" path="Home > FAQs for investors" />
 </div>
-<section class="relative h-[60vh] max-h-[60vh] object-cover bg-center" style="background-image: url('{{ asset('assets/images/bannerImages/faq-banner.webp') }}');
+<section class="px-4 relative h-[60vh] max-h-[60vh] object-cover bg-center" style="background-image: url('{{ asset('assets/images/bannerImages/faq-banner.webp') }}');
 background-position: center; background-size: cover;">
     <div class="absolute inset-0 bg-black bg-opacity-50"></div>
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-white px-4">
@@ -23,7 +23,7 @@ background-position: center; background-size: cover;">
 
 
 <!-- FAQ Accordion Matching Design -->
-<section class=" bg-white">
+<section class="px-4  bg-white">
     <div class="container max-w-5xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-3 py-10 gap-8">
 

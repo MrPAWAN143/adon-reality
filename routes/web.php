@@ -19,6 +19,17 @@ Route::get('/faq', function () {
 Route::get('/blog', function () {
     return view('Pages.blog');
 });
+
+Route::get('project-page', function () {
+    return view('Pages.project-page');
+});
+
+Route::get('developer', function () {
+    return view('Pages.developer-partner-page');
+});
+
+
+
 Route::get('/dashboard', function () {
     return view('Dashboard.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-<section class=" bg-white">
+<section class="px-4  bg-white pb-8">
     <div class="container max-w-7xl mx-auto">
         <x-page-path class="path" path="Home > Blog" />
         <x-heading-subheading heading="Our Blog & Insights" subheading="Get the latest updates, guides, and industry insights to help you make informed decisions about your next dream home." headingClass="heading text-center " subHeadingClass="subheading mb-2" />
@@ -27,21 +27,21 @@
 
             <!-- Filters -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <select class="w-full px-4 py-2 border-2 border-primary rounded-full text-sm text-primary">
+                <select class="hero-section-select ">
                     <option>Category</option>
                     <option>Architecture</option>
                     <option>Interior</option>
                     <option>Exterior</option>
                 </select>
 
-                <select class="w-full px-4 py-2 border-2 border-primary rounded-full text-sm text-primary">
+                <select class="hero-section-select">
                     <option>Year</option>
                     <option>2025</option>
                     <option>2024</option>
                     <option>2023</option>
                 </select>
 
-                <select class="w-full px-4 py-2 border-2 border-primary rounded-full text-sm text-prmary">
+                <select class="hero-section-select">
                     <option>Tags</option>
                     <option>Modern</option>
                     <option>Luxury</option>
@@ -63,6 +63,10 @@
     </div>
 
 </section>
+
+
+<x-contact-us-form heading="Still Have a Question?"
+    subheading="Have questions or ready to take the next step? Whether you're looking to buy, rent, or invest, our team is here to guide you every step of the way." />
 @endsection
 
 

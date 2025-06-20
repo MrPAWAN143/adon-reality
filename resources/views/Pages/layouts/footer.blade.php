@@ -25,9 +25,9 @@
 
         <div class="flex flex-col md:flex-row md:justify-between  md:space-y-0 md:space-x-8 border-b border-goldenColor pb-4 mb-6">
             <!-- Cities -->
-            <div class="">
+            <div class="mb-4">
                 <p class="text-sm font-semibold text-goldenColor mb-1">CITIES</p>
-                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+                <div class="flex flex-wrap gap-x-2 gap-y-1 md:text-base sm:text-[12px]">
                     <span>Noida</span>
                     <span>Delhi</span>
                     <span>Gurugram</span>
@@ -39,7 +39,7 @@
             <!-- Developers -->
             <div class="">
                 <p class="text-sm font-semibold text-goldenColor mb-1">DEVELOPER WE WORK WITH</p>
-                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+                <div class="flex flex-wrap gap-x-2 gap-y-1 md:text-base sm:text-[12px]">
                     <span>DLF</span>
                     <span>Prime</span>
                     <span>Space</span>
@@ -54,11 +54,12 @@
         </div>
 
 
-        <div class="flex md:flex-row md:justify-between mt-6 space-y-4 md:space-y-0 md:space-x-8 border-b border-goldenColor pb-4 mb-">
+        <div class="flex flex-col sm:flex-col md:flex-row justify-between mt-6 border-b border-goldenColor pb-6 mb-6 gap-y-6 gap-x-8 text-white">
 
-            <div class="flex-3 ">
-                <p class="text-goldenColor font-semibold mb-2">Certifications & Trust Badges</p>
-                <ul class="list-disc list-inside space-y-1 text-white text-sm mb-4">
+            <!-- Certifications & Address -->
+            <div class="w-full md:w-auto lg:w-[23%]">
+                <p class="text-goldenColor font-semibold mb-4 text-sm">Certifications & Trust Badges</p>
+                <ul class="list-disc list-inside space-y-1 sm:text-[12px] md:text-base mb-4">
                     <li>RERA Approved</li>
                     <li>100% Verified Properties</li>
                     <li>Trusted by 1000+ Investors</li>
@@ -66,25 +67,29 @@
                     <li>ISO Certification Badge (if applicable)</li>
                 </ul>
                 <p class="text-goldenColor font-semibold mt-4">CORPORATE OFFICE</p>
-                <p class="mt-1">D-27, Sector 2, Noida, Uttar Pradesh-201301</p>
+                <p class="mt-1 text-sm">D-27, Sector 2, Noida, Uttar Pradesh-201301</p>
             </div>
 
-            <div class="flex-2 ">
-                <p class="text-sm mb-1">Your e-mail address</p>
+            <!-- Newsletter -->
+            <div class="w-full md:w-[48%] lg:w-[23%] text-[12px] mb-4">
+                <p class="text-goldenColor font-semibold mb-2">Your e-mail address</p>
                 <div class="flex items-center space-x-2 mb-2">
-                    <input type="email" placeholder="name@email.com" class="px-3 py-1.5 rounded-full text-black text-sm focus:outline-none" />
-                    <button class="bg-primary hover:bg-primary text-bgSecondary px-4 py-1.5 rounded-full text-sm">Subscribe</button>
+                    <input type="email" placeholder="name@email.com"
+                        class="flex-4 px-3 py-1.5 rounded-full text-black text-sm focus:outline-none" />
+                    <button
+                        class="flex-0 bg-primary hover:bg-primary text-bgSecondary px-4 py-1.5 rounded-full text-sm whitespace-nowrap">Subscribe</button>
                 </div>
                 <label class="flex items-start space-x-2 text-xs mt-1">
-                    <input type="checkbox" class="mt-1 accent-transparent bg-transparent border-1 border-white checked:bg-primary" />
+                    <input type="checkbox"
+                        class="mt-1 accent-transparent bg-transparent border border-white checked:bg-primary" />
                     <span>By subscribing I accept the Privacy Policy.</span>
                 </label>
             </div>
 
             <!-- Quick Links -->
-            <div class="max-w-[80px]">
-                <p class="text-goldenColor font-semibold mb-2">Quick Links</p>
-                <ul class="space-y-1 ">
+            <div class="w-full sm:w-1/2 md:w-[30%] lg:w-[15%]">
+                <p class="text-goldenColor font-semibold text-sm md:text-base mb-2">Quick Links</p>
+                <ul class="space-y-1 text-base">
                     <li><a href="#" class="hover:underline">About Us</a></li>
                     <li><a href="#" class="hover:underline">News & PR</a></li>
                     <li><a href="#" class="hover:underline">Events</a></li>
@@ -96,28 +101,32 @@
                     <li><a href="#" class="hover:underline">Service</a></li>
                 </ul>
             </div>
-            <div>
-                <p class="text-goldenColor font-semibold mb-2">Investor Information</p>
-                <ul class="space-y-1">
-                    <li>Why Invest With Us</li>
-                    <li>Verified Properties</li>
-                    <li>FAQs for Investors</li>
+
+            <!-- Investor Info -->
+            <div class="w-full sm:w-1/2 md:w-[30%] lg:w-[18%]">
+                <p class="text-goldenColor font-semibold text-sm md:text-base mb-2">Investor Information</p>
+                <ul class="space-y-1 text-base">
+                    <li><a href="#" class="hover:underline">Why Invest With Us</a></li>
+                    <li><a href="#" class="hover:underline">Verified Properties</a></li>
+                    <li><a href="#" class="hover:underline">FAQs for Investors</a></li>
                 </ul>
             </div>
 
-            <div>
-                <p class="text-goldenColor font-semibold mb-2">Legal & Compliance</p>
-                <ul class="space-y-1">
-                    <li>Terms & Conditions</li>
-                    <li>Privacy Policy</li>
-                    <li>Disclaimer</li>
-                    <li>RERA Disclosures</li>
-                    <li>Anti-Fraud Notice</li>
-                    <li>Cookie Policy</li>
+            <!-- Legal & Compliance -->
+            <div class="w-full sm:w-1/2 md:w-[30%] lg:w-[18%]">
+                <p class="text-goldenColor font-semibold text-sm md:text-base mb-2">Legal & Compliance</p>
+                <ul class="space-y-1 text-base">
+                    <li><a href="#" class="hover:underline">Terms & Conditions</a></li>
+                    <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:underline">Disclaimer</a></li>
+                    <li><a href="#" class="hover:underline">RERA Disclosures</a></li>
+                    <li><a href="#" class="hover:underline">Anti-Fraud Notice</a></li>
+                    <li><a href="#" class="hover:underline">Cookie Policy</a></li>
                 </ul>
             </div>
 
         </div>
+
 
 
         <div class="flex md:flex-row justify-between items-center  ">
