@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="{{ asset('assets/css/homepage.css') }}">
 @endsection
 @section('homepage')
-<section class="relative h-[80vh] max-h-[80vh] object-cover bg-cover bg-center" style="background-image: url('{{ asset('assets/images/bannerImages/hero-banner.webp') }}')">
+<section class="px-4 relative h-[80vh] max-h-[80vh] object-cover bg-cover bg-center" style="background-image: url('{{ asset('assets/images/bannerImages/hero-banner.webp') }}')">
     <div class="absolute inset-0 bg-black bg-opacity-50"></div>
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-white px-4">
         <!-- <h1 class="text-4xl md:text-5xl font-bold mb-4 text-center">
@@ -15,10 +15,7 @@
         </h1> -->
         <div class="flex flex-col md:flex-row items-center justify-between w-full max-w-3xl bg-white rounded-full py-2 px-2 mt-4 shadow-md">
             <div class="relative w-full md:w-[16%]">
-                <select class="w-full font-semibold appearance-none bg-white text-txBlack 
-                 hover:text-white px-6 hover:bg-primary 
-                 border-2 border-primary  py-2 rounded-full 
-                 focus:outline-none focus:ring-0 focus:border-primary transition duration-300 ">
+                <select class="hero-section-select">
                     <option>City</option>
                     <option>Delhi</option>
                     <option>Mumbai</option>
@@ -54,12 +51,12 @@
         </div>
     </div>
 </section>
-<section class="py-8 pt-16 bg-white">
+<section class="px-4 sm:py-4 py-8 md:pt-16 bg-white">
     <div class="container max-w-7xl mx-auto text-center">
 
         <x-heading-subheading heading="Why Invest with us" subheading=" Empowering You to Make Smarter, Safer, and More Profitable Investments." headingClass="heading" subHeadingClass="subheading" />
         <!-- Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
 
             <!-- Card 1 -->
             <div class="investCard">
@@ -69,7 +66,7 @@
                         Get personalized guidance from seasoned real estate advisors to make informed investment decisions.
                     </p>
                 </div>
-                <img src="{{asset('assets/images/icons/advisory.png')}}" alt="Advisory" class=" h-14 object-cover" />
+                <img src="{{asset('assets/images/icons/advisory.png')}}" alt="Advisory" class=" " />
             </div>
 
 
@@ -131,43 +128,43 @@
         </div>
     </div>
 </section>
-<section class="py-8 bg-white">
+<section class="px-4 py-8 sm:py-2 bg-white">
     <div class="container max-w-7xl mx-auto text-center">
 
         <x-heading-subheading heading="Projects on prime location" subheading=" Discover top-tier properties situated in the most sought-after locations." headingClass="heading" subHeadingClass="subheading" />
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-full mx-auto ">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-5 sm:gap-2 max-w-full mx-auto ">
 
             <!-- Card 1 -->
-            <a href="" class="relative rounded-3xl overflow-hidden group">
+            <a href="" class="relative rounded-xl overflow-hidden group">
 
-                <img src="{{asset('assets/images/allImages/noida.png')}}" alt="Noida" class="w-full min-h-72 h-full  object-cover group-hover:scale-105 transition duration-300 ease-in-out" />
-                <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
-                    <span class="text-white text-2xl font-semibold">Noida</span>
+                <img src="{{asset('assets/images/allImages/noida.png')}}" alt="Noida" class="prime-location-image" />
+                <div class="prime-location-overlay">
+                    <span class="prime-location-name">Noida</span>
                 </div>
             </a>
 
             <!-- Card 2 -->
             <a class="relative rounded-xl overflow-hidden group">
-                <img src="{{asset('assets/images/allImages/gurugram.png')}}" alt="Gurugram" class="w-full min-h-72 h-full  object-cover group-hover:scale-105 transition duration-300 ease-in-out" />
-                <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
-                    <span class="text-white text-2xl font-semibold">Gurugram</span>
+                <img src="{{asset('assets/images/allImages/gurugram.png')}}" alt="Gurugram" class="prime-location-image" />
+                <div class="prime-location-overlay">
+                    <span class="prime-location-name">Gurugram</span>
                 </div>
             </a>
 
             <!-- Card 3 -->
             <a class="relative rounded-xl overflow-hidden group">
-                <img src="{{asset('assets/images/allImages/delhi.png')}}" alt="Delhi" class="w-full min-h-72 h-full  object-cover group-hover:scale-105 transition duration-300 ease-in-out" />
-                <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
-                    <span class="text-white text-2xl font-semibold">Delhi</span>
+                <img src="{{asset('assets/images/allImages/delhi.png')}}" alt="Delhi" class="prime-location-image" />
+                <div class="prime-location-overlay">
+                    <span class="prime-location-name">Delhi</span>
                 </div>
             </a>
 
             <!-- Card 4 -->
             <a class="relative rounded-xl overflow-hidden group">
-                <img src="{{asset('assets/images/allImages/pune.png')}}" alt="Pune" class="w-full min-h-72 h-full  object-cover group-hover:scale-105 transition duration-300 ease-in-out" />
-                <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
-                    <span class="text-white text-2xl font-semibold">Pune</span>
+                <img src="{{asset('assets/images/allImages/pune.png')}}" alt="Pune" class="prime-location-image" />
+                <div class="prime-location-overlay">
+                    <span class="prime-location-name">Pune</span>
                 </div>
             </a>
 
@@ -175,7 +172,7 @@
     </div>
 </section>
 
-<section class="py-8 bg-white text-center">
+<section class="px-4 py-8 bg-white text-center">
     <div class="container max-w-7xl mx-auto text-center">
 
         <x-heading-subheading heading="Featured Investment Opportunities" subheading="Explore high-return investment options with trusted developers." headingClass="heading" subHeadingClass="subheading" />
@@ -201,7 +198,7 @@
         </div>
     </div>
 </section>
-<section class="py-8 bg-white text-center">
+<section class="px-4 py-8 bg-white text-center">
     <div class="container max-w-7xl mx-auto">
         <x-heading-subheading heading="What We Offer" subheading="Comprehensive solutions tailored to meet all your real estate needs." headingClass="heading" subHeadingClass="subheading" />
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 ">
@@ -245,7 +242,7 @@
     </div>
 </section>
 
-<section class="py-8 bg-white text-center">
+<section class="px-4 py-8 bg-white text-center">
     <div class="container max-w-7xl mx-auto">
 
         <x-heading-subheading heading="Explore Our Properties Virtually" subheading="Take a digital walkthrough of our premium property listings." headingClass="heading" subHeadingClass="subheading" />
@@ -286,72 +283,19 @@
         </div>
     </div>
 </section>
-<section class="py-8 bg-white text-center">
+<section class="px-4 py-8 bg-white text-center">
     <div class="container max-w-7xl mx-auto">
         <x-heading-subheading heading="Our Development Partners" subheading="Collaborating with renowned names in real estate development." headingClass="heading" subHeadingClass="subheading" />
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-            <div class="development-partner-card">
-                <div class="p-4">
-                    <div class="flex items-center gap-4 mb-4">
-                        <img src="{{asset('assets/images/partnersLogo/dlf.png')}}" alt="DLF Limited" class="w-16 h-16 rounded-full object-contain">
-                        <div>
-                            <h3>DLF Limited</h3>
-                            <p class="development-partner-description">Building India</p>
-                        </div>
-                    </div>
-                    <p class="text-lg font-semibold text-txBlack">Projects Partnered: <span class="font-normal">18</span></p>
-                    <p class="text-lg text-txBlack mt-1">Presence: Gurgaon, Noida, Chennai, Hyderabad</p>
-                </div>
-                <div class="mt-6">
-                    <a href="#" class="development-partner-button">
-                        Explore Projects
-                        <x-tabler-arrow-up-right class="ml-2" />
-                    </a>
-                </div>
-            </div>
+
+            <x-developer-partner-card partnerLogo="{{ asset('assets/images/partnersLogo/dlf.png') }}" alt="DLF Limited" heading="DLF Limited" description="Building India" projectsPartnered="18" presence="Gurgaon, Noida, Chennai, Hyderabad" />
 
             <!-- Partner 2 -->
-            <div class="development-partner-card">
-                <div>
-                    <div class="flex items-center gap-4 mb-4">
-                        <img src="{{asset('assets/images/partnersLogo/raheja.png')}}" alt="Raheja Develop" class="w-16 h-16 rounded-full object-contain">
-                        <div>
-                            <h3>Raheja Develop</h3>
-                            <p class="development-partner-description">Committed to Excellence</p>
-                        </div>
-                    </div>
-                    <p class="text-lg font-semibold text-txBlack">Projects Partnered: <span class="font-normal">10</span></p>
-                    <p class="text-lg text-txBlack mt-1">Presence: Gurgaon, Delhi, Noida</p>
-                </div>
-                <div class="mt-6">
-                    <a href="#" class="development-partner-button">
-                        Explore Projects
-                        <x-tabler-arrow-up-right class="ml-2" />
-                    </a>
-                </div>
-            </div>
+            <x-developer-partner-card partnerLogo="{{ asset('assets/images/partnersLogo/raheja.png') }}" alt="Raheja Develop" heading="Raheja Develop" description="Committed to Excellence" projectsPartnered="10" presence="Gurgaon, Delhi, Noida" />
 
             <!-- Partner 3 -->
-            <div class="development-partner-card">
-                <div>
-                    <div class="flex items-center gap-4 mb-4">
-                        <img src="{{asset('assets/images/partnersLogo/m3m.png')}}" alt="M3M India" class="w-16 h-16 rounded-full object-contain">
-                        <div>
-                            <h3>M3M India</h3>
-                            <p class="development-partner-description">Magnificence in the Trinity of Men & Materials</p>
-                        </div>
-                    </div>
-                    <p class="text-lg font-semibold text-txBlack">Projects Partnered: <span class="font-normal">8</span></p>
-                    <p class="text-lg text-txBlack mt-1">Presence: Gurgaon, Noida</p>
-                </div>
-                <div class="mt-6">
-                    <a href="#" class="development-partner-button">
-                        Explore Projects
-                        <x-tabler-arrow-up-right class="ml-2" />
-                    </a>
-                </div>
-            </div>
+            <x-developer-partner-card partnerLogo="{{ asset('assets/images/partnersLogo/m3m.png') }}" alt="M3M India" heading="M3M India" description="Magnificence in the Trinity of Men & Materials" projectsPartnered="8" presence="Gurgaon, Noida" />
         </div>
 
         <div class="mt-10">
@@ -364,7 +308,7 @@
 
 
 
-<section class="py-8 bg-white text-center">
+<section class="px-4 py-8 bg-white text-center">
     <div class="container max-w-7xl mx-auto">
         <x-heading-subheading heading="Real Estate Marketing Insights" subheading="Stay ahead with industry trends, data, and marketing tips." headingClass="heading" subHeadingClass="subheading" />
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto">
@@ -381,7 +325,7 @@
 </section>
 
 
-<section class="py-8 bg-white">
+<section class="px-4 py-8 bg-white">
     <div class="container max-w-5xl mx-auto px-4">
 
         <x-heading-subheading heading="Hear From Our Investors" subheading="Genuine testimonials and success stories from our valued investors." headingClass="heading text-center" subHeadingClass="subheading text-center" />
@@ -506,33 +450,5 @@
 
 
 @section('scripts')
-<script type="module">
-    $(document).ready(function() {
-        $('.testimonial-slider').slick({
-            centerMode: true,
-            centerPadding: '60px',
-            slidesToShow: 3,
-            responsive: [{
-                    breakpoint: 768,
-                    settings: {
-                        arrows: false,
-                        centerMode: true,
-                        centerPadding: '40px',
-                        slidesToShow: 3
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        arrows: false,
-                        centerMode: true,
-                        centerPadding: '40px',
-                        slidesToShow: 1
-                    }
-                }
-            ]
-        });
-    });
-</script>
 
 @endsection

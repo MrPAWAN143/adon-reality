@@ -1,4 +1,4 @@
-<header class="w-full bg-white shadow-sm border-b border-gray  z-50 sticky top-0">
+<header class="w-full bg-white  z-50 sticky top-0 shadow-xl">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-4">
 
     <!-- Logo -->
