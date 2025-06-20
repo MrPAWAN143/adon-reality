@@ -3,7 +3,9 @@
 
     <!-- Logo -->
     <div class="flex-shrink-0">
-      <img src="{{asset('assets/images/logos/header-logo.png')}}" alt="Adon Realty" class="h-12 w-auto">
+      <a href="/">
+        <img src="{{asset('assets/images/logos/header-logo.png')}}" alt="Adon Realty" class="h-10 w-auto">
+      </a>
     </div>
 
     <!-- Mobile Menu Button -->
@@ -16,15 +18,15 @@
 
     <!-- Desktop Navigation Menu -->
     <nav id="navMenu" class="hidden md:flex items-center space-x-6">
-      <a href="#" class="text-base text-txBlack hover:text-primary font-medium flex items-center justify-center">
+      <a href="/project-page" class="text-base text-txBlack hover:text-primary font-medium flex items-center justify-center">
         Projects
        <x-forkawesome-angle-down class="ml-1 w-auto h-5" />
       </a>
-      <a href="#" class="text-base text-txBlack hover:text-primary font-medium">Blog</a>
-      <a href="#" class="text-base text-txBlack hover:text-primary font-medium">Developers</a>
+      <a href="/blog" class="text-base text-txBlack hover:text-primary font-medium">Blog</a>
+      <a href="/developer" class="text-base text-txBlack hover:text-primary font-medium">Developers</a>
       <a href="#" class="text-base text-txBlack hover:text-primary font-medium">Testimonial</a>
       <a href="#" class="text-base text-txBlack hover:text-primary font-medium">About Us</a>
-      <a href="#" class="ml-2 px-6 py-2 border-2 border-primary text-primary rounded-3xl text-base hover:bg-primary hover:text-white transition font-medium">
+      <a href="/contact-us" class="ml-2 px-6 py-2 border-2 border-primary text-primary rounded-3xl text-base hover:bg-primary hover:text-white transition font-medium">
         Contact Us
       </a>
     </nav>
@@ -42,12 +44,12 @@
       </button>
     </div>
     <nav class="space-y-4">
-      <a href="#" class="block text-sm text-txBlack hover:text-black font-medium">Projects</a>
-      <a href="#" class="block text-sm text-txBlack hover:text-black font-medium">Blog</a>
-      <a href="#" class="block text-sm text-txBlack hover:text-black font-medium">Developers</a>
+      <a href="/project-page" class="block text-sm text-txBlack hover:text-black font-medium">Projects</a>
+      <a href="/blog" class="block text-sm text-txBlack hover:text-black font-medium">Blog</a>
+      <a href="/developer" class="block text-sm text-txBlack hover:text-black font-medium">Developers</a>
       <a href="#" class="block text-sm text-txBlack hover:text-black font-medium">Testimonial</a>
       <a href="#" class="block text-sm text-txBlack hover:text-black font-medium">About Us</a>
-      <a href="#" class="block text-center px-6 py-2 border border-primary text-primary rounded-full text-base hover:bg-primary hover:text-white transition font-medium">
+      <a href="/contact-us" class="block text-center px-6 py-2 border border-primary text-primary rounded-full text-base hover:bg-primary hover:text-white transition font-medium">
         Contact Us
       </a>
     </nav>
