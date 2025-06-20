@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.favicon-logo {
+    width: 20px;
+    height: auto;
+    object-fit: cover;
+
+}

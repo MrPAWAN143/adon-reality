@@ -4,19 +4,23 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('frontend.homepage.homepage');
+    return view('Pages.homepage');
 });
 
 Route::get('/contact-us', function () {
-    return view('frontend.ContactUsPage.contact-us');
+    return view('Pages.contact-us');
 });
 
-Route::get('./faq', function () {
-    return view('frontend.FaqPage.faq');
+Route::get('/faq', function () {
+    return view('Pages.faq');
 });
 
+
+Route::get('/blog', function () {
+    return view('Pages.blog');
+});
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('Dashboard.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

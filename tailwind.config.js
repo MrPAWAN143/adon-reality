@@ -28,7 +28,9 @@ export default {
                 },
                 txBlack: {
                     DEFAULT: '#000000',
+                    gray: 'rgb(27 27 27)'
                 },
+
                 white: {
                     DEFAULT: '#ffffff',
                 },

@@ -1,0 +1,1 @@
+<div class="{{ $class }}"><span>{{ $path }}</span></div>

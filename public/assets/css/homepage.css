@@ -25,10 +25,10 @@
     @apply text-investTxColor/80 text-xs;
 }
 .heading{
-    @apply text-3xl md:text-4xl font-bold mb-4; 
+    @apply text-3xl md:text-3xl font-bold mb-4; 
 }
 .subheading{
-    @apply text-txBlack mb-12 mx-auto font-medium text-center text-lg; 
+    @apply text-txBlack mb-12 mx-auto font-medium text-center  text-lg; 
 }
 
 .featured-investment-card{
