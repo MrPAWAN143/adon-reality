@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('Dashboard.layouts.app')
 @section('content')
 
 <div class="h-screen w-screen flex items-center justify-center px-4 bg-gray-200">
@@ -77,25 +77,6 @@
                     Login
                 </button>
             </form>
-
-            <!-- Divider -->
-            <!-- <div class="flex items-center my-6">
-                <hr class="flex-grow border-t border-gray-300">
-                <span class="mx-4 text-gray-400 text-sm">Instant Login</span>
-                <hr class="flex-grow border-t border-gray-300">
-            </div> -->
-
-            <!-- Social Login -->
-            <!-- <div class="flex flex-col space-y-3 md:flex-row md:space-y-0 md:space-x-4">
-                <a href="#" class="flex items-center justify-center w-full border border-gray-300 py-2 rounded-full hover:bg-gray-100">
-                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5 mr-2" />
-                    Sign in with Google
-                </a>
-                <a href="#" class="flex items-center justify-center w-full border border-gray-300 py-2 rounded-full hover:bg-gray-100">
-                    <img src="https://www.svgrepo.com/show/303128/apple-logo.svg" class="w-5 h-5 mr-2" />
-                    Sign in with Apple
-                </a>
-            </div> -->
 
             <!-- Register Link -->
             <p class="text-center text-sm mt-6 text-gray-600">
