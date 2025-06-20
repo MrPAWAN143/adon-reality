@@ -11,6 +11,16 @@ Route::get('/contact-us', function () {
     return view('frontend.ContactUsPage.contact-us');
 });
 
+
+Route::get('/news-pr', function () {
+    return view('frontend.newsandpr.index');
+});
+
+Route::get('/terms-and-condition', function () {
+    return view('frontend.terms-and-condition.index');
+});
+
+
 Route::get('./faq', function () {
     return view('frontend.FaqPage.faq');
 });

@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+ 
 
-@theme{
-    
+
+#contactPage input:not([type=radio]),textarea{
+    @apply !border-b  !w-full focus:!outline-none !border-b-black !border-t-transparent !border-l-transparent !border-r-transparent focus:!border-t-transparent focus:!border-l-transparent focus:!border-r-transparent;
 }

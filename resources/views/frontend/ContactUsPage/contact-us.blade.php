@@ -6,13 +6,17 @@
 <link rel="stylesheet" href="{{ asset('assets/css/contact-us.css') }}">
 @endsection
 
-@section('content')
-<h1>Contact Us page</h1>
-<x-forkawesome-instagram class='text-xl h-6 w-6'  />
+@section('content') 
+
+
+      
+
+@include('frontend.ContactUsPage.contactform')
 
 @include('frontend.ContactUsPage.testimonials')
 
 @endsection
+
 
 
 @section('scripts')
