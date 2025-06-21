@@ -17,6 +17,7 @@ background-position: center; background-size: cover;">
             FAQs for Real Estate Investors
         </h1>
         <p class="text-xl md:text-lg">Everything you need to know before investing in verified, high-value properties with XYZ Realty.</p>
+        
 
     </div>
 </section>
