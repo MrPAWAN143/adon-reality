@@ -3,12 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.banner-button{
+    @apply mt-6 border-2 border-white text-white px-10 py-3 rounded-2xl hover:bg-bgSecondary/30 ;
+}
 .search-input-homepage-herosection {
     @apply w-full md:w-2/3 px-2 py-2 rounded-full text-txBlack/60 placeholder-black/60 bg-transparent outline-none border-none focus:outline-none focus:ring-0 focus:border-none;
 }
 
 .hero-section-select {
-    @apply w-full font-semibold appearance-none bg-white text-txBlack hover:text-white px-6 hover:bg-primary border-2 border-primary py-2 rounded-full focus:outline-none focus:ring-0 focus:border-primary transition duration-300 font-medium
+    @apply font-semibold appearance-none bg-white text-txBlack hover:text-white px-6 hover:bg-primary border-2 border-primary py-2 rounded-full focus:outline-none focus:ring-0 focus:border-primary transition duration-300 font-medium;
 }
 
 .investCard {
@@ -266,4 +270,21 @@
 
 .testimonial-slider {
     margin-top: 30px;
+}
+
+
+.legacy-card{
+    @apply border-2 border-primary rounded-lg py-8 px-3;
+}
+.legacy-card-why-choose{
+    
+}
+
+.newsAndPrButton{
+    @apply text-sm font-semibold text-white border-2 hover:border-primary px-4 py-3 rounded-2xl hover:bg-white bg-primary hover:text-primary transition duration-300;
+}
+
+.our-core-team{
+   @apply bg-white text-center rounded-2xl shadow-md p-4 transition duration-300;
+    box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.1), -3px -5px 8px rgba(0, 0, 0, 0.08);
 }

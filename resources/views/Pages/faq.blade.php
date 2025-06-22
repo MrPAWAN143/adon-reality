@@ -3,24 +3,13 @@
 <title> Adon Realty - FAQs page</title>
 @endsection
 @section('styles')
-<link rel="stylesheet" href="{{ asset('assets/css/faq.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/homepage.css') }}">
 @endsection
 @section('content')
 <div class="container max-w-6xl mx-auto">
     <x-page-path class="path" path="Home > FAQs for investors" />
 </div>
-<section class="px-4 relative h-[60vh] max-h-[60vh] object-cover bg-center" style="background-image: url('{{ asset('assets/images/bannerImages/faq-banner.webp') }}');
-background-position: center; background-size: cover;">
-    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-    <div class="relative z-10 flex flex-col items-center justify-center h-full text-white px-4">
-        <h1 class="text-4xl md:text-3xl font-bold mb-4 text-center">
-            FAQs for Real Estate Investors
-        </h1>
-        <p class="text-xl md:text-lg">Everything you need to know before investing in verified, high-value properties with XYZ Realty.</p>
-
-    </div>
-</section>
-
+<x-banner-section class="px-4 relative h-[60vh] max-h-[60vh] object-cover bg-center" image="{{ asset('assets/images/bannerImages/faq-banner.webp') }}" title="FAQs for Real Estate Investors" subtitle="Everything you need to know before investing in verified, high-value properties with XYZ Realty."  />
 
 <!-- FAQ Accordion Matching Design -->
 <section class="px-4  bg-white">
