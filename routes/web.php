@@ -28,7 +28,37 @@ Route::get('developer', function () {
     return view('Pages.developer-partner-page');
 });
 
+Route::get('event-and-media' , function (){
+    return view('Pages.event-and-media');
+});
+Route::get('developer-each', function () {
+    return view('Pages.projects-each-brand');
+});
 
+Route::get('/awards', function(){
+    return view('Pages.awards-and-recognitions');
+});
+
+Route::get('/verified-properties', function () {
+    return view('Pages.verified-properties');
+});
+Route::get('/why-invest-with-us', function () {
+    return view('Pages.why-invest-with-us');
+});
+
+Route::get('/service', function () {
+    return view('Pages.service-page');
+});
+
+Route::get('/career', function () {
+    return view('Pages.career-page');
+});
+Route::get('/about-us', function () {
+    return view('Pages.about-us');
+});
+Route::get('/news', function () {
+    return view('Pages.news-and-pr-page');
+});
 
 Route::get('/dashboard', function () {
     return view('Dashboard.dashboard');
