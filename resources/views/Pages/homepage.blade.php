@@ -37,16 +37,16 @@
         <!-- Badges -->
         <div class="flex flex-wrap justify-center gap-3 mt-6">
             <span class="bg-bgSecondary  text-txBlack px-2 py-0 font-semibold text-[16px] rounded-full flex items-center shadow">
-                <x-fwb-s-check class="w-4 h-4 mr-2 text-txBlack/0.4"/> 100% RERA-Approved Projects
+                <x-fwb-s-check class="w-4 h-4 mr-2 text-txBlack/0.4" /> 100% RERA-Approved Projects
             </span>
             <span class="bg-bgSecondary  text-txBlack px-2 py-0 font-semibold text-[16px] rounded-full flex items-center shadow">
-                <x-fwb-s-check class="w-4 h-4 mr-2 text-txBlack/0.7"/> 12-18% Expected ROI
+                <x-fwb-s-check class="w-4 h-4 mr-2 text-txBlack/0.7" /> 12-18% Expected ROI
             </span>
             <span class="bg-bgSecondary  text-txBlack px-2 py-0 font-semibold text-[16px] rounded-full flex items-center shadow">
-                <x-fwb-s-check class="w-4 h-4 mr-2 text-txBlack/0.7"/> End-to-End Legal Assistance
+                <x-fwb-s-check class="w-4 h-4 mr-2 text-txBlack/0.7" /> End-to-End Legal Assistance
             </span>
             <span class="bg-bgSecondary  text-txBlack px-2 py-0 font-semibold text-[16px] rounded-full flex items-center shadow">
-                <x-fwb-s-check class="w-4 h-4 mr-2 text-txBlack/0.7"/> Trusted by 2000+ Investors
+                <x-fwb-s-check class="w-4 h-4 mr-2 text-txBlack/0.7" /> Trusted by 2000+ Investors
             </span>
         </div>
     </div>
@@ -328,116 +328,101 @@
 <section class="px-4 py-8 bg-white">
     <div class="container max-w-5xl mx-auto px-4">
 
-        <x-heading-subheading heading="Hear From Our Investors" subheading="Genuine testimonials and success stories from our valued investors." headingClass="heading text-center" subHeadingClass="subheading text-center" />
+        <x-heading-subheading heading="Hear From Our Investors" subheading="Genuine testimonials and success stories from our valued investors." headingClass="heading text-center" subHeadingClass="subheading text-center !mb-2" />
     </div>
 
 
-    <div class="testimonial-slider max-w-5xl mx-auto px-4 gap-5">
-        <div class="">
-            <div class="bg-white rounded-xl shadow-md p-6 text-sm text-gray-800">
+    <div class="testimonial-slider max-w-5xl mx-auto px-3 !flex !gap-5 justify-center items-center overflow-x-auto">
+        <div class="review-card">
+            <div class="bg-white rounded-xl text-sm p-3 text-txBlack overflow-hidden">
                 <div class="flex items-center mb-3">
-                    <div class="text-[#570713] text-xl">★★★★★</div>
+                    <div class="text-primary text-xl">★★★★★</div>
                 </div>
                 <p class="mb-4">A trusted investment experience with great support.</p>
                 <div class="flex items-center">
                     <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Nathan" class="w-10 h-10 rounded-full mr-3">
                     <div>
                         <p class="font-semibold">Nathan Kapoor</p>
-                        <p class="text-xs text-gray-500">Software Developer</p>
+                        <p class="text-xs text-txBlack">Software Developer</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="">
-            <div class="bg-white rounded-xl shadow-md p-6 text-sm text-gray-800">
+
+        <div class="review-card">
+            <div class="bg-white rounded-xl p-3 text-sm text-txBlack">
                 <div class="flex items-center mb-3">
-                    <div class="text-[#570713] text-xl">★★★★★</div>
+                    <div class="text-primary text-xl">★★★★★</div>
                 </div>
-                <p class="mb-4">The virtual property tour helped faster than ever.</p>
+                <p class="mb-4">Detailed listings and quick support made the process seamless.</p>
                 <div class="flex items-center">
-                    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Arjun" class="w-10 h-10 rounded-full mr-3">
+                    <img src="https://randomuser.me/api/portraits/men/29.jpg" alt="Karan" class="w-10 h-10 rounded-full mr-3">
                     <div>
-                        <p class="font-semibold">Arjun Verma</p>
-                        <p class="text-xs text-gray-500">UX Designer</p>
+                        <p class="font-semibold">Karan Sethi</p>
+                        <p class="text-xs text-txBlack">Entrepreneur</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="review-card">
+            <div class="bg-white rounded-xl p-3 text-sm text-txBlack">
+                <div class="flex items-center mb-3">
+                    <div class="text-primary text-xl">★★★★★</div>
+                </div>
+                <p class="mb-4">Detailed listings and quick support made the process seamless.</p>
+                <div class="flex items-center">
+                    <img src="https://randomuser.me/api/portraits/men/29.jpg" alt="Karan" class="w-10 h-10 rounded-full mr-3">
+                    <div>
+                        <p class="font-semibold">Karan Sethi</p>
+                        <p class="text-xs text-txBlack">Entrepreneur</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="">
-            <div class="bg-white rounded-xl shadow-md p-6 text-sm text-gray-800">
+        <div class="review-card">
+            <div class="bg-white rounded-xl p-3 text-sm text-txBlack">
                 <div class="flex items-center mb-3">
-                    <div class="text-[#570713] text-xl">★★★★★</div>
+                    <div class="text-primary text-xl">★★★★★</div>
                 </div>
                 <p class="mb-4">Detailed listings and quick support made the process seamless.</p>
                 <div class="flex items-center">
                     <img src="https://randomuser.me/api/portraits/men/29.jpg" alt="Karan" class="w-10 h-10 rounded-full mr-3">
                     <div>
                         <p class="font-semibold">Karan Sethi</p>
-                        <p class="text-xs text-gray-500">Entrepreneur</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="">
-            <div class="bg-white rounded-xl shadow-md p-6 text-sm text-gray-800">
-                <div class="flex items-center mb-3">
-                    <div class="text-[#570713] text-xl">★★★★★</div>
-                </div>
-                <p class="mb-4">Detailed listings and quick support made the process seamless.</p>
-                <div class="flex items-center">
-                    <img src="https://randomuser.me/api/portraits/men/29.jpg" alt="Karan" class="w-10 h-10 rounded-full mr-3">
-                    <div>
-                        <p class="font-semibold">Karan Sethi</p>
-                        <p class="text-xs text-gray-500">Entrepreneur</p>
+                        <p class="text-xs text-txBlack">Entrepreneur</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="">
-            <div class="bg-white rounded-xl shadow-md p-6 text-sm text-gray-800">
+        <div class="review-card">
+            <div class="bg-white rounded-xl p-3 text-sm text-txBlack">
                 <div class="flex items-center mb-3">
-                    <div class="text-[#570713] text-xl">★★★★★</div>
+                    <div class="text-primary text-xl">★★★★★</div>
                 </div>
                 <p class="mb-4">Detailed listings and quick support made the process seamless.</p>
                 <div class="flex items-center">
                     <img src="https://randomuser.me/api/portraits/men/29.jpg" alt="Karan" class="w-10 h-10 rounded-full mr-3">
                     <div>
                         <p class="font-semibold">Karan Sethi</p>
-                        <p class="text-xs text-gray-500">Entrepreneur</p>
+                        <p class="text-xs text-txBlack">Entrepreneur</p>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="">
-            <div class="bg-white rounded-xl shadow-md p-6 text-sm text-gray-800">
+        <div class="review-card">
+            <div class="bg-white rounded-xl p-3 text-sm text-txBlack">
                 <div class="flex items-center mb-3">
-                    <div class="text-[#570713] text-xl">★★★★★</div>
+                    <div class="text-primary text-xl">★★★★★</div>
                 </div>
                 <p class="mb-4">Detailed listings and quick support made the process seamless.</p>
                 <div class="flex items-center">
                     <img src="https://randomuser.me/api/portraits/men/29.jpg" alt="Karan" class="w-10 h-10 rounded-full mr-3">
                     <div>
                         <p class="font-semibold">Karan Sethi</p>
-                        <p class="text-xs text-gray-500">Entrepreneur</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="">
-            <div class="bg-white rounded-xl shadow-md p-6 text-sm text-gray-800">
-                <div class="flex items-center mb-3">
-                    <div class="text-[#570713] text-xl">★★★★★</div>
-                </div>
-                <p class="mb-4">Detailed listings and quick support made the process seamless.</p>
-                <div class="flex items-center">
-                    <img src="https://randomuser.me/api/portraits/men/29.jpg" alt="Karan" class="w-10 h-10 rounded-full mr-3">
-                    <div>
-                        <p class="font-semibold">Karan Sethi</p>
-                        <p class="text-xs text-gray-500">Entrepreneur</p>
+                        <p class="text-xs text-txBlack">Entrepreneur</p>
                     </div>
                 </div>
             </div>
@@ -450,5 +435,7 @@
 
 
 @section('scripts')
+<script type="module">
 
+</script>
 @endsection

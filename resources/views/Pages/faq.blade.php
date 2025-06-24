@@ -8,7 +8,6 @@
 @section('content')
 <div class="container max-w-6xl mx-auto">
     <x-page-path class="path" path="Home > FAQs for investors" />
-    
 </div>
 
 <x-banner-section class="px-4 relative h-[60vh] max-h-[60vh] object-cover bg-center" image="{{ asset('assets/images/bannerImages/faq-banner.webp') }}" title="FAQs for Real Estate Investors" subtitle="Everything you need to know before investing in verified, high-value properties with XYZ Realty."  />

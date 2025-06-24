@@ -239,14 +239,52 @@
 
 
 
-        <div class="px-6 py-0 mt-12 bg-white ">
+        <div class="px-6 py-0 mt-12 bg-white items-center">
             <!-- Featured Awards & Recognitions -->
             <h2 class="text-2xl text-center font-bold mb-6">Awards & Recognitions</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
-                
+
+                <!-- Card 1 -->
+                <div class="bg-white p-4 rounded-2xl shadow-md hover:shadow-lg transition flex flex-col items-start text-start about-us-awards-card">
+                    <div class="mb-3">
+                        <img src="{{ asset('assets/images/awards/best-commercial.png') }}" alt="Award 1" class="w-full h-40 object-cover rounded-lg" />
+                    </div>
+                    <h4 class="text-sm font-bold text-txBlack">Best Commercial Project 2024</h4>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-4 rounded-2xl shadow-md hover:shadow-lg transition flex flex-col items-start text-start about-us-awards-card">
+                    <div class="mb-3">
+                        <img src="{{ asset('assets/images/awards/sustainable-design.png') }}" alt="Award 2" class="w-full h-40 object-cover rounded-lg" />
+                    </div>
+                    <h4 class="text-sm font-bold text-txBlack">Best Sustainable Design 2024</h4>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-4 rounded-2xl shadow-md hover:shadow-lg transition flex flex-col items-start text-start about-us-awards-card">
+                    <div class="mb-3">
+                        <img src="{{ asset('assets/images/awards/realty-brand.png') }}" alt="Award 3" class="w-full h-40 object-cover rounded-lg" />
+                    </div>
+                    <h4 class="text-sm font-bold text-txBlack">Best Realty Brand 2024</h4>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white p-4 rounded-2xl shadow-md hover:shadow-lg transition flex flex-col items-start text-start about-us-awards-card">
+                    <div class="mb-3">
+                        <img src="{{ asset('assets/images/awards/realty-brand.png') }}" alt="Award 4" class="w-full h-40 object-cover rounded-lg" />
+                    </div>
+                    <h4 class="text-sm font-bold text-txBlack">Best Commercial Project 2024</h4>
+                </div>
+
+            </div>
+
+            <div class="mt-10">
+                <button class="view-more-button ">
+                    View More <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
+                </button>
             </div>
         </div>
-        </div>
+    </div>
 </section>
 
 
