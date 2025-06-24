@@ -59,7 +59,15 @@ Route::get('/about-us', function () {
 Route::get('/news', function () {
     return view('Pages.news-and-pr-page');
 });
-
+Route::get('/single-blog', function () {
+    return view('Pages.single-blog');
+});
+Route::get('/terms-and-conditions', function () {
+    return view('Pages.terms-and-conditions');
+});
+Route::get('/testimonials', function () {
+    return view('Pages.testimonials');
+});
 Route::get('/dashboard', function () {
     return view('Dashboard.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
