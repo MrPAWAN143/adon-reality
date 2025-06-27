@@ -13,5 +13,7 @@
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
             @yield('content')
         </div>
+
+        @yield('scripts')
     </body>
 </html>

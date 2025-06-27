@@ -1,7 +1,7 @@
 <section class="{{ $class }}" style="background-image: url('{{ $image }}'); background-size: cover; background-position: center;">
     <div class="absolute inset-0 bg-black bg-opacity-35"></div>
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-white px-4">
-        <h1 class="text-4xl md:text-3xl font-bold mb-4 text-center">
+        <h1 class="text-4xl md:text-3xl font-bold mb-4 text-center {{ $titleClass }}">
             {{ $title }}
         </h1>
         <p class="text-xl md:text-base max-w-[50%] font-normal text-center">{{ $subtitle }}</p>

@@ -1,0 +1,34 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('properties_categories', function (Blueprint $table) {
+            $table->id();
+            $table->string('name', 100); // e.g., "Residential"
+            $table->string('slug', 100)->unique(); // e.g., "residential"
+            $table->text('description')->nullable(); // e.g., "All types of homes..."
+            $table->boolean('show_on_website')->default(true); // Should it appear to users?
+            $table->boolean('is_active')->default(true); // Is it currently usable in backend/admin
+            $table->string('seo_title', 150)->nullable(); // SEO: Page title
+            $table->text('seo_description')->nullable(); // SEO: Meta description
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('properties_categories');
+    }
+};

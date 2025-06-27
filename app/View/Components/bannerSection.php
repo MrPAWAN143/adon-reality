@@ -17,9 +17,10 @@ class bannerSection extends Component
                   $class,
                   $buttonText,
                   $buttonLink,
-                    $buttonClass;
+                    $buttonClass,
+                    $titleClass ;
 
-    public function __construct(string $title, string $subtitle, string $image, string $class, string $buttonText= "" , string $buttonLink = "" , string $buttonClass = "" )
+    public function __construct(string $title, string $subtitle, string $image, string $class, string $buttonText= "" , string $buttonLink = "" , string $buttonClass = "" , string $titleClass = "")
     {
         $this->title = $title;
         $this->subtitle = $subtitle;
@@ -28,6 +29,7 @@ class bannerSection extends Component
         $this->buttonText = $buttonText;
         $this->buttonLink = $buttonLink;
         $this->buttonClass = $buttonClass;
+        $this->titleClass = $titleClass;
     }
 
     /**

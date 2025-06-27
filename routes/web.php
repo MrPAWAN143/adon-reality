@@ -20,8 +20,12 @@ Route::get('/blog', function () {
     return view('Pages.blog');
 });
 
-Route::get('project-page', function () {
+Route::get('project', function () {
     return view('Pages.project-page');
+});
+
+Route::get('project-each', function () {
+    return view('Pages.single-project');
 });
 
 Route::get('developer', function () {
@@ -31,7 +35,7 @@ Route::get('developer', function () {
 Route::get('event-and-media' , function (){
     return view('Pages.event-and-media');
 });
-Route::get('developer-each', function () {
+Route::get ('developer-each', function () {
     return view('Pages.projects-each-brand');
 });
 

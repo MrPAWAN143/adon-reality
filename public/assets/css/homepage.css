@@ -181,11 +181,11 @@
 }
 
 .marketing-insights-card h4 {
-    @apply text-lg font-bold mb-2 text-left;
+    @apply text-lg font-bold mb-1 text-left;
 }
 
 .marketing-insights-card p {
-    @apply text-lg font-normal mb-2 text-left;
+    @apply text-lg font-normal mb-1 text-left;
 }
 
 .marketing-insights-button {
@@ -246,36 +246,6 @@
 .contact-form-button {
     @apply bg-primary text-white px-8 py-4 block w-full rounded-full text-xl font-normal hover:bg-white hover:text-primary border-2 hover:border-primary transition;
 }
-
-.slick-track {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px !important;
- 
-}
-.slick-slide {
-    filter: blur(.5px);
-}
-[aria-hidden="true"]{
-    z-index: -10 !important;
-}
-
-.slick-active{
-    transform: scale(1.1);
-    z-index: 0;
-    width: 250px !important;
-    filter: blur(0.5px);
-}
-
-.slick-center {
-    transform: scale(1.3);
-    z-index: 1;
-    width: 250px !important;
-    opacity: 1;
-        filter: blur(0px);
-}
-
 
 
 .legacy-card{
@@ -345,6 +315,8 @@
 
 .slick-slider-single-page .slick-list{
     height: 580px;
+    width: 90%;
+    margin: auto;
 
 }
 
@@ -378,7 +350,54 @@
     border-radius: 10px;
 }
 
-.slick-list.draggable{
+
+
+
+.slick-track:not(.slick-slider-single-page .slick-track) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px !important;
+ 
+}
+.slick-slide:not(.slick-slider-single-page .slick-slide) {
+    filter: blur(.5px);
+}
+[aria-hidden="true"]{
+    z-index: -10 !important;
+}
+
+.slick-active:not(.slick-slider-single-page .slick-active){
+    transform: scale(1.1);
+    z-index: 0;
+    width: 250px !important;
+    filter: blur(0.5px);
+}
+
+.slick-center:not(.slick-slider-single-page .slick-center){
+    transform: scale(1.3);
+    z-index: 5;
+    width: 250px !important;
+    opacity: 1;
+        filter: blur(0px);
+}
+
+
+.slick-list.draggable:not(.slick-slider-single-page .draggable){
     padding: 0 !important;
-    margin-left: -60px !important;
+    /* margin-left: -60px !important; */
+}
+.slick-track:not(.slick-slider-single-page .slick-track) {
+ margin-left: -60px !important;
+}
+
+.featured-investment-card-single-project .featured-investment-image-dev{
+    @apply overflow-hidden rounded-lg w-full h-40 mb-2 !important;
+}
+
+.featured-investment-card-single-project h3{
+    @apply text-xl font-bold mb-1 text-left;
+}
+.featured-investment-card-single-project p{
+    @apply text-base font-normal mb-1 text-left;
 }

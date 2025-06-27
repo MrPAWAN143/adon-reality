@@ -3,11 +3,11 @@
 </div>
 <h3>{{ $heading }}</h3>
 <p class="">Location: {{ $location }}<br>
-    RERA No: {{ $rera }}<br>
+    RERA No: <a class=" text-sm text-blue-600 font-bold" href="">{{ $rera }}</a><br>
     <span class="featured-investment-status">Status: {{ $status }}</span>
     Expected ROI: {{ $roi }}<br>
-    By Developer: {{ $developer }}<br>
+    By Developer: <span class="font-semibold">{{ $developer }}</span><br>
     Variety: {{ $variety }}<br>
     Size: {{ $size }}<br>
-    ₹ {{ $price }}
+  <span class="font-semibold">  ₹ {{ $price }}</span>
 </p>

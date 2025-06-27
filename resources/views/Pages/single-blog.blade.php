@@ -3,14 +3,15 @@
 <title>Adon Reality - Blog</title>
 @endsection
 @section('styles')
-<link rel="stylesheet" href="{{ asset('assets/css/master.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/homepage.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/mastr.css') }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 @endsection
 
 @section('content')
-<section class="px-4  bg-white pb-8">
-    <div class="container max-w-7xl mx-auto">
+<section class="px-4  max-w-7xl mx-auto bg-white pb-8">
+    <div class="container mx-auto">
         <x-page-path class="path" path="Home > Blog > Top cities for real estate investment 2025" />
     </div>
     <!-- Featured Image -->
@@ -162,15 +163,15 @@
         </div>
 
         <!-- Explore Blogs -->
-         <div class="single-page-blog relative">
+        <div class="single-page-blog relative">
             <h3 class="text-lg mb-4 absolute top-[-20px] font-bold">Explore our blogs</h3>
             <div class="pt-6 slick-slider-single-page" id="slick-slider2">
-                 <x-blog-card cardCls="marketing-insights-card heading-h4 !p-3" class="featured-investment-img" src="{{asset('assets/images/allImages/marketing2.png')}}" alt="DLF Cyber City Tower" h4="Top Cities for Real Estate Investment in 2025" p="Discover where smart investors are putting their money this year." />
-            <x-blog-card cardCls="marketing-insights-card heading-h4 !p-3" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing3.png') }}" alt="M3M Corporate Heights" h4="5 Mistakes Every Property Investor Should Avoid" p="Learn common pitfalls and how to protect your real estate investment" />
-            <x-blog-card cardCls="marketing-insights-card heading-h4 !p-3" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing1.png') }}" alt="M3M Atrium" h4="Rental Income: Which Strategy Wins?" p="Compare long-term rental income with short-term property flipping profits." />
-            <x-blog-card cardCls="marketing-insights-card heading-h4 !p-3" class="featured-investment-img" src="{{asset('assets/images/allImages/marketing2.png')}}" alt="DLF Cyber City Tower" h4="Top Cities for Real Estate Investment in 2025" p="Discover where smart investors are putting their money this year." />
-            <x-blog-card cardCls="marketing-insights-card heading-h4 !p-3" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing3.png') }}" alt="M3M Corporate Heights" h4="5 Mistakes Every Property Investor Should Avoid" p="Learn common pitfalls and how to protect your real estate investment" />
-            <x-blog-card cardCls="marketing-insights-card heading-h4 !p-3" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing1.png') }}" alt="M3M Atrium" h4="Rental Income: Which Strategy Wins?" p="Compare long-term rental income with short-term property flipping profits." />
+                <x-blog-card cardCls="marketing-insights-card heading-h4 !p-3" class="featured-investment-img" src="{{asset('assets/images/allImages/marketing2.png')}}" alt="DLF Cyber City Tower" h4="Top Cities for Real Estate Investment in 2025" p="Discover where smart investors are putting their money this year." />
+                <x-blog-card cardCls="marketing-insights-card heading-h4 !p-3" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing3.png') }}" alt="M3M Corporate Heights" h4="5 Mistakes Every Property Investor Should Avoid" p="Learn common pitfalls and how to protect your real estate investment" />
+                <x-blog-card cardCls="marketing-insights-card heading-h4 !p-3" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing1.png') }}" alt="M3M Atrium" h4="Rental Income: Which Strategy Wins?" p="Compare long-term rental income with short-term property flipping profits." />
+                <x-blog-card cardCls="marketing-insights-card heading-h4 !p-3" class="featured-investment-img" src="{{asset('assets/images/allImages/marketing2.png')}}" alt="DLF Cyber City Tower" h4="Top Cities for Real Estate Investment in 2025" p="Discover where smart investors are putting their money this year." />
+                <x-blog-card cardCls="marketing-insights-card heading-h4 !p-3" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing3.png') }}" alt="M3M Corporate Heights" h4="5 Mistakes Every Property Investor Should Avoid" p="Learn common pitfalls and how to protect your real estate investment" />
+                <x-blog-card cardCls="marketing-insights-card heading-h4 !p-3" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing1.png') }}" alt="M3M Atrium" h4="Rental Income: Which Strategy Wins?" p="Compare long-term rental income with short-term property flipping profits." />
             </div>
 
         </div>
