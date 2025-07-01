@@ -14,13 +14,15 @@ class Button extends Component
 
     public string $text;
     public string $class;
+    public string $url;
 
 
-    public function __construct(string $text, string $class)
+    public function __construct(string $text, string $class, string $url = '#')
     {
 
         $this->text = $text;
         $this->class = $class;
+        $this->url = $url;
     }
 
     /**

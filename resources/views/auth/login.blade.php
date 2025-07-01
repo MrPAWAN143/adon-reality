@@ -1,5 +1,5 @@
 @extends('Dashboard.layouts.app')
-@section('content')
+@section('login')
 
 <div class="h-screen w-screen flex items-center justify-center px-4 bg-gray-200">
     <div class="bg-white rounded-3xl mx-24 shadow-lg flex flex-col md:flex-row  w-full overflow-hidden h-full md:h-auto">

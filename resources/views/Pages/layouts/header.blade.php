@@ -1,10 +1,10 @@
 <header class="w-full bg-white  z-50 sticky top-0 shadow-xl">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-4">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-2">
 
     <!-- Logo -->
     <div class="flex-shrink-0">
       <a href="/">
-        <img src="{{asset('assets/images/logos/header-logo.png')}}" alt="Adon Realty" class="h-10 w-auto">
+        <img src="{{asset('assets/images/logos/header-logo.png')}}" alt="Adon Realty" class="h-16 w-auto">
       </a>
     </div>
 

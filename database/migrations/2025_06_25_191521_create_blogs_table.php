@@ -16,17 +16,14 @@ return new class extends Migration
             $table->string('title');                             // Blog Title
             $table->string('slug')->unique();                    // URL Slug
             $table->text('summary')->nullable();                 // Short Summary
-            $table->foreignId('category_id')->constrained('blog_categories')->onDelete('cascade');
             $table->string('featured_image')->nullable();        // Main image path
             $table->longText('content');                         // Full article content
             $table->string('meta_title')->nullable();            // SEO title
             $table->string('meta_keywords')->nullable();         // SEO keywords
             $table->text('meta_description')->nullable();        // SEO description
-            $table->string('author_name')->default('Adon Reality'); // Author
-            $table->boolean('is_published')->default(false);     // Publish flag
-            $table->dateTime('published_at')->nullable();        // Publish date
             $table->boolean('is_active')->default(true);        // Active status
             $table->boolean('is_featured')->default(false);      // Featured on homepage
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade'); // Author ID
             $table->timestamps();
         });
     }

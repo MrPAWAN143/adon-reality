@@ -11,7 +11,7 @@
         </p>
 
 
-        <form class="contact-form bg-white border border-[#6D0A17] rounded-2xl px-6 py-6 shadow-sm" method="POST" action="#">
+        <form class="contact-form bg-white border border-primary rounded-2xl px-6 py-6 shadow-sm" method="POST" action="#">
             <div class="form-grid grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input type="text" name="first_name" placeholder="First Name"
                     class="sm:w-full border-b border-gray-300 focus:outline-none text-sm py-2 placeholder-gray-500" />

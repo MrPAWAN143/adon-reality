@@ -74,10 +74,10 @@
             </div>
 
         </div>
-
+    </div>
 </section>
 
-<section class="px-4 bg-white pb-8">
+<section class="px-4 max-w-7xl bg-white pb-8 m-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- 1. DLF Cyber City Tower -->
         <div class="featured-investment-card">

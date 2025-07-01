@@ -17,8 +17,9 @@ class DeveloperPartnerCard extends Component
     public string $alt;
     public string $projectsPartnered;
     public string $presence;
+    public string $url;
 
-    public function __construct(string $heading, string $description, string $partnerLogo, string $alt, string $projectsPartnered, string $presence)
+    public function __construct(string $heading, string $description, string $partnerLogo, string $alt, string $projectsPartnered, string $presence, string $url= '')
     {
         $this->heading = $heading;
         $this->description = $description;
@@ -26,6 +27,7 @@ class DeveloperPartnerCard extends Component
         $this->alt = $alt;
         $this->projectsPartnered = $projectsPartnered;
         $this->presence = $presence;
+        $this->url = $url;
     }
 
     /**

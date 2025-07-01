@@ -10,6 +10,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "andreiio/blade-remix-icon": "^3.6",
         "blade-ui-kit/blade-zondicons": "^1.6",
         "codeat3/blade-forkawesome": "^1.11",
         "codeat3/blade-typicons": "^1.7",

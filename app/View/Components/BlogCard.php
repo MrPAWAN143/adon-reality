@@ -17,8 +17,9 @@ class BlogCard extends Component
     public string $alt;
     public string $h4;
     public string $p;
- 
-    public function __construct($cardCls , $class ,$src , $alt , $h4 , $p)
+    public string $url;
+
+    public function __construct($cardCls , $class ,$src , $alt , $h4 , $p , $url = '#')
     {
         $this->cardCls = $cardCls;
         $this->class = $class;
@@ -26,7 +27,7 @@ class BlogCard extends Component
         $this->alt = $alt;
         $this->h4 = $h4;
         $this->p = $p;
-
+        $this->url = $url;
 
     }
 

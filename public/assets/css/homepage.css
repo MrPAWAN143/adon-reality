@@ -8,11 +8,12 @@
     @apply mt-6 border-2 border-white text-white px-10 py-3 rounded-2xl hover:bg-bgSecondary/30 ;
 }
 .search-input-homepage-herosection {
-    @apply w-full md:w-2/3 px-2 py-2 rounded-full text-txBlack/60 placeholder-black/60 bg-transparent outline-none border-none focus:outline-none focus:ring-0 focus:border-none;
+    @apply w-full md:w-2/3 px-6 py-2 rounded-full text-txBlack/60 placeholder-black/60 bg-transparent outline-none border-none focus:outline-none focus:ring-0 focus:border-none;
 }
 
 .hero-section-select {
-    @apply font-semibold appearance-none bg-white text-txBlack hover:text-white px-6 hover:bg-primary border-2 border-primary py-2 rounded-full focus:outline-none focus:ring-0 focus:border-primary transition duration-300 font-medium;
+    @apply font-semibold appearance-none bg-white text-txBlack hover:text-white px-6 hover:bg-primary border-2 border-primary py-2  rounded-full focus:outline-none focus:ring-0 focus:border-primary transition duration-300 font-medium;
+        padding-right: 0.5rem;
 }
 
 .investCard {
@@ -129,7 +130,7 @@
 }
 
 .view-more-button {
-    @apply bg-primary text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-white hover:text-primary border-2 hover:border-primary transition flex items-center justify-between m-auto;
+    @apply bg-primary text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-white hover:text-primary border-2 hover:border-primary transition  justify-between m-auto inline-flex items-center;
 
 }
 

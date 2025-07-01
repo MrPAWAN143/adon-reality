@@ -14,7 +14,8 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                // sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                poppins: ['"Poppins"', 'sans-serif'],
             },
             colors: {
                 primary: {
@@ -37,24 +38,36 @@ export default {
                 gray: {
                     DEFAULT: '#6B7280',
                 },
-                bgSecondary:{
+                bgSecondary: {
                     DEFAULT: '#cbc5c5'
                 },
                 investTxColor: {
                     DEFAULT: '#380b2a',
                 },
-                yellowText:{
+                yellowText: {
                     DEFAULT: '#b88c03',
                 },
-                gradientFrom:{
+                gradientFrom: {
                     DEFAULT: '#eee6e8',
                 },
-                gradientTo:{
+                gradientTo: {
                     DEFAULT: '#f9f7f2',
                 },
-                goldenColor:{
+                goldenColor: {
                     DEFAULT: '#CDB987',
-                }
+                },
+
+
+                // Admin colors
+
+                adminPrimary: '#276066',
+                adminPrimaryHover: '#32797E',
+                adminSecondary: '#3B82F6',
+                adminSidebar: '#0F2A38',
+                adminHeader: '#0F2A38',
+               adminTextPrimary: '#155E63',
+               adminInputBorder: '#49717B',
+               adminFormBg: '#F5F7F9',
             },
         },
     },

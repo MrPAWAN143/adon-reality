@@ -10,7 +10,7 @@
     @yield('styles')
 </head>
 
-<body>
+<body class="!font-poppins antialiased bg-white text-gray-900">
     @include('Pages.layouts.header')
     @yield('homepage')
     @yield('content')

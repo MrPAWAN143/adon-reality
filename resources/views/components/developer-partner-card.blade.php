@@ -1,5 +1,5 @@
 
-            <div class="development-partner-card">
+            <div class="development-partner-card ">
                 <div class="p-4">
                     <div class="flex items-center gap-4 mb-4">
                         <img src="{{ $partnerLogo }}" alt="{{ $alt }}" class="w-16 h-16 rounded-full object-contain">
@@ -12,7 +12,7 @@
                     <p class="text-lg text-txBlack mt-1">Presence: {{ $presence }}</p>
                 </div>
                 <div class="mt-6">
-                    <a href="#" class="development-partner-button">
+                    <a href="{{ $url }}" class="development-partner-button">
                         Explore Projects
                         <x-tabler-arrow-up-right class="ml-2" />
                     </a>

@@ -16,10 +16,7 @@ return new class extends Migration
             $table->string('name', 100); // e.g., "Residential"
             $table->string('slug', 100)->unique(); // e.g., "residential"
             $table->text('description')->nullable(); // e.g., "All types of homes..."
-            $table->boolean('show_on_website')->default(true); // Should it appear to users?
             $table->boolean('is_active')->default(true); // Is it currently usable in backend/admin
-            $table->string('seo_title', 150)->nullable(); // SEO: Page title
-            $table->text('seo_description')->nullable(); // SEO: Meta description
             $table->timestamps();
         });
     }

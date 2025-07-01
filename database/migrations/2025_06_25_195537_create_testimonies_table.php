@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('name');                           // Person giving feedback
             $table->string('photo')->nullable();              // Avatar or image
             $table->string('role')->nullable();               // e.g., "Flat Owner"
-            $table->string('company')->nullable();            // e.g., "CTO at ABC Fintech"
             $table->text('review_text');                      // Testimonial content
             $table->tinyInteger('rating')->nullable();        // Rating out of 5
             $table->string('video_link')->nullable();         // Link to video
@@ -25,7 +24,6 @@ return new class extends Migration
             $table->boolean('is_verified')->default(true);    // Verified by admin
             $table->boolean('is_active')->default(true);      // Active status
             $table->unsignedInteger('sort_order')->default(0); // For ordering
-            $table->string('source')->nullable();       // Source of the testimonial
             $table->timestamps();
         });
     }

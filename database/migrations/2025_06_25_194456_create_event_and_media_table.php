@@ -14,19 +14,12 @@ return new class extends Migration
         Schema::create('event_and_media', function (Blueprint $table) {
             $table->id();
             $table->string('title');                             // Media Title
-            $table->string('slug')->unique();                    // URL-friendly slug
-            $table->enum('media_type', ['image', 'video', 'pdf', 'press'])->default('image');
-            $table->string('file_url');                          // Actual file or link (e.g., YouTube)
             $table->string('featured_image')->nullable();         // Thumbnail
             $table->text('short_description')->nullable();       // Caption/teaser
-            $table->json('tags')->nullable();                    // Tagging (e.g., award, CSR)
-            $table->date('publish_date')->nullable();            // Public launch date
-            $table->string('seo_title')->nullable();
-            $table->text('seo_description')->nullable();
             $table->boolean('is_featured')->default(false);      // Show on homepage
+            $table->string('event_date')->nullable();         // Date of the event or media release
+            $table->string('media_url')->nullable();             // URL for video or media file
             $table->boolean('is_active')->default(true);         // Active status
-            $table->foreignId('created_by')->constrained('users')->onDelete('cascade'); // User who created this entry
-            $table->foreignId('updated_by')->nullable()->constrained('users')->onDelete('cascade'); // User who last updated this entry
             $table->timestamps();
         });
     }

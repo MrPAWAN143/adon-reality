@@ -36,16 +36,16 @@
 
         <!-- Badges -->
         <div class="flex flex-wrap justify-center gap-3 mt-6">
-            <span class="bg-bgSecondary  text-txBlack px-2 py-0 font-semibold text-[16px] rounded-full flex items-center shadow">
-                <x-fwb-s-check class="w-4 h-4 mr-2 text-txBlack/0.4" /> 100% RERA-Approved Projects
+            <span class="bg-bgSecondary  text-txBlack px-2 py-0  font-medium text-[16px] rounded-full flex items-center shadow">
+                <x-fwb-s-check class="w-4 h-4 mr-2  text-txBlack/0.4" /> 100% RERA-Approved Projects
             </span>
-            <span class="bg-bgSecondary  text-txBlack px-2 py-0 font-semibold text-[16px] rounded-full flex items-center shadow">
+            <span class="bg-bgSecondary  text-txBlack px-2 py-0 font-medium text-[16px] rounded-full flex items-center shadow">
                 <x-fwb-s-check class="w-4 h-4 mr-2 text-txBlack/0.7" /> 12-18% Expected ROI
             </span>
-            <span class="bg-bgSecondary  text-txBlack px-2 py-0 font-semibold text-[16px] rounded-full flex items-center shadow">
+            <span class="bg-bgSecondary  text-txBlack px-2 py-0 font-medium text-[16px] rounded-full flex items-center shadow">
                 <x-fwb-s-check class="w-4 h-4 mr-2 text-txBlack/0.7" /> End-to-End Legal Assistance
             </span>
-            <span class="bg-bgSecondary  text-txBlack px-2 py-0 font-semibold text-[16px] rounded-full flex items-center shadow">
+            <span class="bg-bgSecondary  text-txBlack px-2 py-0 font-medium text-[16px] rounded-full flex items-center shadow">
                 <x-fwb-s-check class="w-4 h-4 mr-2 text-txBlack/0.7" /> Trusted by 2000+ Investors
             </span>
         </div>
@@ -175,26 +175,26 @@
 <section class="px-4 py-8 bg-white text-center">
     <div class="container max-w-7xl mx-auto text-center">
 
-        <x-heading-subheading heading="Featured Investment Opportunities" subheading="Explore high-return investment options with trusted developers." headingClass="heading" subHeadingClass="subheading" />
+        <x-heading-subheading heading="Featured Investment Opportunities"  subheading="Explore high-return investment options with trusted developers." headingClass="heading" subHeadingClass="subheading" />
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto">
             <div class="featured-investment-card">
                 <x-featured-investment-section src="{{ asset('assets/images/allImages/DlfCyberCity.png') }}" alt="DLF Cyber City Tower" class="featured-investment-img" heading="DLF Cyber City Tower" location="Noida, Sector 62" rera="UPRERAI2345" status="Ongoing" roi="12%" developer="DLF" variety="Multiplex / Commercial" size="5000 sq. ft." price="Price on Demand" />
-                <x-button class="featured-investment-button" text="View Details" />
+                <x-button class="featured-investment-button" url="{{ route('projects.each' , ['id' => 1]) }}"  text="View Details" />
             </div>
             <div class="featured-investment-card">
                 <x-featured-investment-section src="{{ asset('assets/images/allImages/M3MCorporateHeights.png') }}" alt="M3M Corporate Heights" class="featured-investment-img" heading="M3M Corporate Heights" location="Sector 67, Gurgaon" rera="HRERAGGN20230911" status="Ready to Move" roi="10%" developer="M3M" variety="Commercial Office Tower" size="7000 sq. ft." price="Price on Demand" />
-                <x-button class="featured-investment-button" text="View Details" />
+                <x-button class="featured-investment-button" url="{{ route('projects.each' ,['id' => 2]) }}" text="View Details" />
             </div>
             <div class="featured-investment-card">
                 <x-featured-investment-section src="{{ asset('assets/images/allImages/M3MAtrium.png') }}" alt="M3M Atrium" class="featured-investment-img" heading="M3M Atrium" location="Sector 140, Noida Expressway" rera="UPRERA-2023-0567" status="Pre-Launch" roi="12%" developer="M3M" variety="High Street Retail" size="4800 sq. ft." price="Price on Demand" />
-                <x-button class="featured-investment-button" text="View Details" />
+                <x-button class="featured-investment-button" url="{{ route('projects.each' ,['id' => 3]) }}" text="View Details" />
             </div>
         </div>
         <div class="mt-10">
-            <button class="view-more-button ">
+            <a href="{{ route('projects') }}" class="view-more-button ">
                 View More <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
-            </button>
+            </a>
         </div>
     </div>
 </section>
@@ -289,19 +289,19 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
 
-            <x-developer-partner-card partnerLogo="{{ asset('assets/images/partnersLogo/dlf.png') }}" alt="DLF Limited" heading="DLF Limited" description="Building India" projectsPartnered="18" presence="Gurgaon, Noida, Chennai, Hyderabad" />
+            <x-developer-partner-card partnerLogo="{{ asset('assets/images/partnersLogo/dlf.png') }}" url="{{ route('development-partners.show', ['id' => 1]) }}" alt="DLF Limited" heading="DLF Limited" description="Building India" projectsPartnered="18" presence="Gurgaon, Noida, Chennai, Hyderabad" />
 
             <!-- Partner 2 -->
-            <x-developer-partner-card partnerLogo="{{ asset('assets/images/partnersLogo/raheja.png') }}" alt="Raheja Develop" heading="Raheja Develop" description="Committed to Excellence" projectsPartnered="10" presence="Gurgaon, Delhi, Noida" />
+            <x-developer-partner-card partnerLogo="{{ asset('assets/images/partnersLogo/raheja.png') }}" url="{{ route('development-partners.show', ['id' => 2]) }}" alt="Raheja Develop" heading="Raheja Develop" description="Committed to Excellence" projectsPartnered="10" presence="Gurgaon, Delhi, Noida" />
 
             <!-- Partner 3 -->
-            <x-developer-partner-card partnerLogo="{{ asset('assets/images/partnersLogo/m3m.png') }}" alt="M3M India" heading="M3M India" description="Magnificence in the Trinity of Men & Materials" projectsPartnered="8" presence="Gurgaon, Noida" />
+            <x-developer-partner-card partnerLogo="{{ asset('assets/images/partnersLogo/m3m.png') }}" url="{{ route('development-partners.show', ['id' => 3]) }}" alt="M3M India" heading="M3M India" description="Magnificence in the Trinity of Men & Materials" projectsPartnered="8" presence="Gurgaon, Noida" />
         </div>
 
         <div class="mt-10">
-            <button class="view-more-button ">
+            <a href="{{ route('development-partners') }}" class="view-more-button ">
                 View More <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
-            </button>
+            </a>
         </div>
     </div>
 </section>
@@ -312,12 +312,12 @@
     <div class="container max-w-7xl mx-auto">
         <x-heading-subheading heading="Real Estate Marketing Insights" subheading="Stay ahead with industry trends, data, and marketing tips." headingClass="heading" subHeadingClass="subheading" />
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto">
-            <x-blog-card cardCls="marketing-insights-card" class="featured-investment-img" src="{{asset('assets/images/allImages/marketing2.png')}}" alt="DLF Cyber City Tower" h4="Top Cities for Real Estate Investment in 2025" p="Discover where smart investors are putting their money this year." />
-            <x-blog-card cardCls="marketing-insights-card" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing3.png') }}" alt="M3M Corporate Heights" h4="5 Mistakes Every Property Investor Should Avoid" p="Learn common pitfalls and how to protect your real estate investment" />
-            <x-blog-card cardCls="marketing-insights-card" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing1.png') }}" alt="M3M Atrium" h4="Rental Income: Which Strategy Wins?" p="Compare long-term rental income with short-term property flipping profits." />
+            <x-blog-card cardCls="marketing-insights-card" url="{{ route('blog.each', ['id' => 1]) }}" class="featured-investment-img" src="{{asset('assets/images/allImages/marketing2.png')}}" alt="DLF Cyber City Tower" h4="Top Cities for Real Estate Investment in 2025" p="Discover where smart investors are putting their money this year." />
+            <x-blog-card cardCls="marketing-insights-card" url="{{ route('blog.each', ['id' => 2]) }}" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing3.png') }}" alt="M3M Corporate Heights" h4="5 Mistakes Every Property Investor Should Avoid" p="Learn common pitfalls and how to protect your real estate investment" />
+            <x-blog-card cardCls="marketing-insights-card" url="{{ route('blog.each', ['id' => 3]) }}" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing1.png') }}" alt="M3M Atrium" h4="Rental Income: Which Strategy Wins?" p="Compare long-term rental income with short-term property flipping profits." />
         </div>
         <div class="mt-10">
-            <button class="marketing-insights-view-more-button">
+            <button onclick="location.href='{{ route('blog') }}'" class="marketing-insights-view-more-button">
                 View all Blog <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
             </button>
         </div>

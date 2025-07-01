@@ -36,9 +36,9 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="!w-[38
             <!-- Meta Info -->
             <div class="text-sm text-gray-700 flex flex-wrap items-center gap-x-3 gap-y-1">
                 <span>Noida, Sector 62</span>
-                <span class="text-gray-400">|</span>
+                <span class="text-txBlack">|</span>
                 <span>5000 sq. ft.</span>
-                <span class="text-gray-400">|</span>
+                <span class="text-txBlack">|</span>
                 <span>STATUD - NL/RTM</span>
             </div>
         </div>
@@ -271,7 +271,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="!w-[38
     </div>
 
     <!-- Right Column (Sidebar) -->
-    <aside class="space-y-8 md:col-span-1 ">
+    <aside class="space-y-6 md:col-span-1 ">
         <!-- Enquiry Form -->
         <div class="bg-gradient-to-b from-bgSecondary/30 to-white p-6 rounded-xl shadow-md w-full max-w-sm mx-auto">
             <form class="space-y-4">
@@ -357,8 +357,9 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="!w-[38
     </aside>
 </section>
 
+
 <section class="px-4 py-8 bg-white text-center">
-    <div class="container max-w-6xl mx-auto">
+    <div class="container max-5-6xl mx-auto">
         <x-heading-subheading heading="Similar Projects" subheading="" headingClass="heading" subHeadingClass="subheading" />
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mx-auto">
             <div class="featured-investment-card featured-investment-card-single-project !px-3 !py-3">

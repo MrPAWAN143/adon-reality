@@ -4,5 +4,5 @@
    </div>
     <h4>{{ $h4 }}</h4>
     <p class="">{{ $p }}</p>
-    <x-button class="marketing-insights-button" text=" Learn More" />
+    <x-button class="marketing-insights-button" text=" Learn More" :url="$url" />
 </div>
