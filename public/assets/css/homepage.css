@@ -173,20 +173,20 @@
 
 
 .marketing-insights-card {
-    @apply bg-white rounded-2xl shadow-md p-6 transition duration-300 flex flex-col justify-between;
+    @apply bg-white rounded-2xl shadow-md p-4 transition duration-300 flex flex-col justify-between;
     box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.1), -3px -5px 8px rgba(0, 0, 0, 0.08);
 }
 
 .marketing-insights-card img {
-    @apply rounded-2xl mb-4 w-full h-64 object-cover;
+    @apply rounded-2xl mb-2 w-full h-56 object-cover;
 }
 
 .marketing-insights-card h4 {
-    @apply text-lg font-bold mb-1 text-left;
+    @apply  font-bold mb-1 text-left;
 }
 
 .marketing-insights-card p {
-    @apply text-lg font-normal mb-1 text-left;
+    @apply font-normal mb-1 text-left;
 }
 
 .marketing-insights-button {
@@ -257,7 +257,7 @@
 }
 
 .newsAndPrButton{
-    @apply text-sm font-semibold text-white border-2 hover:border-primary px-4 py-3 rounded-2xl hover:bg-white bg-primary hover:text-primary transition duration-300;
+    @apply text-sm font-semibold text-white border-2 hover:border-primary px-4 py-3 mt-2 rounded-2xl hover:bg-white bg-primary hover:text-primary transition duration-300;
 }
 
 .our-core-team{

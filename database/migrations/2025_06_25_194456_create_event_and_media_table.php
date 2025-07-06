@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('featured_image')->nullable();         // Thumbnail
             $table->text('short_description')->nullable();       // Caption/teaser
             $table->boolean('is_featured')->default(false);      // Show on homepage
-            $table->string('event_date')->nullable();         // Date of the event or media release
+            $table->date('event_date')->nullable();         // Date of the event or media release
             $table->string('media_url')->nullable();             // URL for video or media file
             $table->boolean('is_active')->default(true);         // Active status
             $table->timestamps();

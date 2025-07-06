@@ -26,7 +26,7 @@
       <a href="/developer" class="text-base text-txBlack hover:text-primary font-medium">Developers</a>
       <a href="#" class="text-base text-txBlack hover:text-primary font-medium">Testimonial</a>
       <a href="#" class="text-base text-txBlack hover:text-primary font-medium">About Us</a>
-      <a href="/contact-us" class="ml-2 px-6 py-2 border-2 border-primary text-primary rounded-3xl text-base hover:bg-primary hover:text-white transition font-medium">
+      <a href="/contact" class="ml-2 px-6 py-2 border-2 border-primary text-primary rounded-3xl text-base hover:bg-primary hover:text-white transition font-medium">
         Contact Us
       </a>
     </nav>

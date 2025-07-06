@@ -2,15 +2,14 @@
 @section('metadata')
 <title>Create New Blog Post</title>
 <style>
-    .forBorder  {
+    .forBorder {
         border-color: #49717B !important;
     }
-    
 </style>
 @endsection
 
 @section('content')
-<div class="container my-4 mx-auto md:max-w-6xl lg:max-w-7xl">
+<div class="container my-4 mx-auto md:max-w-6xl lg:max-w-7xl xl:max-w-full">
     <div class="my-5">
         <div class="mx-auto py-6 px-8 sm:px-12 bg-adminFormBg rounded-md">
 
@@ -34,7 +33,6 @@
             <!-- FORM -->
             <form id="createBlog"
                 method="POST"
-                action=""
                 enctype="multipart/form-data"
                 class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 @csrf
@@ -115,5 +113,81 @@
             </form>
         </div>
     </div>
+
+    @endsection
+
+    @section('scripts')
+    <script type="module">
+        CKEDITOR.replace('meta_description', {
+            height: 200,
+
+        });
+        CKEDITOR.replace('content', {
+            height: 200,
+        });
+
+        $(document).ready(function() {
+            $('#createBlog').on('submit', function(e) {
+                e.preventDefault();
+                $('.container').hide();
+                $('.loadingbtn').show();
+                let form = this;
+
+                const formData = new FormData(this);
+                // Add any additional data if needed
+                let meta_description = CKEDITOR.instances.meta_description.getData();
+                formData.append('meta_description', meta_description);
+
+                let content = CKEDITOR.instances.content.getData();
+                formData.append('content', content);
+
+                $.ajax({
+                    url: url.store,
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+                        let status = response.status;
+                        let message = response.message
+                        if (status == 'success') {
+                            $('#messageTitle').text(status).addClass('text-green-600').removeClass('text-red-600');
+                            $('#messageContent').text(message);
+                            $('#messageModal').removeClass('hidden');
+                            $('.container').show();
+                            $('.loadingbtn').hide();
+                            form.reset();
+                            CKEDITOR.instances.content.setData('');
+                            CKEDITOR.instances.meta_description.setData('');
+                            setTimeout(() => {
+                                window.location.href = url.list;
+                            }, 1000);
+                        } else {
+                            $('#messageTitle').text('Error').addClass('text-red-600').removeClass('text-green-600');
+                            $('#messageContent').text(message);
+                            $('#messageModal').removeClass('hidden');
+                        }
+
+                    },
+                    error: function(err) {
+                        let error = err.responseJSON.errors;
+                        $.each(error, (field, message) => {
+                            $('#messageTitle').text(field).addClass('text-red-600').removeClass('text-green-600');
+                            $('#messageContent').text(message);
+                            $('#messageModal').removeClass('hidden');
+                        })
+                        $('.container').show();
+                        $('.loadingbtn').hide();
+                    }
+                });
+            });
+        });
+
+
+        const url = {
+            store: "{{ route('blog.store') }}",
+            list: "{{ route('blog.list') }}",
+        }
+    </script>
 
     @endsection

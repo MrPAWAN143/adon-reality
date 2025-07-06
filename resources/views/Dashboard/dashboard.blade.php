@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-<div class="container my-4 mx-auto max-w-6xl">
+<div class="container my-4 mx-auto max-w-6xl lg:max-w-7xl xl:max-w-full">
     <div class="my-5">
         <div class="mx-auto py-6 px-4 sm:px-12 bg-adminFormBg rounded-md">
 
@@ -66,6 +66,42 @@
                     </div>
                 </div>
             </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Left Column -->
+                <div class="bg-white rounded-xl border border-adminInputBorder shadow mb-8">
+                    <div class="border-b px-5 py-4 font-semibold text-adminTextPrimary text-lg">Leads Overview</div>
+                    <div class="p-5">
+                        <p class="text-sm text-gray-700 mb-4">Total Leads: <span class="font-bold">{{ $leads }}</span></p>
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="flex-1">
+                                <p class="text-sm text-gray-700">New Leads</p>
+                                <p class="text-xl font-bold text-green-600">{{ $newLeads }}</p>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm text-gray-700">Leads Converted</p>
+                                <p class="text-xl font-bold text-blue-600">5</p>
+                            </div>
+                    </div>
+                    </div>
+                </div>
+                <!-- Welcome Message -->
+                <div class="bg-white rounded-xl border border-adminInputBorder shadow mb-8">
+                    <div class="border-b px-5 py-4 font-semibold text-adminTextPrimary text-lg">Welcome Back, {{ auth()->user()->name }}!</div>
+                    <div class="p-5 text-gray-700">
+                        <p class="mb-2">Here's a quick overview of your dashboard:</p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Manage projects, blog posts, events, and awards.</li>
+                            <li>View recent activities and quick actions.</li>
+                            <li>Access detailed analytics and reports.</li>
+                        </ul>
+                        <p class="mt-4">Need help? Check out our <a href="#" class="text-adminPrimary hover:underline">documentation</a> or contact support.</p>
+                    </div>
+                </div>
+            </div>
+
+
+
 
             <!-- Quick Actions & Recent Activity -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">

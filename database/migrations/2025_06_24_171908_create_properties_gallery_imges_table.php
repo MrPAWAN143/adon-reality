@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('image_size')->nullable(); // Size of the image, e.g., 'small', 'medium', 'large'
             $table->boolean('is_active')->default(true); // Whether the image is active or not
             $table->boolean('is_featured')->default(false); // Whether the image is featured
-            // $table->foreignId('property_id')->constrained('properties_details')->onDelete('cascade'); // Foreign key to properties_details table
+            $table->foreignId('property_id')->constrained('properties_details')->onDelete('cascade'); // Foreign key to properties_details table
             $table->timestamps();
         });
     }

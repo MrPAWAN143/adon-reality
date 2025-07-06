@@ -19,6 +19,8 @@ class DeveloperPartnerCard extends Component
     public string $presence;
     public string $url;
 
+
+
     public function __construct(string $heading, string $description, string $partnerLogo, string $alt, string $projectsPartnered, string $presence, string $url= '')
     {
         $this->heading = $heading;

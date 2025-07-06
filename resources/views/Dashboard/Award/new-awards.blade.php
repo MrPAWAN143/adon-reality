@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-<div class="container my-4 mx-auto md:max-w-6xl lg:max-w-7xl">
+<div class="container my-4 mx-auto md:max-w-6xl lg:max-w-7xl xl:max-w-full">
     <div class="my-5">
         <div class="mx-auto py-6 px-8 sm:px-12 bg-adminFormBg rounded-md">
 
@@ -34,7 +34,6 @@
             {{-- FORM --}}
             <form id="createAward"
                 method="POST"
-                action=""
                 enctype="multipart/form-data"
                 class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 @csrf
@@ -46,15 +45,6 @@
                         placeholder="Best Developer of the Year"
                         class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
                 </div>
-
-                {{-- Slug --}}
-                <div>
-                    <label class="block font-semibold text-adminTextPrimary mb-1" for="slug">Slug</label>
-                    <input id="slug" name="slug" type="text"
-                        placeholder="best-developer-of-the-year"
-                        class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
-                </div>
-
 
                 {{-- Presented By --}}
                 <div>
@@ -71,7 +61,7 @@
                         class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
                         <option value="">Select Year</option>
                         <!-- You can generate these dynamically with JavaScript or Blade -->
-                        @for ($i = date('Y'); $i >= 2000; $i--)
+                        @for ($i = date('Y'); $i >= 1950; $i--)
                         <option value="{{ $i }}">{{ $i }}</option>
                         @endfor
                     </select>
@@ -114,4 +104,66 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+
+<script type="module">
+    $(document).ready(function() {
+        $('#createAward').on('submit', function(e) {
+            e.preventDefault();
+            $('.container').hide();
+            $('.loadingbtn').show();
+
+            let form = this;
+
+            let formData = new FormData(this);
+            formData.append('is_featured', $('input[name="is_featured"]').is(':checked'));
+
+            $.ajax({
+                url: url.store,
+                method: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    let status = response.status;
+                    let message = response.message
+                    if (status == 'success') {
+                        $('#messageTitle').text(status).addClass('text-green-600').removeClass('text-red-600');
+                        $('#messageContent').text(message);
+                        $('#messageModal').removeClass('hidden');
+                        $('.container').show();
+                        $('.loadingbtn').hide();
+                        form.reset();
+                        setTimeout(() => {
+                            window.location.href = url.list;
+                        }, 1000);
+                    } else {
+                        $('#messageTitle').text('Error').addClass('text-red-600').removeClass('text-green-600');
+                        $('#messageContent').text(message);
+                        $('#messageModal').removeClass('hidden');
+                    }
+                },
+                error: function(err) {
+                    let error = err.responseJSON.errors;
+                    $.each(error, (field, message) => {
+                        $('#messageTitle').text(field.toUpperCase()).addClass('text-red-600').removeClass('text-green-600');
+                        $('#messageContent').text(message);
+                        $('#messageModal').removeClass('hidden');
+                    })
+                    $('.container').show();
+                    $('.loadingbtn').hide();
+                }
+            });
+        });
+
+    });
+
+    const url = {
+        store: "{{ route('award.store') }}",
+        list: "{{ route('award.list') }}"
+    };
+</script>
+
 @endsection

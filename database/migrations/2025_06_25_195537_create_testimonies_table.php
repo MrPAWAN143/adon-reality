@@ -23,7 +23,6 @@ return new class extends Migration
             $table->boolean('is_featured')->default(false);   // Show on homepage
             $table->boolean('is_verified')->default(true);    // Verified by admin
             $table->boolean('is_active')->default(true);      // Active status
-            $table->unsignedInteger('sort_order')->default(0); // For ordering
             $table->timestamps();
         });
     }

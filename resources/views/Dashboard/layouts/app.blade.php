@@ -5,10 +5,33 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-  <script src="https://cdn.ckeditor.com/4.21.0/full/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/4.21.0/full/ckeditor.js"></script>
     <style>
         .cke_notification {
             display: none !important;
+        }
+
+        /* HTML: <div class="loader"></div> */
+        .loader {
+            width: 70px;
+            padding: 10px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: #276066;
+            --_m:
+                conic-gradient(#0000 10%, #000),
+                linear-gradient(#000 0 0) content-box;
+            -webkit-mask: var(--_m);
+            mask: var(--_m);
+            -webkit-mask-composite: source-out;
+            mask-composite: subtract;
+            animation: l3 1s infinite linear;
+        }
+
+        @keyframes l3 {
+            to {
+                transform: rotate(1turn)
+            }
         }
     </style>
 
@@ -38,6 +61,7 @@
                 </h5>
             </div>
             <nav class="flex min-w-[240px] flex-col gap-1 p-2 font-sans text-base font-normal text-white">
+                
                 <!-- ── Development Partner ───────────────────────────── -->
                 <div class="relative block w-full">
                     <a href="{{ route('dashboard') }}">
@@ -54,6 +78,25 @@
                     </a>
 
                 </div>
+
+                
+                <!-- ── Leads ─────────────────────────────────────────── -->
+                <div class="relative block w-full">
+                    <a href="{{ route('index.leads') }}">
+                        <div
+                            class="flex items-center w-full p-0 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80">
+                            <button type="button"
+                                class="flex items-center justify-between w-full p-3 font-sans text-xl antialiased font-semibold leading-snug text-left border-b-0 select-none text-blue-gray-700 hover:text-blue-gray-900">
+                                <div class="grid mr-4 place-items-center">
+                                    <x-ri-dashboard-fill class="w-6 h-6 text-white" />
+                                </div>
+                                <p class="mr-auto text-base font-normal leading-relaxed">Leads</p>
+                            </button>
+                        </div>
+                    </a>
+
+                </div>
+
                 <!-- ── Development Partner ───────────────────────────── -->
                 <div class="relative block w-full">
                     <div role="button"
@@ -289,51 +332,77 @@
                                     </div>
                                 </a>
                                 <!-- Awards -->
-                               <a href="{{ route('award.list') }}">
-                                 <div role="button" class="flex items-center w-full p-3 rounded-lg hover:bg-blue-gray-50 hover:text-blue-gray-900">
-                                    <div class="grid mr-4 place-items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" stroke-width="3" viewBox="0 0 24 24" fill="none" class="w-5 h-3">
-                                            <path d="M8.25 4.5l7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
+                                <a href="{{ route('award.list') }}">
+                                    <div role="button" class="flex items-center w-full p-3 rounded-lg hover:bg-blue-gray-50 hover:text-blue-gray-900">
+                                        <div class="grid mr-4 place-items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" stroke-width="3" viewBox="0 0 24 24" fill="none" class="w-5 h-3">
+                                                <path d="M8.25 4.5l7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        Award List
                                     </div>
-                                    Award List
-                                </div>
-                               </a>
-                               <a href="{{ route('award.create') }}">
-                                 <div role="button" class="flex items-center w-full p-3 rounded-lg hover:bg-blue-gray-50 hover:text-blue-gray-900">
-                                    <div class="grid mr-4 place-items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" stroke-width="3" viewBox="0 0 24 24" fill="none" class="w-5 h-3">
-                                            <path d="M8.25 4.5l7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
+                                </a>
+                                <a href="{{ route('award.create') }}">
+                                    <div role="button" class="flex items-center w-full p-3 rounded-lg hover:bg-blue-gray-50 hover:text-blue-gray-900">
+                                        <div class="grid mr-4 place-items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" stroke-width="3" viewBox="0 0 24 24" fill="none" class="w-5 h-3">
+                                                <path d="M8.25 4.5l7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        Add New Award
                                     </div>
-                                    Add New Award
-                                </div>
-                               </a>
+                                </a>
+
+                                 <!-- Team -->
+                                <a href="{{ route('team.list') }}">
+                                    <div role="button" class="flex items-center w-full p-3 rounded-lg hover:bg-blue-gray-50 hover:text-blue-gray-900">
+                                        <div class="grid mr-4 place-items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" stroke-width="3" viewBox="0 0 24 24" fill="none" class="w-5 h-3">
+                                                <path d="M8.25 4.5l7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                       Team List
+                                    </div>
+                                </a>
+                                <a href="{{ route('team.create') }}">
+                                    <div role="button" class="flex items-center w-full p-3 rounded-lg hover:bg-blue-gray-50 hover:text-blue-gray-900">
+                                        <div class="grid mr-4 place-items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" stroke-width="3" viewBox="0 0 24 24" fill="none" class="w-5 h-3">
+                                                <path d="M8.25 4.5l7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        Add New Team
+                                    </div>
+                                </a>
                                 <!-- Team -->
-                                <div role="button" class="flex items-center w-full p-3 rounded-lg hover:bg-blue-gray-50 hover:text-blue-gray-900">
-                                    <div class="grid mr-4 place-items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" stroke-width="3" viewBox="0 0 24 24" fill="none" class="w-5 h-3">
-                                            <path d="M8.25 4.5l7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
+                                 <!-- Testimonials -->
+                                <a href="{{ route('testimony.list') }}">
+                                    <div role="button" class="flex items-center w-full p-3 rounded-lg hover:bg-blue-gray-50 hover:text-blue-gray-900">
+                                        <div class="grid mr-4 place-items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" stroke-width="3" viewBox="0 0 24 24" fill="none" class="w-5 h-3">
+                                                <path d="M8.25 4.5l7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                       Testimony List
                                     </div>
-                                    Team
-                                </div>
-                                <!-- Testimonials -->
-                                <div role="button" class="flex items-center w-full p-3 rounded-lg hover:bg-blue-gray-50 hover:text-blue-gray-900">
-                                    <div class="grid mr-4 place-items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" stroke-width="3" viewBox="0 0 24 24" fill="none" class="w-5 h-3">
-                                            <path d="M8.25 4.5l7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
+                                </a>
+                                <a href="{{ route('testimony.create') }}">
+                                    <div role="button" class="flex items-center w-full p-3 rounded-lg hover:bg-blue-gray-50 hover:text-blue-gray-900">
+                                        <div class="grid mr-4 place-items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" stroke-width="3" viewBox="0 0 24 24" fill="none" class="w-5 h-3">
+                                                <path d="M8.25 4.5l7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        Add New Testimony
                                     </div>
-                                    Testimonials
-                                </div>
+                                </a>
                             </nav>
                         </div>
                     </div>
                 </div>
 
                 <hr class="my-2 border-blue-gray-50" />
-                
+
                 <div
                     class="flex items-center w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
                     <div class="grid mr-4 place-items-center">
@@ -359,7 +428,95 @@
     </div>
 
 
+    <div class="loadingbtn hidden fixed top-[45%] left-[50%]  z-[200]" type="button" class="bg-indigo-500 ..." disabled>
+        <div class="loader"></div>
+    </div>
 
+    {{-- Message / Alert Modal --}}
+    <div id="messageModal"
+        class="fixed inset-0 z-[300] flex items-center justify-center bg-black/40 hidden">
+        <div class="w-full max-w-sm p-6 text-center bg-white rounded-lg shadow-lg">
+            <h2 id="messageTitle" class="mb-2 text-lg font-bold text-adminTextPrimary"></h2>
+            <p id="messageContent" class="mb-4 text-gray-600"></p>
+
+            <button onclick="$('#messageModal').addClass('hidden')"
+                class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-adminPrimary hover:bg-adminPrimaryHover rounded-md">
+                OK
+            </button>
+        </div>
+    </div>
+
+    {{-- Confirmation modal --}}
+    <div id="statusModal"
+        class="fixed inset-0 z-[300] flex items-center justify-center bg-black/40 hidden">
+        <div class="w-full max-w-sm p-6 text-center bg-white rounded-lg shadow-lg">
+            <h2 class="mb-2 text-lg font-bold text-adminTextPrimary">Confirmation</h2>
+            <p class="mb-4 text-gray-600">
+                Are you sure you want to change the status of this item?
+            </p>
+
+            <div class="flex justify-center gap-4">
+                <button id="cancelToggle"
+                    class="px-4 py-2 text-sm font-semibold text-gray-600 bg-gray-200 rounded hover:bg-gray-300">
+                    Cancel
+                </button>
+
+                <button id="confirmToggle"
+                    class="px-4 py-2 text-sm font-semibold text-white bg-adminPrimary hover:bg-adminPrimaryHover rounded">
+                    Yes, Change
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Gallery Image Modal -->
+    <div id="deleteImageModal"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 hidden">
+        <div class="bg-white rounded-lg p-6 w-full max-w-sm">
+
+            <h2 class="text-lg font-semibold text-gray-800">
+                Delete image?
+            </h2>
+
+            <p class="text-sm text-gray-600 mt-2 mb-6">
+                This will permanently remove the image from the gallery and from storage.
+            </p>
+
+            <div class="flex justify-end gap-3">
+                <button id="cancelDelete"
+                    class="px-4 py-2 rounded border border-gray-300 hover:bg-gray-100">
+                    Cancel
+                </button>
+                <button id="confirmDelete"
+                    class="px-4 py-2 rounded text-white bg-red-600 hover:bg-red-700">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Delete Confirmation Modal -->
+    <div id="deleteModal" class="fixed inset-0 hidden z-50 items-center justify-center bg-black/40">
+        <div class="bg-white w-full max-w-sm rounded-lg shadow-lg p-6 text-center">
+            <h2 class="text-lg font-semibold mb-4">Delete property?</h2>
+            <p class="text-sm text-gray-600 mb-6">This action cannot be undone.</p>
+
+            <div class="flex justify-center gap-4">
+                <button id="cancelDelete"
+                    class="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 text-gray-800">
+                    Cancel
+                </button>
+
+                <button id="confirmDelete"
+                    class="px-4 py-2 rounded bg-red-600 hover:bg-red-700 text-white">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
 
     <script type="module">
         $(document).ready(function() {

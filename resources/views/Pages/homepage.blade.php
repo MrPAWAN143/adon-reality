@@ -175,21 +175,29 @@
 <section class="px-4 py-8 bg-white text-center">
     <div class="container max-w-7xl mx-auto text-center">
 
-        <x-heading-subheading heading="Featured Investment Opportunities"  subheading="Explore high-return investment options with trusted developers." headingClass="heading" subHeadingClass="subheading" />
+        <x-heading-subheading heading="Featured Investment Opportunities" subheading="Explore high-return investment options with trusted developers." headingClass="heading" subHeadingClass="subheading" />
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto">
+
+            @if(isset($properties) && $properties->count() > 0)
+
+            @foreach ($properties as $property)
+
+            <div class="featured-investment-card">
+                <x-featured-investment-section src="{{ asset($property->property_featured_image) }}" alt="{{ $property->property_name }}" class="featured-investment-img" heading="{{ $property->property_name }}" location="{{ $property->property_location }}" reraUrl="{{ $property->property_rera_url }}" rera="{{ $property->property_rera_number }}" status="{{ $property->property_status }}" roi="{{ $property->property_expected_roi }}" developer="{{ $property->developmentPartner->developer_name }}" variety="{{ $property->category->name }}" size="{{ $property->property_size }}" price="{{ $property->starting_price }}" />
+                <x-button class="featured-investment-button" url="{{ route('projects.each' , $property->property_slug) }}" text="View Details" />
+            </div>
+
+            @endforeach
+            @endif
+
             <div class="featured-investment-card">
                 <x-featured-investment-section src="{{ asset('assets/images/allImages/DlfCyberCity.png') }}" alt="DLF Cyber City Tower" class="featured-investment-img" heading="DLF Cyber City Tower" location="Noida, Sector 62" rera="UPRERAI2345" status="Ongoing" roi="12%" developer="DLF" variety="Multiplex / Commercial" size="5000 sq. ft." price="Price on Demand" />
-                <x-button class="featured-investment-button" url="{{ route('projects.each' , ['id' => 1]) }}"  text="View Details" />
+                <x-button class="featured-investment-button" url="{{ route('projects.each' , 'dlf-cyber-city-tower') }}" text="View Details" />
             </div>
-            <div class="featured-investment-card">
-                <x-featured-investment-section src="{{ asset('assets/images/allImages/M3MCorporateHeights.png') }}" alt="M3M Corporate Heights" class="featured-investment-img" heading="M3M Corporate Heights" location="Sector 67, Gurgaon" rera="HRERAGGN20230911" status="Ready to Move" roi="10%" developer="M3M" variety="Commercial Office Tower" size="7000 sq. ft." price="Price on Demand" />
-                <x-button class="featured-investment-button" url="{{ route('projects.each' ,['id' => 2]) }}" text="View Details" />
-            </div>
-            <div class="featured-investment-card">
-                <x-featured-investment-section src="{{ asset('assets/images/allImages/M3MAtrium.png') }}" alt="M3M Atrium" class="featured-investment-img" heading="M3M Atrium" location="Sector 140, Noida Expressway" rera="UPRERA-2023-0567" status="Pre-Launch" roi="12%" developer="M3M" variety="High Street Retail" size="4800 sq. ft." price="Price on Demand" />
-                <x-button class="featured-investment-button" url="{{ route('projects.each' ,['id' => 3]) }}" text="View Details" />
-            </div>
+
+
+
         </div>
         <div class="mt-10">
             <a href="{{ route('projects') }}" class="view-more-button ">
@@ -288,14 +296,13 @@
         <x-heading-subheading heading="Our Development Partners" subheading="Collaborating with renowned names in real estate development." headingClass="heading" subHeadingClass="subheading" />
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
+            @foreach ($developmentPartner as $partner)
 
-            <x-developer-partner-card partnerLogo="{{ asset('assets/images/partnersLogo/dlf.png') }}" url="{{ route('development-partners.show', ['id' => 1]) }}" alt="DLF Limited" heading="DLF Limited" description="Building India" projectsPartnered="18" presence="Gurgaon, Noida, Chennai, Hyderabad" />
+            <x-developer-partner-card partnerLogo="{{ asset($partner->logo) }}" url="{{ route('development-partners.show',  $partner->slug) }}" alt="{{ $partner->developer_name }}" heading="{{ $partner->developer_name }}" description="{{ $partner->tags }}" projectsPartnered="{{ $partner->total_projects }}" presence="{{ implode(', ', $partner->operating_cities ?? []) }}" />
 
             <!-- Partner 2 -->
-            <x-developer-partner-card partnerLogo="{{ asset('assets/images/partnersLogo/raheja.png') }}" url="{{ route('development-partners.show', ['id' => 2]) }}" alt="Raheja Develop" heading="Raheja Develop" description="Committed to Excellence" projectsPartnered="10" presence="Gurgaon, Delhi, Noida" />
+            @endforeach
 
-            <!-- Partner 3 -->
-            <x-developer-partner-card partnerLogo="{{ asset('assets/images/partnersLogo/m3m.png') }}" url="{{ route('development-partners.show', ['id' => 3]) }}" alt="M3M India" heading="M3M India" description="Magnificence in the Trinity of Men & Materials" projectsPartnered="8" presence="Gurgaon, Noida" />
         </div>
 
         <div class="mt-10">
@@ -312,14 +319,18 @@
     <div class="container max-w-7xl mx-auto">
         <x-heading-subheading heading="Real Estate Marketing Insights" subheading="Stay ahead with industry trends, data, and marketing tips." headingClass="heading" subHeadingClass="subheading" />
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto">
-            <x-blog-card cardCls="marketing-insights-card" url="{{ route('blog.each', ['id' => 1]) }}" class="featured-investment-img" src="{{asset('assets/images/allImages/marketing2.png')}}" alt="DLF Cyber City Tower" h4="Top Cities for Real Estate Investment in 2025" p="Discover where smart investors are putting their money this year." />
-            <x-blog-card cardCls="marketing-insights-card" url="{{ route('blog.each', ['id' => 2]) }}" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing3.png') }}" alt="M3M Corporate Heights" h4="5 Mistakes Every Property Investor Should Avoid" p="Learn common pitfalls and how to protect your real estate investment" />
-            <x-blog-card cardCls="marketing-insights-card" url="{{ route('blog.each', ['id' => 3]) }}" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing1.png') }}" alt="M3M Atrium" h4="Rental Income: Which Strategy Wins?" p="Compare long-term rental income with short-term property flipping profits." />
+            @if(isset($blogs) && $blogs->count() > 0)
+
+            @foreach ($blogs as $blog)
+            <x-blog-card cardCls="marketing-insights-card" url="{{ route('blog.each', $blog->slug) }}" class="featured-investment-img" src="{{ asset( $blog->featured_image )}}" alt="{{ $blog->title }}" h4="{{ $blog->title }}" p="{{ $blog->summary }}" />
+            @endforeach
+            @endif
+
         </div>
         <div class="mt-10">
-            <button onclick="location.href='{{ route('blog') }}'" class="marketing-insights-view-more-button">
+            <a href="{{ route('blog.show') }}" class="marketing-insights-view-more-button !inline-flex">
                 View all Blog <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
-            </button>
+            </a>
         </div>
     </div>
 </section>
@@ -430,6 +441,7 @@
     </div>
 
 </section>
+
 <x-contact-us-form heading="Let’s Make Your Property Journey Effortless" subheading="Have questions or ready to take the next step? Whether you’re looking to buy, rent, or invest, our team is here to guide you every step of the way." />
 @endsection
 

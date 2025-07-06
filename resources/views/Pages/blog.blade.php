@@ -17,11 +17,11 @@
             <!-- Search Bar -->
             <div class="mb-6">
                 <div class="flex items-center rounded-2xl border border-gray px-4 py-1 shadow-sm">
-                  <x-zondicon-search  class="w-6 h-6 "/>
+                    <x-zondicon-search class="w-6 h-6 " />
                     <input type="text" placeholder="Search blog articles..."
                         class="w-full outline-none text-sm bg-transparent border-none focus:border-none focus:outline-none" />
                 </div>
-                
+
 
             </div>
 
@@ -52,12 +52,13 @@
 
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto">
-            <x-blog-card url="{{route('blog.each', ['id' => 1])}}" cardCls="marketing-insights-card" class="featured-investment-img" src="{{asset('assets/images/allImages/marketing2.png')}}" alt="DLF Cyber City Tower" h4="Top Cities for Real Estate Investment in 2025" p="Discover where smart investors are putting their money this year." />
-            <x-blog-card url="{{route('blog.each', ['id' => 2])}}" cardCls="marketing-insights-card" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing3.png') }}" alt="M3M Corporate Heights" h4="5 Mistakes Every Property Investor Should Avoid" p="Learn common pitfalls and how to protect your real estate investment" />
-            <x-blog-card url="{{route('blog.each', ['id' => 3])}}" cardCls="marketing-insights-card" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing1.png') }}" alt="M3M Atrium" h4="Rental Income: Which Strategy Wins?" p="Compare long-term rental income with short-term property flipping profits." />
-            <x-blog-card url="{{route('blog.each', ['id' => 4])}}" cardCls="marketing-insights-card" class="featured-investment-img" src="{{asset('assets/images/allImages/marketing2.png')}}" alt="DLF Cyber City Tower" h4="Top Cities for Real Estate Investment in 2025" p="Discover where smart investors are putting their money this year." />
-            <x-blog-card url="{{route('blog.each', ['id' => 5])}}" cardCls="marketing-insights-card" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing3.png') }}" alt="M3M Corporate Heights" h4="5 Mistakes Every Property Investor Should Avoid" p="Learn common pitfalls and how to protect your real estate investment" />
-            <x-blog-card url="{{route('blog.each', ['id' => 6])}}" cardCls="marketing-insights-card" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing1.png') }}" alt="M3M Atrium" h4="Rental Income: Which Strategy Wins?" p="Compare long-term rental income with short-term property flipping profits." />
+            @if(isset($blogs) && $blogs->count() > 0)
+            @foreach ($blogs as $blog)
+            <x-blog-card url="{{route('blog.each', $blog->slug )}}" cardCls="marketing-insights-card" class="featured-investment-img" src="{{ asset($blog->featured_image) }}" alt="{{ $blog->title }}" h4="{{ $blog->title }}" p="{{ $blog->summary }}" />
+            @endforeach
+            @endif
+
+            
         </div>
 
     </div>

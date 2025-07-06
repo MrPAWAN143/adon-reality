@@ -11,7 +11,7 @@
 @section('content')
 <section class=" w-[96%] max-w-7xl py-0 px-4 sm:px-6 lg:px-8 mx-auto">
     <x-page-path class="path" path="Home > Contact Us" />
-    <div class="grid md:grid-cols-1 w-[96%] lg:grid-cols-2 gap-x-6 md:w-[90%] mx-auto mt-10 rounded">
+    <div class="grid md:grid-cols-1 w-[96%] lg:grid-cols-2 gap-x-6 md:w-[90%] mx-auto mt-10 gap-6 rounded">
 
         <div class="py-5 px-7 bg-bgSecondary/30 rounded-xl ">
             <x-heading-subheading heading="Let's get in touch" subheading="We're open for any suggestion or just to have a chat" headingClass="heading text-start !my-2" subHeadingClass="subheading mb-2 text-sm dev-start w-72" />
@@ -31,20 +31,20 @@
                     <div class="bg-primary rounded-full p-2">
                         <x-zondicon-phone class="w-3 h-3  text-white" />
                     </div>
-                    
+
                     <p class=" ">+91-9090906776</p>
                 </div>
                 <div class="flex gap-2 items-center mt-4 ">
-                    
+
                     <div class="bg-primary rounded-full p-1">
-                       <x-typ-mail class="w-5 h-5  text-white" />
+                        <x-typ-mail class="w-5 h-5  text-white" />
                     </div>
 
                     <p class=" ">info@adonrealty.co.in</p>
                 </div>
                 <div class="flex gap-2 items-center mt-4 ">
-                     <div class="bg-primary rounded-full p-1">
-                       <x-forkawesome-globe-e class="w-5 h-5  text-white text-center" />
+                    <div class="bg-primary rounded-full p-1">
+                        <x-forkawesome-globe-e class="w-5 h-5  text-white text-center" />
                     </div>
 
 
@@ -88,34 +88,37 @@
         </div>
         <div id="contactPage" class="">
 
-            
-             <x-heading-subheading heading="Connect with Adon realty" subheading="We'd love to hear from you! Share your Query below" headingClass="heading text-start !my-2" subHeadingClass="subheading mb-2 text-sm dev-start" />
 
-            <div class=" lg:flex gap-2 mt-8">
-                <div class=" w-full ">
-                    <label>Name </label>
-                    <input type="text" class="!outline-none border-b-2  w-full" />
+            <x-heading-subheading heading="Connect with Adon realty" subheading="We'd love to hear from you! Share your Query below" headingClass="heading text-start !my-2" subHeadingClass="subheading mb-2 text-sm dev-start" />
+
+            <form action="" class="queryform" method="POST" action="#">
+
+                <div class=" lg:flex gap-2 mt-8">
+                    <div class=" w-full ">
+                        <label>Name </label>
+                        <input type="text" class="!outline-none border-b-2  w-full" />
+                    </div>
+                    <div class="w-full ">
+                        <label>Phone</label>
+                        <input type="text" class="!outline-none border-b-2  w-full" />
+
+                    </div>
                 </div>
-                <div class="w-full ">
-                    <label>Phone</label>
-                    <input type="text" class="!outline-none border-b-2  w-full" />
+                <div class="mt-2">
+                    <label class="">Email</label>
+                    <input type="email" class="border-b-2 outline-none w-full" />
+                </div>
+                <div class="mt-2">
+                    <label class="">Message</label>
+                    <textarea type="text" class="border-b-2 outline-none w-full "></textarea>
+                </div>
+                <div class="flex gap-2 mt-2  ">
+                    <div class=""><input class=" !accent-[#540313]" checked type="radio" /> </div>
+                    <h1 class="text-sm lg:text-xl">By submitting this from,you here by grant us permission to contact you via SMS, WhatsApp, RCS, Email and any other channel </h1>
 
                 </div>
-            </div>
-            <div class="mt-2">
-                <label class="">Email</label>
-                <input type="email" class="border-b-2 outline-none w-full" />
-            </div>
-            <div class="mt-2">
-                <label class="">Message</label>
-                <textarea type="text" class="border-b-2 outline-none w-full "></textarea>
-            </div>
-            <div class="flex gap-2 mt-2  ">
-                <div class=""><input class=" !accent-[#540313]" type="radio" /> </div>
-                <h1 class="text-sm lg:text-xl">By submitting this from,you here by grant us permission to contact you via SMS, WhatsApp, RCS, Email and any other channel </h1>
-
-            </div>
-            <button class="bg-[#540313] px-4 py-2 mb-3 mt-5 rounded-xl text-white">Send Message</button>
+                <button class="bg-[#540313] px-4 py-2 mb-3 mt-5 rounded-xl text-white">Send Message</button>
+            </form>
 
         </div>
     </div>
@@ -123,7 +126,7 @@
 
 <section class="py-12 bg-white">
     <div class="container max-w-5xl mx-auto px-4">
-         <x-heading-subheading heading="Hear From Our Investors" subheading="Genuine testimonials and success stories from our valued investors." headingClass="heading text-center !my-2" subHeadingClass="subheading mb-2 text-sm" />
+        <x-heading-subheading heading="Hear From Our Investors" subheading="Genuine testimonials and success stories from our valued investors." headingClass="heading text-center !my-2" subHeadingClass="subheading mb-2 text-sm" />
 
     </div>
 

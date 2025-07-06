@@ -22,8 +22,9 @@ class featuredInvestmentSection extends Component
     public string $variety;
     public string $size;
     public string $price;
+    public string $reraUrl;
 
-    public function __construct(string $src, string $alt, string $heading, string $location, string $rera, string $status, string $roi, string $developer, string $variety, string $size, string $price)
+    public function __construct(string $src, string $alt, string $heading, string $location, string $rera, string $status, string $roi, string $developer, string $variety, string $size, string $price, string $reraUrl= '')
     {
         $this->src = $src;
         $this->alt = $alt;
@@ -36,6 +37,7 @@ class featuredInvestmentSection extends Component
         $this->variety = $variety;
         $this->size = $size;
         $this->price = $price;
+        $this->reraUrl = $reraUrl;
     }
 
     /**

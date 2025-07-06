@@ -30,79 +30,13 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-6">
 
-            <x-developer-partner-card
-                partnerLogo="{{ asset('assets/images/partnersLogo/dlf.png') }}"
-                alt="DLF Limited"
-                heading="DLF Limited"
-                description="Building India"
-                projectsPartnered="18"
-                presence="Gurgaon, Noida, Chennai" />
+        
+            @foreach ($developmentPartner as $partner)
 
-            <x-developer-partner-card
-                partnerLogo="{{ asset('assets/images/partnersLogo/raheja.png') }}"
-                alt="Raheja Develop"
-                heading="Raheja Develop"
-                description="Committed to Excellence"
-                projectsPartnered="10"
-                presence="Gurgaon, Delhi, Noida" />
+            <x-developer-partner-card partnerLogo="{{ asset($partner->logo) }}" url="{{ route('development-partners.show',  $partner->slug) }}" alt="{{ $partner->developer_name }}" heading="{{ $partner->developer_name }}" description="{{ $partner->tags }}" projectsPartnered="{{ $partner->total_projects }}" presence="{{ implode(', ', $partner->operating_cities ?? []) }}" />
 
-            <x-developer-partner-card
-                partnerLogo="{{ asset('assets/images/partnersLogo/m3m.png') }}"
-                alt="M3M India"
-                heading="M3M India"
-                description="Magnificence in the Trinity of Men & Materials"
-                projectsPartnered="8"
-                presence="Gurgaon, Noida" />
+            @endforeach
 
-            {{-- Row 2 --}}
-            <x-developer-partner-card
-                partnerLogo="{{ asset('assets/images/partnersLogo/prima.jpg') }}"
-                alt="Prima"
-                heading="Prima"
-                description="Building India"
-                projectsPartnered="18"
-                presence="Gurgaon, Noida, Chennai" />
-
-            <x-developer-partner-card
-                partnerLogo="{{ asset('assets/images/partnersLogo/space.jpg') }}"
-                alt="Space"
-                heading="Space"
-                description="Committed to Excellence"
-                projectsPartnered="10"
-                presence="Gurgaon, Delhi, Noida" />
-
-            <x-developer-partner-card
-                partnerLogo="{{ asset('assets/images/partnersLogo/godrej.jpg') }}"
-                alt="Godrej"
-                heading="Godrej"
-                description="Magnificence in the Trinity"
-                projectsPartnered="8"
-                presence="Gurgaon, Noida" />
-
-            {{-- Row 3 --}}
-            <x-developer-partner-card
-                partnerLogo="{{ asset('assets/images/partnersLogo/arena.jpg') }}"
-                alt="Arena"
-                heading="Arena"
-                description="Building India"
-                projectsPartnered="18"
-                presence="Gurgaon, Noida, Chennai" />
-
-            <x-developer-partner-card
-                partnerLogo="{{ asset('assets/images/partnersLogo/aura.jpg') }}"
-                alt="Aura"
-                heading="Aura"
-                description="Committed to Excellence"
-                projectsPartnered="10"
-                presence="Gurgaon, Delhi, Noida" />
-
-            <x-developer-partner-card
-                partnerLogo="{{ asset('assets/images/partnersLogo/wave.jpg') }}"
-                alt="Wave"
-                heading="Wave"
-                description="Magnificence in the Trinity"
-                projectsPartnered="8"
-                presence="Gurgaon, Noida" />
 
         </div>
 

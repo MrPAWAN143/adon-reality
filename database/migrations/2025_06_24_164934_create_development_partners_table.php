@@ -24,8 +24,8 @@ return new class extends Migration
             $table->text('ongoing_projects')->nullable(); // Flexible field for descriptions
             $table->text('group_owners')->nullable(); // Key people: founders, chairman, etc.
             $table->json('operating_cities')->nullable(); // Cities as JSON array
-            $table->unsignedInteger('total_projects')->default(0); // Total projects completed/listed
-            $table->json('tags')->nullable(); // Labels like "Luxury", "Green Homes"
+            $table->string('total_projects')->nullable(); // Total projects completed/listed
+            $table->string('tags')->nullable(); // Labels like "Luxury", "Green Homes"
             $table->boolean('is_active')->default(true); // Shown on frontend or not
             $table->boolean('is_verified')->default(true); // Verified by admin
             $table->timestamps();

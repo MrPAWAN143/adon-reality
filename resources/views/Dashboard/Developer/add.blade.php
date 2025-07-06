@@ -9,7 +9,7 @@
 
 @endsection
 @section('content')
-<div class="container my-4 mx-auto md:max-w-6xl lg:max-w-7xl">
+<div class="container my-4 mx-auto md:max-w-6xl lg:max-w-7xl xl:max-w-full">
     <div class="my-5">
         <div class="mx-auto py-6 px-8 sm:px-12 bg-adminFormBg rounded-md">
 
@@ -47,6 +47,16 @@
                         class="w-full border border-adminInputBorder rounded px-3 py-2
                       focus:border-adminPrimary focus:ring-adminPrimary">
                 </div>
+                {{-- tags --}}
+                <div class="md:col-span-2">
+                    <label for="tags" class="block font-semibold text-adminTextPrimary mb-1">
+                        Tags
+                    </label>
+                    <input type="text" id="tags" name="tags"
+                        placeholder="Enter tags separated by commas"
+                        class="w-full border border-adminInputBorder rounded px-3 py-2
+                      focus:border-adminPrimary focus:ring-adminPrimary">
+                </div>
 
                 {{-- Slug --}}
                 <div>
@@ -64,7 +74,7 @@
                     <label for="total_completed_area" class="block font-semibold text-adminTextPrimary mb-1">
                         Total Completed Area
                     </label>
-                    <input type="number" id="total_completed_area" name="total_completed_area"
+                    <input type="text" id="total_completed_area" name="total_completed_area"
                         placeholder="e.g., 2.5 million sq.ft"
                         class="w-full border border-adminInputBorder rounded px-3 py-2
                       focus:border-adminPrimary focus:ring-adminPrimary">
@@ -75,7 +85,7 @@
                     <label for="ongoing_projects" class="block font-semibold text-adminTextPrimary mb-1">
                         Ongoing Projects
                     </label>
-                    <input type="number" id="ongoing_projects" name="ongoing_projects"
+                    <input type="text" id="ongoing_projects" name="ongoing_projects"
                         placeholder="e.g., 5"
                         class="w-full border border-adminInputBorder rounded px-3 py-2
                       focus:border-adminPrimary focus:ring-adminPrimary">
@@ -86,7 +96,7 @@
                     <label for="logo" class="block font-semibold text-adminTextPrimary mb-1">
                         Logo
                     </label>
-                    <input type="file" id="logo" name="logo"
+                    <input type="file" id="" name="logo"
                         class="w-full border border-adminInputBorder rounded px-3 py-2 bg-white
                       file:mr-3 file:rounded file:border-0 file:bg-adminPrimary file:px-3 file:py-1 file:text-white
                       hover:file:bg-adminPrimaryHover">
@@ -171,7 +181,7 @@
                     <label for="total_projects" class="block font-semibold text-adminTextPrimary mb-1">
                         Total Projects
                     </label>
-                    <input type="number" id="total_projects" name="total_projects"
+                    <input type="text" id="total_projects" name="total_projects"
                         placeholder="e.g., 10"
                         class="w-full !border !border-adminInputBorder rounded px-3 py-2
                       focus:border-adminPrimary focus:ring-adminPrimary">
@@ -191,7 +201,7 @@
 
 
                 {{-- add button --}}
-                <div class="md:col-span-2 flex justify-end">
+                <div class="md:col-span-2 flex justify-end savebtn">
                     <button type="submit"
                         class="bg-adminPrimary hover:bg-adminPrimaryHover text-white px-6 py-2 rounded-md text-sm font-semibold shadow">
                         Save
@@ -210,10 +220,10 @@
 <script type="module">
     CKEDITOR.replace('developer_description');
 
+
     $(document).ready(function() {
         const $select = $('#founded_in');
         const currentYear = new Date().getFullYear();
-
         for (let year = currentYear; year >= 1950; year--) {
             $select.append(`<option value="${year}">${year}</option>`);
         }
@@ -223,13 +233,9 @@
             const $input = $('#operating_cities');
             const $btn = $('#addCityBtn');
             const $list = $('#operatingCitiesList');
-
-            /* ───── Show / hide button on typing ───── */
             $input.on('input', function() {
                 $btn.toggle($.trim(this.value).length > 0);
             });
-
-            /* ───── Add item: button click or Enter key ───── */
             $btn.on('click', addCityFromInput);
             $input.on('keydown', function(e) {
                 if (e.key === 'Enter') {
@@ -237,13 +243,10 @@
                     addCityFromInput();
                 }
             });
-
-            /* ───── Remove item click ───── */
             $list.on('click', '.remove-city', function() {
                 $(this).closest('li').remove();
             });
 
-            /* ---------- helper ---------- */
             function addCityFromInput() {
                 const city = $.trim($input.val());
                 if (!city) return;
@@ -264,11 +267,18 @@
         // Handle form submission
         $('#createPartner').on('submit', function(e) {
             e.preventDefault();
-            const formData = new FormData(this);
-            formData.set(
-                'developer_description',
-                CKEDITOR.instances.developer_description.getData()
-            );
+            $('.container').hide();
+            $('.loadingbtn').show();
+            let form = this;
+
+            let formData = new FormData(this);
+            let description = CKEDITOR.instances.developer_description.getData();
+            formData.append('developer_description', description);
+
+            $('#operatingCitiesList li span').each(function() {
+                formData.append('operating_cities[]', $(this).text().trim());
+            });
+
             $.ajax({
                 url: url.store,
                 type: 'POST',
@@ -276,14 +286,53 @@
                 processData: false,
                 contentType: false,
                 success: function(response) {
-                    // Handle success response
-                    window.location.href = url.list;
+                    console.log(response);
+                    let status = response.status;
+                    let message = response.message
+                    if (status == 'success') {
+                        $('#messageTitle').text(status).addClass('text-green-600').removeClass('text-red-600');
+                        $('#messageContent').text(message);
+                        $('#messageModal').removeClass('hidden');
+                        form.reset();
+                        CKEDITOR.instances.developer_description.setData('');
+                        $('#operatingCitiesList').empty();
+                        setTimeout(() => {
+                            window.location.href = url.list;
+                        }, 1000);
+                    } else {
+                        $('#messageTitle').text('Error').addClass('text-red-600').removeClass('text-green-600');
+                        $('#messageContent').text(message);
+                        $('#messageModal').removeClass('hidden');
+                    }
+                    $('.container').show();
+                    $('.loadingbtn').hide();
+
+
+
                 },
-                error: function(xhr) {
-                    // Handle error response
-                    alert('Error saving development partner. Please try again.');
+                error: function(err) {
+                    let error = err.responseJSON.errors;
+                    console.log(error);
+
+                    $.each(error, (field, message) => {
+                        $('#messageTitle').text(field).addClass('text-red-600').removeClass('text-green-600');
+                        $('#messageContent').text(message);
+                        $('#messageModal').removeClass('hidden');
+                    })
+
+                    $('.container').show();
+                    $('.loadingbtn').hide();
                 }
             });
+        });
+    });
+
+    
+    $(document).ready(function() {
+        $('#developer_name').on('input', function() {
+            let title = $(this).val();
+            let slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+            $('#slug').val(slug);
         });
     });
 
@@ -291,5 +340,7 @@
         store: "{{ route('development-partners.store') }}",
         list: "{{ route('development-partners.list') }}"
     };
+
+
 </script>
 @endsection
