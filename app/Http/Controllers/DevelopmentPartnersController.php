@@ -49,8 +49,8 @@ class DevelopmentPartnersController extends Controller
 
         if ($request->hasFile('logo')) {
             $image = $request->file('logo');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads/DeveloperLogos'), $filename);
+            $filename = uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->move('uploads/DeveloperLogos', $filename);
             $validated['logo'] = 'uploads/DeveloperLogos/' . $filename;
         } else {
             $validated['logo'] = null; // Set to null if no file is uploaded
@@ -111,13 +111,13 @@ class DevelopmentPartnersController extends Controller
 
         if ($request->hasFile('logo')) {
             // Delete the old logo if it exists
-            if ($developmentPartner->logo && file_exists(public_path($developmentPartner->logo))) {
-                unlink(public_path($developmentPartner->logo));
+            if ($developmentPartner->logo && file_exists($developmentPartner->logo)) {
+                unlink($developmentPartner->logo);
             }
 
             $image = $request->file('logo');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads/DeveloperLogos'), $filename);
+            $filename = uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->move('uploads/DeveloperLogos', $filename);
             $validated['logo'] = 'uploads/DeveloperLogos/' . $filename;
         } else {
             // Keep the old logo if no new file is uploaded
@@ -157,8 +157,8 @@ class DevelopmentPartnersController extends Controller
         $developmentPartner = DevelopmentPartners::findOrFail($id);
 
         // Delete the logo file if it exists
-        if ($developmentPartner->logo && file_exists(public_path($developmentPartner->logo))) {
-            unlink(public_path($developmentPartner->logo));
+        if ($developmentPartner->logo && file_exists($developmentPartner->logo)) {
+            unlink($developmentPartner->logo);
         }
 
         $developmentPartner->delete();

@@ -40,8 +40,8 @@ class EventAndMediaController extends Controller
 
         if ($request->hasFile('featured_image')) {
             $image = $request->file('featured_image');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads/EventAndMedia'), $filename);
+            $filename = uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->move('uploads/EventAndMedia', $filename);
             $validated['featured_image'] = 'uploads/EventAndMedia/' . $filename;
         } else {
             $validated['featured_image'] = null; // Set to null if no file is uploaded
@@ -91,13 +91,13 @@ class EventAndMediaController extends Controller
 
         if ($request->hasFile('featured_image')) {
             // Delete the old featured image if it exists
-            if ($event->featured_image && file_exists(public_path($event->featured_image))) {
-                unlink(public_path($event->featured_image));
+            if ($event->featured_image && file_exists($event->featured_image)) {
+                unlink($event->featured_image);
             }
 
             $image = $request->file('featured_image');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads/EventAndMedia'), $filename);
+            $filename = uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->move('uploads/EventAndMedia', $filename);
             $validated['featured_image'] = 'uploads/EventAndMedia/' . $filename;
         } else {
             // Keep the old featured image if no new file is uploaded
@@ -138,8 +138,8 @@ class EventAndMediaController extends Controller
         $event = EventAndMedia::findOrFail($id);
 
         // Delete the featured image if it exists
-        if ($event->featured_image && file_exists(public_path($event->featured_image))) {
-            unlink(public_path($event->featured_image));
+        if ($event->featured_image && file_exists($event->featured_image)) {
+            unlink($event->featured_image);
         }
 
         if ($event->delete()) {

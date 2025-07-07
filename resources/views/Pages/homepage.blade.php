@@ -7,14 +7,14 @@
 <link rel="stylesheet" href="{{ asset('assets/css/homepage.css') }}">
 @endsection
 @section('homepage')
-<section class="px-4 relative h-[80vh] max-h-[80vh] object-cover bg-cover bg-center" style="background-image: url('{{ asset('assets/images/bannerImages/hero-banner.webp') }}')">
+<section class="px-4 relative md:h-[80vh] md:max-h-[80vh] object-cover bg-cover bg-center" style="background-image: url('{{ asset('assets/images/bannerImages/hero-banner.webp') }}')">
     <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-    <div class="relative z-10 flex flex-col items-center justify-center h-full text-white px-4">
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 sm:my-6">
         <!-- <h1 class="text-4xl md:text-5xl font-bold mb-4 text-center">
             Discover High ROI Real Estate Projects in India
         </h1> -->
-        <div class="flex flex-col md:flex-row items-center justify-between w-full max-w-3xl bg-white rounded-full py-2 px-2 mt-4 shadow-md">
-            <div class="relative w-full md:w-[16%]">
+        <div class="flex flex-row items-center justify-between w-full max-w-3xl bg-white rounded-full py-2 px-2 mt-4 shadow-md">
+            <div class="relative w-full md:w-[16%] sm:w-[10%]">
                 <select class="hero-section-select">
                     <option>City</option>
                     <option>Delhi</option>

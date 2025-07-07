@@ -50,8 +50,8 @@ class NewsAndPrController extends Controller
 
         if ($request->hasFile('featured_image')) {
             $image = $request->file('featured_image');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads/NewsAndPr'), $filename);
+            $filename = uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->move('uploads/NewsAndPr', $filename);
             $validated['featured_image'] = 'uploads/NewsAndPr/' . $filename;
         } else {
             $validated['featured_image'] = null; // Set to null if no file is uploaded
@@ -103,13 +103,13 @@ class NewsAndPrController extends Controller
 
         if ($request->hasFile('featured_image')) {
             // Delete the old featured image if it exists
-            if ($news->featured_image && file_exists(public_path($news->featured_image))) {
-                unlink(public_path($news->featured_image));
+            if ($news->featured_image && file_exists($news->featured_image)) {
+                unlink($news->featured_image);
             }
 
             $image = $request->file('featured_image');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads/NewsAndPr'), $filename);
+            $filename = uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->move('uploads/NewsAndPr', $filename);
             $validated['featured_image'] = 'uploads/NewsAndPr/' . $filename;
         } else {
             // Keep the old featured image if no new file is uploaded
@@ -140,8 +140,8 @@ class NewsAndPrController extends Controller
    public function destroy($id)
     {
         $news = NewsAndPr::findOrFail($id);
-        if ($news->featured_image && file_exists(public_path($news->featured_image))) {
-            unlink(public_path($news->featured_image));
+        if ($news->featured_image && file_exists($news->featured_image)) {
+            unlink($news->featured_image);
         }
         $news->delete();
 

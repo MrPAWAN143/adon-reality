@@ -47,8 +47,8 @@ class BlogsController extends Controller
 
         if ($request->hasFile('featured_image')) {
             $image = $request->file('featured_image');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads/BlogImages'), $filename);
+            $filename = uniqid() .  '.' . $image->getClientOriginalExtension();
+            $image->move('uploads/BlogImages', $filename);
             $validated['featured_image'] = 'uploads/BlogImages/' . $filename;
         } else {
             $validated['featured_image'] = null; // Set to null if no file is uploaded
@@ -95,13 +95,13 @@ class BlogsController extends Controller
 
         if ($request->hasFile('featured_image')) {
             // Delete the old featured image if it exists
-            if ($blog->featured_image && file_exists(public_path($blog->featured_image))) {
-                unlink(public_path($blog->featured_image));
+            if ($blog->featured_image && file_exists($blog->featured_image)) {
+                unlink($blog->featured_image);
             }
 
             $image = $request->file('featured_image');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads/BlogImages'), $filename);
+            $filename = uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->move('uploads/BlogImages', $filename);
             $validated['featured_image'] = 'uploads/BlogImages/' . $filename;
         } else {
             // Keep the old featured image if no new file is uploaded
@@ -143,8 +143,8 @@ class BlogsController extends Controller
     public function destroy($id)
     {
         $blog = Blogs::findOrFail($id);
-        if ($blog->featured_image && file_exists(public_path($blog->featured_image))) {
-            unlink(public_path($blog->featured_image));
+        if ($blog->featured_image && file_exists($blog->featured_image)) {
+            unlink($blog->featured_image);
         }
         $blog->delete();
 
