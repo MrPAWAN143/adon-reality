@@ -31,6 +31,19 @@
     });
 
 
+    // Toggle Level 1
+    document.querySelector('.toggle-l1').addEventListener('click', function() {
+      this.nextElementSibling.classList.toggle('hidden');
+      this.querySelector('svg').classList.toggle('rotate-180');
+    });
+
+    // Toggle Level 2
+    document.querySelectorAll('.toggle-l2').forEach(btn => {
+      btn.addEventListener('click', function() {
+        this.nextElementSibling.classList.toggle('hidden');
+        this.querySelector('svg').classList.toggle('rotate-180');
+      });
+    });
 
     $(document).ready(function() {
       // Helper: Validate email

@@ -50,88 +50,88 @@ Route::post('/leads/store', [QueryController::class, 'store'])->name('leads.stor
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('/development/create', [DevelopmentPartnersController::class, 'create'])->name('development-partners.create');
-    Route::get('/developer-partner-list', [DevelopmentPartnersController::class, 'developerPartnerList'])->name('development-partners.list');
-    Route::get('/developer/edit/{id}', [DevelopmentPartnersController::class, 'edit'])->name('development-partners.edit');
-    Route::post('/development/store', [DevelopmentPartnersController::class, 'store'])->name('development-partners.store');
-    Route::put('/development/update/{id}', [DevelopmentPartnersController::class, 'update'])->name('development-partners.update');
-    Route::delete('/development/delete/{id}', [DevelopmentPartnersController::class, 'destroy'])->name('development-partners.delete');
-    Route::patch('/development-partners/{id}/toggle-status', [DevelopmentPartnersController::class, 'toggleStatus'])->name('development-partners.toggle-status');
+    Route::get('/dashboard/development/create', [DevelopmentPartnersController::class, 'create'])->name('development-partners.create');
+    Route::get('/dashboard/developer-partner-list', [DevelopmentPartnersController::class, 'developerPartnerList'])->name('development-partners.list');
+    Route::get('/dashboard/developer/edit/{id}', [DevelopmentPartnersController::class, 'edit'])->name('development-partners.edit');
+    Route::post('/dashboard/development/store', [DevelopmentPartnersController::class, 'store'])->name('development-partners.store');
+    Route::put('/dashboard/development/update/{id}', [DevelopmentPartnersController::class, 'update'])->name('development-partners.update');
+    Route::delete('/dashboard/development/delete/{id}', [DevelopmentPartnersController::class, 'destroy'])->name('development-partners.delete');
+    Route::patch('/dashboard/development-partners/{id}/toggle-status', [DevelopmentPartnersController::class, 'toggleStatus'])->name('development-partners.toggle-status');
 
-    Route::get('/projects/create', [PropertiesDetailsController::class, 'create'])->name('projects.create');
-    Route::get('/projects/list', [PropertiesDetailsController::class, 'projectList'])->name('project.list');
-    Route::get('/projects/edit/{id}', [PropertiesDetailsController::class, 'edit'])->name('projects.edit');
-    Route::post('/projects/store', [PropertiesDetailsController::class, 'store'])->name('projects.store');
-    Route::put('/projects/update/{id}', [PropertiesDetailsController::class, 'update'])->name('projects.update');
-    Route::delete('/projects/delete/{id}', [PropertiesDetailsController::class, 'destroy'])->name('projects.destroy');
-    Route::delete('/properties/gallery/{image}', [PropertiesGalleryImagesController::class, 'destroy'])->name('properties.gallery.destroy');
-    Route::patch('/projects/{id}/toggle-status', [PropertiesDetailsController::class, 'toggleStatus'])->name('projects.toggle-status');
+    Route::get('/dashboard/projects/create', [PropertiesDetailsController::class, 'create'])->name('projects.create');
+    Route::get('/dashboard/projects/list', [PropertiesDetailsController::class, 'projectList'])->name('project.list');
+    Route::get('/dashboard/projects/edit/{id}', [PropertiesDetailsController::class, 'edit'])->name('projects.edit');
+    Route::post('/dashboard/projects/store', [PropertiesDetailsController::class, 'store'])->name('projects.store');
+    Route::put('/dashboard/projects/update/{id}', [PropertiesDetailsController::class, 'update'])->name('projects.update');
+    Route::delete('/dashboard/projects/delete/{id}', [PropertiesDetailsController::class, 'destroy'])->name('projects.destroy');
+    Route::delete('/dashboard/properties/gallery/{image}', [PropertiesGalleryImagesController::class, 'destroy'])->name('properties.gallery.destroy');
+    Route::patch('/dashboard/projects/{id}/toggle-status', [PropertiesDetailsController::class, 'toggleStatus'])->name('projects.toggle-status');
 
-    Route::get('/categories/create', [PropertiesCategoryController::class, 'create'])->name('categories.create');
-    Route::get('/categories/list', [PropertiesCategoryController::class, 'categoryList'])->name('categories.list');
-    Route::get('/categories/edit/{id}', [PropertiesCategoryController::class, 'edit'])->name('categories.edit');
-    Route::post('/categories/store', [PropertiesCategoryController::class, 'store'])->name('categories.store');
-    Route::put('/categories/update/{id}', [PropertiesCategoryController::class, 'update'])->name('categories.update');
-    Route::delete('/categories/delete/{id}', [PropertiesCategoryController::class, 'destroy'])->name('categories.delete');
-    Route::patch('/categories/{id}/toggle-status', [PropertiesCategoryController::class, 'toggleStatus'])->name('categories.toggle-status');
+    Route::get('/dashboard/categories/create', [PropertiesCategoryController::class, 'create'])->name('categories.create');
+    Route::get('/dashboard/categories/list', [PropertiesCategoryController::class, 'categoryList'])->name('categories.list');
+    Route::get('/dashboard/categories/edit/{id}', [PropertiesCategoryController::class, 'edit'])->name('categories.edit');
+    Route::post('/dashboard/categories/store', [PropertiesCategoryController::class, 'store'])->name('categories.store');
+    Route::put('/dashboard/categories/update/{id}', [PropertiesCategoryController::class, 'update'])->name('categories.update');
+    Route::delete('/dashboard/categories/delete/{id}', [PropertiesCategoryController::class, 'destroy'])->name('categories.delete');
+    Route::patch('/dashboard/categories/{id}/toggle-status', [PropertiesCategoryController::class, 'toggleStatus'])->name('categories.toggle-status');
 
-    Route::get('/blog/create', [BlogsController::class, 'create'])->name('blog.create');
-    Route::get('/blog/list', [BlogsController::class, 'blogList'])->name('blog.list');
-    Route::get('/blog/edit/{id}', [BlogsController::class, 'edit'])->name('blog.edit');
-    Route::post('/blog/store', [BlogsController::class, 'store'])->name('blog.store');
-    Route::put('/blog/update/{id}', [BlogsController::class, 'update'])->name('blog.update');
-    Route::delete('/blog/delete/{id}', [BlogsController::class, 'destroy'])->name('blog.delete');
-    Route::patch('/blog/toggle-status/{id}', [BlogsController::class, 'toggleStatus'])->name('blog.toggle-status');
+    Route::get('/dashboard/blog/create', [BlogsController::class, 'create'])->name('blog.create');
+    Route::get('/dashboard/blog/list', [BlogsController::class, 'blogList'])->name('blog.list');
+    Route::get('/dashboard/blog/edit/{id}', [BlogsController::class, 'edit'])->name('blog.edit');
+    Route::post('/dashboard/blog/store', [BlogsController::class, 'store'])->name('blog.store');
+    Route::put('/dashboard/blog/update/{id}', [BlogsController::class, 'update'])->name('blog.update');
+    Route::delete('/dashboard/blog/delete/{id}', [BlogsController::class, 'destroy'])->name('blog.delete');
+    Route::patch('/dashboard/blog/toggle-status/{id}', [BlogsController::class, 'toggleStatus'])->name('blog.toggle-status');
 
 
-    Route::get('/event', [EventAndMediaController::class, 'create'])->name('event.create');
-    Route::get('/event/list', [EventAndMediaController::class, 'eventList'])->name('event.list');
-    Route::get('/event/edit/{id}', [EventAndMediaController::class, 'edit'])->name('event.edit');
-    Route::post('/event/store', [EventAndMediaController::class, 'store'])->name('event.store');
-    Route::put('/event/update/{id}', [EventAndMediaController::class, 'update'])->name('event.update');
-    Route::delete('/event/delete/{id}', [EventAndMediaController::class, 'destroy'])->name('event.delete');
-    Route::patch('/event/toggle-status/{id}', [EventAndMediaController::class, 'toggleStatus'])->name('event.toggle-status');
-    Route::patch('/event/toggle-featured/{id}', [EventAndMediaController::class, 'toggleFeatured'])->name('event.toggle-featured');
+    Route::get('/dashboard/event', [EventAndMediaController::class, 'create'])->name('event.create');
+    Route::get('/dashboard/event/list', [EventAndMediaController::class, 'eventList'])->name('event.list');
+    Route::get('/dashboard/event/edit/{id}', [EventAndMediaController::class, 'edit'])->name('event.edit');
+    Route::post('/dashboard/event/store', [EventAndMediaController::class, 'store'])->name('event.store');
+    Route::put('/dashboard/event/update/{id}', [EventAndMediaController::class, 'update'])->name('event.update');
+    Route::delete('/dashboard/event/delete/{id}', [EventAndMediaController::class, 'destroy'])->name('event.delete');
+    Route::patch('/dashboard/event/toggle-status/{id}', [EventAndMediaController::class, 'toggleStatus'])->name('event.toggle-status');
+    Route::patch('/dashboard/event/toggle-featured/{id}', [EventAndMediaController::class, 'toggleFeatured'])->name('event.toggle-featured');
 
-    Route::get('/news/create', [NewsAndPrController::class, 'create'])->name('news.create');
-    Route::get('/news/list', [NewsAndPrController::class, 'newsList'])->name('news.list');
-    Route::get('/news/edit/{id}', [NewsAndPrController::class, 'edit'])->name('news.edit');
-    Route::post('/news/store', [NewsAndPrController::class, 'store'])->name('news.store');
-    Route::put('/news/update/{id}', [NewsAndPrController::class, 'update'])->name('news.update');
-    Route::delete('/news/delete/{id}', [NewsAndPrController::class, 'destroy'])->name('news.delete');
-    Route::patch('/news/toggle-status/{id}', [NewsAndPrController::class, 'toggleStatus'])->name('news.toggle-status');
+    Route::get('/dashboard/news/create', [NewsAndPrController::class, 'create'])->name('news.create');
+    Route::get('/dashboard/news/list', [NewsAndPrController::class, 'newsList'])->name('news.list');
+    Route::get('/dashboard/news/edit/{id}', [NewsAndPrController::class, 'edit'])->name('news.edit');
+    Route::post('/dashboard/news/store', [NewsAndPrController::class, 'store'])->name('news.store');
+    Route::put('/dashboard/news/update/{id}', [NewsAndPrController::class, 'update'])->name('news.update');
+    Route::delete('/dashboard/news/delete/{id}', [NewsAndPrController::class, 'destroy'])->name('news.delete');
+    Route::patch('/dashboard/news/toggle-status/{id}', [NewsAndPrController::class, 'toggleStatus'])->name('news.toggle-status');
 
-    Route::get('/awards/create', [FeaturedAndAwardController::class, 'createAwards'])->name('award.create');
-    Route::get('/awards/list', [FeaturedAndAwardController::class, 'awardsList'])->name('award.list');
-    Route::get('/awards/edit/{id}', [FeaturedAndAwardController::class, 'editAwards'])->name('award.edit');
-    Route::post('/awards/store', [FeaturedAndAwardController::class, 'store'])->name('award.store');
-    Route::put('/awards/update/{id}', [FeaturedAndAwardController::class, 'update'])->name('award.update');
-    Route::delete('/awards/delete/{id}', [FeaturedAndAwardController::class, 'destroy'])->name('award.delete');
-    Route::patch('/awards/toggle-status/{id}', [FeaturedAndAwardController::class, 'toggleStatus'])->name('award.toggle-status');
-    Route::patch('/awards/toggle-featured/{id}', [FeaturedAndAwardController::class, 'toggleFeatured'])->name('award.toggle-featured');
+    Route::get('/dashboard/awards/create', [FeaturedAndAwardController::class, 'createAwards'])->name('award.create');
+    Route::get('/dashboard/awards/list', [FeaturedAndAwardController::class, 'awardsList'])->name('award.list');
+    Route::get('/dashboard/awards/edit/{id}', [FeaturedAndAwardController::class, 'editAwards'])->name('award.edit');
+    Route::post('/dashboard/awards/store', [FeaturedAndAwardController::class, 'store'])->name('award.store');
+    Route::put('/dashboard/awards/update/{id}', [FeaturedAndAwardController::class, 'update'])->name('award.update');
+    Route::delete('/dashboard/awards/delete/{id}', [FeaturedAndAwardController::class, 'destroy'])->name('award.delete');
+    Route::patch('/dashboard/awards/toggle-status/{id}', [FeaturedAndAwardController::class, 'toggleStatus'])->name('award.toggle-status');
+    Route::patch('/dashboard/awards/toggle-featured/{id}', [FeaturedAndAwardController::class, 'toggleFeatured'])->name('award.toggle-featured');
 
-    Route::get('/team/create', [TeamMemberController::class, 'createTeam'])->name('team.create');
-    Route::get('/team/list', [TeamMemberController::class, 'teamList'])->name('team.list');
-    Route::get('/team/edit/{id}', [TeamMemberController::class, 'editTeam'])->name('team.edit');
-    Route::post('/team/store', [TeamMemberController::class, 'storeTeam'])->name('team.store');
-    Route::put('/team/update/{id}', [TeamMemberController::class, 'updateTeam'])->name('team.update');
-    Route::delete('/team/delete/{id}', [TeamMemberController::class, 'destroyTeam'])->name('team.delete');
-    Route::patch('/team/toggle-status/{id}', [TeamMemberController::class, 'toggleTeamStatus'])->name('team.toggle-status');
+    Route::get('/dashboard/team/create', [TeamMemberController::class, 'createTeam'])->name('team.create');
+    Route::get('/dashboard/team/list', [TeamMemberController::class, 'teamList'])->name('team.list');
+    Route::get('/dashboard/team/edit/{id}', [TeamMemberController::class, 'editTeam'])->name('team.edit');
+    Route::post('/dashboard/team/store', [TeamMemberController::class, 'storeTeam'])->name('team.store');
+    Route::put('/dashboard/team/update/{id}', [TeamMemberController::class, 'updateTeam'])->name('team.update');
+    Route::delete('/dashboard/team/delete/{id}', [TeamMemberController::class, 'destroyTeam'])->name('team.delete');
+    Route::patch('/dashboard/team/toggle-status/{id}', [TeamMemberController::class, 'toggleTeamStatus'])->name('team.toggle-status');
 
-    Route::get('/testimony/create', [TestimonyController::class, 'createTestimony'])->name('testimony.create');
-    Route::get('/testimony/list', [TestimonyController::class, 'testimonyList'])->name('testimony.list');
-    Route::get('/testimony/edit/{id}', [TestimonyController::class, 'editTestimony'])->name('testimony.edit');
-    Route::post('/testimony/store', [TestimonyController::class, 'storeTestimony'])->name('testimony.store');
-    Route::put('/testimony/update/{id}', [TestimonyController::class, 'updateTestimony'])->name('testimony.update');
-    Route::delete('/testimony/delete/{id}', [TestimonyController::class, 'destroyTestimony'])->name('testimony.delete');
-    Route::patch('/testimony/toggle-status/{id}', [TestimonyController::class, 'toggleTestimonyStatus'])->name('testimony.toggle-status');
+    Route::get('/dashboard/testimony/create', [TestimonyController::class, 'createTestimony'])->name('testimony.create');
+    Route::get('/dashboard/testimony/list', [TestimonyController::class, 'testimonyList'])->name('testimony.list');
+    Route::get('/dashboard/testimony/edit/{id}', [TestimonyController::class, 'editTestimony'])->name('testimony.edit');
+    Route::post('/dashboard/testimony/store', [TestimonyController::class, 'storeTestimony'])->name('testimony.store');
+    Route::put('/dashboard/testimony/update/{id}', [TestimonyController::class, 'updateTestimony'])->name('testimony.update');
+    Route::delete('/dashboard/testimony/delete/{id}', [TestimonyController::class, 'destroyTestimony'])->name('testimony.delete');
+    Route::patch('/dashboard/testimony/toggle-status/{id}', [TestimonyController::class, 'toggleTestimonyStatus'])->name('testimony.toggle-status');
 
-    Route::get('/leads', [QueryController::class, 'index'])->name('index.leads');
-    Route::get('/leads/show/{id}', [QueryController::class, 'showLeadDetails'])->name('show.lead.details');
-    Route::get('/leads/details/{id}', [QueryController::class, 'show'])->name('leads.details');
+    Route::get('/dashboard/leads', [QueryController::class, 'index'])->name('index.leads');
+    Route::get('/dashboard/leads/show/{id}', [QueryController::class, 'showLeadDetails'])->name('show.lead.details');
+    Route::get('/dashboard/leads/details/{id}', [QueryController::class, 'show'])->name('leads.details');
 
-    Route::post('leads/{lead}/message',   [QueryController::class, 'storeMessage']);
-    Route::post('leads/{lead}/toggle-read', [QueryController::class, 'toggleRead']);
+    Route::post('/dashboard/leads/{lead}/message',   [QueryController::class, 'storeMessage']);
+    Route::post('/dashboard/leads/{lead}/toggle-read', [QueryController::class, 'toggleRead']);
 });
 
 

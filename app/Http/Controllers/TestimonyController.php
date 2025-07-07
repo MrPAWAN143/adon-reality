@@ -37,8 +37,8 @@ class TestimonyController extends Controller
         ]);
         if ($request->hasFile('profile_image')) {
             $image = $request->file('profile_image');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads/Testimony'), $filename);
+            $filename = uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->move('uploads/Testimony', $filename);
             $validated['profile_image'] = 'uploads/Testimony/' . $filename;
         }
 
@@ -80,13 +80,13 @@ class TestimonyController extends Controller
 
         if ($request->hasFile('profile_image')) {
             // Delete the old photo if it exists
-            if ($testimony->photo && file_exists(public_path($testimony->photo))) {
-                unlink(public_path($testimony->photo));
+            if ($testimony->photo && file_exists($testimony->photo)) {
+                unlink($testimony->photo);
             }
 
             $image = $request->file('profile_image');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads/Testimony'), $filename);
+            $filename = uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->move('uploads/Testimony', $filename);
             $validated['profile_image'] = 'uploads/Testimony/' . $filename;
         } else {
             // Keep the old photo if no new file is uploaded
@@ -120,8 +120,8 @@ class TestimonyController extends Controller
     public function destroyTestimony($id)
     {
         $testimony = Testimony::findOrFail($id);
-        if ($testimony->photo && file_exists(public_path($testimony->photo))) {
-            unlink(public_path($testimony->photo));
+        if ($testimony->photo && file_exists($testimony->photo)) {
+            unlink($testimony->photo);
         }
         $testimony->delete();
 

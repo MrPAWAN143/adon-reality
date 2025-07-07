@@ -37,8 +37,8 @@ class TeamMemberController extends Controller
 
         if ($request->hasFile('profile_image')) {
             $image = $request->file('profile_image');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads/TeamMembers'), $filename);
+            $filename = uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->move('uploads/TeamMembers', $filename);
             $validated['profile_image'] = 'uploads/TeamMembers/' . $filename;
         } else {
             $validated['profile_image'] = null; // Set to null if no file is uploaded
@@ -78,13 +78,13 @@ class TeamMemberController extends Controller
 
        if ($request->hasFile('profile_image')) {
             // Delete the old profile image if it exists
-            if ($teamMember->photo && file_exists(public_path($teamMember->photo))) {
-                unlink(public_path($teamMember->photo));
+            if ($teamMember->photo && file_exists($teamMember->photo)) {
+                unlink($teamMember->photo);
             }
 
             $image = $request->file('profile_image');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads/TeamMembers'), $filename);
+            $filename = uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->move('uploads/TeamMembers', $filename);
             $validated['profile_image'] = 'uploads/TeamMembers/' . $filename;
         } else {
             // Keep the old profile image if no new file is uploaded

@@ -97,8 +97,8 @@ class PropertiesDetailsController extends Controller
         $featuredImagePath = null;
         if ($request->hasFile('property_featured_image')) {
             $image = $request->file('property_featured_image');
-            $filename = time() . '_featured.' . $image->getClientOriginalExtension();
-            $path = public_path('uploads/PropertyFeaturedImages');
+            $filename = uniqid() . '_featured.' . $image->getClientOriginalExtension();
+            $path = 'uploads/PropertyFeaturedImages';
             if (!file_exists($path)) mkdir($path, 0755, true);
             $image->move($path, $filename);
             $featuredImagePath = 'uploads/PropertyFeaturedImages/' . $filename;
@@ -108,8 +108,8 @@ class PropertiesDetailsController extends Controller
         $galleryPaths = [];
         if ($request->hasFile('property_gallery')) {
             foreach ($request->file('property_gallery') as $index => $galleryImage) {
-                $gFilename = time() . '_gallery_' . $index . '.' . $galleryImage->getClientOriginalExtension();
-                $gPath = public_path('uploads/PropertyGallery');
+                $gFilename = uniqid() . '_gallery_' . $index . '.' . $galleryImage->getClientOriginalExtension();
+                $gPath = 'uploads/PropertyGallery';
                 if (!file_exists($gPath)) mkdir($gPath, 0755, true);
                 $galleryImage->move($gPath, $gFilename);
                 $galleryPaths[] = 'uploads/PropertyGallery/' . $gFilename;
@@ -120,8 +120,8 @@ class PropertiesDetailsController extends Controller
         $brochurePath = null;
         if ($request->hasFile('property_brochure_url')) {
             $file = $request->file('property_brochure_url');
-            $bFilename = time() . '_brochure.' . $file->getClientOriginalExtension();
-            $bPath = public_path('uploads/PropertyBrochures');
+            $bFilename = uniqid() . '_brochure.' . $file->getClientOriginalExtension();
+            $bPath = 'uploads/PropertyBrochures';
             if (!file_exists($bPath)) mkdir($bPath, 0755, true);
             $file->move($bPath, $bFilename);
             $brochurePath = 'uploads/PropertyBrochures/' . $bFilename;
@@ -241,12 +241,12 @@ class PropertiesDetailsController extends Controller
 
         // Save Featured Image
         if ($request->hasFile('property_featured_image')) {
-            if ($property->property_featured_image && file_exists(public_path($property->property_featured_image))) {
-                unlink(public_path($property->property_featured_image));
+            if ($property->property_featured_image && file_exists($property->property_featured_image)) {
+                unlink($property->property_featured_image);
             }
             $image = $request->file('property_featured_image');
-            $filename = time() . '_featured.' . $image->getClientOriginalExtension();
-            $path = public_path('uploads/PropertyFeaturedImages');
+            $filename = uniqid() . '_featured.' . $image->getClientOriginalExtension();
+            $path = 'uploads/PropertyFeaturedImages';
             if (!file_exists($path)) mkdir($path, 0755, true);
             $image->move($path, $filename);
             $validated['property_featured_image'] = 'uploads/PropertyFeaturedImages/' . $filename;
@@ -257,8 +257,8 @@ class PropertiesDetailsController extends Controller
         $galleryPaths = [];
         if ($request->hasFile('property_gallery')) {
             foreach ($request->file('property_gallery') as $index => $galleryImage) {
-                $gFilename = time() . '_gallery_' . $index . '.' . $galleryImage->getClientOriginalExtension();
-                $gPath = public_path('uploads/PropertyGallery');
+                $gFilename = uniqid() . '_gallery_' . $index . '.' . $galleryImage->getClientOriginalExtension();
+                $gPath = 'uploads/PropertyGallery';
                 if (!file_exists($gPath)) mkdir($gPath, 0755, true);
                 $galleryImage->move($gPath, $gFilename);
                 $galleryPaths[] = 'uploads/PropertyGallery/' . $gFilename;
@@ -266,12 +266,12 @@ class PropertiesDetailsController extends Controller
         }
         // Save Brochure
         if ($request->hasFile('property_brochure_url')) {
-            if ($property->property_brochure_url && file_exists(public_path($property->property_brochure_url))) {
-                unlink(public_path($property->property_brochure_url));
+            if ($property->property_brochure_url && file_exists($property->property_brochure_url)) {
+                unlink($property->property_brochure_url);
             }
             $file = $request->file('property_brochure_url');
-            $bFilename = time() . '_brochure.' . $file->getClientOriginalExtension();
-            $bPath = public_path('uploads/PropertyBrochures');
+            $bFilename = uniqid() . '_brochure.' . $file->getClientOriginalExtension();
+            $bPath = 'uploads/PropertyBrochures';
             if (!file_exists($bPath)) mkdir($bPath, 0755, true);
             $file->move($bPath, $bFilename);
             $validated['property_brochure_url'] = 'uploads/PropertyBrochures/' . $bFilename;
@@ -313,19 +313,19 @@ class PropertiesDetailsController extends Controller
         $property = PropertiesDetails::findOrFail($id);
         $property->delete();
         // Delete featured image
-        if ($property->property_featured_image && file_exists(public_path($property->property_featured_image))) {
-            unlink(public_path($property->property_featured_image));
+        if ($property->property_featured_image && file_exists($property->property_featured_image)) {
+            unlink($property->property_featured_image);
         }
         // Delete gallery images
         foreach ($property->galleryImages as $image) {
-            if (file_exists(public_path($image->image_path))) {
-                unlink(public_path($image->image_path));
+            if (file_exists($image->image_path)) {
+                unlink($image->image_path);
             }
             $image->delete();
         }
         // Delete brochure file
-        if ($property->property_brochure_url && file_exists(public_path($property->property_brochure_url))) {
-            unlink(public_path($property->property_brochure_url));
+        if ($property->property_brochure_url && file_exists($property->property_brochure_url)) {
+            unlink($property->property_brochure_url);
         }
         return response()->json(['status' => 'success', 'message' => 'Property deleted successfully.']);
     }
