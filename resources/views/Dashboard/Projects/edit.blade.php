@@ -161,7 +161,7 @@
 
                 <div id="grp_unit_size">
                     <label class="block font-semibold text-adminTextPrimary mb-1" for="unit_size_text">Unit Size Text</label>
-                    <input value="{{ old('unit_size_text', 'Starting from 2700 sq ft') }}" id="unit_size_text" name="unit_size_text" type="text" class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
+                    <input value="{{ old('unit_size_text', $property->unit_size) }}" id="unit_size_text" name="unit_size_text" type="text" class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
                 </div>
 
 
@@ -221,32 +221,32 @@
 
                 <div id="grp_unit_configurations">
                     <label class="block font-semibold text-adminTextPrimary mb-1" for="unit_configurations">Unit Configurations</label>
-                    <input value="{{ old('unit_configurations', '3 BHK & 4 BHK Apartments') }}" id="unit_configurations" name="unit_configurations" type="text" class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
+                    <input value="{{ old('unit_configurations', $property->unit_configurations) }}" id="unit_configurations" name="unit_configurations" type="text" class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
                 </div>
 
                 <div class="md:col-span-2">
                     <label class="block font-semibold text-adminTextPrimary mb-1" for="property_location">Location (Area)</label>
-                    <input value="{{ old('property_location', 'Sector 56') }}" id="property_location" name="property_location" type="text" class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
+                    <input value="{{ old('property_location', $property->property_location) }}" id="property_location" name="property_location" type="text" class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
                 </div>
 
                 <div>
                     <label class="block font-semibold text-adminTextPrimary mb-1" for="property_city">City</label>
-                    <input value="{{ old('property_city', 'Mumbai') }}" id="property_city" name="property_city" type="text" class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
+                    <input value="{{ old('property_city', $property->property_city) }}" id="property_city" name="property_city" type="text" class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
                 </div>
 
                 <div>
                     <label class="block font-semibold text-adminTextPrimary mb-1" for="property_state">State</label>
-                    <input value="{{ old('property_state', 'Maharashtra') }}" id="property_state" name="property_state" type="text" class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
+                    <input value="{{ old('property_state', $property->property_state) }}" id="property_state" name="property_state" type="text" class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
                 </div>
 
                 <div>
                     <label class="block font-semibold text-adminTextPrimary mb-1" for="property_country">Country</label>
-                    <input value="{{ old('property_country', 'India') }}" id="property_country" name="property_country" type="text" class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
+                    <input value="{{ old('property_country', $property->property_country) }}" id="property_country" name="property_country" type="text" class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
                 </div>
 
                 <div>
                     <label class="block font-semibold text-adminTextPrimary mb-1" for="property_zip_code">ZIP Code</label>
-                    <input value="{{ old('property_zip_code', '400001') }}" id="property_zip_code" name="property_zip_code" type="text" class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
+                    <input value="{{ old('property_zip_code', $property->property_zip_code) }}" id="property_zip_code" name="property_zip_code" type="text" class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
                 </div>
 
 

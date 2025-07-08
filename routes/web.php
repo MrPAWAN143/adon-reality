@@ -22,6 +22,7 @@ Route::get('/', [HomePageController::class, 'index'])->name('home');
 Route::get('/developer', [DevelopmentPartnersController::class, 'index'])->name('development-partners');
 Route::get('/developer-each/{slug}', [DevelopmentPartnersController::class, 'show'])->name('development-partners.show');
 Route::get('/projects', [PropertiesDetailsController::class, 'index'])->name('projects');
+Route::get('/project-virtual-tours', [PropertiesDetailsController::class, 'virtualTours'])->name('properties.virtual-tours');
 Route::get('/projects-each/{slug}', [PropertiesDetailsController::class, 'show'])->name('projects.each');
 Route::get('/blog', [BlogsController::class, 'index'])->name('blog.show');
 Route::get('/blog-each/{slug}', [BlogsController::class, 'show'])->name('blog.each');
@@ -130,8 +131,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard/leads/show/{id}', [QueryController::class, 'showLeadDetails'])->name('show.lead.details');
     Route::get('/dashboard/leads/details/{id}', [QueryController::class, 'show'])->name('leads.details');
 
-    Route::post('/dashboard/leads/{lead}/message',   [QueryController::class, 'storeMessage']);
-    Route::post('/dashboard/leads/{lead}/toggle-read', [QueryController::class, 'toggleRead']);
+    Route::post('/leads/{lead}/message',   [QueryController::class, 'storeMessage']);
+    Route::post('/leads/{lead}/toggle-read', [QueryController::class, 'toggleRead']);
 });
 
 

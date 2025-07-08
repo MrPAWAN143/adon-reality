@@ -25,6 +25,15 @@ class PropertiesDetailsController extends Controller
         return view('Pages.properties-page', compact('properties'));
     }
 
+    public function virtualTours()
+    {
+        $properties = PropertiesDetails::with('category', 'developmentPartner')
+            ->where('property_type', 'Virtual')
+            ->orderBy('created_at', 'desc')
+            ->get();
+        return view('Pages.properties-page', compact('properties'));
+    }
+
     public function show($slug)
     {
         $property = PropertiesDetails::where('property_slug', $slug)
