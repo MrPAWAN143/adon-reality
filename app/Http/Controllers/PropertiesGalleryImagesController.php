@@ -14,7 +14,7 @@ class PropertiesGalleryImagesController extends Controller
         $property = $image->property;             // assuming you have belongsTo()
 
         // 1. Delete physical file
-        Storage::disk('uploads')->delete($image->image_path);
+        Storage::disk('public')->delete($image->image_path);
 
         // 2. Remove from JSON array on properties table (if you keep one)
         if ($property && is_array($property->property_gallery)) {

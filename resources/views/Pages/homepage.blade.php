@@ -135,38 +135,19 @@
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-5 sm:gap-2 max-w-full mx-auto ">
 
+            @if(isset($primeLocation) && $primeLocation->count() > 0)
+            @foreach ($primeLocation as $property)
             <!-- Card 1 -->
-            <a href="" class="relative rounded-xl overflow-hidden group">
-
-                <img src="{{asset('assets/images/allImages/noida.png')}}" alt="Noida" class="prime-location-image" />
+            <a href="{{ route('projects.each', $property->property_slug) }}" class="relative rounded-xl overflow-hidden group">
+                <img src="{{ asset($property->property_featured_image) }}" alt="{{ $property->property_name }}" class="prime-location-image" />
                 <div class="prime-location-overlay">
-                    <span class="prime-location-name">Noida</span>
+                    <span class="prime-location-name">{{ $property->property_city }}</span>
                 </div>
             </a>
+            @endforeach
+            @endif
 
-            <!-- Card 2 -->
-            <a class="relative rounded-xl overflow-hidden group">
-                <img src="{{asset('assets/images/allImages/gurugram.png')}}" alt="Gurugram" class="prime-location-image" />
-                <div class="prime-location-overlay">
-                    <span class="prime-location-name">Gurugram</span>
-                </div>
-            </a>
-
-            <!-- Card 3 -->
-            <a class="relative rounded-xl overflow-hidden group">
-                <img src="{{asset('assets/images/allImages/delhi.png')}}" alt="Delhi" class="prime-location-image" />
-                <div class="prime-location-overlay">
-                    <span class="prime-location-name">Delhi</span>
-                </div>
-            </a>
-
-            <!-- Card 4 -->
-            <a class="relative rounded-xl overflow-hidden group">
-                <img src="{{asset('assets/images/allImages/pune.png')}}" alt="Pune" class="prime-location-image" />
-                <div class="prime-location-overlay">
-                    <span class="prime-location-name">Pune</span>
-                </div>
-            </a>
+            
 
         </div>
     </div>
@@ -256,13 +237,19 @@
         <x-heading-subheading heading="Explore Our Properties Virtually" subheading="Take a digital walkthrough of our premium property listings." headingClass="heading" subHeadingClass="subheading" />
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="relative rounded-xl overflow-hidden shadow-md group">
-                <img src="{{ asset('assets/images/allImages/property1.png') }}" alt="Skyline Edge Residences" class="w-full  object-cover group-hover:scale-105 transition-transform duration-300">
+          @if(isset($virtualTours) && $virtualTours->count() > 0)
+            @foreach ($virtualTours as $property)
+             <a href="{{ route('projects.each' , $property->property_slug) }}">
+                 <div class="relative rounded-xl overflow-hidden shadow-md group">
+                <img src="{{ asset($property->property_featured_image) }}" alt="{{ $property->property_name }}" class="w-full  object-cover group-hover:scale-105 transition-transform duration-300">
                 <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-white text-left">
-                    <h3 class="text-2xl font-medium mb-2">Skyline Edge Residences</h3>
-                    <p class="text-xs">Sector 150, Noida</p>
+                    <h3 class="text-2xl font-medium mb-2">{{ $property->property_name }}</h3>
+                    <p class="text-xs">{{ $property->property_location }} , {{ $property->property_city }}</p>
                 </div>
             </div>
+             </a>
+            @endforeach
+          @endif
 
             <!-- Property Card 2 -->
             <div class="relative rounded-xl overflow-hidden shadow-md group">
@@ -285,9 +272,9 @@
 
 
         <div class="mt-10">
-            <button class="view-more-button ">
+            <a class="view-more-button inline-flex" href="{{ route('properties.virtual-tours' , ['property_type' => 'Virtual']) }}">
                 See All Virtual Tours <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
-            </button>
+            </a>
         </div>
     </div>
 </section>

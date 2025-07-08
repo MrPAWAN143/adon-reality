@@ -119,7 +119,7 @@
                         <option value="" disabled selected>Select property type</option>
                         <option value="Prime">Prime Location</option>
                         <option value="Featured">Featured Investment Opportunities</option>
-                        <option value="Explore">Explore Our Properties Virtually</option>
+                        <option value="Virtual">Explore Our Properties Virtually</option>
                     </select>
                 </div>
 

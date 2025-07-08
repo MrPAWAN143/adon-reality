@@ -16,7 +16,7 @@
                             clip-rule="evenodd"></path>
                     </svg>
                 </button>
-                <a href="#" class="text-xl font-bold flex items-center lg:ml-2.5">
+                <a href="{{ route('dashboard') }}" class="text-xl font-bold flex items-center lg:ml-2.5">
                     <img src="{{asset('assets/images/logos/footer-logo.png')}}" class="h-10 mr-2" alt="Windster Logo">
 
                 </a>
