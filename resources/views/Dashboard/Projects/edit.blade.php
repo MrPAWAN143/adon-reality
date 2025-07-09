@@ -109,7 +109,7 @@
                         <option value="" disabled selected>Select property type</option>
                         <option value="Prime" {{ old('property_type', $property->property_type) == 'Prime' ? 'selected' : '' }}>Prime Location</option>
                         <option value="Featured" {{ old('property_type', $property->property_type) == 'Featured' ? 'selected' : '' }}>Featured Investment Opportunities</option>
-                        <option value="Explore" {{ old('property_type', $property->property_type) == 'Explore' ? 'selected' : '' }}>Explore Our Properties Virtually</option>
+                        <option value="Virtual" {{ old('property_type', $property->property_type) == 'Virtual' ? 'selected' : '' }}>Explore Our Properties Virtually</option>
                     </select>
                 </div>
 

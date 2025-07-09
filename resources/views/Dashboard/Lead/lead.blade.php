@@ -122,7 +122,7 @@
                                     </svg>
                                 </button>
 
-                                <!-- Send Mail -->
+                                <!-- Send Mail
                                 <button type="button" title="Send Mail"
                                     class="send-mail hover:bg-gray-200 p-2 rounded transition text-gray-400">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
@@ -130,7 +130,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                     </svg>
-                                </button>
+                                </button> -->
                             </td>
                         </tr>
                         @endforeach

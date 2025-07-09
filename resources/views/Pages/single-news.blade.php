@@ -43,7 +43,7 @@
     <!-- Right Column (Sidebar) -->
     <aside class="space-y-8 md:col-span-1 ">
         <!-- Enquiry Form -->
-        <div class="bg-gradient-to-b from-bgSecondary/30 to-white p-6 rounded-xl shadow-md w-full max-w-sm mx-auto">
+        <div class="bg-gradient-to-b from-secondary/30 to-white p-6 rounded-xl shadow-md w-full max-w-sm mx-auto">
             <form class="space-y-4">
                 <!-- Name -->
                 <div>

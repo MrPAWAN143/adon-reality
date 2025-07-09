@@ -11,7 +11,7 @@
 @section('content')
 <section class=" bg-white ">
     <div class="container max-w-6xl mx-auto">
-        <x-page-path class="path" path="Home > About Us" />
+        <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> > <a href="{{ route('about-us') }}">About Us</a></div>
     </div>
 
     <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center " style="padding-top: 1rem; padding-bottom: 2rem;">

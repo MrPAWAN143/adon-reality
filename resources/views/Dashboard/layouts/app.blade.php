@@ -28,6 +28,10 @@
             animation: l3 1s infinite linear;
         }
 
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
         @keyframes l3 {
             to {
                 transform: rotate(1turn)
@@ -52,16 +56,17 @@
     @endauth
 
     @yield('login')
-    <div class="max-h-[100vh] h-[100vh] bg-adminSidebar flex gap-6">
+
+    <div class="max-h-auto h-[100vh] bg-adminSidebar flex gap-6 ">
         <div
-            class="relative flex h-[calc(100vh)] w-full max-w-[18rem] flex-col  bg-clip-border p-4 text-white shadow-xl shadow-blue-gray-900/5">
+            class="relative flex h-[calc(100vh)] w-full max-w-[15rem] flex-col  bg-clip-border p-4 text-white shadow-xl shadow-blue-gray-900/5 overflow-y-scroll">
             <div class="p-4 mb-2">
                 <h5 class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-white">
                     Sidebar
                 </h5>
             </div>
             <nav class="flex min-w-[240px] flex-col gap-1 p-2 font-sans text-base font-normal text-white">
-                
+
                 <!-- ── Development Partner ───────────────────────────── -->
                 <div class="relative block w-full">
                     <a href="{{ route('dashboard') }}">
@@ -79,7 +84,7 @@
 
                 </div>
 
-                
+
                 <!-- ── Leads ─────────────────────────────────────────── -->
                 <div class="relative block w-full">
                     <a href="{{ route('index.leads') }}">
@@ -353,7 +358,7 @@
                                     </div>
                                 </a>
 
-                                 <!-- Team -->
+                                <!-- Team -->
                                 <a href="{{ route('team.list') }}">
                                     <div role="button" class="flex items-center w-full p-3 rounded-lg hover:bg-blue-gray-50 hover:text-blue-gray-900">
                                         <div class="grid mr-4 place-items-center">
@@ -361,7 +366,7 @@
                                                 <path d="M8.25 4.5l7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round" />
                                             </svg>
                                         </div>
-                                       Team List
+                                        Team List
                                     </div>
                                 </a>
                                 <a href="{{ route('team.create') }}">
@@ -375,7 +380,7 @@
                                     </div>
                                 </a>
                                 <!-- Team -->
-                                 <!-- Testimonials -->
+                                <!-- Testimonials -->
                                 <a href="{{ route('testimony.list') }}">
                                     <div role="button" class="flex items-center w-full p-3 rounded-lg hover:bg-blue-gray-50 hover:text-blue-gray-900">
                                         <div class="grid mr-4 place-items-center">
@@ -383,7 +388,7 @@
                                                 <path d="M8.25 4.5l7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round" />
                                             </svg>
                                         </div>
-                                       Testimony List
+                                        Testimony List
                                     </div>
                                 </a>
                                 <a href="{{ route('testimony.create') }}">
@@ -516,7 +521,7 @@
         </div>
     </div>
 
-    
+
 
     <script type="module">
         $(document).ready(function() {

@@ -8,12 +8,12 @@
 @section('content')
 <section class="px-4  bg-white pb-8">
     <div class="container max-w-7xl mx-auto">
-        <x-page-path class="path" path="Home > Project" />
+        <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> > <a href="{{ route('projects') }}">Projects</a></div>
         <x-heading-subheading heading="Explore project that you need" subheading="Filter,short,and find the perfect property just the way you want" headingClass="heading text-center " subHeadingClass="subheading mb-2" />
 
         <div class="max-w-3xl mx-auto px-4 py-4 pb-8">
             <!-- Filters -->
-            <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+            <div class="grid md:grid-cols-4 grid-cols-2 md:gap-4 gap-2">
                 <select class="hero-section-select ">
                     <option>Location</option>
                     <option>Architecture</option>
@@ -43,14 +43,14 @@
                 </select>
             </div>
 
-            <div class="mb-6 flex gap-5 items-center justify-between mt-4">
+            <div class="mb-6 flex md:gap-5 gap-2 items-center justify-between mt-4">
                 <div class="flex w-full items-center rounded-2xl border border-gray px-4 py-1 shadow-sm">
-                    <x-zondicon-search class="w-6 h-6 " />
+                    <x-zondicon-search class="w-6 h-6" />
                     <input type="text" placeholder="Search blog articles..."
                         class="w-full outline-none text-sm bg-transparent border-none focus:border-none focus:outline-none" />
                 </div>
 
-                <select class="hero-section-select w-40 font-normal">
+                <select class="hero-section-select md:w-40 w-32 font-normal">
                     <option>Sort By</option>
                     <option>Price: Low to High</option>
                     <option>Price: High to Low</option>
@@ -61,7 +61,7 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 md:gap-8 gap-3 mx-auto">
            @foreach ($properties as $property)
           <div class="featured-investment-card">
                     <x-featured-investment-section src="{{ asset($property->property_featured_image) }}" alt="{{ $property->property_name }}" class="featured-investment-img" heading="{{ $property->property_name }}" location="{{ $property->property_location }}" url="{{ $property->property_rera_url }}" rera="{{ $property->property_rera_number }}" status="{{ $property->property_status }}" roi="{{ $property->property_expected_roi }}" developer="{{ $property->developmentPartner->developer_name }}" variety="{{ $property->category->name }}" size="{{ $property->property_size }}" price="{{ $property->starting_price }}" />

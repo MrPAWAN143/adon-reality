@@ -12,7 +12,7 @@
     <div class="container max-w-7xl mx-auto">
         <x-page-path class="path" path="Home > Blog" />
 
-        <div class="flex flex-row items-center justify-between mb-8">
+        <div class="flex md:flex-row flex-col md:items-center md:justify-between justify-center items-center mb-8">
             <div class="flex-1 px-6">
                 <x-heading-subheading heading="Our Partnered Developers" subheading="Explore top real estate developers and their best projects." headingClass="heading text-start !my-2" subHeadingClass="subheading mb-2 dev-start" />
             </div>

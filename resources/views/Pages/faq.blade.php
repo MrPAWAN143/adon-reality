@@ -10,7 +10,7 @@
     <x-page-path class="path" path="Home > FAQs for investors" />
 </div>
 
-<x-banner-section class="px-4 relative h-[60vh] max-h-[60vh] object-cover bg-center" image="{{ asset('assets/images/bannerImages/faq-banner.webp') }}" title="FAQs for Real Estate Investors" subtitle="Everything you need to know before investing in verified, high-value properties with XYZ Realty."  />
+<x-banner-section class="px-4 relative h-[40vh] md:h-[60vh] md:max-h-[60vh] object-cover bg-center" image="{{ asset('assets/images/bannerImages/faq-banner.webp') }}" title="FAQs for Real Estate Investors" subtitle="Everything you need to know before investing in verified, high-value properties with XYZ Realty." />
 
 
 <!-- FAQ Accordion Matching Design -->
@@ -21,12 +21,14 @@
             <!-- Left Navigation -->
             <div class="space-y-4 text-sm font-medium text-gray-600">
                 <div class="text-primary font-bold text-lg">Company & Vision</div>
-                <div class="hover:text-primary cursor-pointer">Investment Opportunities</div>
-                <div class="hover:text-primary cursor-pointer">Returns & Financials</div>
-                <div class="hover:text-primary cursor-pointer">Safety & Regulations</div>
-                <div class="hover:text-primary cursor-pointer">Project Development & Construction</div>
-                <div class="hover:text-primary cursor-pointer">Payment & Exit Options</div>
-                <div class="hover:text-primary cursor-pointer">Reporting & Communication</div>
+                <div class="space-y-4 text-sm font-medium text-gray-600 hidden md:block">
+                    <div class="hover:text-primary cursor-pointer">Investment Opportunities</div>
+                    <div class="hover:text-primary cursor-pointer">Returns & Financials</div>
+                    <div class="hover:text-primary cursor-pointer">Safety & Regulations</div>
+                    <div class="hover:text-primary cursor-pointer">Project Development & Construction</div>
+                    <div class="hover:text-primary cursor-pointer">Payment & Exit Options</div>
+                    <div class="hover:text-primary cursor-pointer">Reporting & Communication</div>
+                </div>
             </div>
 
             <!-- Right FAQ Accordion -->

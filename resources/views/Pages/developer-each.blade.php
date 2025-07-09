@@ -12,7 +12,7 @@
 
         <x-page-path class="path" path="Home > Developers > Single Developer Details" />
 
-        <div class="flex flex-row items-center justify-between mb-0">
+        <div class="flex md:flex-row flex-col-reverse items-center justify-between mb-0">
             <div class="flex-1 px-6">
                 <x-heading-subheading heading="Explore Projects by DLF" subheading="Discover premium real estate offerings tailored to your lifestyle needs" headingClass="heading " subHeadingClass="subheading dev-start mb-4" />
             </div>
@@ -59,7 +59,7 @@
                 </select>
             </div>
 
-            <div class="flex flex-col md:flex-row items-center justify-between w-full max-w-3xl bg-white rounded-2xl p-1 px-2 mt-4 border border-primary shadow-md">
+            <div class="flex flex-row items-center justify-between w-full max-w-3xl bg-white rounded-2xl p-1 px-2 mt-4 border border-primary shadow-md">
 
                 <div class="flex w-full items-center rounded-2xl px-4 py-1 ">
                     <x-zondicon-search class="w-6 h-6 " />
@@ -68,12 +68,54 @@
                 </div>
 
                 <!-- Button -->
-                <button class="bg-primary border-primary hover:bg-white border-2 hover:border-primary text-white hover:text-txBlack font-semibold px-10 py-2 rounded-full mt-2 md:mt-0 md:ml-2 transition duration-300">
+                <button class="bg-primary border-primary hover:bg-white border-2 hover:border-primary text-white hover:text-txBlack font-semibold md:px-10 px-4 py-2 rounded-full md:mt-0 md:ml-2 transition duration-300">
                     Search
                 </button>
             </div>
 
         </div>
+
+
+       <div class="max-w-5xl mx-auto px-4 py-4 pb-8">
+  <table class="min-w-full border border-gray-300 text-left text-sm">
+    <tbody class="divide-y divide-gray-300">
+      <tr class="bg-white">
+        <th class="font-bold p-4 w-1/4 align-top border-r">Founded in</th>
+        <th class="p-4 font-normal text-gray-700">1946</th>
+      </tr>
+      <tr class="bg-gray-50">
+        <th class="font-bold p-4 align-top border-r">Completed Projects</th>
+        <th class="p-4 font-normal text-gray-700">32 Million sq m area delivered</th>
+      </tr>
+      <tr class="bg-white">
+        <th class="font-bold p-4 align-top border-r">On-going Projects</th>
+        <th class="p-4 font-normal text-gray-700">N/A</th>
+      </tr>
+      <tr class="bg-gray-50">
+        <th class="font-bold p-4 align-top border-r">Owner of Group</th>
+        <th class="p-4 font-normal text-gray-700">
+          Mr. Chaudhary Raghvendra Singh, Founder<br>
+          Mr Rajiv Singh, Chairman
+        </th>
+      </tr>
+      <tr class="bg-white">
+        <th class="font-bold p-4 align-top border-r">Operating in Cities</th>
+        <th class="p-4 font-normal text-gray-700">
+          Gurgaon, New Delhi, Hyderabad, Bangalore, Kochi, Kolkata, Indore, New Chandigarh, Chennai, Lucknow, Shimla, Noida
+        </th>
+      </tr>
+      <tr class="bg-gray-50">
+        <th class="font-bold p-4 align-top border-r">Official Website</th>
+        <th class="p-4 font-normal text-blue-600 underline">
+          <a href="https://www.dlf.in/" target="_blank">https://www.dlf.in/</a>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
     </div>
 </section>
 

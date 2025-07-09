@@ -4,18 +4,22 @@
 
 @endsection
 @section('styles')
+<style>
+
+</style>
 <link rel="stylesheet" href="{{ asset('assets/css/homepage.css') }}">
+
 @endsection
 @section('homepage')
 <section class="px-4 relative md:h-[80vh] md:max-h-[80vh] object-cover bg-cover bg-center" style="background-image: url('{{ asset('assets/images/bannerImages/hero-banner.webp') }}')">
     <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-    <div class="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 sm:my-6">
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 py-16">
         <!-- <h1 class="text-4xl md:text-5xl font-bold mb-4 text-center">
             Discover High ROI Real Estate Projects in India
         </h1> -->
-        <div class="flex flex-row items-center justify-between w-full max-w-3xl bg-white rounded-full py-2 px-2 mt-4 shadow-md">
-            <div class="relative w-full md:w-[16%] sm:w-[10%]">
-                <select class="hero-section-select">
+        <div class="flex flex-row items-center justify-start w-full max-w-3xl bg-white rounded-full md:py-2 py-1 px-2 mt-4 shadow-md">
+            <div class="relative w-full md:w-[16%] ">
+                <select class="hero-section-select home py-1 md:py-2">
                     <option>City</option>
                     <option>Delhi</option>
                     <option>Mumbai</option>
@@ -29,7 +33,7 @@
 
 
             <!-- Button -->
-            <button class="bg-primary border-primary hover:bg-white border-2 hover:border-primary text-white hover:text-txBlack font-semibold px-10 py-2 rounded-full mt-2 md:mt-0 md:ml-2 transition duration-300">
+            <button class="bg-primary border-primary hover:bg-white border-2 hover:border-primary text-white hover:text-txBlack font-semibold md:py-2 md:px-10 px-2 py-1 ml-[-20px] rounded-full  md:mt-0 md:ml-2 transition duration-300">
                 Search
             </button>
         </div>
@@ -133,12 +137,12 @@
 
         <x-heading-subheading heading="Projects on prime location" subheading=" Discover top-tier properties situated in the most sought-after locations." headingClass="heading" subHeadingClass="subheading" />
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-5 sm:gap-2 max-w-full mx-auto ">
+        <div class="grid grid-cols-2 md:grid-cols-4 md:gap-5 !gap-4 max-w-full mx-auto ">
 
             @if(isset($primeLocation) && $primeLocation->count() > 0)
             @foreach ($primeLocation as $property)
             <!-- Card 1 -->
-            <a href="{{ route('projects.each', $property->property_slug) }}" class="relative rounded-xl overflow-hidden group">
+            <a href="{{ route('projects.each', $property->property_slug) }}" class="relative rounded-xl overflow-hidden group md:h-[300px] h-[200px] md:max-h-[300px]">
                 <img src="{{ asset($property->property_featured_image) }}" alt="{{ $property->property_name }}" class="prime-location-image" />
                 <div class="prime-location-overlay">
                     <span class="prime-location-name">{{ $property->property_city }}</span>
@@ -147,13 +151,13 @@
             @endforeach
             @endif
 
-            
+
 
         </div>
     </div>
 </section>
 
-<section class="px-4 py-8 bg-white text-center">
+<section class="px-4 py-8 bg-white text-center hidden md:block">
     <div class="container max-w-7xl mx-auto text-center">
 
         <x-heading-subheading heading="Featured Investment Opportunities" subheading="Explore high-return investment options with trusted developers." headingClass="heading" subHeadingClass="subheading" />
@@ -172,10 +176,6 @@
             @endforeach
             @endif
 
-            <div class="featured-investment-card">
-                <x-featured-investment-section src="{{ asset('assets/images/allImages/DlfCyberCity.png') }}" alt="DLF Cyber City Tower" class="featured-investment-img" heading="DLF Cyber City Tower" location="Noida, Sector 62" rera="UPRERAI2345" status="Ongoing" roi="12%" developer="DLF" variety="Multiplex / Commercial" size="5000 sq. ft." price="Price on Demand" />
-                <x-button class="featured-investment-button" url="{{ route('projects.each' , 'dlf-cyber-city-tower') }}" text="View Details" />
-            </div>
 
 
 
@@ -187,6 +187,43 @@
         </div>
     </div>
 </section>
+
+<section class="py-8 bg-white text-center block md:hidden ">
+    <div class="container mx-auto text-center">
+
+        <x-heading-subheading heading="Featured Investment Opportunities" subheading="Explore high-return investment options with trusted developers." headingClass="heading" subHeadingClass="subheading" />
+
+        <div class="project-slider gap-8">
+
+            @if(isset($properties) && $properties->count() > 0)
+
+            @foreach ($properties as $property)
+
+            <div class="featured-investment-card">
+                <x-featured-investment-section src="{{ asset($property->property_featured_image) }}" alt="{{ $property->property_name }}" class="featured-investment-img" heading="{{ $property->property_name }}" location="{{ $property->property_location }}" reraUrl="{{ $property->property_rera_url }}" rera="{{ $property->property_rera_number }}" status="{{ $property->property_status }}" roi="{{ $property->property_expected_roi }}" developer="{{ $property->developmentPartner->developer_name }}" variety="{{ $property->category->name }}" size="{{ $property->property_size }}" price="{{ $property->starting_price }}" />
+                <x-button class="featured-investment-button" url="{{ route('projects.each' , $property->property_slug) }}" text="View Details" />
+            </div>
+
+            @endforeach
+            @endif
+
+
+
+
+        </div>
+        <div class="mt-10">
+            <a href="{{ route('projects') }}" class="view-more-button ">
+                View More <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
 <section class="px-4 py-8 bg-white text-center">
     <div class="container max-w-7xl mx-auto">
         <x-heading-subheading heading="What We Offer" subheading="Comprehensive solutions tailored to meet all your real estate needs." headingClass="heading" subHeadingClass="subheading" />
@@ -231,43 +268,27 @@
     </div>
 </section>
 
-<section class="px-4 py-8 bg-white text-center">
+<section class="px-4 py-8 bg-white text-center hidden md:block">
     <div class="container max-w-7xl mx-auto">
 
         <x-heading-subheading heading="Explore Our Properties Virtually" subheading="Take a digital walkthrough of our premium property listings." headingClass="heading" subHeadingClass="subheading" />
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          @if(isset($virtualTours) && $virtualTours->count() > 0)
+            @if(isset($virtualTours) && $virtualTours->count() > 0)
             @foreach ($virtualTours as $property)
-             <a href="{{ route('projects.each' , $property->property_slug) }}">
-                 <div class="relative rounded-xl overflow-hidden shadow-md group">
-                <img src="{{ asset($property->property_featured_image) }}" alt="{{ $property->property_name }}" class="w-full  object-cover group-hover:scale-105 transition-transform duration-300">
-                <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-white text-left">
-                    <h3 class="text-2xl font-medium mb-2">{{ $property->property_name }}</h3>
-                    <p class="text-xs">{{ $property->property_location }} , {{ $property->property_city }}</p>
+            <a href="{{ route('projects.each' , $property->property_slug) }}">
+                <div class="relative rounded-xl overflow-hidden shadow-md group">
+                    <img src="{{ asset($property->property_featured_image) }}" alt="{{ $property->property_name }}" class="w-full  object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-white text-left">
+                        <h3 class="text-2xl font-medium mb-2">{{ $property->property_name }}</h3>
+                        <p class="text-xs">{{ $property->property_location }} , {{ $property->property_city }}</p>
+                    </div>
                 </div>
-            </div>
-             </a>
+            </a>
             @endforeach
-          @endif
+            @endif
 
-            <!-- Property Card 2 -->
-            <div class="relative rounded-xl overflow-hidden shadow-md group">
-                <img src="{{ asset('assets/images/allImages/property2.png') }}" alt="Silverwood Manor" class="w-full  object-cover group-hover:scale-105 transition-transform duration-300">
-                <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-white text-left">
-                    <h3 class="text-2xl font-medium mb-2">Silverwood Manor</h3>
-                    <p class="text-xs">DLF Phase 2, Gurugram</p>
-                </div>
-            </div>
 
-            <!-- Property Card 3 -->
-            <div class="relative rounded-xl overflow-hidden shadow-md group">
-                <img src="{{ asset('assets/images/allImages/property3.png') }}" alt="BlueNest Towers" class="w-full  object-cover group-hover:scale-105 transition-transform duration-300">
-                <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-white text-left">
-                    <h3 class="text-2xl font-medium mb-2">BlueNest Towers</h3>
-                    <p class="text-xs">Wakad, Pune</p>
-                </div>
-            </div>
         </div>
 
 
@@ -278,7 +299,42 @@
         </div>
     </div>
 </section>
-<section class="px-4 py-8 bg-white text-center">
+
+
+<section class="px-4 py-8 bg-white text-center md:hidden block">
+    <div class="container max-w-7xl mx-auto">
+
+        <x-heading-subheading heading="Explore Our Properties Virtually" subheading="Take a digital walkthrough of our premium property listings." headingClass="heading" subHeadingClass="subheading" />
+
+        <div class="project-slider gap-6">
+            @if(isset($virtualTours) && $virtualTours->count() > 0)
+            @foreach ($virtualTours as $property)
+            <a href="{{ route('projects.each' , $property->property_slug) }}">
+                <div class="relative rounded-xl overflow-hidden shadow-md group">
+                    <img src="{{ asset($property->property_featured_image) }}" alt="{{ $property->property_name }}" class="w-full  object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-white text-left">
+                        <h3 class="text-2xl font-medium mb-2">{{ $property->property_name }}</h3>
+                        <p class="text-xs">{{ $property->property_location }} , {{ $property->property_city }}</p>
+                    </div>
+                </div>
+            </a>
+            @endforeach
+            @endif
+
+
+        </div>
+
+
+        <div class="mt-10">
+            <a class="view-more-button inline-flex" href="{{ route('properties.virtual-tours' , ['property_type' => 'Virtual']) }}">
+                See All Virtual Tours <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<section class="px-4 py-8 bg-white text-center hidden md:block">
     <div class="container max-w-7xl mx-auto">
         <x-heading-subheading heading="Our Development Partners" subheading="Collaborating with renowned names in real estate development." headingClass="heading" subHeadingClass="subheading" />
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -301,8 +357,30 @@
 </section>
 
 
+<section class="px-4 py-8 bg-white text-center md:hidden block">
+    <div class="container max-w-7xl mx-auto">
+        <x-heading-subheading heading="Our Development Partners" subheading="Collaborating with renowned names in real estate development." headingClass="heading" subHeadingClass="subheading" />
+        <div class="project-slider gap-6">
 
-<section class="px-4 py-8 bg-white text-center">
+            @foreach ($developmentPartner as $partner)
+
+            <x-developer-partner-card partnerLogo="{{ asset($partner->logo) }}" url="{{ route('development-partners.show',  $partner->slug) }}" alt="{{ $partner->developer_name }}" heading="{{ $partner->developer_name }}" description="{{ $partner->tags }}" projectsPartnered="{{ $partner->total_projects }}" presence="{{ implode(', ', $partner->operating_cities ?? []) }}" />
+
+            <!-- Partner 2 -->
+            @endforeach
+
+        </div>
+
+        <div class="mt-10">
+            <a href="{{ route('development-partners') }}" class="view-more-button ">
+                View More <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<section class="px-4 py-8 bg-white text-center hidden md:block">
     <div class="container max-w-7xl mx-auto">
         <x-heading-subheading heading="Real Estate Marketing Insights" subheading="Stay ahead with industry trends, data, and marketing tips." headingClass="heading" subHeadingClass="subheading" />
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto">
@@ -322,6 +400,26 @@
     </div>
 </section>
 
+
+<section class="px-4 py-8 bg-white text-center md:hidden block">
+    <div class="container max-w-7xl mx-auto">
+        <x-heading-subheading heading="Real Estate Marketing Insights" subheading="Stay ahead with industry trends, data, and marketing tips." headingClass="heading" subHeadingClass="subheading" />
+        <div class="project-slider gap-8 mx-auto">
+            @if(isset($blogs) && $blogs->count() > 0)
+
+            @foreach ($blogs as $blog)
+            <x-blog-card cardCls="marketing-insights-card" url="{{ route('blog.each', $blog->slug) }}" class="featured-investment-img" src="{{ asset( $blog->featured_image )}}" alt="{{ $blog->title }}" h4="{{ $blog->title }}" p="{{ $blog->summary }}" />
+            @endforeach
+            @endif
+
+        </div>
+        <div class="mt-10">
+            <a href="{{ route('blog.show') }}" class="marketing-insights-view-more-button !inline-flex">
+                View all Blog <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
+            </a>
+        </div>
+    </div>
+</section>
 
 <section class="px-4 py-8 bg-white">
     <div class="container max-w-5xl mx-auto px-4">
@@ -435,6 +533,33 @@
 
 @section('scripts')
 <script type="module">
+    $(document).ready(function() {
 
+        $(document).ready(function() {
+            $('.project-slider').slick({
+                slidesToShow: 1.2,
+                slidesToScroll: 1,
+                infinite: false,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                dots: true,
+                arrows: false,
+                responsive: [{
+                    breakpoint: 768, // sm only
+                    settings: {
+                        slidesToShow: 1.2,
+                        slidesToScroll: 1,
+                        centerMode: false,
+                        variableWidth: false,
+                        autoplay: true,
+                        autoplaySpeed: 5000,
+                        dots: true,
+                    }
+                }]
+            });
+        });
+
+
+    });
 </script>
 @endsection
