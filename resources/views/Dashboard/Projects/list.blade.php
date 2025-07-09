@@ -30,7 +30,7 @@
                             <th class="px-4 py-3 text-left font-semibold">Developer</th>
                             <th class="px-4 py-3 text-left font-semibold">Pro Status</th>
                             <th class="px-4 py-3 text-left font-semibold">Status</th> <!-- 👈 NEW -->
-                            <th class="px-4 py-3 text-left font-semibold">Actions</th>
+                            <th class="px-4 py-3 text-left font-semibold !w-52">Actions</th>
                         </tr>
                     </thead>
 
@@ -71,7 +71,7 @@
 
 
 
-                            <td class="px-4 py-3 space-x-2">
+                            <td class="px-4 py-3 space-x-1">
                                 <a href="{{ route('projects.each', $property->property_slug) }}" target="_blank" class="inline-block bg-gray-200 hover:bg-gray-300 text-gray-800 px-3 py-1 rounded text-xs">View</a>
                                 <a href="{{ route('projects.edit', $property->id) }}" class="inline-block bg-adminPrimary hover:bg-adminPrimaryHover text-white px-3 py-1 rounded text-xs">Edit</a>
                                 <button type="button" data-id="{{ $property->id }}" class="deletebtn bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-xs">Delete</button>

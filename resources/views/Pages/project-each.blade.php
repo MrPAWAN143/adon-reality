@@ -10,12 +10,12 @@
 @section('content')
 
 <div class="container max-w-7xl mx-auto">
-    <x-page-path class="path" path="Home > project > Single Project" />
+    <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> > <a href="{{ route('projects') }}">Projects</a> > <a href="{{ route('projects.each', $property->property_slug) }}">{{ $property->property_name }}</a></div>
 </div>
-<x-banner-section class="px-4 relative h-[55vh] max-h-[55vh]" image="{{ asset('assets/images/bannerImages/single-project-banner.jpg') }}" title="DLF Prime Towers
-Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="!w-[38%]" />
+<x-banner-section class="px-4 relative md:h-[55vh] md:max-h-[55vh] h-[30vh] max-h-[30vh]" image="{{ asset('assets/images/bannerImages/single-project-banner.jpg') }}" title="DLF Prime Towers
+Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-[38%] !w-full" />
 
-<div class="w-full py-6 px-10">
+<div class="w-full py-6 px-4 md:px-10">
     <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-start gap-6">
 
         <!-- Left Content -->
@@ -44,7 +44,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="!w-[38
         </div>
 
         <!-- Right Buttons -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full lg:w-auto">
+        <div class="flex flex-wrap md:flex-row gap-4">
             <!-- WhatsApp -->
             <button class="flex items-center justify-center gap-2 border border-primary text-primary px-4 py-2 rounded-full text-sm hover:bg-primary hover:text-white transition">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-4 h-4">
@@ -72,7 +72,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="!w-[38
 
 
 
-<section class="pb-10 pt-0 px-4 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+<section class="pb-10 pt-0 md:px-4 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
 
     <!-- Left Column (Blog Content) -->
     <div class="md:col-span-2 px-4 pe-10 border-r border-gray/30">
@@ -87,7 +87,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="!w-[38
             <li>Great investment with assured leasing and high footfall</li>
         </ul>
 
-        <div class="max-w-xl mr-auto px-4 py-8">
+        <div class="max-w-xl mr-auto py-8">
             <h3 class="text-xl font-semibold text-txBlack mb-4">Quick Summary of Project</h3>
             <div class="border-2 border-primary rounded-lg overflow-hidden text-txBlack">
                 <div class="grid grid-cols-3 border-b-2 border-primary">
@@ -137,16 +137,16 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="!w-[38
             </div>
         </div>
 
-        <div class="max-w-6xl mx-auto px-4 py-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 h-auto items-start">
+        <div class="max-w-6xl mx-auto  py-8">
+            <div class="grid grid-cols-4 gap-4 h-auto items-start">
 
                 <!-- Main Image -->
-                <div class="md:col-span-3">
+                <div class="col-span-3">
                     <img src="{{ asset('assets/images/allImages/project-gallery-image-3.jpg') }}" alt="Main Property" class="w-full h-auto rounded-2xl object-cover">
                 </div>
 
                 <!-- Thumbnails -->
-                <div class="flex md:flex-col gap-4 w-full md:w-auto content-between items-between ">
+                <div class="flex flex-col gap-4 w-full md:w-auto content-between items-between ">
                     <img src="{{ asset('assets/images/allImages/project-gallery-image-3.png') }}" alt="Thumb 1" class="rounded-xl w-full object-cover">
                     <img src="{{ asset('assets/images/allImages/project-gallery-image-2.png') }}" alt="Thumb 2" class="rounded-xl w-full object-cover">
                     <img src="{{ asset('assets/images/allImages/project-gallery-image-1.png') }}" alt="Thumb 3" class="rounded-xl w-full object-cover">
@@ -160,7 +160,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="!w-[38
             <!-- Amenities Section -->
             <div class="mb-8">
                 <h3 class="text-2xl font-bold mb-4">Amenities</h3>
-                <ul class="list-disc list-inside font-medium text-md text-txBlack">
+                <ul class="list-disc list-outside font-medium text-md text-txBlack">
                     <li>Modern Multi-level Parking Facility</li>
                     <li>24×7 Security and CCTV Surveillance</li>
                     <li>High-speed Elevators and Escalators</li>
@@ -175,7 +175,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="!w-[38
             <!-- Location Advantages Section -->
             <div>
                 <h3 class="text-2xl font-bold mb-4">Location Advantages</h3>
-                <ul class="list-disc list-inside text-md font-medium text-txBlack">
+                <ul class="list-disc list-outside text-md font-medium text-txBlack">
                     <li>Prime location in Sector 62, Noida — a thriving commercial hub</li>
                     <li>Excellent connectivity to NH-24 and Delhi-Meerut Expressway</li>
                     <li>Close proximity to metro stations (Noida Sector 62 Metro)</li>
@@ -186,7 +186,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="!w-[38
 
         </div>
 
-        <div class="max-w-5xl mx-auto px-4 py-8">
+        <div class="max-w-5xl mx-auto md:px-4 py-8">
             <!-- Embedded Map or Image -->
             <div class="rounded-2xl  overflow-hidden mb-8">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17383.336479488054!2d77.34828205607775!3d28.623641394275474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5456ef36d9f%3A0x3b7191b1286136c8!2sSector%2062%2C%20Noida%2C%20Uttar%20Pradesh!5e1!3m2!1sen!2sin!4v1751018298195!5m2!1sen!2sin" width="800" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -221,7 +221,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="!w-[38
             </div>
         </div>
 
-        <div class="max-w-4xl mx-auto px-4 py-8 text-gray-800 space-y-8">
+        <div class="max-w-4xl mx-auto  py-8 text-gray-800 space-y-8">
 
             <!-- About Builder -->
             <div>
@@ -254,7 +254,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="!w-[38
             </div>
 
             <!-- Who Should Invest -->
-            <div >
+            <div class="px-4">
                 <h3 class="text-lg font-semibold mb-4">Who to invest in this project</h3>
                 <ul class="list-disc list-outside space-y-1 text-txBlack">
                     <li class="">Luxury Home Buyers seeking spacious 3 & 4 BHK apartments with premium finishes and top-notch amenities.</li>
@@ -273,7 +273,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="!w-[38
     <!-- Right Column (Sidebar) -->
     <aside class="space-y-6 md:col-span-1 ">
         <!-- Enquiry Form -->
-        <div class="bg-gradient-to-b from-bgSecondary/30 to-white p-6 rounded-xl shadow-md w-full max-w-sm mx-auto">
+        <div class="bg-gradient-to-b from-secondary/30 to-white p-6 rounded-xl shadow-md w-full max-w-sm mx-auto">
             <form class="space-y-4">
                 <!-- Name -->
                 <div>
@@ -322,7 +322,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="!w-[38
             </form>
         </div>
 
-        <div class="">
+        <div class="px-8">
             <h3 class="text-lg mb-4 absolute pt-[10px] font-bold">Project of the Day</h3>
             <div class=" pt-16 slick-slider-single-page" id="slick-slider">
                 <div class="featured-investment-card-single-page ">
@@ -342,7 +342,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="!w-[38
         </div>
 
         <!-- Explore Blogs -->
-        <div class="single-page-blog relative">
+        <div class="single-page-blog relative px-8 ">
             <h3 class="text-lg mb-4 absolute top-[-20px] font-bold">Explore our blogs</h3>
             <div class="pt-6 slick-slider-single-page" id="slick-slider2">
                 <x-blog-card cardCls="marketing-insights-card heading-h4 !p-3" class="featured-investment-img" src="{{asset('assets/images/allImages/marketing2.png')}}" alt="DLF Cyber City Tower" h4="Top Cities for Real Estate Investment in 2025" p="Discover where smart investors are putting their money this year." />
@@ -358,7 +358,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="!w-[38
 </section>
 
 
-<section class="px-4 py-8 bg-white text-center">
+<section class="px-8 pb-8 pt-0 md:mt-8 mt-[-100px] bg-white text-center">
     <div class="container max-5-6xl mx-auto">
         <x-heading-subheading heading="Similar Projects" subheading="" headingClass="heading" subHeadingClass="subheading" />
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mx-auto">

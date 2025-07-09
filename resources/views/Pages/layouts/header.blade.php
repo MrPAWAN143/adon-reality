@@ -1,9 +1,9 @@
 <header class="w-full bg-white  z-50 sticky top-0 shadow-xl">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-2">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-8 flex items-center justify-between py-4">
 
     <!-- Logo -->
     <div class="flex-shrink-0">
-      <a href="/">
+      <a href="{{ route('home') }}" class="flex items-center">
         <img src="{{asset('assets/images/logos/header-logo.png')}}" alt="Adon Realty" class="h-14 w-auto">
       </a>
     </div>
@@ -20,7 +20,7 @@
 <nav class="hidden md:flex items-center space-x-6">
   <!-- Projects Dropdown -->
   <div class="relative group">
-    <a href="#" class="flex items-center text-base text-txBlack hover:text-primary font-medium">
+    <a href="{{ route('projects') }}" class="flex items-center text-base text-txBlack hover:text-primary font-medium">
       Projects
       <svg class="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path d="M6 9l6 6 6-6" />
@@ -29,13 +29,13 @@
 
     <!-- First Level Dropdown -->
     <ul class="absolute left-0 pt-2 w-56 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition z-40 py-2">
-      <li><a href="#" class="block px-4 py-2 text-sm text-txBlack hover:bg-gray-100">All</a></li>
-      <li><a href="#" class="block px-4 py-2 text-sm text-txBlack hover:bg-gray-100">Residential</a></li>
-    
+      <li><a href="{{ route('projects') }}" class="block px-4 py-2 text-sm text-txBlack hover:bg-gray-100">All</a></li>
+      <li><a href="{{ route('projects' , ['category' => 'residential']) }}" class="block px-4 py-2 text-sm text-txBlack hover:bg-gray-100">Residential</a></li>
+
 
       <!-- Studio Apartments with Submenu -->
       <li class="relative group/item">
-        <a href="#" class="flex justify-between items-center px-4 py-2 text-sm text-txBlack hover:bg-gray-100">
+        <a href="{{ route('projects' , ['category' => 'commercial']) }}" class="flex justify-between items-center px-4 py-2 text-sm text-txBlack hover:bg-gray-100">
         Commercial
           <svg class="ml-2 h-3 w-3 text-gray-500 group-hover/item:text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M9 18l6-6-6-6" />
@@ -44,11 +44,11 @@
 
         <!-- Second Level Submenu -->
         <ul class="absolute top-0 left-full ml-[1px] w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover/item:opacity-100 group-hover/item:visible transition py-2 z-50">
-          <li><a href="#" class="block px-4 py-2 text-sm text-txBlack hover:bg-rose-200">Noida</a></li>
-          <li><a href="#" class="block px-4 py-2 text-sm text-txBlack hover:bg-gray-100">Delhi</a></li>
-          <li><a href="#" class="block px-4 py-2 text-sm text-txBlack hover:bg-gray-100">Gurugram</a></li>
-          <li><a href="#" class="block px-4 py-2 text-sm text-txBlack hover:bg-gray-100">Pune</a></li>
-          <li><a href="#" class="block px-4 py-2 text-sm text-txBlack hover:bg-gray-100">Bangalore</a></li>
+          <li><a href="{{ route('projects' , ['category' => 'commercial' , 'location' => 'noida']) }}" class="block px-4 py-2 text-sm text-txBlack hover:bg-rose-200">Noida</a></li>
+          <li><a href="{{ route('projects' , ['category' => 'commercial' , 'location' => 'delhi']) }}" class="block px-4 py-2 text-sm text-txBlack hover:bg-gray-100">Delhi</a></li>
+          <li><a href="{{ route('projects' , ['category' => 'commercial' , 'location' => 'gurugram']) }}" class="block px-4 py-2 text-sm text-txBlack hover:bg-gray-100">Gurugram</a></li>
+          <li><a href="{{ route('projects' , ['category' => 'commercial' , 'location' => 'pune']) }}" class="block px-4 py-2 text-sm text-txBlack hover:bg-gray-100">Pune</a></li>
+          <li><a href="{{ route('projects' , ['category' => 'commercial' , 'location' => 'bangalore']) }}" class="block px-4 py-2 text-sm text-txBlack hover:bg-gray-100">Bangalore</a></li>
         </ul>
       </li>
 
@@ -63,24 +63,24 @@
 
         <!-- Second Level Submenu -->
         <ul class="absolute top-0 left-full ml-[1px] w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover/item:opacity-100 group-hover/item:visible transition py-2 z-50">
-          <li><a href="#" class="block px-4 py-2 text-sm text-txBlack hover:bg-rose-200">Noida</a></li>
-          <li><a href="#" class="block px-4 py-2 text-sm text-txBlack hover:bg-gray-100">Delhi</a></li>
-          <li><a href="#" class="block px-4 py-2 text-sm text-txBlack hover:bg-gray-100">Gurugram</a></li>
-          <li><a href="#" class="block px-4 py-2 text-sm text-txBlack hover:bg-gray-100">Pune</a></li>
-          <li><a href="#" class="block px-4 py-2 text-sm text-txBlack hover:bg-gray-100">Bangalore</a></li>
+          <li><a href="{{ route('projects' , ['category' => 'studio-apartments' , 'location' => 'noida']) }}" class="block px-4 py-2 text-sm text-txBlack hover:bg-rose-200">Noida</a></li>
+          <li><a href="{{ route('projects' , ['category' => 'studio-apartments' , 'location' => 'delhi']) }}" class="block px-4 py-2 text-sm text-txBlack hover:bg-gray-100">Delhi</a></li>
+          <li><a href="{{ route('projects' , ['category' => 'studio-apartments' , 'location' => 'gurugram']) }}" class="block px-4 py-2 text-sm text-txBlack hover:bg-gray-100">Gurugram</a></li>
+          <li><a href="{{ route('projects' , ['category' => 'studio-apartments' , 'location' => 'pune']) }}" class="block px-4 py-2 text-sm text-txBlack hover:bg-gray-100">Pune</a></li>
+          <li><a href="{{ route('projects' , ['category' => 'studio-apartments' , 'location' => 'bangalore']) }}" class="block px-4 py-2 text-sm text-txBlack hover:bg-gray-100">Bangalore</a></li>
         </ul>
       </li>
 
-      <li><a href="#" class="block px-4 py-2 text-sm text-txBlack hover:bg-gray-100">Plots</a></li>
+      <li><a href="{{ route('projects' , ['category' => 'plots']) }}" class="block px-4 py-2 text-sm text-txBlack hover:bg-gray-100">Plots</a></li>
     </ul>
   </div>
 
   <!-- Other Links -->
-  <a href="/blog" class="text-base text-txBlack hover:text-primary font-medium">Blog</a>
-  <a href="/developer" class="text-base text-txBlack hover:text-primary font-medium">Developers</a>
-  <a href="#" class="text-base text-txBlack hover:text-primary font-medium">Testimonial</a>
-  <a href="#" class="text-base text-txBlack hover:text-primary font-medium">About Us</a>
-  <a href="/contact" class="ml-2 px-6 py-2 border-2 border-primary text-primary rounded-3xl text-base hover:bg-primary hover:text-white transition font-medium">Contact Us</a>
+  <a href="{{ route('blog.show') }}" class="text-base text-txBlack hover:text-primary font-medium">Blog</a>
+  <a href="{{ route('development-partners') }}" class="text-base text-txBlack hover:text-primary font-medium">Developers</a>
+  <a href="{{ route('testimonials') }}" class="text-base text-txBlack hover:text-primary font-medium">Testimonial</a>
+  <a href="{{ route('about-us') }}" class="text-base text-txBlack hover:text-primary font-medium">About Us</a>
+  <a href="{{ route('contact') }}" class="ml-2 px-6 py-2 border-2 border-primary text-primary rounded-3xl text-base hover:bg-primary hover:text-white transition font-medium">Contact Us</a>
 </nav>
 
 

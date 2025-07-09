@@ -10,7 +10,7 @@
 @section('content')
 <section class="px-4  bg-white pb-8">
     <div class="container max-w-7xl mx-auto">
-        <x-page-path class="path" path="Home > Blog" />
+        <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> > <a href="{{ route('blog.show') }}">Blog</a></div>
         <x-heading-subheading heading="Our Blog & Insights" subheading="Get the latest updates, guides, and industry insights to help you make informed decisions about your next dream home." headingClass="heading text-center " subHeadingClass="subheading mb-2" />
 
         <div class="max-w-2xl mx-auto px-4 py-4 pb-8">
@@ -26,7 +26,7 @@
             </div>
 
             <!-- Filters -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="md:px-auto  grid grid-cols-3 gap-3">
                 <select class="hero-section-select ">
                     <option>Category</option>
                     <option>Architecture</option>
@@ -51,7 +51,7 @@
         </div>
 
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-3 md:gap-8 gap-3 mx-auto">
             @if(isset($blogs) && $blogs->count() > 0)
             @foreach ($blogs as $blog)
             <x-blog-card url="{{route('blog.each', $blog->slug )}}" cardCls="marketing-insights-card" class="featured-investment-img" src="{{ asset($blog->featured_image) }}" alt="{{ $blog->title }}" h4="{{ $blog->title }}" p="{{ $blog->summary }}" />

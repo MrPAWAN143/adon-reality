@@ -1,4 +1,5 @@
 @extends('Dashboard.layouts.app')
+
 @section('login')
 
 <div class="h-screen w-screen flex items-center justify-center px-4 bg-gray-200">
@@ -7,8 +8,8 @@
         <!-- Left Side Image -->
         <div class="w-full md:w-2/3 relative h-60 md:h-auto">
             <img src="{{ asset('assets/images/bannerImages/hero-banner.webp') }}"
-                 alt="House"
-                 class="w-full h-full object-cover">
+                alt="House"
+                class="w-full h-full object-cover">
 
             <div class="absolute top-4 left-4 bg-white px-4 py-2 rounded-full text-sm font-semibold shadow">
                 🏠 Adon Reality
@@ -31,9 +32,9 @@
 
             <!-- Display Session Status -->
             @if (session('status'))
-                <div class="mb-4 text-green-600 text-sm font-medium">
-                    {{ session('status') }}
-                </div>
+            <div class="mb-4 text-green-600 text-sm font-medium">
+                {{ session('status') }}
+            </div>
             @endif
 
             <form method="POST" action="{{ route('login') }}">
@@ -43,9 +44,9 @@
                 <div class="mb-4">
                     <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
                     <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus
-                           class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-full focus:ring-blue-500 focus:border-blue-500" />
+                        class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-full focus:ring-blue-500 focus:border-blue-500" />
                     @error('email')
-                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                     @enderror
                 </div>
 
@@ -53,9 +54,9 @@
                 <div class="mb-4">
                     <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
                     <input id="password" type="password" name="password" required
-                           class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-full focus:ring-blue-500 focus:border-blue-500" />
+                        class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-full focus:ring-blue-500 focus:border-blue-500" />
                     @error('password')
-                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                     @enderror
                 </div>
 
@@ -66,9 +67,9 @@
                         <span class="ml-2 text-gray-600">Remember Me</span>
                     </label>
                     @if (Route::has('password.request'))
-                        <a href="{{ route('password.request') }}" class="text-blue-500 hover:underline">
-                            Forgot Password?
-                        </a>
+                    <a href="{{ route('password.request') }}" class="text-blue-500 hover:underline">
+                        Forgot Password?
+                    </a>
                     @endif
                 </div>
 
@@ -85,6 +86,6 @@
             </p>
         </div>
     </div>
-</div>
 
+</div>
 @endsection

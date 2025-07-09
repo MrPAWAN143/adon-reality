@@ -85,7 +85,7 @@
                                     {{ $event->is_active ? 'Active' : 'Inactive' }}
                                 </button>
                             </td>
-                            <td class="px-4 py-3 space-x-2">
+                            <td class="px-4 py-3 space-x-1">
                                 <a href="#" class="inline-block bg-gray-200 hover:bg-gray-300 text-gray-800 px-3 py-1 rounded text-xs">View</a>
                                 <a href="{{ route('event.edit', $event->id) }}" class="inline-block bg-adminPrimary hover:bg-adminPrimaryHover text-white px-3 py-1 rounded text-xs">Edit</a>
                                 <button type="button" data-id="{{ $event->id }}" class="deletebtn bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-xs">

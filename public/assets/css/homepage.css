@@ -4,23 +4,25 @@
 @tailwind utilities;
 
 
-.banner-button{
-    @apply mt-6 border-2 border-white text-white px-10 py-3 rounded-2xl hover:bg-bgSecondary/30 ;
+.banner-button {
+    @apply mt-6 border-2 border-white text-white px-10 py-3 rounded-2xl hover:bg-bgSecondary/30;
 }
+
 .search-input-homepage-herosection {
-    @apply w-full md:w-2/3 px-6 py-2 rounded-full text-txBlack/60 placeholder-black/60 bg-transparent outline-none border-none focus:outline-none focus:ring-0 focus:border-none;
+    @apply md:w-full px-6 py-2 rounded-full text-txBlack/60 placeholder-black/60 bg-transparent outline-none border-none focus:outline-none focus:ring-0 focus:border-none;
 }
 
 .hero-section-select {
-    @apply font-semibold appearance-none bg-white text-txBlack hover:text-white px-6 hover:bg-primary border-2 border-primary py-2  rounded-full focus:outline-none focus:ring-0 focus:border-primary transition duration-300 font-medium;
-        padding-right: 0.5rem;
+    @apply font-semibold appearance-none bg-white text-txBlack hover:text-white px-6 hover:bg-primary border-2 border-primary py-2 rounded-full focus:outline-none focus:ring-0 focus:border-primary transition duration-300 font-medium;
+    padding-right: 0.5rem;
 }
 
 .investCard {
-    @apply bg-white rounded-2xl shadow-xl px-6 py-5 flex items-center justify-between text-left ;
+    @apply bg-white rounded-2xl shadow-xl px-6 py-5 flex items-center justify-between text-left;
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.1), 0 6px 8px rgba(0, 0, 0, 0.08);
 
 }
+
 .investCard:hover {
     box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.15), 0 8px 10px rgba(0, 0, 0, 0.1);
 
@@ -45,7 +47,8 @@
 .heading {
     @apply md:text-3xl font-bold mb-4 mt-4;
 }
-.dev-start{
+
+.dev-start {
     text-align: start !important;
 }
 
@@ -55,17 +58,18 @@
     }
 
     .subheading {
-        @apply text-sm mb-3 ;
+        @apply text-sm mb-3;
     }
 
     .investCard {
         @apply flex-col-reverse items-center text-center p-2;
 
     }
-    .investCard:hover {
-    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.15), 0 8px 10px rgba(0, 0, 0, 0.1);
 
-}
+    .investCard:hover {
+        box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.15), 0 8px 10px rgba(0, 0, 0, 0.1);
+
+    }
 
     .investCard div {
         @apply flex flex-col justify-center items-center w-full mb-2;
@@ -83,8 +87,32 @@
         @apply text-xs text-center;
     }
 
-    .hero-section-select{
+    .hero-section-select.home {
+        @apply w-[80px] px-2 text-sm;
+
+    }
+
+    .featured-investment-card {
+        @apply !w-[100%] p-2;
         
+    }
+
+    .featured-investment-image-dev {
+        @apply overflow-hidden rounded-lg w-full h-40 mb-2 !important;
+    }
+
+    .featured-investment-img {
+        @apply w-full !h-32 object-cover;
+    }
+
+    .slick-slide {
+        margin-right: 16px;
+        /* adjust as needed */
+    }
+
+    .slick-list {
+        margin-right: -16px;
+        /* negative margin to fix overflow */
     }
 
 }
@@ -94,12 +122,14 @@
     @apply w-full min-h-full h-full object-cover group-hover:scale-105 transition duration-300 ease-in-out;
 }
 
-.prime-location-overlay{
+.prime-location-overlay {
     @apply absolute inset-0 bg-black/30 flex items-center justify-center left-0 top-0 rounded-2xl;
 }
-.prime-location-name{
-   @apply text-white text-3xl font-semibold;
+
+.prime-location-name {
+    @apply text-white text-3xl font-semibold;
 }
+
 .subheading {
     @apply text-txBlack mb-12 font-normal text-center text-lg;
 }
@@ -118,11 +148,11 @@
 }
 
 .featured-investment-img {
-    @apply rounded-lg w-full h-full object-cover transform transition duration-300 ease-in-out hover:scale-125;
+    @apply rounded-2xl w-full !h-full object-cover transform transition duration-300 ease-in-out hover:scale-125;
 }
 
 .featured-investment-image-dev {
-    @apply overflow-hidden rounded-lg w-full h-56 mb-4;
+    @apply overflow-hidden rounded-lg w-full h-60 mb-4;
 }
 
 .featured-investment-status {
@@ -134,7 +164,7 @@
 }
 
 .view-more-button {
-    @apply bg-primary text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-white hover:text-primary border-2 hover:border-primary transition  justify-between m-auto inline-flex items-center;
+    @apply bg-primary text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-white hover:text-primary border-2 hover:border-primary transition justify-between m-auto inline-flex items-center;
 
 }
 
@@ -155,9 +185,9 @@
 }
 
 .development-partner-card {
-  
+
     @apply rounded-2xl bg-gradient-to-br from-gradientFrom to-gradientTo p-6 text-left flex flex-col justify-between !box-border hover:border-bgSecondary hover:border-2 transition;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .development-partner-card h3 {
@@ -177,7 +207,8 @@
 
 
 .marketing-insights-card {
-    @apply bg-white rounded-2xl shadow-md p-4 transition duration-300 flex flex-col justify-between;
+    @apply bg-white rounded-2xl shadow-md p-4 transition duration-300 flex flex-col justify-between items-start;
+
     box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.1), -3px -5px 8px rgba(0, 0, 0, 0.08);
 }
 
@@ -186,7 +217,7 @@
 }
 
 .marketing-insights-card h4 {
-    @apply  font-bold mb-1 text-left;
+    @apply font-bold mb-1 text-left;
 }
 
 .marketing-insights-card p {
@@ -194,7 +225,7 @@
 }
 
 .marketing-insights-button {
-    @apply mt-5 w-full bg-primary text-white rounded-full py-3 transition hover:border-primary hover:text-primary hover:bg-white border-2;
+    @apply md:mt-5 mt-2 w-full bg-primary text-white rounded-full md:py-3 py-1 transition md:text-base hover:border-primary hover:text-primary hover:bg-white border-2;
 }
 
 .marketing-insights-view-more-button {
@@ -253,23 +284,22 @@
 }
 
 
-.legacy-card{
+.legacy-card {
     @apply border-2 border-primary rounded-lg py-8 px-3;
 }
-.legacy-card-why-choose{
-    
-}
 
-.newsAndPrButton{
+.legacy-card-why-choose {}
+
+.newsAndPrButton {
     @apply text-sm font-semibold text-white border-2 hover:border-primary px-4 py-3 mt-2 rounded-2xl hover:bg-white bg-primary hover:text-primary transition duration-300;
 }
 
-.our-core-team{
-   @apply bg-white text-center rounded-2xl shadow-md p-4 transition duration-300;
+.our-core-team {
+    @apply bg-white text-center rounded-2xl shadow-md p-4 transition duration-300;
     box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.1), -3px -5px 8px rgba(0, 0, 0, 0.08);
 }
 
-.about-us-awards-card{
+.about-us-awards-card {
     box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.1), -3px -5px 8px rgba(0, 0, 0, 0.08) !important;
 }
 
@@ -283,6 +313,7 @@
 .featured-investment-card-single-page h3 {
     @apply text-xl font-bold mb-1 text-left;
 }
+
 .featured-investment-img-single-page {
     @apply rounded-lg w-full h-full object-cover transform transition duration-300 ease-in-out hover:scale-125;
 }
@@ -299,26 +330,28 @@
     @apply mt-3 w-full border-2 border-primary text-primary rounded-full py-2 transition hover:bg-primary hover:text-white;
 }
 
-.slick-prev{
+.slick-prev {
     top: 30px;
     left: 80%;
     z-index: 1;
-   
+
 }
 
 .slick-next {
     right: 20px;
     top: 30px;
-   
+
 }
-.slick-prev:before, .slick-next:before{
+
+.slick-prev:before,
+.slick-next:before {
     color: #550413 !important;
     font-size: 25px;
-    padding: 8px ;
+    padding: 8px;
 }
 
 
-.slick-slider-single-page .slick-list{
+.slick-slider-single-page .slick-list {
     height: 580px;
     width: 90%;
     margin: auto;
@@ -333,13 +366,14 @@
     right: 20px;
     top: -10px;
 }
+
 .single-page-blog .slick-prev {
     top: -10px;
-      left: 80%;
+    left: 80%;
 }
 
 .heading-h4 h4 {
-    @apply text-base ;
+    @apply text-base;
 }
 
 .heading-h4 p {
@@ -358,51 +392,55 @@
 
 
 
-.slick-track:not(.slick-slider-single-page .slick-track) {
+.slick-track:not(.slick-slider-single-page .slick-track, .project-slider .slick-track) {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 50px !important;
- 
+
 }
-.slick-slide:not(.slick-slider-single-page .slick-slide) {
+
+.slick-slide:not(.slick-slider-single-page .slick-slide, .project-slider .slick-slide) {
     filter: blur(.5px);
 }
-[aria-hidden="true"]{
+
+[aria-hidden="true"] {
     z-index: -10 !important;
 }
 
-.slick-active:not(.slick-slider-single-page .slick-active){
+.slick-active:not(.slick-slider-single-page .slick-active, .project-slider .slick-active) {
     transform: scale(1.05);
     z-index: 0;
     width: 250px !important;
     filter: blur(0.5px);
 }
 
-.slick-center:not(.slick-slider-single-page .slick-center){
+.slick-center:not(.slick-slider-single-page .slick-center, .project-slider .slick-center) {
     transform: scale(1.2);
     z-index: 5;
     width: 260px !important;
     opacity: 1;
-        filter: blur(0px);
+    filter: blur(0px);
 }
 
 
-.slick-list.draggable:not(.slick-slider-single-page .draggable){
+.slick-list.draggable:not(.slick-slider-single-page .draggable, .project-slider .slick-list) {
     padding: 0 !important;
     /* margin-left: -60px !important; */
 }
-.slick-track:not(.slick-slider-single-page .slick-track) {
- margin-left: -60px !important;
+
+.slick-track:not(.slick-slider-single-page .slick-track, .project-slider .slick-track) {
+    margin-left: -60px !important;
 }
 
-.featured-investment-card-single-project .featured-investment-image-dev{
+.featured-investment-card-single-project .featured-investment-image-dev {
     @apply overflow-hidden rounded-lg w-full h-40 mb-2 !important;
 }
 
-.featured-investment-card-single-project h3{
+.featured-investment-card-single-project h3 {
     @apply text-xl font-bold mb-1 text-left;
 }
-.featured-investment-card-single-project p{
+
+.featured-investment-card-single-project p {
     @apply text-base font-normal mb-1 text-left;
 }

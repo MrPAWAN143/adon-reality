@@ -12,7 +12,7 @@
 @section('content')
 <section class="px-4  max-w-7xl mx-auto bg-white pb-8">
     <div class="container mx-auto">
-        <x-page-path class="path" path="Home > Blog > Top cities for real estate investment 2025" />
+        <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> > <a href="{{ route('blog.show') }}">Blog</a> > <a href="{{ route('blog.each', $blog->slug) }}">{{ $blog->title }}</a></div>
     </div>
     <!-- Featured Image -->
     <div class="w-full overflow-hidden rounded-2xl mt-4">
@@ -94,7 +94,7 @@
     <!-- Right Column (Sidebar) -->
     <aside class="space-y-8 md:col-span-1 ">
         <!-- Enquiry Form -->
-        <div class="bg-gradient-to-b from-bgSecondary/30 to-white p-6 rounded-xl shadow-md w-full max-w-sm mx-auto">
+        <div class="bg-gradient-to-b from-secondary/30 to-white p-6 rounded-xl shadow-md w-full max-w-sm mx-auto">
             <form class=" queryform space-y-4">
                 <!-- Name -->
                 <div>

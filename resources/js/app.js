@@ -21,7 +21,7 @@ $(document).ready(function () {
         centerMode: true,
         centerPadding: '60px',
         slidesToShow: 3,
-        autoplay:  true ,
+        autoplay: true,
         autoplaySpeed: 2000,
         arrows: false,
         responsive: [
@@ -45,4 +45,6 @@ $(document).ready(function () {
             }
         ]
     });
+
+
 });
