@@ -20,6 +20,7 @@ class QueryController extends Controller
 
     public function showLeadDetails(Request $request, $id)
     {
+        
         $lead = Lead::with('comments', 'user')->findOrFail($id);
         return view('Dashboard.Lead.details', compact('lead'));
     }

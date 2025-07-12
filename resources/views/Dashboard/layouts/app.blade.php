@@ -51,11 +51,11 @@
 
 <body class="font-sans antialiased">
 
+    @yield('login')
     @auth
     @include('Dashboard.layouts.header')
-    @endauth
 
-    @yield('login')
+
 
     <div class="max-h-auto h-[100vh] bg-adminSidebar flex gap-6 ">
         <div
@@ -520,6 +520,8 @@
             </div>
         </div>
     </div>
+
+    @endauth
 
 
 

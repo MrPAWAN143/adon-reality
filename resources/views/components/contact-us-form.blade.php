@@ -1,11 +1,11 @@
 <section class="py-8 bg-white text-center mb-8">
     <div class="container sm:max-w-lg md:max-w-5xl mx-auto px-4">
 
-        <h2 class="heading ">
+        <h2 class="heading m-heading">
             {{ $heading }}
         </h2>
 
-        <p class="subheading text-gray-700 text-xs sm:text-base max-w-[90%] mx-auto mb-6">
+        <p class="subheading m-subheading text-[8px] text-gray-700  md:text-base md:max-w-[90%] w-full mx-auto mb-6">
             {{ $subheading }}
         </p>
 
@@ -19,7 +19,7 @@
             </div>
         </div>
 
-        <form method="POST" class="queryform contact-form bg-white border border-primary rounded-2xl px-6 py-6 shadow-sm">
+        <form method="POST" class="queryform contact-form bg-white border border-primary rounded-2xl px-6 py-6 shadow-sm sm:mt-3">
             @csrf
             <div class="form-grid grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>

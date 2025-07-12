@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 use App\Models\DevelopmentPartners; // Assuming you have a model named DevelopmentPartner
+use App\Models\PropertiesDetails; // Assuming you have a model named PropertiesDetails
 
 class DevelopmentPartnersController extends Controller
 {
@@ -15,19 +16,32 @@ class DevelopmentPartnersController extends Controller
         return view('Pages.developer-partner-page', compact('developmentPartner'));
     }
 
-    public function show($slug)
+    public function show(Request $request, $slug)
     {
+     
         $developmentPartner = DevelopmentPartners::where('slug', $slug)->firstOrFail();
-        return view('Pages.developer-each', compact('developmentPartner'));
+        $properties = PropertiesDetails::where('development_partner_id', $developmentPartner->id)
+            ->where('is_active', 1)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        $primeLocation = PropertiesDetails::where('development_partner_id', $developmentPartner->id)
+            ->where('is_active', 1)
+            ->where('property_type', 'Prime')
+            ->orderBy('created_at', 'desc')
+            ->get();
+        return view('Pages.developer-each', compact('developmentPartner', 'properties', 'primeLocation'));
     }
 
     public function create()
     {
+        
         return view('Dashboard.Developer.add');
     }
 
     public function store(Request $request)
     {
+
         $validated = $request->validate([
             'developer_name'       => 'required|string|max:255',
             'slug'                 => 'nullable|string|unique:development_partners,slug',

@@ -16,6 +16,7 @@ export default {
             fontFamily: {
                 // sans: ['Figtree', ...defaultTheme.fontFamily.sans],
                 poppins: ['"Poppins"', 'sans-serif'],
+                montserrat: ['"Montserrat"', 'sans-serif'],
             },
             colors: {
                 primary: {
@@ -28,8 +29,7 @@ export default {
                     DEFAULT: '#000000',
                 },
                 txBlack: {
-                    DEFAULT: '#000000',
-                    gray: 'rgb(27 27 27)'
+                    DEFAULT: '#000000'
                 },
 
                 white: {
@@ -42,10 +42,10 @@ export default {
                     DEFAULT: '#cbc5c5'
                 },
                 investTxColor: {
-                    DEFAULT: '#380b2a',
+                    DEFAULT: '#380B2A',
                 },
                 yellowText: {
-                    DEFAULT: '#b88c03',
+                    DEFAULT: '#A2770A',
                 },
                 gradientFrom: {
                     DEFAULT: '#eee6e8',
@@ -56,6 +56,7 @@ export default {
                 goldenColor: {
                     DEFAULT: '#CDB987',
                 },
+           
 
 
                 // Admin colors

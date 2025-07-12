@@ -18,8 +18,9 @@ class BlogCard extends Component
     public string $h4;
     public string $p;
     public string $url;
+    public string $imageWrapperClass;
 
-    public function __construct($cardCls , $class ,$src , $alt , $h4 , $p , $url = '#')
+    public function __construct($cardCls , $class ,$src , $alt , $h4 , $p , $url = '#' , $imageWrapperClass = '')
     {
         $this->cardCls = $cardCls;
         $this->class = $class;
@@ -28,6 +29,7 @@ class BlogCard extends Component
         $this->h4 = $h4;
         $this->p = $p;
         $this->url = $url;
+        $this->imageWrapperClass = $imageWrapperClass ?: 'featured-investment-image-dev';
 
     }
 

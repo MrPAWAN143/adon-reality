@@ -18,10 +18,11 @@ class DeveloperPartnerCard extends Component
     public string $projectsPartnered;
     public string $presence;
     public string $url;
+    public string $developerButtonClass;
+    public string $buttonText;
+    public string $mobileClass;
 
-
-
-    public function __construct(string $heading, string $description, string $partnerLogo, string $alt, string $projectsPartnered, string $presence, string $url= '')
+    public function __construct(string $heading, string $description, string $partnerLogo, string $alt, string $projectsPartnered, string $presence, string $url= '', string $developerButtonClass = 'development-partner-button', string $buttonText = 'Explore Projects', string $mobileClass = '')
     {
         $this->heading = $heading;
         $this->description = $description;
@@ -30,6 +31,9 @@ class DeveloperPartnerCard extends Component
         $this->projectsPartnered = $projectsPartnered;
         $this->presence = $presence;
         $this->url = $url;
+        $this->developerButtonClass = $developerButtonClass ?: 'development-partner-button';
+        $this->buttonText = $buttonText ?: 'Explore Projects';
+        $this->mobileClass = $mobileClass;
     }
 
     /**

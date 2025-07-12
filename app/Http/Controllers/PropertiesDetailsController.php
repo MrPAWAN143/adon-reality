@@ -39,7 +39,15 @@ class PropertiesDetailsController extends Controller
         $property = PropertiesDetails::where('property_slug', $slug)
             ->with(['category', 'developmentPartner', 'galleryImages'])
             ->firstOrFail();
-        return view('Pages.project-each', compact('property'));
+
+        $similarProperties = PropertiesDetails::where('id', '!=', $property->id)
+            ->where('category_id', $property->category_id)
+            ->with('galleryImages')
+            ->inRandomOrder()
+            ->limit(4)
+            ->get();
+
+        return view('Pages.project-each', compact('property', 'similarProperties'));
     }
 
     public function verifiedProperties()
@@ -351,8 +359,4 @@ class PropertiesDetailsController extends Controller
             'new_status' => $property->is_active ? 'Active' : 'Inactive'
         ]);
     }
-
-    
-
-
 }

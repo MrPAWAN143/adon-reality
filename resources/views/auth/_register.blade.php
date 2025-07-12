@@ -1,7 +1,6 @@
-<form method="POST" action="{{ route('register') }}">
+<!-- <form method="POST" action="{{ route('register') }}">
     @csrf
 
-    <!-- Name -->
     <div class="mb-4">
         <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
         <input id="name" type="text" name="name" value="{{ old('name') }}"
@@ -11,8 +10,6 @@
             <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
         @enderror
     </div>
-
-    <!-- Email -->
     <div class="mb-4">
         <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
         <input id="email" type="email" name="email" value="{{ old('email') }}"
@@ -22,8 +19,6 @@
             <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
         @enderror
     </div>
-
-    <!-- Password -->
     <div class="mb-4">
         <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
         <input id="password" type="password" name="password" required autocomplete="new-password"
@@ -32,8 +27,6 @@
             <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
         @enderror
     </div>
-
-    <!-- Confirm Password -->
     <div class="mb-4">
         <label for="password_confirmation" class="block text-sm font-medium text-gray-700">Confirm Password</label>
         <input id="password_confirmation" type="password" name="password_confirmation" required autocomplete="new-password"
@@ -43,7 +36,6 @@
         @enderror
     </div>
 
-    <!-- Submit + Already registered -->
     <div class="flex items-center justify-between">
         <a href="{{ route('login') }}" class="text-sm text-indigo-600 hover:underline">
             Already registered?
@@ -53,4 +45,4 @@
             Register
         </button>
     </div>
-</form>
+</form> -->

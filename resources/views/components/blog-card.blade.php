@@ -1,7 +1,7 @@
-<div class="{{ $cardCls}}">
-  <div class="featured-investment-image-dev md:max-h-52 md:h-52 max-h-48 h-48 overflow-hidden">
+<div class="{{ $cardCls}} ">
+  <div class="{{ $imageWrapperClass }} ">
 
-    <img src="{{ $src }}" alt="{{ $alt }}" class="{{ $class}}" />
+    <img src="{{ $src }}" alt="{{ $alt }}" class="{{ $class}}  transform transition duration-300 ease-in-out hover:scale-125" />
   </div>
   <h4 class="text-sm !md:text-md ">{{ $h4 }}</h4>
   <p class="!md:text-base !text-xs">{{ $p }}</p>

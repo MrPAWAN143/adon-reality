@@ -558,10 +558,6 @@
                         $('#messageTitle').text(status).addClass('text-green-600').removeClass('text-red-600');
                         $('#messageContent').text(message);
                         $('#messageModal').removeClass('hidden');
-                    }else {
-                        $('#messageTitle').text('Error').addClass('text-red-600').removeClass('text-green-600');
-                        $('#messageContent').text(message);
-                        $('#messageModal').removeClass('hidden');
                     }
                     $('.container').show();
                     $('.loadingbtn').hide();

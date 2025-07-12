@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/logos/adon-fevicon.png') }}" class="favicon-logo object-cover">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   @yield('metadata')
   @vite(['resources/css/app.css', 'resources/js/app.js'])
   @yield('styles')
@@ -13,7 +14,7 @@
 <body class="!font-poppins antialiased bg-white text-gray-900">
   @include('Pages.layouts.header')
   @yield('homepage')
-  @yield('content')
+    @yield('content')
   @include('Pages.layouts.footer')
 
 

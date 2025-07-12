@@ -183,6 +183,15 @@
             });
         });
 
+         
+    $(document).ready(function() {
+        $('#title').on('input', function() {
+            let title = $(this).val();
+            let slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+            $('#slug').val(slug);
+        });
+    });
+
 
         const url = {
             store: "{{ route('blog.store') }}",
