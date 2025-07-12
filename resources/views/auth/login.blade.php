@@ -2,8 +2,9 @@
 
 @section('login')
 
-<div class="h-screen w-screen flex items-center justify-center px-4 bg-gray-200">
-    <div class="bg-white rounded-3xl mx-24 shadow-lg flex flex-col md:flex-row  w-full overflow-hidden h-full md:h-auto">
+
+<div class="h-screen max-w-6xl mx-auto flex items-center justify-center px-4 bg-white">
+    <div class="bg-white rounded-3xl mx-24 shadow-[0_4px_20px_rgba(0,0,0,0.25)] flex flex-col md:flex-row  w-full overflow-hidden h-full md:h-auto">
 
         <!-- Left Side Image -->
         <div class="w-full md:w-2/3 relative h-60 md:h-auto">
@@ -79,11 +80,7 @@
                 </button>
             </form>
 
-            <!-- Register Link -->
-            <p class="text-center text-sm mt-6 text-gray-600">
-                Don’t have an account?
-                <a href="{{ route('register') }}" class="text-blue-500 hover:underline">Register</a>
-            </p>
+
         </div>
     </div>
 

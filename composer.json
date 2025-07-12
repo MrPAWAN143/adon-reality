@@ -13,6 +13,7 @@
         "andreiio/blade-remix-icon": "^3.6",
         "blade-ui-kit/blade-zondicons": "^1.6",
         "codeat3/blade-forkawesome": "^1.11",
+        "codeat3/blade-simple-icons": "^7.3",
         "codeat3/blade-typicons": "^1.7",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",

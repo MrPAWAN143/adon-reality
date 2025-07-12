@@ -2,6 +2,7 @@ import './bootstrap';
 import '../../public/assets/css/homepage.css';
 import '../../public/assets/css/faq.css';
 import '../../public/assets/css/master.css';
+import '../../public/assets/css/mobile.css';
 
 
 
@@ -31,7 +32,7 @@ $(document).ready(function () {
                     arrows: false,
                     centerMode: true,
                     centerPadding: '40px',
-                    slidesToShow: 3
+                    slidesToShow: 1
                 }
             },
             {

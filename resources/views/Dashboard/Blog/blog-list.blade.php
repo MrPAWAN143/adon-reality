@@ -29,7 +29,7 @@
                             <th class="px-4 py-3 text-left font-semibold">Summary</th>
                             <th class="px-4 py-3 text-left font-semibold">Author</th>
                             <th class="px-4 py-3 text-left font-semibold">Status</th>
-                            <th class="px-4 py-3 text-left font-semibold">Actions</th>
+                            <th class="px-4 py-3 text-left font-semibold !w-52">Actions</th>
                         </tr>
                     </thead>
 

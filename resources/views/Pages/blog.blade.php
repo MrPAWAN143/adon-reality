@@ -8,8 +8,8 @@
 @endsection
 
 @section('content')
-<section class="px-4  bg-white pb-8">
-    <div class="container max-w-7xl mx-auto">
+<section class="px-4 max-w-6xl mx-auto bg-white pb-8">
+    <div class="container ">
         <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> > <a href="{{ route('blog.show') }}">Blog</a></div>
         <x-heading-subheading heading="Our Blog & Insights" subheading="Get the latest updates, guides, and industry insights to help you make informed decisions about your next dream home." headingClass="heading text-center " subHeadingClass="subheading mb-2" />
 
@@ -51,7 +51,7 @@
         </div>
 
 
-        <div class="grid grid-cols-2 md:grid-cols-3 md:gap-8 gap-3 mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-3 md:gap-4 gap-3 mx-auto">
             @if(isset($blogs) && $blogs->count() > 0)
             @foreach ($blogs as $blog)
             <x-blog-card url="{{route('blog.each', $blog->slug )}}" cardCls="marketing-insights-card" class="featured-investment-img" src="{{ asset($blog->featured_image) }}" alt="{{ $blog->title }}" h4="{{ $blog->title }}" p="{{ $blog->summary }}" />

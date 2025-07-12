@@ -6,19 +6,19 @@
         <div class="flex flex-col md:flex-row md:justify-between md:space-x-8 border-b border-goldenColor pb-4 mb-4">
             <!-- Logo and Cities -->
             <div class="flex items-center space-x-3 mb-4 md:mb-0">
-                <img src="{{ asset('assets/images/logos/footer-logo.png') }}" alt="Logo" class=""> <!-- Replace with your logo -->
+                <img src="{{ asset('assets/images/logos/footer-logo.png') }}" alt="Logo" class=""> 
 
             </div>
 
             <!-- Contact Right -->
             <div class="flex space-x-10 text-sm">
                 <div>
-                    <p class="font-semibold text-goldenColor">EMAIL ADDRESS</p>
-                    <p class="text-white">connect@xyz.in</p>
+                    <p class="font-semibold text-goldenColor text-[16px]">EMAIL ADDRESS</p>
+                    <p class="text-white text-[12px] md:text-[16px]">connect@xyz.in</p>
                 </div>
                 <div>
-                    <p class="font-semibold text-goldenColor">PHONE NUMBER</p>
-                    <p class="text-white">+91 9876543210</p>
+                    <p class="font-semibold text-goldenColor text-[16px]">PHONE NUMBER</p>
+                    <p class="text-white text-[12px] md:text-[16px]">+91 9876543210</p>
                 </div>
             </div>
         </div>
@@ -26,29 +26,28 @@
         <div class="flex flex-col md:flex-row md:justify-between  md:space-y-0 md:space-x-8 border-b border-goldenColor pb-4 mb-6">
             <!-- Cities -->
             <div class="mb-4">
-                <p class="text-sm font-semibold text-goldenColor mb-1">CITIES</p>
-                <div class="flex flex-wrap gap-x-2 gap-y-1 md:text-base sm:text-[12px]">
-                    <span>Noida</span>
-                    <span>Delhi</span>
-                    <span>Gurugram</span>
-                    <span>Pune</span>
-                    <span>Hyderabad</span>
+                <p class="text-sm font-semibold text-goldenColor mb-1 text-[16px]">CITIES</p>
+                <div class="flex flex-wrap gap-x-2 gap-y-1 md:text-base sm:text-[12px] md:text-[16px]">
+                   <a href="" class="text-white">Delhi</a>
+                    <a href="" class="text-white">Gurugram</a>
+                    <a href="" class="text-white">Pune</a>
+                    <a href="" class="text-white">Hyderabad</a>
                 </div>
             </div>
 
             <!-- Developers -->
             <div class="">
-                <p class="text-sm font-semibold text-goldenColor mb-1">DEVELOPER WE WORK WITH</p>
-                <div class="flex flex-wrap gap-x-2 gap-y-1 md:text-base sm:text-[12px]">
-                    <span>DLF</span>
-                    <span>Prime</span>
-                    <span>Space</span>
-                    <span>Godrej</span>
-                    <span>Arena</span>
-                    <span>2A Company</span>
-                    <span>Aura</span>
-                    <span>Wave</span>
-                    <span>M3M</span>
+                <p class="text-sm font-semibold text-goldenColor mb-1 text-[16px]">DEVELOPER WE WORK WITH</p>
+                <div class="flex flex-wrap gap-x-2 gap-y-1 md:text-base sm:text-[12px] md:text-[16px]">
+                    <a href="" class="text-white">DLF</a>
+                    <a href="" class="text-white">Prime</a>
+                    <a href="" class="text-white">Space</a>
+                    <a href="" class="text-white">Godrej</a>
+                    <a href="" class="text-white">Arena</a>
+                    <a href="" class="text-white">2A Company</a>
+                    <a href="" class="text-white">Aura</a>
+                    <a href="" class="text-white">Wave</a>
+                    <a href="" class="text-white">M3M</a>
                 </div>
             </div>
         </div>
@@ -58,26 +57,26 @@
 
             <!-- Certifications & Address -->
             <div class="w-full md:w-auto lg:w-[23%]">
-                <p class="text-goldenColor font-semibold mb-4 text-sm">Certifications & Trust Badges</p>
-                <ul class="list-disc list-inside space-y-1 sm:text-[12px] md:text-base mb-4">
+                <p class="text-goldenColor font-semibold mb-4 text-[16px]">Certifications & Trust Badges</p>
+                <ul class="list-disc list-inside space-y-1 md:text-[16px] text-[12px] md:text-base mb-4">
                     <li>RERA Approved</li>
                     <li>100% Verified Properties</li>
                     <li>Trusted by 1000+ Investors</li>
                     <li>SSL Secure Website Icon</li>
                     <li>ISO Certification Badge (if applicable)</li>
                 </ul>
-                <p class="text-goldenColor font-semibold mt-4">CORPORATE OFFICE</p>
+                <p class="text-goldenColor font-semibold mt-4 text-[16px]">CORPORATE OFFICE</p>
                 <p class="mt-1 text-sm">D-27, Sector 2, Noida, Uttar Pradesh-201301</p>
             </div>
 
             <!-- Newsletter -->
             <div class="w-full md:w-[48%] lg:w-[23%] text-[12px] mb-4">
                 <p class="text-goldenColor font-semibold mb-2">Your e-mail address</p>
-                <div class="flex items-center space-x-2 mb-2">
+                <div class="flex items-center space-x-1 mb-2">
                     <input type="email" placeholder="name@email.com"
-                        class="flex-4 px-3 py-1.5 rounded-full text-black text-sm focus:outline-none" />
+                        class="flex-3 px-3 py-1 rounded-full text-black text-sm focus:outline-none" />
                     <button
-                        class="flex-0 bg-primary hover:bg-primary text-bgSecondary px-4 py-1.5 rounded-full text-sm whitespace-nowrap">Subscribe</button>
+                        class="flex-0 bg-primary hover:bg-primary text-bgSecondary px-2 py-1 rounded-full text-sm">Subscribe</button>
                 </div>
                 <label class="flex items-start space-x-2 text-xs mt-1">
                     <input type="checkbox"
@@ -133,25 +132,18 @@
             <!-- Left Side: Copyright -->
             <div class="flex items-center space-x-2 text-sm">
                 <span>©</span>
-                <p>2025 XYZ Real Estate Investment Platform. All Rights Reserved.</p>
+                <p class="text-xs">2025 XYZ Real Estate Investment Platform. All Rights Reserved.</p>
             </div>
 
             <!-- Right Side: Social Media -->
             <div class="flex flex-col md:flex-col items-left gap-2 md:gap-4 ">
                 <p class="text-sm font-semibold text-white">Follow us.</p>
-                <div class="flex items-center space-x-2">
-                    <a href="#" aria-label="LinkedIn">
-                        <img src="linkedin-icon.png" alt="LinkedIn" class="w-5 h-5" />
-                    </a>
-                    <a href="#" aria-label="Facebook">
-                        <img src="facebook-icon.png" alt="Facebook" class="w-5 h-5" />
-                    </a>
-                    <a href="#" aria-label="Instagram">
-                        <img src="instagram-icon.png" alt="Instagram" class="w-5 h-5" />
-                    </a>
-                    <a href="#" aria-label="YouTube">
-                        <img src="youtube-icon.png" alt="YouTube" class="w-5 h-5" />
-                    </a>
+                <div class="mt-4 text-center flex justify-center items-center md:gap-5 gap-2">
+                    <a href=""><x-forkawesome-facebook-square class="text-bgSecondary w-5 h-5" /></a>
+                    <a href=""><x-forkawesome-youtube-play class="text-bgSecondary w-5 h-5" /></a>
+                    <a href=""><x-forkawesome-instagram class="text-bgSecondary w-5 h-5" /></a>
+                    <a href=""><x-forkawesome-linkedin-square class="text-bgSecondary w-5 h-5" /></a>
+                    <a href=""><x-si-x class="text-bgSecondary w-5 h-5" /></a>
                 </div>
             </div>
 
