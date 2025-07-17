@@ -84,7 +84,7 @@
     <div class="m-auto">
         <h2 class="text-3xl md:text-3xl font-bold text-center text-txBlack mb-8">Services We Offer</h2>
 
-        <div class="m-auto max-w-5xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 ">
+        <div class=" max-w-6xl grid grid-cols-1 md:grid-cols-3 mx-auto gap-4 px-4 !pb-10">
 
             <!-- Card -->
             <div class="what-we-offer-card !px-4 !py-4 text-center">
@@ -126,28 +126,43 @@
     </div>
 </section>
 
-<section class="px-4 py-8 bg-white text-center">
+
+<section class="px-4 py-8 bg-white text-center hidden md:block">
     <div class="container max-w-6xl mx-auto">
         <x-heading-subheading heading="Our Development Partners" subheading="Collaborating with renowned names in real estate development." headingClass="heading" subHeadingClass="subheading" />
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
 
+            @foreach ($developmentPartner as $partner)
+            <x-developer-partner-card partnerLogo="{{ asset($partner->logo) }}" url="{{ route('development-partners.show',  $partner->slug) }}" alt="{{ $partner->developer_name }}" heading="{{ $partner->developer_name }}" description="{{ $partner->tags }}" projectsPartnered="{{ $partner->total_projects }}" presence="{{ implode(', ', $partner->operating_cities ?? []) }}" />
+            @endforeach
 
-            <x-developer-partner-card partnerLogo="{{ asset('assets/images/partnersLogo/dlf.png') }}" alt="DLF Limited" heading="DLF Limited" description="Building India" projectsPartnered="18" presence="Gurgaon, Noida, Chennai, Hyderabad" />
-
-            <!-- Partner 2 -->
-            <x-developer-partner-card partnerLogo="{{ asset('assets/images/partnersLogo/raheja.png') }}" alt="Raheja Develop" heading="Raheja Develop" description="Committed to Excellence" projectsPartnered="10" presence="Gurgaon, Delhi, Noida" />
-
-            <!-- Partner 3 -->
-            <x-developer-partner-card partnerLogo="{{ asset('assets/images/partnersLogo/m3m.png') }}" alt="M3M India" heading="M3M India" description="Magnificence in the Trinity of Men & Materials" projectsPartnered="8" presence="Gurgaon, Noida" />
         </div>
 
         <div class="mt-10">
-            <button class="view-more-button ">
+            <a href="{{ route('development-partners') }}" class="view-more-button ">
                 View More <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
-            </button>
+            </a>
         </div>
     </div>
 </section>
+
+
+<section class=" py-8 bg-white text-center md:hidden block">
+    <div class="">
+        <x-heading-subheading heading="Our Development Partners" subheading="Collaborating with renowned names in real estate development." headingClass="heading" subHeadingClass="subheading" />
+        <div class="project-slider">
+            @foreach ($developmentPartner as $partner)
+            <x-developer-partner-card partnerLogo="{{ asset($partner->logo) }}" developerButtonClass="!text-primary !hover:text-white !hover:bg-primary  !bg-white !border-2 !border-primary " url="{{ route('development-partners.show',  $partner->slug) }}" alt="{{ $partner->developer_name }}" heading="{{ $partner->developer_name }}" description="{{ $partner->tags }}" projectsPartnered="{{ $partner->total_projects }}" presence="{{ implode(', ', $partner->operating_cities ?? []) }}" />
+            @endforeach
+        </div>
+        <div class="mt-10">
+            <a href="{{ route('development-partners') }}" class="view-more-button ">
+                View More <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
+            </a>
+        </div>
+    </div>
+</section>
+
 
 <section class="py-10 bg-[#ede7e8] ">
     <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-2 px-4">
@@ -180,10 +195,10 @@
 
         <!-- Founder Talks -->
         <h2 class="text-center text-2xl font-semibold mb-6">Founder Talks</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        <div class="grid grid-cols-2 md:grid-cols-2 gap-2 md:gap-6 mb-10">
             <!-- Video 1 -->
             <div class="relative overflow-hidden rounded-xl">
-                <img src="{{ asset('assets/images/allImages/raj-talk.jpg') }}" alt="Founder Talk 1" class="w-full h-60 object-cover" />
+                <img src="{{ asset('assets/images/allImages/raj-talk.jpg') }}" alt="Founder Talk 1" class="w-full md:h-60 h-24 object-cover" />
                 <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
                     <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-4.586-2.65A1 1 0 009 9.35v5.3a1 1 0 001.166.982l4.586-2.65a1 1 0 000-1.764z" />
@@ -194,7 +209,7 @@
 
             <!-- Video 2 -->
             <div class="relative overflow-hidden rounded-xl">
-                <img src="{{ asset('assets/images/allImages/meeting-room.jpg') }}" alt="Founder Talk 2" class="w-full h-60 object-cover" />
+                <img src="{{ asset('assets/images/allImages/meeting-room.jpg') }}" alt="Founder Talk 2" class="w-full md:h-60 h-24 object-cover" />
                 <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
                     <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-4.586-2.65A1 1 0 009 9.35v5.3a1 1 0 001.166.982l4.586-2.65a1 1 0 000-1.764z" />
@@ -204,10 +219,10 @@
             </div>
         </div>
 
-        <!-- Meet Our Core allImages -->
+        <!-- Meet Our Core Team -->
         <h2 class="text-center text-2xl font-semibold mb-8">Meet Our Core Team</h2>
-        <div class="max-w-5xl m-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            <!-- allImages Member -->
+        <div class="max-w-5xl m-auto grid grid-cols-2 md:grid-cols-4 md:gap-6 gap-2">
+            <!-- Team Member -->
             <div class="our-core-team ">
                 <img src="{{ asset('assets/images/allImages/raj-malhotra.jpg') }}" alt="Raj Malhotra" class="w-full h-48 rounded-lg mb-3 object-cover" />
                 <h3 class="font-semibold text-md">Raj Malhotra</h3>
@@ -239,13 +254,13 @@
 
 
 
-        <div class="px-6 py-0 mt-12 bg-white items-center">
+        <div class="md:px-6 py-0 mt-12 bg-white items-center">
             <!-- Featured Awards & Recognitions -->
             <h2 class="text-2xl text-center font-bold mb-6">Awards & Recognitions</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 md:gap-6 gap-2 mb-12">
 
                 <!-- Card 1 -->
-                <div class="bg-white p-4 rounded-2xl shadow-md hover:shadow-lg transition flex flex-col items-start text-start about-us-awards-card">
+                <div class="bg-white md:p-4 p-2 rounded-2xl shadow-md hover:shadow-lg transition flex flex-col md:items-start md:text-start text-center about-us-awards-card">
                     <div class="mb-3">
                         <img src="{{ asset('assets/images/awards/best-commercial.png') }}" alt="Award 1" class="w-full h-40 object-cover rounded-lg" />
                     </div>
@@ -253,7 +268,7 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="bg-white p-4 rounded-2xl shadow-md hover:shadow-lg transition flex flex-col items-start text-start about-us-awards-card">
+                <div class="bg-white md:p-4 p-2 rounded-2xl shadow-md hover:shadow-lg transition flex flex-col md:items-start md:text-start text-center about-us-awards-card">
                     <div class="mb-3">
                         <img src="{{ asset('assets/images/awards/sustainable-design.png') }}" alt="Award 2" class="w-full h-40 object-cover rounded-lg" />
                     </div>
@@ -261,7 +276,7 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="bg-white p-4 rounded-2xl shadow-md hover:shadow-lg transition flex flex-col items-start text-start about-us-awards-card">
+                <div class="bg-white md:p-4 p-2 rounded-2xl shadow-md hover:shadow-lg transition flex flex-col md:items-start md:text-start text-center about-us-awards-card">
                     <div class="mb-3">
                         <img src="{{ asset('assets/images/awards/realty-brand.png') }}" alt="Award 3" class="w-full h-40 object-cover rounded-lg" />
                     </div>
@@ -269,7 +284,7 @@
                 </div>
 
                 <!-- Card 4 -->
-                <div class="bg-white p-4 rounded-2xl shadow-md hover:shadow-lg transition flex flex-col items-start text-start about-us-awards-card">
+                <div class="bg-white md:p-4 p-2 rounded-2xl shadow-md hover:shadow-lg transition flex flex-col md:items-start md:text-start text-center about-us-awards-card">
                     <div class="mb-3">
                         <img src="{{ asset('assets/images/awards/realty-brand.png') }}" alt="Award 4" class="w-full h-40 object-cover rounded-lg" />
                     </div>
@@ -278,10 +293,10 @@
 
             </div>
 
-            <div class="mt-10">
-                <button class="view-more-button ">
+            <div class="mt-10 justify-center md:flex hidden">
+                <a class="view-more-button inline-flex items-center justify-center" href="{{ route('awards-and-recognitions') }}">
                     View More <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
-                </button>
+                </a>
             </div>
         </div>
     </div>
@@ -294,4 +309,40 @@
 
 
 
+@endsection
+
+
+@section('scripts')
+<script type="module">
+    $(document).ready(function() {
+
+        $(document).ready(function() {
+            $('.project-slider').slick({
+                slidesToShow: 1.2,
+                slidesToScroll: 1,
+                infinite: false,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                dots: false,
+                arrows: false,
+                responsive: [{
+                    breakpoint: 768, // sm only
+                    settings: {
+                        slidesToShow: 1.2,
+                        slidesToScroll: 1,
+                        centerMode: false,
+                        variableWidth: false,
+                        autoplay: true,
+                        autoplaySpeed: 5000,
+                        dots: false,
+                    }
+                }]
+            });
+
+
+        });
+
+
+    });
+</script>
 @endsection

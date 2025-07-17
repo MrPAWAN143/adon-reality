@@ -69,7 +69,7 @@
             </div>
 
             <!-- Button - Search -->
-            <button class="bg-primary border-primary hover:bg-white border-2 hover:border-primary text-white hover:text-txBlack font-semibold md:px-10 text-[10px] px-4 md:py-2 py-1 rounded-full md:mt-0 md:ml-2 transition duration-300">
+            <button class="bg-primary border-primary hover:bg-white border-2 hover:border-primary text-white hover:text-txBlack font-semibold md:px-8 text-[10px] md:text-[14px] px-4 md:py-2 py-1 rounded-full md:mt-0 md:ml-2 transition duration-300">
                 Search
             </button>
         </div>

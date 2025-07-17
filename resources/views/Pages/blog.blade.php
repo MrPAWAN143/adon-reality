@@ -54,7 +54,7 @@
         <div class="grid grid-cols-2 md:grid-cols-3 md:gap-4 gap-3 mx-auto">
             @if(isset($blogs) && $blogs->count() > 0)
             @foreach ($blogs as $blog)
-            <x-blog-card url="{{route('blog.each', $blog->slug )}}" cardCls="marketing-insights-card" class="featured-investment-img" src="{{ asset($blog->featured_image) }}" alt="{{ $blog->title }}" h4="{{ $blog->title }}" p="{{ $blog->summary }}" />
+            <x-blog-card url="{{route('blog.each', $blog->slug )}}" imageWrapperClass="m-blog-page-image-dev" cardCls="marketing-insights-card blog-page" class="featured-investment-img" src="{{ asset($blog->featured_image) }}" alt="{{ $blog->title }}" h4="{{ $blog->title }}" p="{{ $blog->summary }}" />
             @endforeach
             @endif
 

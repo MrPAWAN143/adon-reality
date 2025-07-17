@@ -132,7 +132,7 @@
             <!-- Left Side: Copyright -->
             <div class="flex items-center space-x-2 text-sm">
                 <span>©</span>
-                <p class="text-xs">2025 XYZ Real Estate Investment Platform. All Rights Reserved.</p>
+                <p class="text-xs">2025 Adon Realty Real Estate Investment Platform. All Rights Reserved.</p>
             </div>
 
             <!-- Right Side: Social Media -->
