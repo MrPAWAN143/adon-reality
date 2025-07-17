@@ -46,7 +46,7 @@
             <div class="md:mb-6 mb-2 flex md:gap-5 gap-2 items-center justify-between mt-4">
                 <div class="flex w-full items-center rounded-xl border border-bgSecondary px-4 md:py-1 py-0 shadow-sm">
                     <x-zondicon-search class="md:w-6 md:h-6 h-4 w-4 text-bgSecondary" />
-                    <input type="text" placeholder="Search blog articles..."
+                    <input type="text" placeholder="Search Property By Name Location..."
                         class="w-full outline-none placeholder:text-bgSecondary md:placeholder:text-sm placeholder:text-xs text-sm bg-transparent border-none focus:border-none focus:outline-none py-1 md:py-2" />
                 </div>
 

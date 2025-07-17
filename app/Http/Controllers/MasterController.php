@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DevelopmentPartners;
 use Illuminate\Http\Request;
 
 class MasterController extends Controller
@@ -18,7 +19,11 @@ class MasterController extends Controller
 
     public function aboutUs()
     {
-        return view('Pages.about-us');
+        $developmentPartner = DevelopmentPartners::where('is_active', 1)
+           ->inRandomOrder()
+           ->take(3)
+           ->get();
+        return view('Pages.about-us', compact('developmentPartner'));
     }
 
     public function service()

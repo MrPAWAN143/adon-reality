@@ -1,3 +1,3 @@
-  <button class="{{ $class }}" onclick="location.href='{{ $url }}'">
-         {{ $text }}
-     </button>
+  <a class="{{ $class }} inline-flex items-center justify-center" href='{{ $url }}'>
+    {{ $text }}
+  </a>

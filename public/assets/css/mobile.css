@@ -12,7 +12,6 @@
         font-size: 16px !important;
         line-height: 28px;
         margin-bottom: 8px;
-
     }
 
     .subheading {
@@ -87,8 +86,10 @@
     }
 
     .herosearchBtn {
+        position: relative;
         padding: 5px 15px;
         font-size: 0.675rem;
+        z-index: 5;
 
     }
 
@@ -162,14 +163,6 @@
     }
 
 
-    .marketing-insights-card {
-        @apply bg-white rounded-[10px] shadow-md p-4 transition duration-300 flex flex-col items-start;
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
-        width: 100%;
-        max-width: 355px;
-        height: 100%;
-        max-height: auto;
-    }
 
     .featured-investment-image-dev {
         width: 100%;
@@ -177,6 +170,38 @@
         height: 220px !important;
         object-fit: cover;
         border-radius: 10px;
+    }
+
+    .marketing-insights-card.blog-page {
+        @apply !p-2 flex flex-col items-start justify-between;
+    }
+
+    .marketing-insights-card.blog-page h4 {
+        font-size: 12px !important;
+        line-height: 16px;
+        margin-top: 0px;
+    }
+
+    .marketing-insights-card.blog-page p {
+        font-size: 12px !important;
+        line-height: 16px;
+        margin-top: 0px;
+    }
+
+    .marketing-insights-card.blog-page a {
+        font-size: 12px !important;
+        line-height: 16px;
+        margin-top: 0px;
+    }
+
+    .m-blog-page-image-dev {
+        width: 100%;
+        max-height: 130px !important;
+        height: 110px !important;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 4px;
+
     }
 
     .marketing-insights-button {
@@ -344,7 +369,7 @@
     }
 
     .m-featured-page-card {
-        @apply bg-white rounded-[10px] shadow-md p-2 transition duration-300 flex flex-col items-start;
+        @apply bg-white rounded-[10px] shadow-md p-2 transition duration-300 flex flex-col items-start justify-between;
         box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
         width: 100%;
         max-width: 100% !important;
@@ -400,9 +425,47 @@
 
 
     /* Footer Styles */
-    
 
 
+    .our-core-team {
+        @apply p-2 text-center;
+    }
+
+    .our-core-team img {
+        @apply p-2;
+    }
+
+    .our-core-team h3 {
+        @apply text-[14px] font-semibold text-txBlack mb-2 !mt-0;
+    }
+
+    .our-core-team p {
+        @apply text-[12px] font-normal text-gray-700 mb-2;
+    }
+
+    .our-core-team p:last-child {
+        @apply text-[10px] font-normal;
+    }
+
+
+    .what-we-offer-card {
+        width: 195px;
+        height: 140px;
+        @apply border border-primary rounded-[20px] px-4 py-3 h-auto shadow-sm hover:shadow-md transition flex flex-col justify-between;
+
+    }
+
+    .what-we-offer-card h3 {
+        @apply text-[12px] font-semibold mb-1;
+    }
+
+    .what-we-offer-card p {
+        @apply text-txBlack text-[10px] mb-2;
+    }
+
+    .what-we-offer-button {
+        @apply bg-primary text-white text-[10px] font-normal px-3 py-1.5 rounded-[20px] inline-block hover:bg-white hover:text-primary border hover:border-primary;
+    }
 
 
 }
@@ -459,6 +522,7 @@
         padding: 0 !important;
         /* margin-left: -60px !important; */
     }
+
 
 
 }

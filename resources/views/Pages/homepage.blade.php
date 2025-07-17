@@ -8,6 +8,7 @@
 
 </style>
 <link rel="stylesheet" href="{{ asset('assets/css/homepage.css') }}">
+<link rel ="stylesheet" href="{{ asset('assets/css/mobile.css') }}">
 
 @endsection
 @section('homepage')
@@ -21,7 +22,7 @@
             Discover the best ROI-driven properties across India
         </p>
         <div class="m-hero-search flex flex-row items-center justify-between w-full md:max-w-[795px] md:h-[60px] !sm:h-[24px] bg-white rounded-full md:py-2 py-1 px-2 mt-4 shadow-md">
-            <div class="relative w-full !sm:w-[10%] md:w-[16%] ">
+            <div class="relative w-full !sm:w-[10%] md:w-[16%] z-10">
                 <select class="hero-section-select home py-1 md:py-2">
                     <option>City</option>
                     <option>Delhi</option>
@@ -29,7 +30,7 @@
                     <option>Bangalore</option>
                 </select>
             </div>
-            <div class="relative w-full !sm:w-auto">
+            <div class="relative w-full !sm:w-auto z-0">
                 <input type="text" placeholder="Search by city, ROI, project name..." class="search-input-homepage-herosection" />
             </div>
 
@@ -152,9 +153,6 @@
             </a>
             @endforeach
             @endif
-
-
-
         </div>
     </div>
 </section>
@@ -177,10 +175,6 @@
 
             @endforeach
             @endif
-
-
-
-
         </div>
         <div class="mt-10">
             <a href="{{ route('projects') }}" class="view-more-button ">
@@ -205,13 +199,8 @@
                 <x-featured-investment-section featuredCardClass="featured-investment-image-dev" src="{{ asset($property->property_featured_image) }}" imageClass="featured-investment-img" alt="{{ $property->property_name }}" heading="{{ $property->property_name }}" location="{{ $property->property_location }}" reraUrl="{{ $property->property_rera_url }}" rera="{{ $property->property_rera_number }}" status="{{ $property->property_status }}" roi="{{ $property->property_expected_roi }}" developer="{{ $property->developmentPartner->developer_name }}" variety="{{ $property->category->name }}" size="{{ $property->property_size }}" price="{{ $property->starting_price }}" />
                 <x-button class="featured-investment-button py-2" url="{{ route('projects.each' , $property->property_slug) }}" text="View Details" />
             </div>
-
             @endforeach
             @endif
-
-
-
-
         </div>
         <div class="mt-2">
             <a href="{{ route('projects') }}" class="view-more-button ">
@@ -229,7 +218,7 @@
 <section class="px-4 py-8 bg-white text-center">
     <div class="container max-w-6xl mx-auto">
         <x-heading-subheading heading="What We Offer" subheading="Comprehensive solutions tailored to meet all your real estate needs." headingClass="heading" subHeadingClass="subheading" />
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 ">
+        <div class="grid grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-10 gap-6 mx-auto">
             <!-- Card -->
             <div class="what-we-offer-card">
                 <h3>Property Investment Solutions</h3>
@@ -360,16 +349,10 @@
     <div class="">
         <x-heading-subheading heading="Our Development Partners" subheading="Collaborating with renowned names in real estate development." headingClass="heading" subHeadingClass="subheading" />
         <div class="project-slider">
-
             @foreach ($developmentPartner as $partner)
-
             <x-developer-partner-card partnerLogo="{{ asset($partner->logo) }}" url="{{ route('development-partners.show',  $partner->slug) }}" alt="{{ $partner->developer_name }}" heading="{{ $partner->developer_name }}" description="{{ $partner->tags }}" projectsPartnered="{{ $partner->total_projects }}" presence="{{ implode(', ', $partner->operating_cities ?? []) }}" />
-
-            <!-- Partner 2 -->
             @endforeach
-
         </div>
-
         <div class="mt-10">
             <a href="{{ route('development-partners') }}" class="view-more-button ">
                 View More <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
@@ -386,7 +369,7 @@
             @if(isset($blogs) && $blogs->count() > 0)
 
             @foreach ($blogs as $blog)
-            <x-blog-card cardCls="marketing-insights-card" url="{{ route('blog.each', $blog->slug) }}" imageWrapperClass=" mb-2 overflow-hidden rounded-[20px] md:h-52 w-full" class="featured-investment-img-blog" src="{{ asset( $blog->featured_image )}}" alt="{{ $blog->title }}" h4="{{ $blog->title }}" p="{{ $blog->summary }}" />
+            <x-blog-card cardCls="marketing-insights-card" url="{{ route('blog.each', $blog->slug) }}" imageWrapperClass=" mb-2 overflow-hidden rounded-[20px] md:h-64 w-full" class="featured-investment-img-blog" src="{{ asset( $blog->featured_image )}}" alt="{{ $blog->title }}" h4="{{ $blog->title }}" p="{{ $blog->summary }}" />
             @endforeach
             @endif
 

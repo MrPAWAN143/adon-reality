@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-<section class="px-4  max-w-7xl mx-auto py-8 sm:py-2 bg-white">
+<section class="md:px-0 px-4  md:max-w-6xl w-full lg:max-w-7xl xl:max-w-8xl mx-auto py-8 sm:py-2 bg-white">
     <div class="container">
         <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> > <a href="{{ route('event-and-media') }}">Events and Media</a>
     </div>
@@ -18,7 +18,7 @@
     <div class="px-6 py-0 bg-white">
         <!-- Featured Event Section -->
         <h2 class="text-2xl font-bold mb-6">Featured Event</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
+        <div class="grid grid-cols-2 md:grid-cols-3 md:gap-4 gap-3 mx-auto">
             <x-event image="{{ asset('assets/images/events/investor-connect.png') }}" alt="Investor Connect 2025" class="featured-investment-img" title="Investor Connect 2025" dateTime="June 10, 2025" buttonText="Watch" />
             <x-event image="{{ asset('assets/images/events/property-power-meet.png') }}" alt="Property Power Meet" class="featured-investment-img" title="Property Power Meet" dateTime="June 18, 2025" buttonText="Watch" />
             <x-event image="{{ asset('assets/images/events/realty-roundtable.png') }}" alt="The Realty Roundtable" class="featured-investment-img" title="The Realty Roundtable" dateTime="June 20, 2025" buttonText="Watch" />
@@ -26,7 +26,7 @@
 
         <!-- Past Event Section -->
         <h2 class="text-2xl font-bold mb-6">Past Event</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-2 md:grid-cols-3 md:gap-4 gap-3 mx-auto">
             <x-event image="{{ asset('assets/images/events/skyline-launch.png') }}" alt="Grand Launch of Skyline Residences" class="featured-investment-img" title="Grand Launch of Skyline Residences" dateTime="February 10, 2025" buttonText="Watch" />
             <x-event image="{{ asset('assets/images/events/women-in-real-estate.png') }}" alt="Women in Real Estate: Breaking Barriers" class="featured-investment-img" title="Women in Real Estate: Breaking Barriers" dateTime="January 26, 2025" buttonText="Watch" />
             <x-event image="{{ asset('assets/images/events/annual-meet.png') }}" alt="Adon Realty Annual Meet 2024" class="featured-investment-img" title="Adon Realty Annual Meet 2024" dateTime="December 10, 2024" buttonText="Watch" />

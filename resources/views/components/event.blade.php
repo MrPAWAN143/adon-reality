@@ -1,4 +1,4 @@
-<div class="marketing-insights-card">
+<div class="marketing-insights-card-event">
    <div class="featured-investment-image-dev">
      <img src="{{ $image }}" alt="{{ $alt }}" class="{{ $class}}" />
    </div>
