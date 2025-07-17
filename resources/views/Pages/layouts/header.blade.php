@@ -78,7 +78,7 @@
       <!-- Other Links -->
       <a href="{{ route('blog.show') }}" class="text-base text-txBlack hover:text-primary font-medium">Blog</a>
       <a href="{{ route('development-partners') }}" class="text-base text-txBlack hover:text-primary font-medium">Developers</a>
-      <a href="{{ route('testimonials') }}" class="text-base text-txBlack hover:text-primary font-medium">Testimonial</a>
+      <a href="#" class="text-base text-txBlack hover:text-primary font-medium">Testimonial</a>
       <a href="{{ route('about-us') }}" class="text-base text-txBlack hover:text-primary font-medium">About Us</a>
       <a href="{{ route('contact') }}" class="ml-2 px-6 py-2 border-2 border-primary text-primary rounded-3xl text-base hover:bg-primary hover:text-white transition font-medium">Contact Us</a>
     </nav>
@@ -134,7 +134,7 @@
         <!-- Other Links -->
         <a href="{{ route('blog.show') }}" class="block text-sm text-txBlack hover:text-black font-medium">Blog</a>
         <a href="{{ route('development-partners') }}" class="block text-sm text-txBlack hover:text-black font-medium">Developers</a>
-        <a href="{{ route('testimonials') }}" class="block text-sm text-txBlack hover:text-black font-medium">Testimonial</a>
+        <a href="#" class="block text-sm text-txBlack hover:text-black font-medium">Testimonial</a>
         <a href="{{ route('about-us') }}" class="block text-sm text-txBlack hover:text-black font-medium">About Us</a>
         <a href="{{ route('contact') }}" class="block text-center px-6 py-2 border border-primary text-primary rounded-full text-base hover:bg-primary hover:text-white transition font-medium">Contact Us</a>
       </nav>
