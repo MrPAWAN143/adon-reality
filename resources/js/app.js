@@ -1,8 +1,8 @@
 import './bootstrap';
-import '../../public/assets/css/homepage.css';
-import '../../public/assets/css/faq.css';
-import '../../public/assets/css/master.css';
-import '../../public/assets/css/mobile.css';
+import '../css/homepage.css';
+import '../css/faq.css';
+import '../css/master.css';
+import '../css/mobile.css';
 
 
 
