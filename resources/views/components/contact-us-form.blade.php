@@ -30,7 +30,7 @@
 
                 <div>
                     <input type="text" name="last_name" placeholder="Last Name" value="{{ old('last_name') }}"
-                        class="sm:w-full border-b border-gray-300 focus:outline-none text-sm py-2 placeholder-gray-500" />
+                        class="sm:w-full border-b border-gray-300  text-sm py-2 placeholder-gray-500" />
                     <div class="error text-start text-base text-red-500 mt-1"></div>
                 </div>
 

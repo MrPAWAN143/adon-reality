@@ -333,22 +333,29 @@
     background: transparent;
     color: #000;
     resize: none;
+     box-shadow: none !important;
+
+}
+input:focus {
+    box-shadow: none !important;
+
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    box-shadow: none !important;
+     border-bottom: 2px solid #ccc !important;
 }
 
-.contact-form textarea {
-    margin-bottom: 10px;
-}
+
+
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
     color: #888;
 }
 
-/* Remove focus border */
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none !important;
-    border: none !important;
+.contact-form textarea{
+    border-bottom: 2px solid #ccc !important;
 }
 
 .contact-form-button {

@@ -26,7 +26,7 @@ class featuredInvestmentSection extends Component
     public string $imageClass;
     public string $featuredCardClass;
 
-    public function __construct(string $src, string $alt, string $heading, string $location, string $rera, string $status, string $roi, string $developer, string $variety, string $size, string $price, string $url= '', string $imageClass = '', string $featuredCardClass = '')
+    public function __construct(string $src, string $alt, string $heading, string $location, string $rera, string $status, string $roi, string $developer, string $variety, string $size, string $price, string $url= '', string $imageClass = 'featured-investment-img', string $featuredCardClass = 'featured-investment-image-dev')
     {
         $this->src = $src;
         $this->alt = $alt;
@@ -40,8 +40,8 @@ class featuredInvestmentSection extends Component
         $this->size = $size;
         $this->price = $price;
         $this->url = $url;
-        $this->imageClass = $imageClass ?: 'featured-investment-img';
-        $this->featuredCardClass = $featuredCardClass ?: 'featured-investment-image-dev';
+        $this->imageClass = $imageClass;
+        $this->featuredCardClass = $featuredCardClass;
     }
 
     /**

@@ -22,7 +22,7 @@
             Discover the best ROI-driven properties across India
         </p>
         <div class="m-hero-search flex flex-row items-center justify-between w-full md:max-w-[795px] md:h-[60px] !sm:h-[24px] bg-white rounded-full md:py-2 py-1 px-2 mt-4 shadow-md">
-            <div class="relative w-full !sm:w-[10%] md:w-[16%] z-10">
+            <div class="relative w-auto !sm:w-[10%] md:w-[16%] z-10">
                 <select class="hero-section-select home py-1 md:py-2">
                     <option>City</option>
                     <option>Delhi</option>
@@ -169,7 +169,7 @@
             @foreach ($properties as $property)
 
             <div class="featured-investment-card">
-                <x-featured-investment-section src="{{ asset($property->property_featured_image) }}" alt="{{ $property->property_name }}" class="featured-investment-img" heading="{{ $property->property_name }}" location="{{ $property->property_location }}" reraUrl="{{ $property->property_rera_url }}" rera="{{ $property->property_rera_number }}" status="{{ $property->property_status }}" roi="{{ $property->property_expected_roi }}" developer="{{ $property->developmentPartner->developer_name }}" variety="{{ $property->category->name }}" size="{{ $property->property_size }}" price="{{ $property->starting_price }}" />
+                <x-featured-investment-section featuredCardClass="featured-investment-image-dev" src="{{ asset($property->property_featured_image) }}" imageClass="featured-investment-img" alt="{{ $property->property_name }}" class="featured-investment-img" heading="{{ $property->property_name }}" location="{{ $property->property_location }}" url="{{ $property->property_rera_url }}" rera="{{ $property->property_rera_number }}" status="{{ $property->property_status }}" roi="{{ $property->property_expected_roi }}" developer="{{ $property->developmentPartner->developer_name }}" variety="{{ $property->category->name }}" size="{{ $property->property_size }}" price="{{ $property->starting_price }}" />
                 <x-button class="featured-investment-button" url="{{ route('projects.each' , $property->property_slug) }}" text="View Details" />
             </div>
 

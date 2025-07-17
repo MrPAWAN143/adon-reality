@@ -14,7 +14,7 @@
 </div>
 </div>
 <x-banner-section class="px-4 relative md:h-[55vh] md:max-h-[55vh] h-[30vh] max-h-[30vh]" image="{{ asset('assets/images/bannerImages/single-project-banner.jpg') }}" title="DLF Prime Towers
-Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-[38%] !w-full" />
+Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-[38%] !w-full" buttonLink="#" buttonClass=" " buttonText=""/>
 
 <div class="w-full py-6 px-4 md:px-0">
     <div class="max-w-6xl mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-start gap-6">
@@ -413,15 +413,15 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
             <h3 class="md:text-[24px] text-[16px] font-semibold">Project of the Day</h3>
             <div class=" slick-slider-single-page" id="slick-slider">
                 <div class="featured-investment-card-single-page">
-                    <x-featured-investment-section src="{{ asset('assets/images/allImages/DlfCyberCity.png') }}" featuredCardClass="featured-investment-card-single-page-div" alt="DLF Cyber City Tower" class="featured-investment-img-single-page" heading="DLF Cyber City Tower" location="Noida, Sector 62" rera="UPRERAI2345" status="Ongoing" roi="12%" developer="DLF" variety="Multiplex / Commercial" size="5000 sq. ft." price="Price on Demand" />
+                    <x-featured-investment-section imageClass=" " src="{{ asset('assets/images/allImages/DlfCyberCity.png') }}" featuredCardClass="featured-investment-card-single-page-div" alt="DLF Cyber City Tower" heading="DLF Cyber City Tower" location="Noida, Sector 62" rera="UPRERAI2345" status="Ongoing" roi="12%" developer="DLF" variety="Multiplex / Commercial" size="5000 sq. ft." price="Price on Demand" />
                     <x-button class="featured-investment-button-single-page" text="View Details" />
                 </div>
                 <div class="featured-investment-card-single-page">
-                    <x-featured-investment-section src="{{ asset('assets/images/allImages/M3MCorporateHeights.png') }}" featuredCardClass="featured-investment-card-single-page-div" alt="M3M Corporate Heights" class="featured-investment-img-single-page" heading="M3M Corporate Heights" location="Sector 67, Gurgaon" rera="HRERAGGN20230911" status="Ready to Move" roi="10%" developer="M3M" variety="Commercial Office Tower" size="7000 sq. ft." price="Price on Demand" />
+                    <x-featured-investment-section imageClass=" " src="{{ asset('assets/images/allImages/M3MCorporateHeights.png') }}" featuredCardClass="featured-investment-card-single-page-div" alt="M3M Corporate Heights" heading="M3M Corporate Heights" location="Sector 67, Gurgaon" rera="HRERAGGN20230911" status="Ready to Move" roi="10%" developer="M3M" variety="Commercial Office Tower" size="7000 sq. ft." price="Price on Demand" />
                     <x-button class="featured-investment-button-single-page" text="View Details" />
                 </div>
                 <div class="featured-investment-card-single-page">
-                    <x-featured-investment-section src="{{ asset('assets/images/allImages/M3MAtrium.png') }}" featuredCardClass="featured-investment-card-single-page-div" alt="M3M Atrium" class="featured-investment-img-single-page" heading="M3M Atrium" location="Sector 140, Noida Expressway" rera="UPRERA-2023-0567" status="Pre-Launch" roi="12%" developer="M3M" variety="High Street Retail" size="4800 sq. ft." price="Price on Demand" />
+                    <x-featured-investment-section imageClass=" " src="{{ asset('assets/images/allImages/M3MAtrium.png') }}" featuredCardClass="featured-investment-card-single-page-div" alt="M3M Atrium" heading="M3M Atrium" location="Sector 140, Noida Expressway" rera="UPRERA-2023-0567" status="Pre-Launch" roi="12%" developer="M3M" variety="High Street Retail" size="4800 sq. ft." price="Price on Demand" />
                     <x-button class="featured-investment-button-single-page" text="View Details" />
                 </div>
             </div>
