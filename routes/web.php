@@ -23,7 +23,7 @@ Route::get('/developer', [DevelopmentPartnersController::class, 'index'])->name(
 Route::get('/developer-each/{slug}', [DevelopmentPartnersController::class, 'show'])->name('development-partners.show');
 Route::get('/projects', [PropertiesDetailsController::class, 'index'])->name('projects');
 Route::get('/project-virtual-tours', [PropertiesDetailsController::class, 'virtualTours'])->name('properties.virtual-tours');
-Route::get('/projects-each/{slug}', [PropertiesDetailsController::class, 'show'])->name('projects.each');
+Route::get('/projects/{slug}', [PropertiesDetailsController::class, 'show'])->name('projects.each');
 Route::get('/blog', [BlogsController::class, 'index'])->name('blog.show');
 Route::get('/blog-each/{slug}', [BlogsController::class, 'show'])->name('blog.each');
 Route::get('/event-and-media', [EventAndMediaController::class, 'index'])->name('event-and-media');

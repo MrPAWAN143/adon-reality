@@ -8,11 +8,10 @@
 @endsection
 
 @section('content')
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
+     <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('projects') }}">Projects</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('projects.each', $property->property_slug) }}">{{ $property->property_name }}</a></div>
+</section>
 
-<div class="container max-w-6xl mx-auto">
-    <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> > <a href="{{ route('projects') }}">Projects</a> > <a href="{{ route('projects.each', $property->property_slug) }}">{{ $property->property_name }}</a>
-</div>
-</div>
 <x-banner-section class="px-4 relative md:h-[55vh] md:max-h-[55vh] h-[30vh] max-h-[30vh]" image="{{ asset('assets/images/bannerImages/single-project-banner.jpg') }}" title="DLF Prime Towers
 Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-[38%] !w-full" buttonLink="#" buttonClass=" " buttonText=""/>
 
@@ -20,7 +19,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
     <div class="max-w-6xl mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-start gap-6">
 
         <!-- Left Content -->
-        <div class="space-y-3 md:inline-flex flex-col md:items-start items-center md:gap-4 w-full md:w-auto">
+        <div class="space-y-3 md:inline-flex flex-col md:items-start items-center md:gap-2 w-full md:w-auto">
             <!-- Tag -->
             <div class="md:inline-flex flex items-center justify-center ">
                 <span class="md:inline-block border border-txBlack font-light rounded-2xl px-8 py-2 md:text-[16px] text-[12px] text-txBlack">
@@ -35,7 +34,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
             </div>
 
             <!-- Meta Info -->
-            <div class="md:text-sm text-[8px] md:text-left text-center text-gray-700 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+            <div class="md:text-sm text-[8px] md:text-left text-center text-gray-700 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 md:gap-y-0 !md:mt-0">
                 <span>Noida, Sector 62</span>
                 <span class="text-txBlack">|</span>
                 <span>5000 sq. ft.</span>
@@ -326,7 +325,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
 
             <!-- Who Should Invest -->
             <div class="">
-                <h3 class="text-txBlack md:text-[16px] text-[12px] md:ml-4 space-y-0">Who to invest in this project</h3>
+                <h3 class="md:text-[24px] text-[16px] font-semibold mb-2 md:text-start text-center">Who to invest in this project</h3>
 
                 <ul class="text-txBlack md:text-[16px] text-[12px] md:ml-4 space-y-0">
                     <li class="flex items-start gap-2">
@@ -432,16 +431,16 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
             <h3 class="md:text-[24px] text-[16px] font-semibold">Explore our blogs</h3>
             <div class="pt-2 slick-slider-single-page" id="slick-slider2">
                 <div class="marketing-insights-card-single-page">
-                    <x-blog-card  cardCls="marketing-insights-card border-[0.1px] border-primary heading-h4 !p-3" imageWrapperClass="!h-52 w-full mb-2" class="featured-investment-img !mb-0" src="{{asset('assets/images/allImages/marketing2.png')}}" alt="DLF Cyber City Tower" h4="Top Cities for Real Estate Investment in 2025" p="Discover where smart investors are putting their money this year." />
+                    <x-blog-card  cardCls="marketing-insights-card  heading-h4 !p-3" imageWrapperClass="!h-52 w-full mb-2 overflow-hidden" class="featured-investment-img !mb-0" src="{{asset('assets/images/allImages/marketing2.png')}}" alt="DLF Cyber City Tower" h4="Top Cities for Real Estate Investment in 2025" p="Discover where smart investors are putting their money this year." />
                 </div>
                 <div class="marketing-insights-card-single-page">
-                    <x-blog-card cardCls="marketing-insights-card border-[0.1px] border-primary heading-h4 !p-3" imageWrapperClass="!h-52 w-full mb-2" class="featured-investment-img !mb-0" src="{{ asset('assets/images/allImages/marketing3.png') }}" alt="M3M Corporate Heights" h4="5 Mistakes Every Property Investor Should Avoid" p="Learn common pitfalls and how to protect your real estate investment" />
+                    <x-blog-card cardCls="marketing-insights-card  heading-h4 !p-3" imageWrapperClass="!h-52 w-full mb-2 overflow-hidden" class="featured-investment-img !mb-0" src="{{ asset('assets/images/allImages/marketing3.png') }}" alt="M3M Corporate Heights" h4="5 Mistakes Every Property Investor Should Avoid" p="Learn common pitfalls and how to protect your real estate investment" />
                 </div>
                 <div class="marketing-insights-card-single-page">
-                    <x-blog-card cardCls="marketing-insights-card border-[0.1px] border-primary heading-h4 !p-3" imageWrapperClass="!h-52 w-full mb-2" class="featured-investment-img !mb-0" src="{{ asset('assets/images/allImages/marketing1.png') }}" alt="M3M Atrium" h4="Rental Income: Which Strategy Wins?" p="Compare long-term rental income with short-term property flipping profits." />
+                    <x-blog-card cardCls="marketing-insights-card  heading-h4 !p-3" imageWrapperClass="!h-52 w-full mb-2 overflow-hidden" class="featured-investment-img !mb-0" src="{{ asset('assets/images/allImages/marketing1.png') }}" alt="M3M Atrium" h4="Rental Income: Which Strategy Wins?" p="Compare long-term rental income with short-term property flipping profits." />
                 </div>
                 <div class="marketing-insights-card-single-page">
-                    <x-blog-card cardCls="marketing-insights-card border-[0.1px] border-primary heading-h4 !p-3" imageWrapperClass="!h-52 w-full mb-2" class="featured-investment-img !mb-0" src="{{ asset('assets/images/allImages/marketing4.png') }}" alt="M3M Corporate Heights" h4="The Future of Real Estate: Trends to Watch" p="Stay ahead of the curve with these emerging real estate trends." />
+                    <x-blog-card cardCls="marketing-insights-card  heading-h4 !p-3" imageWrapperClass="!h-52 w-full mb-2 overflow-hidden" class="featured-investment-img !mb-0" src="{{ asset('assets/images/allImages/marketing4.png') }}" alt="M3M Corporate Heights" h4="The Future of Real Estate: Trends to Watch" p="Stay ahead of the curve with these emerging real estate trends." />
                 </div>
             </div>
         </div>

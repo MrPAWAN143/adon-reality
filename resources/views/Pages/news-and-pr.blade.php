@@ -9,6 +9,10 @@
 @endsection
 
 @section('content')
+
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
+     <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('news') }}">News & PR</a></div>
+</section>
 <section class="px-4 pt-8 pb-0 sm:py-2 bg-white max-w-7xl mx-auto">
     <div class="container max-w-6xl mx-auto">
         <x-page-path class="path" path="Home > News & PR" />

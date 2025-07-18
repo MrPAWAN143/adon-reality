@@ -9,11 +9,13 @@
 @endsection
 
 @section('content')
+
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
+     <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a href="{{ route('awards-and-recognitions') }}" class="ml-[-5px]">Awards & Recognitions</a></div>
+</section>
 <section class="px-4 py-8 sm:py-2 bg-white">
-    <div class="container max-w-7xl mx-auto">
-        <x-page-path class="path" path="Home > Awards & Recognitions" />
-        <div>
-            <x-heading-subheading heading="Awards & Recognitions" subheading="Celebrating Our Journey of Excellence in Real Estate" headingClass="heading text-center" subHeadingClass="subheading text-md mb-4" />
+    <div>
+        <x-heading-subheading heading="Awards & Recognitions" subheading="Celebrating Our Journey of Excellence in Real Estate" headingClass="heading text-center" subHeadingClass="subheading text-md mb-4" />
         </div>
         <div class="max-w-3xl m-auto px-6 mt-0">
             <p class="text-center text-sm">Over the years, Adon Realty has been recognized for our commitment to innovation, sustainability, and excellence. These accolades reflect the trust of our clients and our team’s unwavering dedication to redefining real estate experiences.</p>

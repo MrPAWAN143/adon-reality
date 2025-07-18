@@ -9,10 +9,11 @@
 @endsection
 
 @section('content')
+
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
+     <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('event-and-media') }}">Events and Media</a></div>
+</section>
 <section class="md:px-0 px-4  md:max-w-6xl w-full lg:max-w-7xl xl:max-w-8xl mx-auto py-8 sm:py-2 bg-white">
-    <div class="container">
-        <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> > <a href="{{ route('event-and-media') }}">Events and Media</a>
-    </div>
     <x-heading-subheading heading="Events and Media" subheading="Discover the moments that define XYZ’s journey" headingClass="heading text-center" subHeadingClass="subheading text-sm mb-4" />
 
     <div class="px-6 py-0 bg-white">

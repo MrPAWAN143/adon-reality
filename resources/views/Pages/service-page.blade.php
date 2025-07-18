@@ -6,9 +6,9 @@
 <link rel="stylesheet" href="{{ asset('assets/css/homepage.css') }}">
 @endsection
 @section('content')
-<div class="container max-w-6xl mx-auto">
-    <x-page-path class="path" path="Home > Services" />
-</div>
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
+     <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a href="{{ route('service') }}" class="ml-[-5px]">Services</a></div>
+</section>
 <x-banner-section class="px-4 relative h-[75vh] max-h-[75vh]" image="{{ asset('assets/images/bannerImages/service-page-banner.webp') }}" title="Empowering Your Journey with Smart, Scalable Solutions" subtitle="At Adon, we provide customized digital services designed to streamline your business and drive success." buttonText="Get Started" buttonLink="#" buttonClass="banner-button" />
 
 <section class="py-10 bg-white text-center mx-auto">

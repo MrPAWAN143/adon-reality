@@ -6,9 +6,9 @@
 <link rel="stylesheet" href="{{ asset('assets/css/homepage.css') }}">
 @endsection
 @section('content')
-<div class="container max-w-6xl mx-auto">
-    <x-page-path class="path" path="Home > Why Invest With us" />
-</div>
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
+     <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('why-invest-with-us') }}">Why Invest With Us</a> </div>
+</section>
 <x-banner-section class="px-4 relative h-[65vh] max-h-[65vh]" image="{{ asset('assets/images/bannerImages/why-choose.webp') }}" title="Secure Your Future with Smart Investments" subtitle="Adon Realty helps you grow your wealth through
 carefully planned real estate opportunities." />
 

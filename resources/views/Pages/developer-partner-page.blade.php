@@ -8,24 +8,17 @@
 @endsection
 
 @section('content')
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
+     <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('development-partners') }}">Developer Partners</a></div>
+</section>
 <section class="px-4  bg-white pb-8  max-w-6xl mx-auto ">
-    <div class="container">
-        <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> > <a href="{{ route('development-partners') }}">Developer Partners</a>
-    </div>
 
     <div class="flex md:flex-row flex-col md:items-center md:justify-between justify-center items-center mb-8">
         <div class="flex-1 px-6">
             <x-heading-subheading heading="Our Partnered Developers" subheading="Explore top real estate developers and their best projects." headingClass="heading text-start !my-2 m-heading" subHeadingClass="subheading mb-2 dev-start m-subheading" />
         </div>
 
-        <div class="flex-1 flex justify-end">
-            <select class="project-page-filter-btn w-40 font-normal">
-                <option>Filter By</option>
-                <option>Price: Low to High</option>
-                <option>Price: High to Low</option>
-                <option>Newest</option>
-            </select>
-        </div>
+        
     </div>
 
 

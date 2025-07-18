@@ -1,5 +1,5 @@
 <div class="{{ $cardCls}} ">
-  <div class="{{ $imageWrapperClass }} ">
+  <div class="{{ $imageWrapperClass }} overflow-hidden">
 
     <img src="{{ $src }}" alt="{{ $alt }}" class="{{ $class}}  transform transition duration-300 ease-in-out hover:scale-125" />
   </div>
