@@ -6,9 +6,12 @@
 <link rel="stylesheet" href="{{ asset('assets/css/master.css') }}">
 @endsection
 @section('content')
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
+    <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a href="{{ route('projects') }}" class="ml-[-5px]">Projects</a></div>
+</section>
 <section class="px-4 max-w-6xl mx-auto bg-white pb-8">
     <div class="container ">
-        <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> > <a href="{{ route('projects') }}">Projects</a></div>
+
         <x-heading-subheading heading="Explore project that you need" subheading="Filter,short,and find the perfect property just the way you want" headingClass="heading text-center m-heading" subHeadingClass="subheading m-subheading mb-2" />
 
         <div class="max-w-3xl mx-auto px-4 py-4 md:pb-8 pb-3">
@@ -50,25 +53,28 @@
                         class="w-full outline-none placeholder:text-bgSecondary md:placeholder:text-sm placeholder:text-xs text-sm bg-transparent border-none focus:border-none focus:outline-none py-1 md:py-2" />
                 </div>
 
-                <select class="project-page-filter-btn filter md:w-40 w-24 !rounded-[20px] font-normal">
-                    <option>Sort By</option>
-                    <option>Price: Low to High</option>
-                    <option>Price: High to Low</option>
-                    <option>Newest</option>
+                <select class="project-page-filter-btn w-30 focus:bg-primary  md:w-auto rounded-[20px] bg-white text-primary border-2 border-primary px-4 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50">
+                    <option disabled selected>Sort by</option>
+                    <option>Price: Low To High</option>
+                    <option>Price: High To Low</option>
+                    <option>Newest Listings</option>
+                    <option>Most Viewed</option>
+                    <option>Best ROI Potential</option>
                 </select>
+
 
 
             </div>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-3 md:gap-6 gap-3 mx-auto">
-           @foreach ($properties as $property)
-          <div class="featured-investment-card m-featured-page-card">
-                    <x-featured-investment-section featuredCardClass="project-page-image-dev" src="{{ asset($property->property_featured_image) }}" alt="{{ $property->property_name }}" imageClass="project-page-image" heading="{{ $property->property_name }}" location="{{ $property->property_location }}" url="{{ $property->property_rera_url }}" rera="{{ $property->property_rera_number }}" status="{{ $property->property_status }}" roi="{{ $property->property_expected_roi }}" developer="{{ $property->developmentPartner->developer_name }}" variety="{{ $property->category->name }}" size="{{ $property->property_size }}" price="{{ $property->starting_price }}" />
+            @foreach ($properties as $property)
+            <div class="featured-investment-card m-featured-page-card">
+                <x-featured-investment-section featuredCardClass="project-page-image-dev" src="{{ asset($property->property_featured_image) }}" alt="{{ $property->property_name }}" imageClass="project-page-image" heading="{{ $property->property_name }}" location="{{ $property->property_location }}" url="{{ $property->property_rera_url }}" rera="{{ $property->property_rera_number }}" status="{{ $property->property_status }}" roi="{{ $property->property_expected_roi }}" developer="{{ $property->developmentPartner->developer_name }}" variety="{{ $property->category->name }}" size="{{ $property->property_size }}" price="{{ $property->starting_price }}" />
                 <x-button class="featured-investment-button !py-2" url="{{ route('projects.each' , $property->property_slug) }}" text="View Details" />
             </div>
 
-              @endforeach
+            @endforeach
 
         </div>
     </div>

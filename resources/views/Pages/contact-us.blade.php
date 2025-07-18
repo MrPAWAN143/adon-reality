@@ -9,8 +9,10 @@
 @endsection
 
 @section('content')
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
+    <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a href="{{ route('contact') }}" class="ml-[-5px]">Contact Us</a></div>
+</section>
 <section class=" w-[96%] max-w-7xl py-0 md:px-4 px-0 lg:px-8 mx-auto">
-    <x-page-path class="path" path="Home > Contact Us" />
     <x-heading-subheading class="" heading="Connect with Adon realty" subheading="We'd love to hear from you! Share your Query below" headingClass="heading md:hidden m-heading block" subHeadingClass="subheading m-subheading md:hidden block" />
     <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-x-6 w-full md:w-[90%] mx-auto md:mt-10 mt-4 gap-6 rounded">
         <div class="py-5 md:px-7 px-4 bg-gradient-to-b from-bgSecondary/30 to-white rounded-xl w-[90%] md:w-[90%] mx-auto">
@@ -21,10 +23,9 @@
                         <x-zondicon-location class="w-3 h-3  text-white" />
                     </div>
 
-                    <p class=" ">
-                        Building No 76, M3M Market 84, Sector 84,Gurugaon, Haryana
-                        122004
-                    </p>
+                    <address class=" ">
+                        Ground floor 4, DEEP SHIKHA BUILDING, Rajendra Place, New Delhi, Delhi, 110008
+                    </address>
                 </div>
                 <div class="flex gap-2 items-center  mt-4 ">
 
@@ -32,7 +33,7 @@
                         <x-zondicon-phone class="w-3 h-3  text-white" />
                     </div>
 
-                    <p class=" ">+91-9090906776</p>
+                    <p class=" "><a href="tel:+919355963568">+91 9355963568</a></p>
                 </div>
                 <div class="flex gap-2 items-center mt-4 ">
 
@@ -40,7 +41,7 @@
                         <x-typ-mail class="w-5 h-5  text-white" />
                     </div>
 
-                    <p class=" ">info@adonrealty.co.in</p>
+                    <p class=" "><a href="mailto:contact@adonrealty.in">Contact@adonrealty.in</a></p>
                 </div>
                 <div class="flex gap-2 items-center mt-4 ">
                     <div class="bg-primary rounded-full p-1">
@@ -48,7 +49,7 @@
                     </div>
 
 
-                    <p class=" ">adonrealty.co.in</p>
+                    <p class=" "><a target="_blank" href="https://adonrealty.in">adonrealty.in</a></p>
                 </div>
 
                 <div class="md:mt-8 mt-4 rounded-[15px] overflow-hidden ">
@@ -71,36 +72,40 @@
 
             <x-heading-subheading class="" heading="Connect with Adon realty" subheading="We'd love to hear from you! Share your Query below" headingClass="heading text-start !my-2 md:block hidden" subHeadingClass="subheading mb-2 text-sm dev-start md:block hidden" />
 
-            <form action="" class="queryform" method="POST" action="#">
-
+            <form class="contactUsForm" method="POST">
+                @csrf
                 <div class="flex flex-row md:flex-row gap-4 mt-4 md:mt-8">
                     <!-- Name Input -->
                     <div class="w-full">
-                        <label class="block text-xs md:text-sm mb-1 text-primary" for="name">Name</label>
-                        <input type="text" id="name"
+                        <label class="block text-xs md:text-sm mb-1 text-primary" for="first_name">First Name</label>
+                        <input type="text" name="first_name" id="first_name"
                             class="w-full border-b-2 focus:outline-none md:h-8 h-5 text-sm px-1" />
+                        <div class="error text-start text-base text-red-500 mt-1"></div>
                     </div>
 
                     <!-- Phone Input -->
                     <div class="w-full">
                         <label class="block text-xs md:text-sm mb-1 text-primary" for="phone">Phone</label>
-                        <input type="text" id="phone"
+                        <input type="text" name="phone" id="phone"
                             class="w-full border-b-2 focus:outline-none md:h-8 h-5 text-sm px-1" />
+                        <div class="error text-start text-base text-red-500 mt-1"></div>
                     </div>
                 </div>
 
                 <div class="mt-2">
                     <label class="text-xs md:text-sm  text-primary">Email</label>
-                    <input type="email" class="border-b-2 outline-none h-8 w-full" />
+                    <input type="email" name="email" id="email" class="border-b-2 outline-none h-8 w-full" />
+                    <div class="error text-start text-base text-red-500 mt-1"></div>
                 </div>
                 <div class="mt-2">
                     <label class="text-xs md:text-sm  text-primary">Message</label>
-                    <textarea type="text" class="border-b-2 outline-none md:h-24 h-16 w-full "></textarea>
+                    <textarea name="message" id="message" class="border-b-2 outline-none md:h-24 h-16 w-full "></textarea>
+                    <div class="error text-start text-base text-red-500 mt-1"></div>
                 </div>
                 <div class="flex gap-2 mt-2  ">
-                    <div class=""><input class=" !accent-[#540313]" checked type="radio" /> </div>
-                    <h1 class="text-xs md:text-sm">By submitting this from,you here by grant us permission to contact you via SMS, WhatsApp, RCS, Email and any other channel </h1>
-
+                    <div class=""><input class=" !accent-[#540313]" name="checkbox" id="checkbox" type="radio" /> </div>
+                    <p for="checkbox" class="text-xs md:text-sm">By submitting this from,you here by grant us permission to contact you via SMS, WhatsApp, RCS, Email and any other channel </h1>
+                    <div class="error text-start text-base text-red-500 mt-1"></div>
                 </div>
                 <button class="bg-primary hover:bg-white hover:text-primary hover:border-primary border-2  md:px-8 px-6 md:py-4 py-3 mb-3 md:mt-8 mt-6 rounded-[20px] text-white">Send Message</button>
             </form>
@@ -221,5 +226,109 @@
 
 
 @section('scripts')
+<script type="module">
+    $(document).ready(function() {
+        // Helper: Validate email
+        const emailIsValid = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
+        // Phone auto-prefix +91 and clean input
+        const $phone = $('input[name="phone"]');
+        $phone.on('input', function() {
+            if (!this.value.startsWith('+91')) {
+                this.value = '+91' + this.value.replace(/^\+?91?/, '');
+            }
+            this.value = this.value.replace(/(?!^\+)\D/g, '');
+        });
+
+        $('.contactUsForm').submit(function(e) {
+            e.preventDefault();
+
+
+            const form = this;
+            const formData = new FormData(form);
+
+
+            // Clear old errors
+            $('.error').text('');
+            $('input, textarea').removeClass('border-red-500');
+
+            // Extract values
+            const first_name = formData.get('first_name').trim();
+            const email = formData.get('email').trim();
+            const phone = formData.get('phone').trim();
+            const message = formData.get('message').trim();
+            const checkbox = formData.get('checkbox') ? formData.get('checkbox') : false;
+            if (!checkbox) {
+                showFieldError('checkbox', 'You must agree to the terms.');
+                return;
+            }
+            let button = $(this).find('button[type="submit"]');
+
+
+            let hasError = false;
+
+            // Client-side validation
+            if (first_name.length < 2) {
+                showFieldError('first_name', 'Enter Full Name.');
+                hasError = true;
+            }
+            if (!emailIsValid(email)) {
+                showFieldError('email', 'Enter a valid email address.');
+                hasError = true;
+            }
+            if (!/^\+91\d{10}$/.test(phone)) {
+                showFieldError('phone', 'Enter a valid phone number.');
+                hasError = true;
+            }
+            if (hasError) return;
+
+            button.prop('disabled', true).text('Submitting...');
+
+            // AJAX submit
+            $.ajax({
+                url: "{{ route('leads.store') }}",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response) {
+                    let message = response.message || 'Thank you! We’ll contact you soon.';
+                    $('#thankYouModal').removeClass('hidden').addClass('flex');
+                    $('#thankYouModal').find('h3').text('Thank You!');
+                    $('#thankYouModal').find('p').text(message);
+                    button.prop('disabled', false).text('Book a Call');
+                    form.reset();
+                },
+                error: function(err) {
+                    if (err.responseJSON && err.responseJSON.errors) {
+                        $.each(err.responseJSON.errors, function(name, message) {
+                            showFieldError(name, message[0]);
+                        });
+                    } else {
+                        $('#thankYouModal').removeClass('hidden').addClass('flex');
+                        $('#thankYouModal').find('h3').text('Error!');
+                        $('#thankYouModal').find('p').text('Something went wrong. Please try again later.');
+                    }
+                    button.prop('disabled', false).text('Book a Call');
+                }
+            });
+        });
+
+        function showFieldError(name, message) {
+            const input = $(`[name="${name}"]`);
+            input.addClass('border-red-500');
+            input.closest('div').find('.error').text(message);
+        }
+
+
+
+        $('#closeModal').on('click', function() {
+            $('#thankYouModal').addClass('hidden').removeClass('flex');
+        });
+
+    });
+</script>
 @endsection

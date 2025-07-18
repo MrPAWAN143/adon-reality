@@ -6,9 +6,9 @@
 <link rel="stylesheet" href="{{ asset('assets/css/homepage.css') }}">
 @endsection
 @section('content')
-<div class="container max-w-6xl mx-auto">
-    <x-page-path class="path" path="Home > FAQs for investors" />
-</div>
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
+     <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('verified-properties') }}">Verified Properties</a> </div>
+</section>
 <x-banner-section class="px-4 relative h-[60vh] max-h-[60vh]" image="{{ asset('assets/images/bannerImages/verified-properties-banner.png') }}" title="Verified Properties You Can Trust" subtitle="Every property listed here has been carefully verified to meet our highest standards of transparency and legal compliance." />
 
 <section class="py-10 bg-white text-center max-w-3xl mx-auto">
@@ -143,7 +143,7 @@
     </div>
 
 
-        <div class="mt-10">
+        <div class="mt-6">
             <button class="view-more-button ">
                 View More <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
             </button>

@@ -10,6 +10,9 @@
 @endsection
 
 @section('content')
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
+     <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('news') }}">News</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('single-news') }}">Top cities for real estate investment 2025</a></div>
+</section>
 <section class="px-4  max-w-7xl mx-auto bg-white pb-8">
     <div class="container mx-auto">
         <x-page-path class="path" path="Home > news > Top cities for real estate investment 2025" />
@@ -151,7 +154,7 @@
             <x-blog-card cardCls="marketing-insights-card" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing3.png') }}" alt="M3M Corporate Heights" h4="5 Mistakes Every Property Investor Should Avoid" p="Learn common pitfalls and how to protect your real estate investment" />
             <x-blog-card cardCls="marketing-insights-card" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing1.png') }}" alt="M3M Atrium" h4="Rental Income: Which Strategy Wins?" p="Compare long-term rental income with short-term property flipping profits." />
         </div>
-        <div class="mt-10">
+        <div class="mt-6">
             <button class="marketing-insights-view-more-button">
                 View all Blog <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
             </button>

@@ -8,9 +8,11 @@
 @endsection
 
 @section('content')
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
+     <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a href="{{ route('blog.show') }}" class="ml-[-5px]">Blog</a></div>
+</section>
 <section class="px-4 max-w-6xl mx-auto bg-white pb-8">
     <div class="container ">
-        <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> > <a href="{{ route('blog.show') }}">Blog</a></div>
         <x-heading-subheading heading="Our Blog & Insights" subheading="Get the latest updates, guides, and industry insights to help you make informed decisions about your next dream home." headingClass="heading text-center " subHeadingClass="subheading mb-2" />
 
         <div class="max-w-2xl mx-auto px-4 py-4 pb-8">

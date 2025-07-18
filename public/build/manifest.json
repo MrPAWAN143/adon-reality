@@ -20,18 +20,17 @@
     "src": "node_modules/slick-carousel/slick/fonts/slick.woff"
   },
   "resources/css/app.css": {
-    "file": "assets/app-BICEWQk0.css",
+    "file": "assets/app-COWE7An2.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-B-yuvtqq.js",
+    "file": "assets/app-D1bLYSJi.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-JB0LM-q6.css"
-
+      "assets/app-DVxzcXRL.css"
     ],
     "assets": [
       "assets/ajax-loader-BcnMEykj.gif",

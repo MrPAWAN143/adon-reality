@@ -7,12 +7,10 @@
 @endsection
 
 @section('content')
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
+     <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('development-partners') }}">Developer Partners</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('development-partners.show', $developmentPartner->slug) }}">{{ $developmentPartner->developer_name }}</a></div>
+</section>
 <section class="md:px-4  px-0 max-w-7xl mx-auto bg-white pb-8">
-    <div class="container">
-
-        <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> > <a href="{{ route('development-partners') }}">Developer Partners</a> > <a href="{{ route('development-partners.show', $developmentPartner->slug) }}">{{ $developmentPartner->developer_name }}</a>
-    </div>
-
     <div class="flex md:flex-row flex-col-reverse items-center justify-between mb-0">
         <div class="flex-1 px-6">
             <x-heading-subheading heading="{{ 'Explore Projects by ' . $developmentPartner->developer_name }}" subheading="Discover premium real estate offerings tailored to your lifestyle needs" headingClass="heading " subHeadingClass="subheading text-start mb-4" />
@@ -26,6 +24,42 @@
         <p class="md:pr-[10%] pr-0 text-[8px] md:text-sm">DLF Limited is one of India's most prestigious and trusted real estate developers, with over seven decades of excellence. Known for creating iconic residential, commercial, and retail properties across the country, DLF has redefined urban living through thoughtful design, unmatched construction quality, and world-class amenities. With a legacy built on innovation and integrity, DLF continues to shape skylines and create vibrant communities that stand the test of time.</p>
     </div>
 
+    <div class="md:max-w-5xl w-full mx-auto px-4 md:py-4 py-1 pb-8">
+        <table class="min-w-full border border-gray-300 text-left md:text-sm text-[12px]">
+            <tbody class="divide-y divide-gray-300">
+                <tr class="bg-white">
+                    <th class="font-bold md:p-4 p-2 w-1/4 align-top border-r">Founded in</th>
+                    <th class="md:p-4 p-2 font-normal text-gray-700">{{ $developmentPartner->founded_in ?? 'N/A' }}</th>
+                </tr>
+                <tr class="bg-gray-50">
+                    <th class="font-bold md:p-4 p-2 align-top border-r">Completed Projects</th>
+                    <th class="md:p-4 p-2 font-normal text-gray-700">{{ $developmentPartner->completed_projects ?? 'N/A' }}</th>
+                </tr>
+                <tr class="bg-white">
+                    <th class="font-bold md:p-4 p-2 align-top border-r">On-going Projects</th>
+                    <th class="md:p-4 p-2 font-normal text-gray-700">{{ $developmentPartner->ongoing_projects ?? 'N/A' }}</th>
+                </tr>
+                <tr class="bg-gray-50">
+                    <th class="font-bold md:p-4 p-2 align-top border-r">Owner of Group</th>
+                    <th class="md:p-4 p-2 font-normal text-gray-700">
+                    {{ $developmentPartner->owner_of_group ?? 'N/A' }}
+                    </th>
+                </tr>
+                <tr class="bg-white">
+                    <th class="font-bold md:p-4 p-2 align-top border-r">Operating in Cities</th>
+                    <th class="md:p-4 p-2 font-normal text-gray-700">
+                        {{ implode(', ', $developmentPartner->operating_cities) ?? 'N/A' }}
+                    </th>
+                </tr>
+                <tr class="bg-gray-50">
+                    <th class="font-bold md:p-4 p-2 align-top border-r">Official Website</th>
+                    <th class="md:p-4 p-2 font-normal text-blue-600 underline">
+                        <a href="{{ $developmentPartner->official_website }}" target="_blank">{{ $developmentPartner->official_website }}</a>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 
     <div class="max-w-3xl mx-auto px-4 py-4 pb-8 mt-4">
@@ -77,42 +111,7 @@
     </div>
 
 
-    <div class="md:max-w-5xl w-full mx-auto px-4 md:py-4 py-1 pb-8">
-        <table class="min-w-full border border-gray-300 text-left md:text-sm text-[12px]">
-            <tbody class="divide-y divide-gray-300">
-                <tr class="bg-white">
-                    <th class="font-bold md:p-4 p-2 w-1/4 align-top border-r">Founded in</th>
-                    <th class="md:p-4 p-2 font-normal text-gray-700">{{ $developmentPartner->founded_in ?? 'N/A' }}</th>
-                </tr>
-                <tr class="bg-gray-50">
-                    <th class="font-bold md:p-4 p-2 align-top border-r">Completed Projects</th>
-                    <th class="md:p-4 p-2 font-normal text-gray-700">{{ $developmentPartner->completed_projects ?? 'N/A' }}</th>
-                </tr>
-                <tr class="bg-white">
-                    <th class="font-bold md:p-4 p-2 align-top border-r">On-going Projects</th>
-                    <th class="md:p-4 p-2 font-normal text-gray-700">{{ $developmentPartner->ongoing_projects ?? 'N/A' }}</th>
-                </tr>
-                <tr class="bg-gray-50">
-                    <th class="font-bold md:p-4 p-2 align-top border-r">Owner of Group</th>
-                    <th class="md:p-4 p-2 font-normal text-gray-700">
-                    {{ $developmentPartner->owner_of_group ?? 'N/A' }}
-                    </th>
-                </tr>
-                <tr class="bg-white">
-                    <th class="font-bold md:p-4 p-2 align-top border-r">Operating in Cities</th>
-                    <th class="md:p-4 p-2 font-normal text-gray-700">
-                        {{ implode(', ', $developmentPartner->operating_cities) ?? 'N/A' }}
-                    </th>
-                </tr>
-                <tr class="bg-gray-50">
-                    <th class="font-bold md:p-4 p-2 align-top border-r">Official Website</th>
-                    <th class="md:p-4 p-2 font-normal text-blue-600 underline">
-                        <a href="{{ $developmentPartner->official_website }}" target="_blank">{{ $developmentPartner->official_website }}</a>
-                    </th>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    
 
 
 

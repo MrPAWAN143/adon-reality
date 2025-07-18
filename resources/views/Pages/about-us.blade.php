@@ -9,10 +9,11 @@
 @endsection
 
 @section('content')
+
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
+    <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a href="{{ route('about-us') }}">About Us</a></div>
+</section>
 <section class=" bg-white ">
-    <div class="container max-w-6xl mx-auto">
-        <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> > <a href="{{ route('about-us') }}">About Us</a></div>
-    </div>
 
     <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center " style="padding-top: 1rem; padding-bottom: 2rem;">
 
@@ -47,7 +48,7 @@
         </div>
     </div>
 
-    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 px-4 !pb-10">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 px-4 !pb-10">
 
         <x-choose-adon-reality>
 
@@ -80,45 +81,44 @@
 
         </x-choose-adon-reality>
     </div>
-
-    <div class="m-auto">
-        <h2 class="text-3xl md:text-3xl font-bold text-center text-txBlack mb-8">Services We Offer</h2>
-
-        <div class=" max-w-6xl grid grid-cols-1 md:grid-cols-3 mx-auto gap-4 px-4 !pb-10">
-
+</section>
+<section class="px-4 md:py-8 py-0 bg-white text-center">
+    <div class="container max-w-6xl mx-auto">
+        <x-heading-subheading heading="What We Offer" subheading="Comprehensive solutions tailored to meet all your real estate needs." headingClass="heading" subHeadingClass="subheading" />
+        <div class="grid grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-10 gap-6 mx-auto">
             <!-- Card -->
-            <div class="what-we-offer-card !px-4 !py-4 text-center">
-                <h3 class="!text-[20px] ">Property Investment Solutions</h3>
+            <div class="what-we-offer-card md:w-[350px] md:h-[250px] w-[195px] h-[140px]">
+                <h3>Property Investment Solutions</h3>
                 <p>Maximize your returns with our real estate investment.</p>
                 <a href="#" class="what-we-offer-button">Explore Opportunities</a>
             </div>
 
-            <div class="what-we-offer-card !px-4 !py-4 text-center">
-                <h3 class="!text-[20px]">Portfolio Management</h3>
+            <div class="what-we-offer-card md:w-[350px] md:h-[250px] w-[195px] h-[140px]">
+                <h3>Portfolio Management</h3>
                 <p>Experts maximize profits and minimize risk.</p>
                 <a href="#" class="what-we-offer-button">Schedule a Consultation</a>
             </div>
 
-            <div class="what-we-offer-card !px-4 !py-4 text-center">
-                <h3 class="!text-[20px]">Tax and Legal Advisory</h3>
+            <div class="what-we-offer-card md:w-[350px] md:h-[250px] w-[195px] h-[140px]">
+                <h3>Tax and Legal Advisory</h3>
                 <p>Expert tax planning and legal consultation to ensure the compliant.</p>
                 <a href="#" class="what-we-offer-button">Get Professional Advice</a>
             </div>
 
-            <div class="what-we-offer-card !px-4 !py-4 text-center">
-                <h3 class="!text-[20px]">Risk Management & Insurance</h3>
+            <div class="what-we-offer-card md:w-[350px] md:h-[250px] w-[195px] h-[140px]">
+                <h3>Risk Management & Insurance</h3>
                 <p>Mitigate risks by investing in property insurance.</p>
                 <a href="#" class="what-we-offer-button">Get Insured</a>
             </div>
 
-            <div class="what-we-offer-card !px-4 !py-4 text-center">
-                <h3 class="!text-[20px]">Investment Planning for Startups</h3>
+            <div class="what-we-offer-card md:w-[350px] md:h-[250px] w-[195px] h-[140px]">
+                <h3>Investment Planning for Startups</h3>
                 <p>Provide tailored investment solutions to help startups.</p>
                 <a href="#" class="what-we-offer-button">Start Your Journey</a>
             </div>
 
-            <div class="what-we-offer-card !px-4 !py-4 text-center">
-                <h3 class="!text-[20px]">Property Leasing and Sales</h3>
+            <div class="what-we-offer-card md:w-[350px] md:h-[250px] w-[195px] h-[140px]">
+                <h3>Property Leasing and Sales</h3>
                 <p>We help lease and sell residential and commercial properties.</p>
                 <a href="#" class="what-we-offer-button">List Your Property</a>
             </div>
@@ -138,7 +138,7 @@
 
         </div>
 
-        <div class="mt-10">
+        <div class="mt-6">
             <a href="{{ route('development-partners') }}" class="view-more-button ">
                 View More <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
             </a>
@@ -150,12 +150,12 @@
 <section class=" py-8 bg-white text-center md:hidden block">
     <div class="">
         <x-heading-subheading heading="Our Development Partners" subheading="Collaborating with renowned names in real estate development." headingClass="heading" subHeadingClass="subheading" />
-        <div class="project-slider">
+        <div class="project-slider profist">
             @foreach ($developmentPartner as $partner)
             <x-developer-partner-card partnerLogo="{{ asset($partner->logo) }}" developerButtonClass="!text-primary !hover:text-white !hover:bg-primary  !bg-white !border-2 !border-primary " url="{{ route('development-partners.show',  $partner->slug) }}" alt="{{ $partner->developer_name }}" heading="{{ $partner->developer_name }}" description="{{ $partner->tags }}" projectsPartnered="{{ $partner->total_projects }}" presence="{{ implode(', ', $partner->operating_cities ?? []) }}" />
             @endforeach
         </div>
-        <div class="mt-10">
+        <div class="mt-6">
             <a href="{{ route('development-partners') }}" class="view-more-button ">
                 View More <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
             </a>
@@ -165,22 +165,22 @@
 
 
 <section class="py-10 bg-[#ede7e8] ">
-    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-2 px-4">
+    <div class="md:max-w-5xl mx-auto flex md:flex-row items-center gap-2 px-4">
 
         <!-- Founder Image -->
-        <div class="w-full md:w-1/3 flex justify-center md:justify-center">
-            <img src="{{ asset('assets/images/allImages/founder.png') }}" alt="Founder" class="rounded-xl w-48 h-48 object-cover shadow-md" />
+        <div class="w-[40%] md:w-1/3 flex justify-center md:justify-center">
+            <img src="{{ asset('assets/images/allImages/founder.png') }}" alt="Founder" class="rounded-xl md:w-48 w-36 h-36 md:h-48 object-cover shadow-md" />
         </div>
 
         <!-- Content -->
-        <div class="w-full md:w-2/3 pr-16">
-            <h3 class="text-lg font-bold mb-3 text-gray-900">FOUNDERS DESK</h3>
-            <p class="text-sm text-gray-700 leading-relaxed">
+        <div class=" w-[60%] md:w-2/3 md:pr-16">
+            <h3 class="md:text-lg text-[16px] font-bold mb-3 text-gray-900">FOUNDERS DESK</h3>
+            <p class="md:text-sm text-[8px] text-gray-700 leading-relaxed">
                 At Adon Realty, our mission goes beyond building structures—we build lifestyles. Every project we undertake is a reflection of our dedication to innovation, quality, and trust. We are committed to crafting spaces that truly feel like home and stand the test of time.
             </p>
 
             <!-- Signature -->
-            <div class=" text-right inline-block rotate-[-15deg] ml-[250px] mt-[20px]">
+            <div class="text-center mt-3 md:text-right inline-block rotate-[-15deg] md:ml-[250px] md:mt-[20px]">
                 <div class="signature  text-emerald-950">
                     <span>Signature</span>
                 </div>
@@ -190,11 +190,11 @@
     </div>
 </section>
 
-<section class="py-10 bg-white">
+<section class="md:py-10 pt-10 pb-0 bg-white">
     <div class="max-w-6xl mx-auto px-4">
 
         <!-- Founder Talks -->
-        <h2 class="text-center text-2xl font-semibold mb-6">Founder Talks</h2>
+        <h2 class="text-center text-[16px] md:text-2xl font-semibold mb-6">Founder Talks</h2>
         <div class="grid grid-cols-2 md:grid-cols-2 gap-2 md:gap-6 mb-10">
             <!-- Video 1 -->
             <div class="relative overflow-hidden rounded-xl">
@@ -220,7 +220,7 @@
         </div>
 
         <!-- Meet Our Core Team -->
-        <h2 class="text-center text-2xl font-semibold mb-8">Meet Our Core Team</h2>
+        <h2 class="text-center text-[16px] md:text-2xl font-semibold mb-8">Meet Our Core Team</h2>
         <div class="max-w-5xl m-auto grid grid-cols-2 md:grid-cols-4 md:gap-6 gap-2">
             <!-- Team Member -->
             <div class="our-core-team ">
@@ -256,8 +256,8 @@
 
         <div class="md:px-6 py-0 mt-12 bg-white items-center">
             <!-- Featured Awards & Recognitions -->
-            <h2 class="text-2xl text-center font-bold mb-6">Awards & Recognitions</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 md:gap-6 gap-2 mb-12">
+            <h2 class="text-[16px] md:text-2xl text-center font-bold mb-6">Awards & Recognitions</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 md:gap-6 gap-2 md:mb-12">
 
                 <!-- Card 1 -->
                 <div class="bg-white md:p-4 p-2 rounded-2xl shadow-md hover:shadow-lg transition flex flex-col md:items-start md:text-start text-center about-us-awards-card">
