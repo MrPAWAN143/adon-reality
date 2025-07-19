@@ -13,7 +13,7 @@
 <section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
      <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a href="{{ route('awards-and-recognitions') }}" class="ml-[-5px]">Awards & Recognitions</a></div>
 </section>
-<section class="px-4 py-8 sm:py-2 bg-white">
+<section class="md:px-0 px-0  md:max-w-6xl w-full  mx-auto md:py-8 sm:py-2 bg-white">
     <div>
         <x-heading-subheading heading="Awards & Recognitions" subheading="Celebrating Our Journey of Excellence in Real Estate" headingClass="heading text-center" subHeadingClass="subheading text-md mb-4" />
         </div>
@@ -53,7 +53,7 @@
         <div class="px-6 py-0 mt-8 bg-white">
             <!-- Featured Awards & Recognitions -->
             <h2 class="text-2xl font-bold mb-6">Featured Awards & Recognitions</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-6 mb-12">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
                 <x-awards
                     image="{{ asset('assets/images/awards/best-commercial.png') }}"
                     alt="Best Commercial Project 2024"
@@ -78,7 +78,7 @@
             </div>
 
             <!-- Past Awards & Recognitions -->
-            <h2 class="text-2xl font-bold mb-6">Past Awards & Recognitions</h2>
+            <h2 class="text-2xl font-bold mb-6 mt-10">Past Awards & Recognitions</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-6">
                 <x-awards image="{{ asset('assets/images/awards/smart-urban.png') }}" alt="Smart Urban Developer 2023" class="featured-investment-img" title="Smart Urban Developer 2023" by="By National Infrastructure Council" description="Awarded for our integration of smart-city technologies into residential and commercial spaces across Noida and Gurugram." />
                 <x-awards image="{{ asset('assets/images/awards/real-estate-innovator.png') }}" alt="Top Real Estate Innovator 2022" class="featured-investment-img" title="Top Real Estate Innovator 2022" by="By Realty Tech Forum" description="Recognized for pioneering the use of AI-powered customer support and digital walkthroughs in real estate sales." />
