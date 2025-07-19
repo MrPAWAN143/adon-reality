@@ -5,115 +5,101 @@
 @endsection
 @section('styles')
 <style>
+    .swiper-pagination-bullet[aria-current="true"] {
+        background-color: #550413;
+        /* Primary */
+        transform: scale(1.5);
+    }
 
+    .swiper-pagination-bullet:not([aria-current="true"]) {
+        background-color: #ffffff;
+        /* Secondary */
+    }
 </style>
 <link rel="stylesheet" href="{{ asset('assets/css/homepage.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/css/mobile.css') }}">
 
 @endsection
 @section('homepage')
-<section class=" md:h-[80vh] md:max-h-[80vh] h-[25vh] object-cover bg-cover bg-center ">
+<section class="relative md:h-[75vh] md:max-h-[75vh] h-[25vh] object-cover bg-cover bg-center ">
 
     <div class="swiper mySwiper h-full">
         <div class="swiper-wrapper">
             <!-- Slides -->
-            <div class="swiper-slide relative m-hero_section" style="background-image: url('assets/images/bannerImages/hero-banner.webp');
-                background-size: cover; background-position: center;
-                background-repeat: no-repeat;">
-                <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-                <div class="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 py-0 md:py-16">
+            <div class="swiper-slide relative  m-hero_section h-[100vh]">
+                <!-- Background Video -->
+                <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+                    <source src="{{ asset('assets/images/bannerImages/banner-video.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <!-- Black Overlay -->
+                <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+
+                <!-- Content -->
+                <div class="relative md:top-[-200px] top-[-200px] z-10 flex flex-col items-center justify-center h-full text-white px-4 py-0 md:py-16">
                     <h1 class="md:text-[24px] text-[16px] md:max-w-3xl font-bold mb-4 text-center">
                         Invest in High-Return, Legally Verified Real Estate Projects
                     </h1>
                     <p class="text-lg md:text-xl mb-6 text-center">
                         Discover the best ROI-driven properties across India
                     </p>
-                    <div class="m-hero-search flex flex-row items-center justify-between w-full md:max-w-[700px] md:h-[60px] !sm:h-[24px] bg-white rounded-full md:py-2 py-1  px-2 mt-4 shadow-md">
-                        <div class="relative w-auto !sm:w-[10%] md:w-[16%] z-10">
-                            <select class="hero-section-select home md:py-2">
-                                <option>City</option>
-                                <option>Delhi</option>
-                                <option>Mumbai</option>
-                                <option>Bangalore</option>
-                            </select>
-                        </div>
-                        <div class="relative w-full !sm:w-auto z-0">
-                            <input type="text" placeholder="Search by city, ROI, project name..." class="search-input-homepage-herosection md:ml-2" />
-                        </div>
+                </div>
+            </div>
 
-                        <button class="herosearchBtn bg-primary border-primary hover:bg-white border-2 hover:border-primary text-white hover:text-txBlack font-semibold md:py-2 md:px-10 px-2 py-1 ml-[-40px] rounded-full  md:mt-0 md:ml-2 transition duration-300">
-                            Search
-                        </button>
-                    </div>
+            <div class="swiper-slide relative m-hero_section" style="background-image: url('assets/images/bannerImages/hero-banner.webp');
+                background-size: cover; background-position: center;
+                background-repeat: no-repeat;">
+                <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+                <div class="relative md:top-[-100px] top-[-50px] z-10 flex flex-col items-center justify-center h-full text-white px-4 py-0 md:py-16">
+                    <h1 class="md:text-[24px] text-[16px] md:max-w-3xl font-bold mb-4 text-center">
+                        Invest in High-Return, Legally Verified Real Estate Projects
+                    </h1>
+                    <p class="text-lg md:text-xl mb-6 text-center">
+                        Discover the best ROI-driven properties across India
+                    </p>
+
                 </div>
             </div>
             <div class="swiper-slide relative m-hero_section" style="background-image: url('assets/images/bannerImages/hero-banner.webp');
                 background-size: cover; background-position: center;
                 background-repeat: no-repeat;">
                 <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-                <div class="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 py-0 md:py-16">
-                    <h1 class="text-2xl max-w-3xl font-bold mb-4 text-center">
+                <div class="relative md:top-[-100px] top-[-50px] z-10 flex flex-col items-center justify-center h-full text-white px-4 py-0 md:py-16">
+                    <h1 class="md:text-[24px] text-[16px] md:max-w-3xl font-bold mb-4 text-center">
                         Invest in High-Return, Legally Verified Real Estate Projects
                     </h1>
                     <p class="text-lg md:text-xl mb-6 text-center">
                         Discover the best ROI-driven properties across India
                     </p>
-                    <div class="m-hero-search flex flex-row items-center justify-between w-full md:max-w-[700px] md:h-[60px] !sm:h-[24px] bg-white rounded-full md:py-2 py-1  px-2 mt-4 shadow-md">
-                        <div class="relative w-auto !sm:w-[10%] md:w-[16%] z-10">
-                            <select class="hero-section-select home py-1 md:py-2">
-                                <option>City</option>
-                                <option>Delhi</option>
-                                <option>Mumbai</option>
-                                <option>Bangalore</option>
-                            </select>
-                        </div>
-                        <div class="relative w-full !sm:w-auto z-0">
-                            <input type="text" placeholder="Search by city, ROI, project name..." class="search-input-homepage-herosection md:ml-2" />
-                        </div>
 
-                        <button class="herosearchBtn bg-primary border-primary hover:bg-white border-2 hover:border-primary text-white hover:text-txBlack font-semibold md:py-2 md:px-10 px-2 py-1 ml-[-20px] rounded-full  md:mt-0 md:ml-2 transition duration-300">
-                            Search
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide relative m-hero_section" style="background-image: url('assets/images/bannerImages/hero-banner.webp');
-                background-size: cover; background-position: center;
-                background-repeat: no-repeat;">
-                <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-                <div class="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 py-0 md:py-16">
-                    <h1 class="text-2xl max-w-3xl font-bold mb-4 text-center">
-                        Invest in High-Return, Legally Verified Real Estate Projects
-                    </h1>
-                    <p class="text-lg md:text-xl mb-6 text-center">
-                        Discover the best ROI-driven properties across India
-                    </p>
-                    <div class="m-hero-search flex flex-row items-center justify-between w-full md:max-w-[700px] md:h-[60px] !sm:h-[24px] bg-white rounded-full md:py-2 py-1  px-2 mt-4 shadow-md">
-                        <div class="relative w-auto !sm:w-[10%] md:w-[16%] z-10">
-                            <select class="hero-section-select home py-1 md:py-2">
-                                <option>City</option>
-                                <option>Delhi</option>
-                                <option>Mumbai</option>
-                                <option>Bangalore</option>
-                            </select>
-                        </div>
-                        <div class="relative w-full !sm:w-auto z-0">
-                            <input type="text" placeholder="Search by city, ROI, project name..." class="search-input-homepage-herosection md:ml-2" />
-                        </div>
-
-                        <button class="herosearchBtn bg-primary border-primary hover:bg-white border-2 hover:border-primary text-white hover:text-txBlack font-semibold md:py-2 md:px-10 px-2 py-1 ml-[-20px] rounded-full  md:mt-0 md:ml-2 transition duration-300">
-                            Search
-                        </button>
-                    </div>
                 </div>
             </div>
 
         </div>
-        <x-forkawesome-angle-right class="swiper-button-next md:w-16 md:h-16 w-6 h-6 text-secondary" />
-        <x-forkawesome-angle-left class="swiper-button-prev md:w-16 md:h-16 w-6 h-6 text-secondary" />
+
 
         <!-- If we need pagination -->
-        <!-- <div class="swiper-pagination "></div> -->
+        <div class="swiper-pagination "></div>
+    </div>
+
+    <div class="absolute left-1/2 md:top-1/2 top-[60%] transform -translate-x-1/2 -translate-y-1/2  z-10 m-hero-search flex flex-row items-center justify-between md:w-full  md:max-w-[700px] md:h-[60px] !sm:h-[24px] bg-white rounded-full md:py-2 py-1 px-2 shadow-md w-[calc(100%-100px)]">
+
+        <div class=" w-auto !sm:w-[10%] md:w-[16%] z-10">
+            <select class="hero-section-select home py-1 md:py-2">
+                <option>City</option>
+                <option>Delhi</option>
+                <option>Mumbai</option>
+                <option>Bangalore</option>
+            </select>
+        </div>
+        <div class="relative w-full !sm:w-auto z-0">
+            <input type="text" placeholder="Search by city, ROI, project name..." class="search-input-homepage-herosection md:ml-2" />
+        </div>
+
+        <button class="herosearchBtn bg-primary border-primary hover:bg-white border-2 hover:border-primary text-white hover:text-txBlack font-semibold md:py-2 md:px-10 px-2 py-1 ml-[-20px] rounded-full  md:mt-0 md:ml-2 transition duration-300">
+            Search
+        </button>
     </div>
 </section>
 
@@ -583,6 +569,10 @@
         loop: true,
         pagination: {
             el: ".swiper-pagination",
+        },
+        effect: "fade",
+        fadeEffect: {
+            crossFade: true
         },
         navigation: {
             nextEl: '.swiper-button-next',

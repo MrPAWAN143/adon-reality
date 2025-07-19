@@ -11,28 +11,29 @@
 @section('content')
 
 <section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
-     <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('news') }}">News & PR</a></div>
+    <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('news') }}">News & PR</a></div>
 </section>
-<section class="px-4 pt-8 pb-0 sm:py-2 bg-white max-w-7xl mx-auto">
+<section class="px-4  pb-0 sm:py-2 bg-white max-w-6xl mx-auto">
     <div class="container max-w-6xl mx-auto">
-        <x-page-path class="path" path="Home > News & PR" />
         <x-heading-subheading heading="News & PR" subheading="We provide full articles or story links featuring Adon in reputed publications and PR coverage." headingClass="heading text-center" subHeadingClass="subheading text-sm mb-4" />
     </div>
 
 
 
-    <div class="px-6 py-0 mt-8 bg-white">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-6 mb-12 ">
+    <div class="md:px-6 py-0 mt-8 bg-white">
+        <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-3 md:gap-6 gap-2 place-items-start">
             <x-awards
                 image="{{ asset('assets/images/news-pr/best-commercial.jpg') }}"
                 alt="Best Commercial Project 2024"
-                class="featured-investment-img"
+                class="featured-investment-img news-page"
                 title="Best Commercial Project 2024"
                 by="By CREDAI India"
                 description="Recognised for our DLF Cyber Hub tower that redefines premium office spaces with smart tech and green design."
                 buttonText="Read More"
-                buttonClass="newsAndPrButton" />
-                
+                buttonClass="newsAndPrButton"
+                newsAndPrCard="newsAndPrCard"
+                newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
+
 
             <x-awards
                 image="{{ asset('assets/images/news-pr/sustainable-future.jpg') }}"
@@ -42,7 +43,9 @@
                 by="April 15, 2025"
                 description="Discover how eco-friendly technologies are reshaping modern residences into sustainable havens."
                 buttonText="Read More"
-                buttonClass="newsAndPrButton" />
+                buttonClass="newsAndPrButton"
+                newsAndPrCard="newsAndPrCard"
+                newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
 
             <x-awards
                 image="{{ asset('assets/images/news-pr/urban-living.jpg') }}"
@@ -52,7 +55,9 @@
                 by="October 10, 2025"
                 description="Explore how green technologies are transforming the cities into eco-friendly sanctuaries."
                 buttonText="Read More"
-                buttonClass="newsAndPrButton" />
+                buttonClass="newsAndPrButton"
+                newsAndPrCard="newsAndPrCard"
+                newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
 
             <x-awards
                 image="{{ asset('assets/images/news-pr/condo-changing.jpg') }}"
@@ -60,9 +65,11 @@
                 class="featured-investment-img"
                 title="Luxury Condo Developments Changing City Skylines"
                 by="March 11, 2025"
-                description="Explore the latest trends in luxury condos and their impact on urban landscapes."
+                description="Explore the latest trends in luxury condos and their impact on urban landscapes. Hello lorem ipsum dolor sit amet, consectetur adipiscing elit."
                 buttonText="Read More"
-                buttonClass="newsAndPrButton" />
+                buttonClass="newsAndPrButton"
+                newsAndPrCard="newsAndPrCard"
+                newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
 
             <x-awards
                 image="{{ asset('assets/images/news-pr/metro-housing.jpg') }}"
@@ -70,9 +77,11 @@
                 class="featured-investment-img"
                 title="Affordable Housing Initiatives in Metro Areas"
                 by="January 16, 2025"
-                description="Explore innovative solutions combating the affordable housing crisis in major cities."
+                description="Explore innovative solutions combating the affordable housing crisis in major cities. Hello lorem ipsum dolor sit amet, consectetur adipiscing elit."
                 buttonText="Read More"
-                buttonClass="newsAndPrButton" />
+                buttonClass="newsAndPrButton"
+                newsAndPrCard="newsAndPrCard"
+                newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
 
             <x-awards
                 image="{{ asset('assets/images/news-pr/estate-practices.jpg') }}"
@@ -80,9 +89,11 @@
                 class="featured-investment-img"
                 title="Sustainable Real Estate Practices on the Rise"
                 by="June 22, 2025"
-                description="Understanding how eco-friendly practices are becoming the norm in the real estate industry."
+                description="Understanding how eco-friendly practices are becoming the norm in the real estate industry. Hello lorem ipsum dolor sit amet, consectetur adipiscing elit."
                 buttonText="Read More"
-                buttonClass="newsAndPrButton" />
+                buttonClass="newsAndPrButton"
+                newsAndPrCard="newsAndPrCard"
+                newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
 
             <x-awards
                 image="{{ asset('assets/images/news-pr/green-future.jpg') }}"
@@ -92,7 +103,9 @@
                 by="March 9, 2025"
                 description="Explore eco-friendly homes that prioritize sustainability and energy efficiency."
                 buttonText="Read More"
-                buttonClass="newsAndPrButton" />
+                buttonClass="newsAndPrButton"
+                newsAndPrCard="newsAndPrCard"
+                newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
 
             <x-awards
                 image="{{ asset('assets/images/news-pr/smart-home-innovation.jpg') }}"
@@ -102,7 +115,9 @@
                 by="March 10, 2025"
                 description="Uncover the latest smart technologies transforming the way we live in homes."
                 buttonText="Read More"
-                buttonClass="newsAndPrButton" />
+                buttonClass="newsAndPrButton"
+                newsAndPrCard="newsAndPrCard"
+                newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
 
             <x-awards
                 image="{{ asset('assets/images/news-pr/housing-communities.jpg') }}"
@@ -112,7 +127,9 @@
                 by="June 04, 2025"
                 description="Find out about ongoing projects aimed at creating affordable living spaces in urban areas."
                 buttonText="Read More"
-                buttonClass="newsAndPrButton" />
+                buttonClass="newsAndPrButton"
+                newsAndPrCard="newsAndPrCard"
+                newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
 
             <x-awards
                 image="{{ asset('assets/images/news-pr/suburban-retreat.jpg') }}"
@@ -120,9 +137,11 @@
                 class="featured-investment-img"
                 title="Serene Suburban Retreat Embrace Tranquility and Space"
                 by="March 10, 2025"
-                description="Explore spacious homes surrounded by nature, perfect for families."
+                description="Explore spacious homes surrounded by nature, perfect for families. Hello lorem ipsum dolor sit amet, consectetur adipiscing elit."
                 buttonText="Read More"
-                buttonClass="newsAndPrButton" />
+                buttonClass="newsAndPrButton"
+                newsAndPrCard="newsAndPrCard"
+                newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
 
             <x-awards
                 image="{{ asset('assets/images/news-pr/coastal-dreams.jpg') }}"
@@ -132,7 +151,9 @@
                 by="March 02, 2025"
                 description="Find stunning beachfront properties with breathtaking views and easy access to the shore."
                 buttonText="Read More"
-                buttonClass="newsAndPrButton" />
+                buttonClass="newsAndPrButton"
+                newsAndPrCard="newsAndPrCard"
+                newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
 
             <x-awards
                 image="{{ asset('assets/images/news-pr/timeless-charm.jpg') }}"
@@ -142,7 +163,9 @@
                 by="November 18, 2025"
                 description="Experience the perfect fusion of vintage elegance and contemporary living in our beautifully renovated homes."
                 buttonText="Read More"
-                buttonClass="newsAndPrButton" />
+                buttonClass="newsAndPrButton"
+                newsAndPrCard="newsAndPrCard"
+                newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
 
 
         </div>

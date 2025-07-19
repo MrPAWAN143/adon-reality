@@ -1,10 +1,10 @@
-<header class="w-full bg-white  z-50 sticky top-0 shadow-xl">
-  <div class="max-w-7xl mx-auto px-8 md:px-8 flex items-center justify-between md:py-2 py-2">
+<header class="w-full bg-white  z-50 sticky top-0">
+  <div class="max-w-7xl mx-auto px-8 md:px-8 py-2 flex items-center justify-between ">
 
     <!-- Logo -->
-    <div class="flex-shrink-0">
-      <a href="{{ route('home') }}" class="inline-flex justify-start md:items-center mt-1 md:mt-3">
-        <img src="{{ asset('assets/images/logos/header-logo.png') }}" alt="Adon Realty" class="h-16 w-auto object-contain">
+    <div class="flex items-center ">
+      <a href="{{ route('home') }}" class=" nav-link inline-flex justify-start md:items-center text-primary font-semibold">
+        <img src="{{ asset('assets/images/logos/header-logo.png') }}" alt="Adon Realty" class="md:h-14 h-8 w-auto object-cover">
       </a>
     </div>
 
@@ -21,7 +21,7 @@
     <nav class="hidden md:flex items-center space-x-6">
       <!-- Projects Dropdown -->
       <div class="relative group">
-        <a href="{{ route('projects') }}" class="flex items-center text-base text-txBlack hover:text-primary font-medium">
+        <a href="{{ route('projects') }}" class="nav-link flex items-center text-base text-txBlack hover:text-primary font-medium">
           Projects
           <svg class="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M6 9l6 6 6-6" />
@@ -33,7 +33,7 @@
           <li><a href="{{ route('projects') }}" class="block px-4 py-2 text-sm text-txBlack hover:bg-gray-100">All</a></li>
           <!-- Studio Apartments with Submenu -->
           <li class="relative group/item">
-            <a href="{{ route('projects' , ['category' => 'residential']) }}" class="flex justify-between items-center px-4 py-2 text-sm text-txBlack hover:bg-gray-100">
+            <a href="{{ route('projects' , ['category' => 'residential']) }}" class=" flex justify-between items-center px-4 py-2 text-sm text-txBlack hover:bg-gray-100">
               Residential
               <svg class="ml-2 h-3 w-3 text-gray-500 group-hover/item:text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path d="M9 18l6-6-6-6" />
@@ -41,7 +41,7 @@
             </a>
 
             <ul class="absolute top-0 left-full ml-[1px] w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover/item:opacity-100 group-hover/item:visible transition py-0 overflow-hidden z-50">
-              <li><a href="{{ route('projects' , ['category' => 'residential' , 'location' => 'noida']) }}" class="block px-4 py-2 text-sm text-txBlack hover:bg-rose-200">Noida</a></li>
+              <li><a href="{{ route('projects' , ['category' => 'residential' , 'location' => 'noida']) }}" class=" block px-4 py-2 text-sm text-txBlack hover:bg-rose-200">Noida</a></li>
               <li><a href="{{ route('projects' , ['category' => 'residential' , 'location' => 'delhi']) }}" class="block px-4 py-2 text-sm text-txBlack hover:bg-rose-200">Delhi</a></li>
               <li><a href="{{ route('projects' , ['category' => 'residential' , 'location' => 'gurugram']) }}" class="block px-4 py-2 text-sm text-txBlack hover:bg-rose-200">Gurugram</a></li>
               <li><a href="{{ route('projects' , ['category' => 'residential' , 'location' => 'pune']) }}" class="block px-4 py-2 text-sm text-txBlack hover:bg-rose-200">Pune</a></li>
@@ -105,18 +105,18 @@
       </div>
 
       <!-- Other Links -->
-      <a href="{{ route('blog.show') }}" class="text-base text-txBlack hover:text-primary font-medium">Blog</a>
-      <a href="{{ route('development-partners') }}" class="text-base text-txBlack hover:text-primary font-medium">Developers</a>
-      <a href="{{ route('testimonials') }}" class="text-base text-txBlack hover:text-primary font-medium">Testimonial</a>
-      <a href="{{ route('about-us') }}" class="text-base text-txBlack hover:text-primary font-medium">About Us</a>
-      <a href="{{ route('contact') }}" class="ml-2 px-6 py-2 border-2 border-primary text-primary rounded-3xl text-base hover:bg-primary hover:text-white transition font-medium">Contact Us</a>
+      <a href="{{ route('blog.show') }}" class=" nav-link text-base text-txBlack hover:text-primary font-medium">Blog</a>
+      <a href="{{ route('development-partners') }}" class="nav-link text-base text-txBlack hover:text-primary font-medium">Developers</a>
+      <a href="{{ route('testimonials') }}" class="nav-link text-base text-txBlack hover:text-primary font-medium">Testimonial</a>
+      <a href="{{ route('about-us') }}" class="nav-link text-base text-txBlack hover:text-primary font-medium">About Us</a>
+      <a href="{{ route('contact') }}" class="nav-link ml-2 px-6 py-2 border-2 border-primary text-primary rounded-3xl text-base hover:bg-primary hover:text-white transition font-medium">Contact Us</a>
     </nav>
 
 
     <!-- MOBILE NAVIGATION -->
-    <div id="mobileNav" class="fixed top-0 left-0 h-full w-72 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-40 p-6 md:hidden">
-      <div class="flex items-center justify-between mb-6">
-        <img src="{{ asset('assets/images/logos/header-logo.png') }}" alt="Adon Realty" class="h-8 w-auto">
+    <div id="mobileNav" class="fixed top-0 left-0 h-full w-56 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-40 p-6 md:hidden">
+      <div class="flex items-center justify-between mb-6 ml-[-5px]">
+        <img src="{{ asset('assets/images/logos/header-logo.png') }}" alt="Adon Realty" class="!h-6 w-auto">
         <button class="close-mobile-menu text-gray">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M6 18L18 6M6 6l12 12" />
@@ -127,7 +127,7 @@
       <nav class="space-y-2">
         <!-- Projects Accordion -->
         <div>
-          <button class="flex w-full items-center justify-between text-sm font-medium text-txBlack toggle-l1">
+          <button class="nav-link flex w-full items-center justify-between text-sm font-medium text-txBlack toggle-l1">
             Projects
             <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M6 9l6 6 6-6" />
@@ -186,7 +186,7 @@
             </div>
             <div>
               <button class="flex w-full items-center justify-between text-sm text-txBlack font-medium toggle-l2">
-               Plots
+                Plots
                 <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <path d="M6 9l6 6 6-6" />
                 </svg>
@@ -199,17 +199,17 @@
                 <a href="{{ route('projects', ['category' => 'Plots', 'location' => 'bangalore']) }}" class="block text-sm text-txBlack hover:text-black">Bangalore</a>
               </div>
             </div>
-            
+
           </div>
         </div>
 
         <!-- Other Links -->
-        <a href="{{ route('blog.show') }}" class="block text-sm text-txBlack hover:text-black font-medium">Blog</a>
-        <a href="{{ route('development-partners') }}" class="block text-sm text-txBlack hover:text-black font-medium">Developers</a>
-        <a href="{{ route('testimonials') }}" class="block text-sm text-txBlack hover:text-black font-medium">Testimonial</a>
-        <a href="{{ route('about-us') }}" class="block text-sm text-txBlack hover:text-black font-medium">About Us</a>
-        <a href="{{ route('contact') }}" class="block text-center px-6 py-2 border border-primary text-primary rounded-full text-base hover:bg-primary hover:text-white transition font-medium">Contact Us</a>
+        <a href="{{ route('blog.show') }}" class="nav-link block text-sm text-txBlack hover:text-black font-medium">Blog</a>
+        <a href="{{ route('development-partners') }}" class="nav-link block text-sm text-txBlack hover:text-black font-medium">Developers</a>
+        <a href="{{ route('testimonials') }}" class="nav-link block text-sm text-txBlack hover:text-black font-medium">Testimonial</a>
+        <a href="{{ route('about-us') }}" class="nav-link block text-sm text-txBlack hover:text-black font-medium">About Us</a>
+        <a href="{{ route('contact') }}" class="nav-link block text-center px-6 py-2 border border-primary text-primary rounded-full text-base hover:bg-primary hover:text-white transition font-medium">Contact Us</a>
       </nav>
     </div>
-
+  </div>
 </header>

@@ -27,8 +27,8 @@ Route::get('/projects/{slug}', [PropertiesDetailsController::class, 'show'])->na
 Route::get('/blog', [BlogsController::class, 'index'])->name('blog.show');
 Route::get('/blog-each/{slug}', [BlogsController::class, 'show'])->name('blog.each');
 Route::get('/event-and-media', [EventAndMediaController::class, 'index'])->name('event-and-media');
-Route::get('/news-and-pr', [NewsAndPrController::class, 'index'])->name('news');
-Route::get('/news-each/{slug}', [NewsAndPrController::class, 'show'])->name('news.show');
+Route::get('/news', [NewsAndPrController::class, 'index'])->name('news');
+Route::get('/news/{slug}', [NewsAndPrController::class, 'show'])->name('news.show');
 
 
 Route::get('/awards-and-recognitions', [FeaturedAndAwardController::class, 'index'])->name('awards-and-recognitions');
