@@ -1,6 +1,6 @@
 @extends('Pages.layouts.app')
 @section('metadata')
-<title>Adon Reality - Blog</title>
+<title>Adon Reality - News</title>
 @endsection
 @section('styles')
 <link rel="stylesheet" href="{{ asset('assets/css/homepage.css') }}">
@@ -11,12 +11,9 @@
 
 @section('content')
 <section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
-     <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('news') }}">News</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('single-news') }}">Top cities for real estate investment 2025</a></div>
+     <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('news') }}">News</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="#">Top cities for real estate investment 2025</a></div>
 </section>
 <section class="px-4  max-w-7xl mx-auto bg-white pb-8">
-    <div class="container mx-auto">
-        <x-page-path class="path" path="Home > news > Top cities for real estate investment 2025" />
-    </div>
     <!-- Featured Image -->
     <div class="w-full overflow-hidden rounded-2xl mt-4">
         <img

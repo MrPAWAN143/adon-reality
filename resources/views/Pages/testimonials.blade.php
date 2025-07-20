@@ -445,9 +445,9 @@
 </section>
 
 
-
+<section class=" max-w-5xl  mx-auto text-center md:mb-8">
 <x-contact-us-form heading="Still Have a Question?" subheading="Have questions or ready to take the next step? Whether you’re looking to buy, rent, or invest, our team is here to guide you every step of the way." />
-
+</section>
 @endsection
 
 @section('scripts')

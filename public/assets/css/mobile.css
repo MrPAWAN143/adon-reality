@@ -5,6 +5,43 @@
 
 @media screen and (max-width: 640px) {
 
+    .mobile-menu-button {
+        width: 30px;
+        height: 30px;
+    }
+
+
+    .contact-form input,
+    .contact-form textarea {
+        border: none;
+        border-bottom: 2px solid #ccc;
+        padding: 5px 10px;
+        font-size: 12px;
+        width: 100%;
+        background: transparent;
+        color: #000;
+        resize: none;
+        box-shadow: none !important;
+
+    }
+
+    .contact-form textarea {
+        height: 30px;
+    }
+
+    .contact-form-button {
+        @apply py-1.5;
+    }
+
+    
+    .clamp-1-line {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        /* limits to 1 line */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
     .clamp-2-lines {
         display: -webkit-box;
         -webkit-line-clamp: 2;
@@ -25,12 +62,14 @@
 
     .path {
         font-size: 12px;
+        padding: 0px;
     }
 
     .heading {
         font-size: 16px !important;
         line-height: 28px;
         margin-bottom: 8px;
+        margin-top: 5px;
     }
 
     .subheading {
@@ -99,9 +138,9 @@
     }
 
     .search-input-homepage-herosection {
-        height: 24px;
-        padding: 0 8px;
-        font-size: 12px;
+        width: 81%;
+        padding: 0 0px 0 5px;
+        font-size: 10px;
     }
 
     .herosearchBtn {
@@ -182,11 +221,20 @@
     }
 
 
+    .marketing-insights-card h4 {
+        @apply font-bold mb-1 text-[14px] text-left;
+    }
+
+    .marketing-insights-card p {
+        @apply font-light mb-0 text-left text-[12px] text-txBlack;
+    }
+
+
 
     .featured-investment-image-dev {
         width: 100%;
         max-height: 360px !important;
-        height: 220px !important;
+        height: 200px !important;
         object-fit: cover;
         border-radius: 10px;
     }
@@ -236,7 +284,7 @@
 
     .testimonial-slider {
         width: 100% !important;
-        height: 280px !important;
+        height: 250px !important;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -244,7 +292,6 @@
     }
 
     .review-card {
-
         box-shadow: 1px 2px 5px rgba(22, 22, 22, 0.3), -1px -2px 5px rgba(22, 22, 24, 0.3);
         border-radius: 15px;
         display: inline-flex;
@@ -252,7 +299,7 @@
         align-items: center;
         justify-content: center;
         width: 95% !important;
-        height: 150px !important;
+        height: 140px !important;
         max-width: 100% !important;
         margin-left: 0px;
 
@@ -377,8 +424,17 @@
         @apply py-0;
     }
 
+    .m-featured-investment-card.featured-investment-card {
+        box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+        max-width: 300px;
+        width: 100%;
+        height: auto !important;
+    }
+
+
+
     .m-featured-investment-card .featured-investment-image-dev {
-        height: 180px !important;
+        height: 150px !important;
         object-fit: cover;
     }
 
@@ -388,15 +444,17 @@
     }
 
     .m-featured-page-card {
-        @apply bg-white rounded-[10px] shadow-md p-2 transition duration-300 flex flex-col items-start justify-between;
+        @apply bg-white rounded-[10px] shadow-md p-2 transition duration-300;
         box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
         width: 100%;
-        max-width: 100% !important;
-        height: auto !important;
+        min-width: 170px;
+        width: 100%;
+        max-height:325px;
+        height:100%;
     }
 
     .m-featured-page-card .project-page-image-dev {
-        height: 100px !important;
+        max-height: 95px !important;
         object-fit: cover;
     }
 
@@ -406,7 +464,7 @@
     }
 
     .m-featured-page-card .featured-investment-button {
-        @apply !py-1 !mt-3 text-[10px] !px-2;
+        @apply !py-1 !mt-3 text-[10px] !px-2 border;
     }
 
     .m-featured-page-card h3 {
@@ -468,8 +526,10 @@
 
 
     .what-we-offer-card {
-        width: 195px;
-        height: 140px;
+        min-width: 170px;
+        width: 100%;
+        min-height: 125px;
+        height: 100%;
         @apply border border-primary rounded-[20px] px-4 py-3 h-auto shadow-sm hover:shadow-md transition flex flex-col justify-between;
 
     }
@@ -483,7 +543,7 @@
     }
 
     .what-we-offer-button {
-        @apply bg-primary text-white text-[10px] font-normal px-3 py-1.5 rounded-[20px] inline-block hover:bg-white hover:text-primary border hover:border-primary;
+        @apply bg-primary text-white text-[8px] font-normal px-3 py-1.5 rounded-[20px] inline-block hover:bg-white hover:text-primary border hover:border-primary;
     }
 
 

@@ -8,21 +8,21 @@
 @endsection
 
 @section('content')
-<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
-    <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('projects') }}">Projects</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('projects.each', $property->property_slug) }}">{{ $property->property_name }}</a></div>
+<section class="max-w-[1100px] mx-auto md:px-0 pb-2">
+    <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="md:w-4 md:h-4 w-3 h-3 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('projects') }}">Projects</a> <x-forkawesome-angle-right class="md:w-4 md:h-4 w-3 h-3 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('projects.each', $property->property_slug) }}">{{ $property->property_name }}</a></div>
 </section>
 
-<x-banner-section class="px-4 relative md:h-[55vh] md:max-h-[55vh] h-[30vh] max-h-[30vh]" image="{{ asset('assets/images/bannerImages/single-project-banner.jpg') }}" title="DLF Prime Towers
-Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-[38%] !w-full" buttonLink="#" buttonClass=" " buttonText="" />
+<x-banner-section class="px-4 relative md:h-[55vh] md:max-h-[45vh] h-[20vh] max-h-[20vh]" image="{{ asset('assets/images/bannerImages/single-project-banner.jpg') }}" title="DLF Prime Towers
+Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-[38%] !w-full tracking-wide leading-8" buttonLink="#" buttonClass=" " buttonText="" />
 
 <div class="w-full py-6 px-4 md:px-0">
-    <div class="max-w-6xl mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-start gap-6">
+    <div class="max-w-[1100px] mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-start gap-6">
 
         <!-- Left Content -->
-        <div class="space-y-3 md:inline-flex flex-col md:items-start items-center md:gap-2 w-full md:w-auto">
+        <div class="space-y-3 md:space-y-2 md:inline-flex flex-col md:items-start items-center md:gap-2 w-full md:w-auto">
             <!-- Tag -->
             <div class="md:inline-flex flex items-center justify-center ">
-                <span class="md:inline-block border border-txBlack font-light rounded-2xl px-8 py-2 md:text-[16px] text-[12px] text-txBlack">
+                <span class="md:inline-block border border-txBlack font-normal rounded-2xl px-8 py-2 md:text-[12px] text-[12px] text-txBlack">
                     Multiplex / Complex
                 </span>
             </div>
@@ -34,7 +34,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
             </div>
 
             <!-- Meta Info -->
-            <div class="md:text-sm text-[8px] md:text-left text-center text-gray-700 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 md:gap-y-0 !md:mt-0">
+            <div class="md:text-[12px] text-[8px] md:text-left text-center text-txBlack flex flex-wrap items-center justify-center gap-x-3 gap-y-1 md:gap-y-0 !md:mt-0">
                 <span>Noida, Sector 62</span>
                 <span class="text-txBlack">|</span>
                 <span>5000 sq. ft.</span>
@@ -46,8 +46,8 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
         <!-- Right Buttons -->
         <div class=" flex flex-row items-center justify-between md:flex-row md:gap-4 gap-2">
             <!-- WhatsApp -->
-            <button class=" brochurebtnxx flex items-center justify-center md:gap-2 md:font-medium gap-1 md:border-2 border border-primary text-black md:px-4 md:py-2 py-1 px-2 rounded-full text-[9px] md:text-[16px] hover:bg-primary hover:text-white transition">
-                <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <button class=" brochurebtnxx flex items-center justify-center md:gap-2 md:font-normal gap-1 md:border-2 border border-primary text-txBlack md:px-4 md:py-2 py-2 px-2 rounded-full text-[8px] md:text-[12px] hover:bg-primary hover:text-white transition">
+                <svg width="18" height="16" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_2521_2859)">
                         <path d="M1.13861 10.9496C1.1381 12.7981 1.62108 14.6029 2.53945 16.1938L1.05078 21.6291L6.6132 20.1706C8.1517 21.0082 9.87546 21.447 11.6272 21.4471H11.6318C17.4144 21.4471 22.1217 16.7416 22.1241 10.9579C22.1252 8.15531 21.0348 5.51991 19.0536 3.53719C17.0728 1.55463 14.4383 0.462217 11.6313 0.460938C5.84798 0.460938 1.14108 5.16621 1.1387 10.9496" fill="url(#paint0_linear_2521_2859)" />
                         <path d="M0.767022 10.947C0.766425 12.8619 1.26671 14.7313 2.21783 16.3791L0.675781 22.0093L6.43765 20.4985C8.02523 21.3641 9.81269 21.8205 11.6315 21.8212H11.6362C17.6264 21.8212 22.5027 16.9464 22.5052 10.9557C22.5063 8.05234 21.3766 5.32221 19.3246 3.26845C17.2724 1.21495 14.5437 0.083225 11.6362 0.0820312C5.64505 0.0820312 0.769409 4.95614 0.767022 10.947ZM4.19842 16.0953L3.98328 15.7538C3.0789 14.3158 2.60155 12.654 2.60223 10.9476C2.60411 5.96823 6.65654 1.91707 11.6396 1.91707C14.0528 1.91809 16.3207 2.85881 18.0264 4.5656C19.7321 6.27256 20.6707 8.54163 20.6701 10.955C20.6679 15.9344 16.6154 19.9861 11.6362 19.9861H11.6326C10.0114 19.9852 8.42132 19.5498 7.03463 18.727L6.70463 18.5313L3.28542 19.4278L4.19842 16.0953Z" fill="url(#paint1_linear_2521_2859)" />
@@ -72,8 +72,8 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
             </button>
 
             <!-- Download Brochure -->
-            <button class="brochurebtnxx flex items-center justify-center md:font-medium md:gap-2 gap-1 md:border-2 border border-primary text-black md:px-4 md:py-2 py-1 px-2 rounded-full text-[9px] md:text-[16px] hover:bg-primary hover:text-white transition">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="black" xmlns="http://www.w3.org/2000/svg">
+            <button class="brochurebtnxx flex items-center justify-center md:font-normal md:gap-2 gap-1 md:border-2 border border-primary text-black md:px-4 md:py-2 py-2 px-2 rounded-full text-[8px] md:text-[12px] hover:bg-primary hover:text-white transition">
+                <svg width="12" height="12" viewBox="0 0 16 16" fill="black" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7.83724 11.2745C7.71502 11.2745 7.60043 11.2555 7.49349 11.2176C7.38655 11.1798 7.28724 11.1147 7.19557 11.0224L3.89557 7.7224C3.71224 7.53907 3.62424 7.32518 3.63157 7.08073C3.63891 6.83629 3.72691 6.6224 3.89557 6.43907C4.07891 6.25573 4.29677 6.1604 4.54916 6.15307C4.80155 6.14573 5.0191 6.23343 5.20182 6.41615L6.92057 8.1349V1.58073C6.92057 1.32101 7.00857 1.10345 7.18457 0.928066C7.36057 0.752677 7.57813 0.664677 7.83724 0.664066C8.09635 0.663455 8.31421 0.751455 8.49082 0.928066C8.66743 1.10468 8.75513 1.32223 8.75391 1.58073V8.1349L10.4727 6.41615C10.656 6.23282 10.8739 6.14482 11.1262 6.15215C11.3786 6.15948 11.5962 6.25512 11.7789 6.43907C11.947 6.6224 12.035 6.83629 12.0429 7.08073C12.0508 7.32518 11.9629 7.53907 11.7789 7.7224L8.47891 11.0224C8.38724 11.1141 8.28793 11.1791 8.18099 11.2176C8.07405 11.2561 7.95946 11.2751 7.83724 11.2745ZM2.33724 15.3307C1.83307 15.3307 1.40163 15.1514 1.04291 14.7926C0.684184 14.4339 0.504517 14.0022 0.503906 13.4974V11.6641C0.503906 11.4043 0.591906 11.1868 0.767906 11.0114C0.943906 10.836 1.16146 10.748 1.42057 10.7474C1.67968 10.7468 1.89754 10.8348 2.07416 11.0114C2.25077 11.188 2.33846 11.4056 2.33724 11.6641V13.4974H13.3372V11.6641C13.3372 11.4043 13.4252 11.1868 13.6012 11.0114C13.7772 10.836 13.9948 10.748 14.2539 10.7474C14.513 10.7468 14.7309 10.8348 14.9075 11.0114C15.0841 11.188 15.1718 11.4056 15.1706 11.6641V13.4974C15.1706 14.0016 14.9912 14.4333 14.6325 14.7926C14.2738 15.152 13.842 15.3313 13.3372 15.3307H2.33724Z" />
                 </svg>
 
@@ -81,8 +81,8 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
             </button>
 
             <!-- RERA -->
-            <button class="brochurebtnxx flex items-center justify-center md:gap-2 gap-1 md:border-2 border border-primary md:font-medium text-black md:px-4 md:py-2 py-1 px-2 rounded-full text-[9px] md:text-[16px] hover:bg-primary hover:text-white transition">
-                <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <button class="brochurebtnxx flex items-center justify-center md:gap-2 gap-1 md:border-2 border border-primary md:font-normal text-black md:px-4 md:py-2 py-2 px-2 rounded-full text-[8px] md:text-[12px] hover:bg-primary hover:text-white transition">
+                <svg width="16" height="16" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8.33594 11.917C8.7296 12.4432 9.23185 12.8787 9.80861 13.1938C10.3854 13.5089 11.0232 13.6963 11.6787 13.7433C12.3342 13.7902 12.9922 13.6956 13.608 13.4659C14.2238 13.2362 14.783 12.8768 15.2476 12.412L17.9976 9.66196C18.8325 8.79753 19.2945 7.63977 19.284 6.43804C19.2736 5.2363 18.7916 4.08675 17.9418 3.23696C17.092 2.38717 15.9424 1.90515 14.7407 1.8947C13.539 1.88426 12.3812 2.34624 11.5168 3.18113L9.9401 4.74863" stroke="black" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M11.999 10.0841C11.6054 9.55782 11.1031 9.12236 10.5264 8.80725C9.94961 8.49214 9.31183 8.30475 8.65628 8.2578C8.00073 8.21085 7.34276 8.30544 6.72698 8.53514C6.1112 8.76485 5.55202 9.1243 5.08738 9.58911L2.33738 12.3391C1.50249 13.2035 1.04051 14.3613 1.05095 15.563C1.0614 16.7648 1.54342 17.9143 2.39321 18.7641C3.243 19.6139 4.39255 20.0959 5.59429 20.1064C6.79602 20.1168 7.95378 19.6548 8.81821 18.8199L10.3857 17.2524" stroke="black" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
@@ -95,17 +95,17 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
 
 
 
-<section class="pb-10 pt-0  max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0">
+<section class="pb-10 pt-0  max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0">
 
 
 
     <!-- Left Column (Blog Content) -->
-    <div class="md:col-span-2 md:pe-10 border-r  border-gray/30">
+    <div class="md:col-span-2 md:pe-10 border-r  border-txBlack">
 
         <x-heading-subheading heading="Property Description" subheading="DLF Cyber City Tower in Sector 62, Noida, is a premium commercial project by DLF, spanning 5000 sq. ft. Designed for modern businesses, it offers flexible spaces for multiplexes, offices, co-working, and more. With top-notch amenities, excellent connectivity, and sustainable architecture, it’s perfect for corporates and entertainment setups. Backed by DLF’s trusted legacy, the project promises high returns and a future-ready workspace." headingClass="heading project-each " subHeadingClass="subheading project-each mb-4 text-start !text-md" />
         <ul class="text-txBlack md:text-[16px] text-[12px] md:ml-4 space-y-0">
             <li class="flex items-center gap-2">
-                <span class="w-1 h-1 mt-1 bg-gray rounded-full shrink-0"></span>
+                <span class="w-1 h-1 mt-1 bg-txBlack rounded-full shrink-0"></span>
                 <span>Located in Noida’s prime IT & business hub</span>
             </li>
             <li class="flex items-center gap-2">
@@ -194,7 +194,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
             </div>
         </div>
 
-        <div class="max-w-4xl mx-auto md:px-4 py-4 text-gray-800">
+        <div class="max-w-4xl mx-auto md:px-4 py-4 text-tx`Black ">
 
             <!-- Amenities Section -->
             <div class="mb-8">
@@ -314,7 +314,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
             </div>
         </div>
 
-        <div class="max-w-4xl mx-auto  py-8 text-gray-800 space-y-8">
+        <div class="max-w-4xl mx-auto  py-8 text-txBlack space-y-8">
 
             <!-- About Builder -->
             <div>
@@ -328,7 +328,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
             </div>
 
             <!-- Project Snapshot (Right aligned table on larger screens if needed) -->
-            <div class="md:max-w-full max-w-[85%] m-auto ">
+            <div class="md:max-w-full max-w-[85%] m-auto text-txBlack">
                 <h3 class="md:text-[16px] text-[12px] font-semibold mb-2 md:text-start text-center">At raising sector 44, Noida</h3>
                 <div class="border border-primary rounded-lg overflow-hidden w-full md:w-2/3 text-[10px] md:text-[16px]">
                     <div class="grid grid-cols-2 border-b border-primary">
@@ -385,7 +385,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
     <aside class="space-y-6 md:col-span-1 sticky top-[100px] self-start">
 
         <!-- Enquiry Form -->
-        <div class="bg-gradient-to-b from-bgSecondary/30 to-white p-6  rounded-[15px] w-full max-w-sm mx-auto max-h-[80vh] overflow-y-auto">
+        <div class="bg-gradient-to-b from-primary/10 to-secondary/10 p-6  rounded-[15px] w-full max-w-sm mx-auto max-h-[80vh] overflow-y-auto">
             <form class="space-y-4">
                 <!-- Name -->
                 <div>
@@ -432,7 +432,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
 
         <!-- Project of the Day -->
         <div class=" project-of-the-day md:px-0 px-4 ">
-            <h3 class="md:text-[24px] text-[16px] font-semibold">Project of the Day</h3>
+            <h3 class="md:text-[24px] text-[16px] font-semibold mx-5">Project of the Day</h3>
             <div class=" slick-slider-single-page" id="slick-slider">
                 <div class="featured-investment-card-single-page">
                     <x-featured-investment-section imageClass=" " src="{{ asset('assets/images/allImages/DlfCyberCity.png') }}" featuredCardClass="featured-investment-card-single-page-div" alt="DLF Cyber City Tower" heading="DLF Cyber City Tower" location="Noida, Sector 62" rera="UPRERAI2345" status="Ongoing" roi="12%" developer="DLF" variety="Multiplex / Commercial" size="5000 sq. ft." price="Price on Demand" />
@@ -451,19 +451,19 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
 
         <!-- Explore Blogs -->
         <div class="single-page-blog md:px-0 px-4">
-            <h3 class="md:text-[24px] text-[16px] font-semibold">Explore our blogs</h3>
+            <h3 class="md:text-[24px] text-[16px] font-semibold mx-5">Explore our blogs</h3>
             <div class="pt-2 slick-slider-single-page" id="slick-slider2">
                 <div class="marketing-insights-card-single-page">
-                    <x-blog-card cardCls="marketing-insights-card  heading-h4 !p-3" imageWrapperClass="!h-52 w-full mb-2 overflow-hidden" class="featured-investment-img !mb-0" src="{{asset('assets/images/allImages/marketing2.png')}}" alt="DLF Cyber City Tower" h4="Top Cities for Real Estate Investment in 2025" p="Discover where smart investors are putting their money this year." />
+                    <x-blog-card cardCls="marketing-insights-card  heading-h4 !p-3" imageWrapperClass="!h-52 w-full mb-2 overflow-hidden rounded-[15px]" class="featured-investment-img !mb-0" src="{{asset('assets/images/allImages/marketing2.png')}}" alt="DLF Cyber City Tower" h4="Top Cities for Real Estate Investment in 2025" p="Discover where smart investors are putting their money this year." />
                 </div>
                 <div class="marketing-insights-card-single-page">
-                    <x-blog-card cardCls="marketing-insights-card  heading-h4 !p-3" imageWrapperClass="!h-52 w-full mb-2 overflow-hidden" class="featured-investment-img !mb-0" src="{{ asset('assets/images/allImages/marketing3.png') }}" alt="M3M Corporate Heights" h4="5 Mistakes Every Property Investor Should Avoid" p="Learn common pitfalls and how to protect your real estate investment" />
+                    <x-blog-card cardCls="marketing-insights-card  heading-h4 !p-3" imageWrapperClass="!h-52 w-full mb-2 overflow-hidden rounded-[15px]" class="featured-investment-img !mb-0" src="{{ asset('assets/images/allImages/marketing3.png') }}" alt="M3M Corporate Heights" h4="5 Mistakes Every Property Investor Should Avoid" p="Learn common pitfalls and how to protect your real estate investment" />
                 </div>
                 <div class="marketing-insights-card-single-page">
-                    <x-blog-card cardCls="marketing-insights-card  heading-h4 !p-3" imageWrapperClass="!h-52 w-full mb-2 overflow-hidden" class="featured-investment-img !mb-0" src="{{ asset('assets/images/allImages/marketing1.png') }}" alt="M3M Atrium" h4="Rental Income: Which Strategy Wins?" p="Compare long-term rental income with short-term property flipping profits." />
+                    <x-blog-card cardCls="marketing-insights-card  heading-h4 !p-3" imageWrapperClass="!h-52 w-full mb-2 overflow-hidden rounded-[15px]" class="featured-investment-img !mb-0" src="{{ asset('assets/images/allImages/marketing1.png') }}" alt="M3M Atrium" h4="Rental Income: Which Strategy Wins?" p="Compare long-term rental income with short-term property flipping profits." />
                 </div>
                 <div class="marketing-insights-card-single-page">
-                    <x-blog-card cardCls="marketing-insights-card  heading-h4 !p-3" imageWrapperClass="!h-52 w-full mb-2 overflow-hidden" class="featured-investment-img !mb-0" src="{{ asset('assets/images/allImages/marketing4.png') }}" alt="M3M Corporate Heights" h4="The Future of Real Estate: Trends to Watch" p="Stay ahead of the curve with these emerging real estate trends." />
+                    <x-blog-card cardCls="marketing-insights-card  heading-h4 !p-3" imageWrapperClass="!h-52 w-full mb-2 overflow-hidden rounded-[15px]" class="featured-investment-img !mb-0" src="{{ asset('assets/images/allImages/marketing4.png') }}" alt="M3M Corporate Heights" h4="The Future of Real Estate: Trends to Watch" p="Stay ahead of the curve with these emerging real estate trends." />
                 </div>
             </div>
         </div>
@@ -506,7 +506,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: true,
-            autoplay: true,
+            autoplay: false,
             autoplaySpeed: 2000,
         });
 

@@ -37,7 +37,7 @@
                 <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
 
                 <!-- Content -->
-                <div class="relative md:top-[-200px] top-[-200px] z-10 flex flex-col items-center justify-center h-full text-white px-4 py-0 md:py-16">
+                <div class="relative md:top-[-200px] top-0 z-10 flex flex-col items-center justify-center h-full text-white px-4 py-0 md:py-16">
                     <h1 class="md:text-[24px] text-[16px] md:max-w-3xl font-bold mb-4 text-center">
                         Invest in High-Return, Legally Verified Real Estate Projects
                     </h1>
@@ -83,7 +83,7 @@
         <div class="swiper-pagination "></div>
     </div>
 
-    <div class="absolute left-1/2 md:top-1/2 top-[60%] transform -translate-x-1/2 -translate-y-1/2  z-10 m-hero-search flex flex-row items-center justify-between md:w-full  md:max-w-[700px] md:h-[60px] !sm:h-[24px] bg-white rounded-full md:py-2 py-1 px-2 shadow-md w-[calc(100%-100px)]">
+    <div class="absolute left-1/2 md:top-1/2 top-[60%] transform -translate-x-1/2 -translate-y-1/2  z-10 m-hero-search flex flex-row items-center justify-between md:w-full  md:max-w-[700px] md:h-[60px] h-auto bg-white rounded-full md:py-2 py-1 px-2 shadow-md !w-[calc(100%-80px)]">
 
         <div class=" w-auto !sm:w-[10%] md:w-[16%] z-10">
             <select class="hero-section-select home py-1 md:py-2">
@@ -93,8 +93,8 @@
                 <option>Bangalore</option>
             </select>
         </div>
-        <div class="relative w-full !sm:w-auto z-0">
-            <input type="text" placeholder="Search by city, ROI, project name..." class="search-input-homepage-herosection md:ml-2" />
+        <div class=" w-full z-0">
+            <input type="text" placeholder="Search by city, ROI, project name..." class="search-input-homepage-herosection md:ml-2 md:placeholder:text-[16px] placeholder:text-[10px] md:text-[16px]" />
         </div>
 
         <button class="herosearchBtn bg-primary border-primary hover:bg-white border-2 hover:border-primary text-white hover:text-txBlack font-semibold md:py-2 md:px-10 px-2 py-1 ml-[-20px] rounded-full  md:mt-0 md:ml-2 transition duration-300">
@@ -103,8 +103,8 @@
     </div>
 </section>
 
-<section class="px-4 sm:py-4 py-6 md:pt-12 bg-white">
-    <div class="container max-w-[1116px] mx-auto text-center">
+<section class="px-4 md:px-0 py-4 md:py-6 md:pt-8 bg-white">
+    <div class="container max-w-[1100px] mx-auto text-center">
 
         <x-heading-subheading heading="Why Invest with us" subheading=" Empowering You to Make Smarter, Safer, and More Profitable Investments." headingClass="heading" subHeadingClass="subheading" />
         <!-- Cards -->
@@ -181,17 +181,17 @@
     </div>
 </section>
 
-<section class="px-4 md:py-12 sm:py-2 bg-white">
-    <div class="container max-w-6xl  mx-auto text-center">
+<section class="px-4 md:px-0 md:py-6 py-2 bg-white">
+    <div class="container max-w-[1100px]  mx-auto text-center">
 
         <x-heading-subheading heading="Projects on prime location" subheading=" Discover top-tier properties situated in the most sought-after locations." headingClass="heading" subHeadingClass="subheading" />
 
-        <div class="grid grid-cols-2 place-items-center md:grid-cols-4 md:gap-3 gap-4 max-w-full mx-auto ">
+        <div class="grid grid-cols-2 place-items-center md:grid-cols-4 md:gap-5 gap-y-3 gap-x-3 max-w-full mx-auto !justify-items-center">
 
             @if(isset($primeLocation) && $primeLocation->count() > 0)
             @foreach ($primeLocation as $property)
             <!-- Card 1 -->
-            <a href="{{ route('projects.each', $property->property_slug) }}" class="relative rounded-[15px] overflow-hidden group md:h-[245px] md:w-[265px] w-[185px] h-[180px]  ">
+            <a href="{{ route('projects.each', $property->property_slug) }}" class="relative rounded-[15px] overflow-hidden group md:min-h-[230px] md:max-h-[245px] md:w-[100%] md:h-[100%] md:min-w-[250px] w-[100%] h-[100%] min-w-[160px] min-h-[160px]  ">
                 <img src="{{ asset($property->property_featured_image) }}" alt="{{ $property->property_name }}" class="prime-location-image" />
                 <div class="prime-location-overlay">
                     <span class="prime-location-name">{{ $property->property_city }}</span>
@@ -203,12 +203,12 @@
     </div>
 </section>
 
-<section class="px-4 py-8 bg-white text-center hidden md:block">
-    <div class="container max-w-6xl mx-auto text-center">
+<section class="px-4 md:px-0 py-4 md:py-6 bg-white text-center hidden md:block">
+    <div class="container max-w-[1100px] mx-auto text-center">
 
         <x-heading-subheading heading="Featured Investment Opportunities" subheading="Explore high-return investment options with trusted developers." headingClass="heading" subHeadingClass="subheading" />
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-0 mx-auto">
+        <div class="grid md:grid-cols-3 gap-8 mx-auto place-items-center">
 
             @if(isset($properties) && $properties->count() > 0)
 
@@ -231,11 +231,11 @@
 </section>
 
 <section class="bg-white text-center block md:hidden mx-auto">
-    <div class="container bg-white !my-8">
+    <div class="container bg-white !my-4">
 
         <x-heading-subheading heading="Featured Investment Opportunities" subheading="Explore high-return investment options with trusted developers." headingClass="heading" subHeadingClass="subheading" />
 
-        <div class="project-slider profist gap-8 ">
+        <div class="project-slider profist gap-6 ">
 
             @if(isset($properties) && $properties->count() > 0)
 
@@ -256,47 +256,42 @@
     </div>
 </section>
 
-
-
-
-
-
-<section class="px-4 md:py-8 py-0 bg-white text-center">
-    <div class="container max-w-6xl mx-auto">
+<section class="px-4 md:px-0 md:py-6 py-4 bg-white text-center">
+    <div class="container max-w-[1100px] mx-auto">
         <x-heading-subheading heading="What We Offer" subheading="Comprehensive solutions tailored to meet all your real estate needs." headingClass="heading" subHeadingClass="subheading" />
-        <div class="grid grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-10 gap-6 mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-3 md:gap-6 gap-3 mx-auto">
             <!-- Card -->
-            <div class="what-we-offer-card md:w-[350px] md:h-[250px] w-[195px] h-[140px]">
+            <div class="what-we-offer-card ">
                 <h3>Property Investment Solutions</h3>
                 <p>Maximize your returns with our real estate investment.</p>
                 <a href="#" class="what-we-offer-button">Explore Opportunities</a>
             </div>
 
-            <div class="what-we-offer-card md:w-[350px] md:h-[250px] w-[195px] h-[140px]">
+            <div class="what-we-offer-card">
                 <h3>Portfolio Management</h3>
                 <p>Experts maximize profits and minimize risk.</p>
                 <a href="#" class="what-we-offer-button">Schedule a Consultation</a>
             </div>
 
-            <div class="what-we-offer-card md:w-[350px] md:h-[250px] w-[195px] h-[140px]">
+            <div class="what-we-offer-card ">
                 <h3>Tax and Legal Advisory</h3>
                 <p>Expert tax planning and legal consultation to ensure the compliant.</p>
                 <a href="#" class="what-we-offer-button">Get Professional Advice</a>
             </div>
 
-            <div class="what-we-offer-card md:w-[350px] md:h-[250px] w-[195px] h-[140px]">
+            <div class="what-we-offer-card">
                 <h3>Risk Management & Insurance</h3>
                 <p>Mitigate risks by investing in property insurance.</p>
                 <a href="#" class="what-we-offer-button">Get Insured</a>
             </div>
 
-            <div class="what-we-offer-card md:w-[350px] md:h-[250px] w-[195px] h-[140px]">
+            <div class="what-we-offer-card">
                 <h3>Investment Planning for Startups</h3>
                 <p>Provide tailored investment solutions to help startups.</p>
                 <a href="#" class="what-we-offer-button">Start Your Journey</a>
             </div>
 
-            <div class="what-we-offer-card md:w-[350px] md:h-[250px] w-[195px] h-[140px]">
+            <div class="what-we-offer-card">
                 <h3>Property Leasing and Sales</h3>
                 <p>We help lease and sell residential and commercial properties.</p>
                 <a href="#" class="what-we-offer-button">List Your Property</a>
@@ -305,12 +300,12 @@
     </div>
 </section>
 
-<section class="px-4 py-8 bg-white text-center hidden md:block">
-    <div class="container max-w-6xl mx-auto">
+<section class="px-4 md:px-0 md:py-6 py-4 bg-white text-center hidden md:block">
+    <div class="container max-w-[1100px] mx-auto">
 
         <x-heading-subheading heading="Explore Our Properties Virtually" subheading="Take a digital walkthrough of our premium property listings." headingClass="heading" subHeadingClass="subheading" />
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div class="grid md:grid-cols-3 gap-4 place-items-center mx-auto">
             @if(isset($virtualTours) && $virtualTours->count() > 0)
             @foreach ($virtualTours as $property)
             <a href="{{ route('projects.each' , $property->property_slug) }}" class="group w-[350px] h-[480px]">
@@ -329,7 +324,7 @@
         </div>
 
 
-        <div class="mt-6">
+        <div class="mt-3">
             <a class="view-more-button inline-flex" href="{{ route('properties.virtual-tours' , ['property_type' => 'Virtual']) }}">
                 See All Virtual Tours <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
             </a>
@@ -338,12 +333,12 @@
 </section>
 
 
-<section class="px-4 py-8 bg-white text-center md:hidden block">
+<section class="px-4 py-4 bg-white text-center md:hidden block">
     <div class="container max-w-6xl mx-auto">
 
         <x-heading-subheading heading="Explore Our Properties Virtually" subheading="Take a digital walkthrough of our premium property listings." headingClass="heading" subHeadingClass="subheading" />
 
-        <div class="project-slider profist gap-6">
+        <div class="project-slider profist gap-8">
             @if(isset($virtualTours) && $virtualTours->count() > 0)
             @foreach ($virtualTours as $property)
             <a href="{{ route('projects.each' , $property->property_slug) }}">
@@ -362,7 +357,7 @@
         </div>
 
 
-        <div class="mt-6">
+        <div class="mt-3">
             <a class="view-more-button inline-flex" href="{{ route('properties.virtual-tours' , ['property_type' => 'Virtual']) }}">
                 See All Virtual Tours <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
             </a>
@@ -371,8 +366,8 @@
 </section>
 
 
-<section class="px-4 py-8 bg-white text-center hidden md:block">
-    <div class="container max-w-6xl mx-auto">
+<section class="px-4 py-4 bg-white text-center hidden md:block">
+    <div class="container max-w-[1100px] mx-auto">
         <x-heading-subheading heading="Our Development Partners" subheading="Collaborating with renowned names in real estate development." headingClass="heading" subHeadingClass="subheading" />
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
 
@@ -382,7 +377,7 @@
 
         </div>
 
-        <div class="mt-6">
+        <div class="mt-4">
             <a href="{{ route('development-partners') }}" class="view-more-button ">
                 View More <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
             </a>
@@ -391,7 +386,7 @@
 </section>
 
 
-<section class=" py-8 bg-white text-center md:hidden block">
+<section class=" py-4 bg-white text-center md:hidden block">
     <div class="">
         <x-heading-subheading heading="Our Development Partners" subheading="Collaborating with renowned names in real estate development." headingClass="heading" subHeadingClass="subheading" />
         <div class="project-slider profist">
@@ -399,7 +394,7 @@
             <x-developer-partner-card partnerLogo="{{ asset($partner->logo) }}" url="{{ route('development-partners.show',  $partner->slug) }}" alt="{{ $partner->developer_name }}" heading="{{ $partner->developer_name }}" description="{{ $partner->tags }}" projectsPartnered="{{ $partner->total_projects }}" presence="{{ implode(', ', $partner->operating_cities ?? []) }}" />
             @endforeach
         </div>
-        <div class="mt-6">
+        <div class="mt-3">
             <a href="{{ route('development-partners') }}" class="view-more-button ">
                 View More <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
             </a>
@@ -409,9 +404,9 @@
 
 
 <section class="px-4 py-6 bg-white text-center hidden md:block">
-    <div class="container max-w-6xl mx-auto">
+    <div class="container max-w-[1100px] mx-auto">
         <x-heading-subheading heading="Real Estate Marketing Insights" subheading="Stay ahead with industry trends, data, and marketing tips." headingClass="heading" subHeadingClass="subheading" />
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mx-auto">
+        <div class="grid md:grid-cols-3 gap-6 mx-auto place-items-center">
             @if(isset($blogs) && $blogs->count() > 0)
 
             @foreach ($blogs as $blog)
@@ -429,7 +424,7 @@
 </section>
 
 
-<section class=" py-6 bg-white text-center md:hidden block">
+<section class=" py-4 bg-white text-center md:hidden block">
     <div class="container">
         <x-heading-subheading heading="Real Estate Marketing Insights" subheading="Stay ahead with industry trends, data, and marketing tips." headingClass="heading px-4" subHeadingClass="subheading px-4" />
         <div class="project-slider profist gap-8 mx-auto">
@@ -441,7 +436,7 @@
             @endif
 
         </div>
-        <div class="mt-6">
+        <div class="mt-3">
             <a href="{{ route('blog.show') }}" class="marketing-insights-view-more-button !inline-flex">
                 View all Blog <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
             </a>
@@ -449,8 +444,8 @@
     </div>
 </section>
 
-<section class="md:px-4 px-0 py-8 bg-white">
-    <div class="container max-w-5xl mx-auto px-4">
+<section class="md:px-4 px-0 py-4  bg-white">
+    <div class="container max-w-[1000px] mx-auto px-4">
 
         <x-heading-subheading heading="Hear From Our Investors" subheading="Genuine testimonials and success stories from our valued investors." headingClass="heading text-center" subHeadingClass="subheading text-center !mb-2" />
     </div>

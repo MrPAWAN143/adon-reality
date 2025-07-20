@@ -16,8 +16,10 @@ class NewsAndPrController extends Controller
 
     public function show($slug)
     {
-        $news = NewsAndPr::where('slug', $slug)->firstOrFail();
-        return view('Pages.single-news', compact('news'));
+        // $news = NewsAndPr::where('slug', $slug)->firstOrFail();
+        
+
+        return view('Pages.single-news');
     }
 
     public function create()

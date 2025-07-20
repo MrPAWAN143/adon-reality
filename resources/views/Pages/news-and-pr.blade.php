@@ -32,6 +32,7 @@
                 buttonText="Read More"
                 buttonClass="newsAndPrButton"
                 newsAndPrCard="newsAndPrCard"
+                buttonLink="{{ route('news.show') }}"
                 newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
 
 
