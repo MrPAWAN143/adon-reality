@@ -19,10 +19,11 @@ class awards extends Component
     public string $class;
     public string $buttonText;
     public string $buttonClass;
+    public string $buttonLink; // Added for button link
     public string $newsAndPrCard;
     public string $newsAndPrCardImgDiv;
 
-    public function __construct( $image = "" ,  $title = "", $by = "", $description = "",  $alt ="",  $class ="",  $buttonText = "",  $buttonClass = "",  $newsAndPrCard = "",  $newsAndPrCardImgDiv = "" )
+    public function __construct( $image = "" ,  $title = "", $by = "", $description = "",  $alt ="",  $class ="",  $buttonText = "",  $buttonClass = "",  $newsAndPrCard = "",  $newsAndPrCardImgDiv = "" , $buttonLink = "#" )
     {
         $this->image = $image;
         $this->title = $title;
@@ -34,6 +35,7 @@ class awards extends Component
         $this->buttonClass = $buttonClass;
         $this->newsAndPrCard = $newsAndPrCard;
         $this->newsAndPrCardImgDiv = $newsAndPrCardImgDiv;
+        $this->buttonLink = $buttonLink; 
 
     }
 

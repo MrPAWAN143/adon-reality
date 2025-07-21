@@ -9,23 +9,23 @@
 @endsection
 
 @section('content')
-<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
+<section class="max-w-[1100px] mx-auto px-4 md:px-0 pb-2 pt-1">
     <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a href="{{ route('contact') }}" class="ml-[-5px]">Contact Us</a></div>
 </section>
-<section class=" w-[96%] max-w-7xl py-0 md:px-4 px-0 lg:px-8 mx-auto">
+<section class="max-w-[1100px] w-[100%] md:px-0 py-0 px-4 mx-auto">
     <x-heading-subheading class="" heading="Connect with Adon realty" subheading="We'd love to hear from you! Share your Query below" headingClass="heading md:hidden m-heading block" subHeadingClass="subheading m-subheading md:hidden block" />
-    <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-x-6 w-full md:w-[90%] mx-auto md:mt-10 mt-4 gap-6 rounded">
-        <div class="py-5 md:px-7 px-4 bg-gradient-to-b from-bgSecondary/30 to-white rounded-xl w-[90%] md:w-[90%] mx-auto">
+    <div class=" grid md:grid-cols-2 gap-x-0 w-full md:w-[100%] mx-auto md:mt-6 mt-4 gap-0 rounded place-items-center justify-items-stretch">
+        <div class="py-5 md:px-7 px-4 bg-gradient-to-b from-primary/10 to-secondary/10 rounded-xl w-[90%] md:w-[80%] mx-auto">
             <x-heading-subheading heading="Let's get in touch" subheading="We're open for any suggestion or just to have a chat" headingClass="heading text-start !my-2" subHeadingClass="subheading mb-4 text-sm dev-start w-72 -tracking-tighter" />
-            <div class="mt-3 gap-3 flex flex-col m-contact-details">
+            <div class="mt-3 md:gap-3 gap-2 flex flex-col m-contact-details">
                 <div class="flex gap-2 items-center  ">
                     <div class="bg-primary rounded-full p-2 ">
                         <x-zondicon-location class="w-3 h-3  text-white" />
                     </div>
 
-                    <address class=" ">
+                    <p class=" ">
                         Ground floor 4, DEEP SHIKHA BUILDING, Rajendra Place, New Delhi, Delhi, 110008
-                    </address>
+                    </p>
                 </div>
                 <div class="flex gap-2 items-center  mt-4 ">
 
@@ -67,9 +67,7 @@
                 <a href=""><x-si-x class="text-primary w-5 h-5" /></a>
             </div>
         </div>
-        <div id="contactPage" class="w-full lg:w-[90%]">
-
-
+        <div id="contactPage" class="w-full md:w-[100%] md:px-4 px-2">
             <x-heading-subheading class="" heading="Connect with Adon realty" subheading="We'd love to hear from you! Share your Query below" headingClass="heading text-start !my-2 md:block hidden" subHeadingClass="subheading mb-2 text-sm dev-start md:block hidden" />
 
             <form class="contactUsForm" method="POST">
@@ -116,7 +114,7 @@
 
 </section>
 
-<section class="md:px-4 px-0 py-8 bg-white">
+<section class="md:px-4 px-0 py-8 bg-white max-w-[1100px] mx-auto">
     <div class="container max-w-5xl mx-auto px-4">
 
         <x-heading-subheading heading="Hear From Our Investors" subheading="Genuine testimonials and success stories from our valued investors." headingClass="heading text-center" subHeadingClass="subheading text-center !mb-2" />

@@ -8,20 +8,20 @@
 @endsection
 
 @section('content')
-<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
+<section class="max-w-[1100px] mx-auto px-4 md:px-0 pb-2 pt-1">
      <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a href="{{ route('blog.show') }}" class="ml-[-5px]">Blog</a></div>
 </section>
-<section class="px-4 max-w-6xl mx-auto bg-white pb-8">
-    <div class="container ">
-        <x-heading-subheading heading="Our Blog & Insights" subheading="Get the latest updates, guides, and industry insights to help you make informed decisions about your next dream home." headingClass="heading text-center " subHeadingClass="subheading mb-2" />
+<section class="px-4 md:px-0 max-w-[1100px] mx-auto bg-white pb-8">
+    <div class="container mx-auto">
+        <x-heading-subheading heading="Our Blog & Insights" subheading="Get the latest updates, guides, and industry insights to help you make informed decisions about your next dream home." headingClass="heading text-center " subHeadingClass="subheading mb-2 md:max-w-[600px] mx-auto" />
 
-        <div class="max-w-2xl mx-auto px-4 py-4 pb-8">
+        <div class="max-w-2xl mx-auto px-4 py-4 pb-6">
             <!-- Search Bar -->
-            <div class="mb-6">
-                <div class="flex items-center rounded-2xl border border-gray px-4 py-1 shadow-sm">
-                    <x-zondicon-search class="w-6 h-6 " />
+            <div class="mb-4">
+                <div class="flex items-center rounded-2xl border border-gray px-4 md:py-1 shadow-sm">
+                    <x-zondicon-search class="md:w-5 md:h-5 w-4 h-4 text-gray" />
                     <input type="text" placeholder="Search blog articles..."
-                        class="w-full outline-none text-sm bg-transparent border-none focus:border-none focus:outline-none" />
+                        class="md:px-1 px-[4px] w-full outline-none text-sm bg-transparent border-none focus:border-none focus:outline-none md:placeholder:text-[16px] placeholder:text-[12px] md:text-[16px] text-[10px]" />
                 </div>
 
 

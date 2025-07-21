@@ -6,7 +6,7 @@
 
     <p class="text-base !font-light ">{{ $by }}</p>
     <p class="text-sm clamp-4-lines">{{ $description }}</p>
-    <button class="{{ $buttonClass ?? '' }}">{{ $buttonText ?? '' }}</button>
+    <a href="{{ $buttonLink ?? '' }}" class="{{ $buttonClass ?? '' }} inline-flex justify-center items-center">{{ $buttonText ?? '' }}</a>
 
 
 </div>

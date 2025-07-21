@@ -1,5 +1,5 @@
 <header class="w-full bg-white  z-50 sticky top-0">
-  <div class="max-w-7xl mx-auto px-8 md:px-8 py-2 flex items-center justify-between ">
+  <div class="max-w-6xl mx-auto px-4 md:px-0 py-4 flex items-center justify-between ">
 
     <!-- Logo -->
     <div class="flex items-center ">
@@ -10,8 +10,8 @@
 
 
     <!-- Mobile Menu Button -->
-    <button class="md:hidden block text-gray focus:outline-none mobile-menu-button">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+    <button class="md:hidden block text-black focus:outline-none mobile-menu-button">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
         viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
         <path d="M4 6h16M4 12h16M4 18h16" />
       </svg>
@@ -114,22 +114,22 @@
 
 
     <!-- MOBILE NAVIGATION -->
-    <div id="mobileNav" class="fixed top-0 left-0 h-full w-56 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-40 p-6 md:hidden">
+    <div id="mobileNav" class="fixed top-0 left-0 h-full w-72 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-40 p-6 md:hidden">
       <div class="flex items-center justify-between mb-6 ml-[-5px]">
         <img src="{{ asset('assets/images/logos/header-logo.png') }}" alt="Adon Realty" class="!h-6 w-auto">
-        <button class="close-mobile-menu text-gray">
+        <button class="close-mobile-menu text-black">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
 
-      <nav class="space-y-2">
+      <nav class="space-y-3">
         <!-- Projects Accordion -->
         <div>
           <button class="nav-link flex w-full items-center justify-between text-sm font-medium text-txBlack toggle-l1">
             Projects
-            <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M6 9l6 6 6-6" />
             </svg>
           </button>
@@ -208,7 +208,7 @@
         <a href="{{ route('development-partners') }}" class="nav-link block text-sm text-txBlack hover:text-black font-medium">Developers</a>
         <a href="{{ route('testimonials') }}" class="nav-link block text-sm text-txBlack hover:text-black font-medium">Testimonial</a>
         <a href="{{ route('about-us') }}" class="nav-link block text-sm text-txBlack hover:text-black font-medium">About Us</a>
-        <a href="{{ route('contact') }}" class="nav-link block text-center px-6 py-2 border border-primary text-primary rounded-full text-base hover:bg-primary hover:text-white transition font-medium">Contact Us</a>
+        <a href="{{ route('contact') }}" class="nav-link block text-center px-4 py-1 border border-primary text-primary rounded-full text-base hover:bg-primary hover:text-white transition font-medium">Contact Us</a>
       </nav>
     </div>
   </div>

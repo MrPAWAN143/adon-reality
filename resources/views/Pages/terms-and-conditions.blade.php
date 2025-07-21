@@ -11,12 +11,12 @@
 
 @section('content')
 
-<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
+<section class="max-w-[1100px] mx-auto px-4 md:px-0 pb-2 pt-1">
      <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('terms-and-conditions') }}">Terms and Conditions</a> </div>
 </section>
 <section class=" bg-white ">
 
-    <div class="max-w-5xl mx-auto px-4  gap-8 items-center " style="padding-top: 1rem; padding-bottom: 2rem;">
+    <div class="max-w-[1100px] mx-auto px-4  gap-8 items-center " style="padding-top: 1rem; padding-bottom: 2rem;">
 
         <h1 class="text-2xl font-bold mb-2">Terms & Conditions</h1>
         <p class="text-sm text-txBlack mb-6">

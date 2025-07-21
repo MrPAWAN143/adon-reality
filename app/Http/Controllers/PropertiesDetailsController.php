@@ -52,7 +52,12 @@ class PropertiesDetailsController extends Controller
 
     public function verifiedProperties()
     {
-        return view('Pages.verified-properties');
+        $properties = PropertiesDetails::with('category', 'developmentPartner')
+            ->where('is_verified', 1)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('Pages.verified-properties', compact('properties'));
     }
 
     public function whyInvestWithUs()

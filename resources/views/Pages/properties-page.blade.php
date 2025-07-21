@@ -6,17 +6,17 @@
 <link rel="stylesheet" href="{{ asset('assets/css/master.css') }}">
 @endsection
 @section('content')
-<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
+<section class="max-w-[1100px] mx-auto px-4 md:px-0 py-0">
     <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a href="{{ route('projects') }}" class="ml-[-5px]">Projects</a></div>
 </section>
-<section class="px-4 max-w-6xl mx-auto bg-white pb-8">
+<section class="px-4 md:px-8 max-w-[1100px] mx-auto bg-white py-6">
     <div class="container ">
 
         <x-heading-subheading heading="Explore project that you need" subheading="Filter,short,and find the perfect property just the way you want" headingClass="heading text-center m-heading" subHeadingClass="subheading m-subheading mb-2" />
 
-        <div class="max-w-3xl mx-auto px-4 py-4 md:pb-8 pb-3">
+        <div class="max-w-full mx-auto md:px-12 py-4 md:pb-6 pb-3">
             <!-- Filters -->
-            <div class="grid md:grid-cols-4 grid-cols-4 md:gap-4 gap-2">
+            <div class="grid md:grid-cols-4 grid-cols-4 md:gap-4 gap-2 md:pb-5">
                 <select class="project-page-filter-btn ">
                     <option>Location</option>
                     <option>Architecture</option>
@@ -47,10 +47,10 @@
             </div>
 
             <div class="md:mb-6 mb-2 flex md:gap-5 gap-2 items-center justify-between mt-4">
-                <div class="flex w-full items-center rounded-xl border border-bgSecondary px-4 md:py-1 py-0 shadow-sm">
+                <div class="flex w-full items-center md:rounded-xl rounded-[20px] border border-bgSecondary md:px-4 px-2 md:py-1 py-0 shadow-sm">
                     <x-zondicon-search class="md:w-6 md:h-6 h-4 w-4 text-bgSecondary" />
                     <input type="text" placeholder="Search Property By Name Location..."
-                        class="w-full outline-none placeholder:text-bgSecondary md:placeholder:text-sm placeholder:text-xs text-sm bg-transparent border-none focus:border-none focus:outline-none py-1 md:py-2" />
+                        class="w-full outline-none placeholder:text-bgSecondary md:placeholder:text-[16px] placeholder:text-[10px] text-[10px] md:text-[16px] px-1 bg-transparent border-none focus:border-none focus:outline-none py-1  md:py-2" />
                 </div>
 
                 <select class="project-page-filter-btn w-30 focus:bg-primary  md:w-auto rounded-[20px] bg-white text-primary border-2 border-primary px-4 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50">
@@ -77,6 +77,7 @@
             @endforeach
 
         </div>
+
     </div>
 </section>
 

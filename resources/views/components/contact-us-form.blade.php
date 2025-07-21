@@ -1,11 +1,11 @@
-<section class="py-8 bg-white text-center mb-8">
+<section class="md:pb-8 py-3 bg-white text-center mb-8">
     <div class="container sm:max-w-lg md:max-w-5xl mx-auto px-4">
 
         <h2 class="heading m-heading">
             {{ $heading }}
         </h2>
 
-        <p class="subheading m-subheading text-[8px] text-gray-700  md:text-base md:max-w-[90%] w-full mx-auto mb-6">
+        <p class="subheading m-subheading form-subheading text-[8px] tracking-tight text-gray-700  md:text-[14px] md:max-w-[90%] w-full mx-auto mb-6">
             {{ $subheading }}
         </p>
 
@@ -19,12 +19,12 @@
             </div>
         </div>
 
-        <form method="POST" class="queryform contact-form bg-white border border-primary rounded-2xl px-6 py-6 shadow-sm sm:mt-3">
+        <form method="POST" class="queryform contact-form bg-white border border-primary rounded-2xl md:px-6 md:my-3 md:py-6 p-3 shadow-sm mt-6">
             @csrf
-            <div class="form-grid grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="form-grid grid grid-cols-1 md:grid-cols-2 md:gap-4 gap-2">
                 <div>
                     <input type="text" name="first_name" placeholder="First Name" value="{{ old('first_name') }}"
-                        class="sm:w-full border-b border-gray-300 focus:outline-none text-sm py-2 placeholder-gray-500" />
+                        class="border-b border-gray-300 focus:outline-none text-sm md:py-2 py-1 placeholder-gray-500" />
                     <div class="error text-start text-base text-red-500 mt-1"></div>
                 </div>
 

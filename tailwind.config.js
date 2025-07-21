@@ -36,7 +36,9 @@ export default {
                     DEFAULT: '#ffffff',
                 },
                 gray: {
+                    // DEFAULT: '#000000',
                     DEFAULT: '#6B7280',
+
                 },
                 bgSecondary: {
                     DEFAULT: '#cbc5c5'

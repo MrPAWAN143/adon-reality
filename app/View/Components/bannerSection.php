@@ -12,15 +12,17 @@ class bannerSection extends Component
      * Create a new component instance.
      */
     public string $title,
-                  $subtitle,
-                  $image,
-                  $class,
-                  $buttonText,
-                  $buttonLink,
-                    $buttonClass,
-                    $titleClass ;
+        $subtitle,
+        $image,
+        $class,
+        $buttonText,
+        $buttonLink,
+        $buttonClass,
+        $titleClass,
+        $mobileBanner;
 
-    public function __construct(string $title, string $subtitle, string $image, string $class, string $buttonText= "" , string $buttonLink = "" , string $buttonClass = "" , string $titleClass = "")
+
+    public function __construct(string $title, string $subtitle, string $image, string $class, string $buttonText = "", string $buttonLink = "", string $buttonClass = "", string $titleClass = "", string $mobileBanner = "")
     {
         $this->title = $title;
         $this->subtitle = $subtitle;
@@ -30,6 +32,7 @@ class bannerSection extends Component
         $this->buttonLink = $buttonLink;
         $this->buttonClass = $buttonClass;
         $this->titleClass = $titleClass;
+        $this->mobileBanner = $mobileBanner;
     }
 
     /**

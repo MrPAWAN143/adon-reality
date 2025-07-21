@@ -4,28 +4,31 @@
 @endsection
 @section('styles')
 <link rel="stylesheet" href="{{ asset('assets/css/homepage.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/master.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/mobile.css') }}">
+
 @endsection
 @section('content')
-<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
-     <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('verified-properties') }}">Verified Properties</a> </div>
+<section class="max-w-[1100px] mx-auto px-4 md:px-0 pb-2 pt-1">
+    <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('verified-properties') }}">Verified Properties</a> </div>
 </section>
-<x-banner-section class="px-4 relative h-[60vh] max-h-[60vh]" image="{{ asset('assets/images/bannerImages/verified-properties-banner.png') }}" title="Verified Properties You Can Trust" subtitle="Every property listed here has been carefully verified to meet our highest standards of transparency and legal compliance." />
+<x-banner-section class="px-4 relative h-[20vh] md:max-h-[45vh] md:h-[45vh]" mobileBanner="{{ asset('assets/images/bannerImages/verified-properties-banner.png') }}" image="{{ asset('assets/images/bannerImages/verified-properties-banner.png') }}" title="Verified Properties You Can Trust" subtitle="Every property listed here has been carefully verified to meet our highest standards of transparency and legal compliance." />
 
-<section class="py-10 bg-white text-center max-w-3xl mx-auto">
-    <h2 class="text-2xl md:text-2xl font-bold mb-8">A Legacy of Trust</h2>
+<section class="py-8 md:pb-8 pb-5 bg-white text-center mx-auto">
+    <h2 class="md:text-[24px] font-bold text-[16px] md:mb-8 mb-4 text-center">A Legacy of Trust</h2>
 
-    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
-        <x-legacy-card class="legacy-card" title="10+" description="Years in the Real Estate Market" />
-        <x-legacy-card class="legacy-card" title="500+" description="Happy Investors" />
-        <x-legacy-card class="legacy-card" title="₹100 Cr+" description="Investment Managed" />
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 md:gap-6 gap-4 px-4">
+        <x-legacy-card class="legacy-card verified-property" title="10+" description="Years in the Real Estate Market" />
+        <x-legacy-card class="legacy-card verified-property" title="500+" description="Happy Investors" />
+        <x-legacy-card class="legacy-card verified-property" title="₹100 Cr+" description="Investment Managed" />
     </div>
 </section>
 
 
 <section class="py-4 bg-white text-center">
-    <h2 class="text-2xl md:text-2xl font-bold mb-10">Why Choose Adon Realty</h2>
+    <h2 class="md:text-[24px] font-bold text-[16px] md:mb-8 mb-4 text-center">Why Choose Adon Realty</h2>
 
-    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-4">
+    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 px-4">
         <x-choose-adon-reality>
             <x-slot name="content">
                 <p class="font-semibold leading-5">Prime<br>Locations</p>
@@ -109,51 +112,26 @@
 </section>
 
 
+<div class="container m-auto ">
+    <section class="max-w-[1100px] mx-auto px-4 md:px-0 py-4 bg-white text-center mt-4">
+        <h2 class="md:text-[24px] font-bold text-[16px] md:mb-8 mb-4 text-center">Verified Property Listings</h2>
 
-<section class="py-4 bg-white text-center mt-4">
-    <h2 class="text-2xl md:text-2xl font-bold mb-6">Verified Property Listings</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 md:gap-6 gap-3 mx-auto">
+            @foreach ($properties as $property)
+            <div class="featured-investment-card m-featured-page-card">
+                <x-featured-investment-section featuredCardClass="project-page-image-dev" src="{{ asset($property->property_featured_image) }}" alt="{{ $property->property_name }}" imageClass="project-page-image" heading="{{ $property->property_name }}" location="{{ $property->property_location }}" url="{{ $property->property_rera_url }}" rera="{{ $property->property_rera_number }}" status="{{ $property->property_status }}" roi="{{ $property->property_expected_roi }}" developer="{{ $property->developmentPartner->developer_name }}" variety="{{ $property->category->name }}" size="{{ $property->property_size }}" price="{{ $property->starting_price }}" />
+                <x-button class="featured-investment-button !py-2" url="{{ route('projects.each' , $property->property_slug) }}" text="View Details" />
+            </div>
 
+            @endforeach
 
-    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
-        <div class="featured-investment-card">
-            <x-featured-investment-section src="{{ asset('assets/images/allImages/DlfCyberCity.png') }}" alt="DLF Cyber City Tower" class="featured-investment-img" heading="DLF Cyber City Tower" location="Noida, Sector 62" rera="UPRERAI2345" status="Ongoing" roi="12%" developer="DLF" variety="Multiplex / Commercial" size="5000 sq. ft." price="Price on Demand" />
-            <x-button class="featured-investment-button" text="View Details" />
         </div>
-        <div class="featured-investment-card">
-            <x-featured-investment-section src="{{ asset('assets/images/allImages/M3MCorporateHeights.png') }}" alt="M3M Corporate Heights" class="featured-investment-img" heading="M3M Corporate Heights" location="Sector 67, Gurgaon" rera="HRERAGGN20230911" status="Ready to Move" roi="10%" developer="M3M" variety="Commercial Office Tower" size="7000 sq. ft." price="Price on Demand" />
-            <x-button class="featured-investment-button" text="View Details" />
-        </div>
-        <div class="featured-investment-card">
-            <x-featured-investment-section src="{{ asset('assets/images/allImages/M3MAtrium.png') }}" alt="M3M Atrium" class="featured-investment-img" heading="M3M Atrium" location="Sector 140, Noida Expressway" rera="UPRERA-2023-0567" status="Pre-Launch" roi="12%" developer="M3M" variety="High Street Retail" size="4800 sq. ft." price="Price on Demand" />
-            <x-button class="featured-investment-button" text="View Details" />
-        </div>
-
-        <div class="featured-investment-card">
-            <x-featured-investment-section src="{{ asset('assets/images/allImages/DlfCyberCity.png') }}" alt="DLF Cyber City Tower" class="featured-investment-img" heading="DLF Cyber City Tower" location="Noida, Sector 62" rera="UPRERAI2345" status="Ongoing" roi="12%" developer="DLF" variety="Multiplex / Commercial" size="5000 sq. ft." price="Price on Demand" />
-            <x-button class="featured-investment-button" text="View Details" />
-        </div>
-        <div class="featured-investment-card">
-            <x-featured-investment-section src="{{ asset('assets/images/allImages/M3MCorporateHeights.png') }}" alt="M3M Corporate Heights" class="featured-investment-img" heading="M3M Corporate Heights" location="Sector 67, Gurgaon" rera="HRERAGGN20230911" status="Ready to Move" roi="10%" developer="M3M" variety="Commercial Office Tower" size="7000 sq. ft." price="Price on Demand" />
-            <x-button class="featured-investment-button" text="View Details" />
-        </div>
-        <div class="featured-investment-card">
-            <x-featured-investment-section src="{{ asset('assets/images/allImages/M3MAtrium.png') }}" alt="M3M Atrium" class="featured-investment-img" heading="M3M Atrium" location="Sector 140, Noida Expressway" rera="UPRERA-2023-0567" status="Pre-Launch" roi="12%" developer="M3M" variety="High Street Retail" size="4800 sq. ft." price="Price on Demand" />
-            <x-button class="featured-investment-button" text="View Details" />
-        </div>
-    </div>
-
-
-        <div class="mt-6">
-            <button class="view-more-button ">
-                View More <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
-            </button>
-        </div>
-
-</section>
+    </section>
+</div>
 
 
 <x-contact-us-form heading="Still Have a Question?"
     subheading="Have questions or ready to take the next step? Whether you're looking to buy, rent, or invest, our team is here to guide you every step of the way." />
-    
+
 
 @endsection
