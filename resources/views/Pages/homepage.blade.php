@@ -51,7 +51,7 @@
                 background-size: cover; background-position: center;
                 background-repeat: no-repeat;">
                 <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-                <div class="relative md:top-[-100px] top-[-50px] z-10 flex flex-col items-center justify-center h-full text-white px-4 py-0 md:py-16">
+                <div class="relative md:top-[-100px] top-[-30px] z-10 flex flex-col items-center justify-center h-full text-white px-4 py-0 md:py-16">
                     <h1 class="md:text-[24px] text-[16px] md:max-w-3xl font-bold mb-4 text-center">
                         Invest in High-Return, Legally Verified Real Estate Projects
                     </h1>
@@ -65,7 +65,7 @@
                 background-size: cover; background-position: center;
                 background-repeat: no-repeat;">
                 <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-                <div class="relative md:top-[-100px] top-[-50px] z-10 flex flex-col items-center justify-center h-full text-white px-4 py-0 md:py-16">
+                <div class="relative md:top-[-100px] top-[-30px] z-10 flex flex-col items-center justify-center h-full text-white px-4 py-0 md:py-16">
                     <h1 class="md:text-[24px] text-[16px] md:max-w-3xl font-bold mb-4 text-center">
                         Invest in High-Return, Legally Verified Real Estate Projects
                     </h1>
@@ -83,7 +83,7 @@
         <div class="swiper-pagination "></div>
     </div>
 
-    <div class="absolute left-1/2 md:top-1/2 top-[60%] transform -translate-x-1/2 -translate-y-1/2  z-10 m-hero-search flex flex-row items-center justify-between md:w-full  md:max-w-[700px] md:h-[60px] h-auto bg-white rounded-full md:py-2 py-1 px-2 shadow-md !w-[calc(100%-80px)]">
+    <div class="absolute left-1/2 md:top-1/2 top-[62%] transform -translate-x-1/2 -translate-y-1/2  z-10 m-hero-search flex flex-row items-center justify-between md:w-full  md:max-w-[700px] md:h-[60px] h-auto bg-white rounded-full md:py-2 py-1 px-2 shadow-md !w-[calc(100%-80px)]">
 
         <div class=" w-auto !sm:w-[10%] md:w-[16%] z-10">
             <select class="hero-section-select home py-1 md:py-2">
@@ -222,7 +222,7 @@
             @endforeach
             @endif
         </div>
-        <div class="mt-6">
+        <div class="mt-10">
             <a href="{{ route('projects') }}" class="view-more-button ">
                 View More <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
             </a>
@@ -248,7 +248,7 @@
             @endforeach
             @endif
         </div>
-        <div class="mt-2">
+        <div class="mt-4">
             <a href="{{ route('projects') }}" class="view-more-button ">
                 View More <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
             </a>
@@ -377,7 +377,7 @@
 
         </div>
 
-        <div class="mt-4">
+        <div class="mt-10">
             <a href="{{ route('development-partners') }}" class="view-more-button ">
                 View More <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
             </a>
@@ -415,8 +415,8 @@
             @endif
 
         </div>
-        <div class="mt-6">
-            <a href="{{ route('blog.show') }}" class="marketing-insights-view-more-button !inline-flex">
+        <div class="mt-10">
+            <a href="{{ route('blog.show') }}" class="marketing-insights-view-more-button !inline-flex ">
                 View all Blog <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
             </a>
         </div>
@@ -436,8 +436,8 @@
             @endif
 
         </div>
-        <div class="mt-3">
-            <a href="{{ route('blog.show') }}" class="marketing-insights-view-more-button !inline-flex">
+        <div class="mt-5">
+            <a href="{{ route('blog.show') }}" class="marketing-insights-view-more-button !inline-flex py-1.5 px-4">
                 View all Blog <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
             </a>
         </div>
@@ -612,35 +612,27 @@
 </script>
 <script type="module">
     $(document).ready(function() {
-
-
-
-        $(document).ready(function() {
-            $('.project-slider').slick({
-                slidesToShow: 1.2,
-                slidesToScroll: 1,
-                infinite: false,
-                autoplay: true,
-                autoplaySpeed: 5000,
-                dots: false,
-                arrows: false,
-                responsive: [{
-                    breakpoint: 768, // sm only
-                    settings: {
-                        slidesToShow: 1.2,
-                        slidesToScroll: 1,
-                        centerMode: false,
-                        variableWidth: false,
-                        autoplay: true,
-                        autoplaySpeed: 5000,
-                        dots: false,
-                    }
-                }]
-            });
-
-
+        $('.project-slider').slick({
+            slidesToShow: 1.2,
+            slidesToScroll: 1,
+            infinite: false,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            dots: false,
+            arrows: false,
+            responsive: [{
+                breakpoint: 768, // sm only
+                settings: {
+                    slidesToShow: 1.2,
+                    slidesToScroll: 1,
+                    centerMode: false,
+                    variableWidth: false,
+                    autoplay: true,
+                    autoplaySpeed: 5000,
+                    dots: false,
+                }
+            }]
         });
-
 
     });
 </script>

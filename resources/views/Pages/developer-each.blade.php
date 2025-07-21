@@ -7,24 +7,25 @@
 @endsection
 
 @section('content')
-<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
+<section class="max-w-[1100px] mx-auto px-4 md:px-0 pb-2 pt-1">
      <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('development-partners') }}">Developer Partners</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('development-partners.show', $developmentPartner->slug) }}">{{ $developmentPartner->developer_name }}</a></div>
 </section>
-<section class="md:px-4  px-0 max-w-7xl mx-auto bg-white pb-8">
+
+<section class="px-4  md:px-0 max-w-[1100px] mx-auto bg-white pb-0">
     <div class="flex md:flex-row flex-col-reverse items-center justify-between mb-0">
-        <div class="flex-1 px-6">
-            <x-heading-subheading heading="{{ 'Explore Projects by ' . $developmentPartner->developer_name }}" subheading="Discover premium real estate offerings tailored to your lifestyle needs" headingClass="heading " subHeadingClass="subheading text-start mb-4" />
+        <div class="flex-1">
+            <x-heading-subheading heading="{{ 'Explore Projects by ' . $developmentPartner->developer_name }}" subheading="Discover premium real estate offerings tailored to your lifestyle needs" headingClass="heading " subHeadingClass="devsubheading mb-4" />
         </div>
 
         <div class="flex-1 flex justify-end items-center">
             <img src="{{ asset( $developmentPartner->logo) }}" alt="{{$developmentPartner->developer_name }}" class="md:w-24 md:h-24 w-16 h-16 object-cover rounded-full shadow-md" />
         </div>
     </div>
-    <div class="w-full px-6 mt-0">
-        <p class="md:pr-[10%] pr-0 text-[8px] md:text-sm">DLF Limited is one of India's most prestigious and trusted real estate developers, with over seven decades of excellence. Known for creating iconic residential, commercial, and retail properties across the country, DLF has redefined urban living through thoughtful design, unmatched construction quality, and world-class amenities. With a legacy built on innovation and integrity, DLF continues to shape skylines and create vibrant communities that stand the test of time.</p>
+    <div class="w-full mt-0">
+        <p class="md:pr-[10%] pr-0 text-[8px] md:text-sm pb-3">DLF Limited is one of India's most prestigious and trusted real estate developers, with over seven decades of excellence. Known for creating iconic residential, commercial, and retail properties across the country, DLF has redefined urban living through thoughtful design, unmatched construction quality, and world-class amenities. With a legacy built on innovation and integrity, DLF continues to shape skylines and create vibrant communities that stand the test of time.</p>
     </div>
 
-    <div class="md:max-w-5xl w-full mx-auto px-4 md:py-4 py-1 pb-8">
+    <div class="md:max-w-5xl w-full mx-auto px-4 md:py-4 py-1 md:pb-4">
         <table class="min-w-full border border-gray-300 text-left md:text-sm text-[12px]">
             <tbody class="divide-y divide-gray-300">
                 <tr class="bg-white">
@@ -62,9 +63,9 @@
     </div>
 
 
-    <div class="max-w-3xl mx-auto px-4 py-4 pb-8 mt-4">
+    <div class="max-w-4xl mx-auto px-4 py-4 pb-8 mt-0">
         <!-- Filters -->
-        <div class="grid grid-cols-4 md :grid-cols-4 md:gap-4 gap-2">
+        <div class="grid grid-cols-4 md:grid-cols-4 md:gap-6 gap-4">
             <select class="project-page-filter-btn ">
                 <option>Location</option>
                 <option>Architecture</option>
@@ -94,12 +95,12 @@
             </select>
         </div>
 
-        <div class="flex flex-row items-center justify-between w-full md:max-w-3xl  bg-white rounded-2xl p-1 px-2 mt-4 border border-bgSecondary shadow-md">
+        <div class="flex flex-row items-center justify-between w-[82%] md:max-w-xl mx-auto bg-white rounded-2xl py-1 px-1 md:p-1 md:px-2 mt-6 border border-bgSecondary shadow-md">
 
-            <div class="flex w-full items-center rounded-2xl md:px-4 md:py-1 py-0 ">
+            <div class="flex w-full items-center justify-start rounded-2xl md:px-4 px-2 md:py-1 py-0 ">
                 <x-zondicon-search class="md:w-6 md:h-6 w-4 h-4 text-bgSecondary" />
-                <input type="text" placeholder="Search blog articles..."
-                    class="w-full placeholder:text-bgSecondary outline-none text-sm bg-transparent border-none focus:border-none focus:outline-none md:py-2 py-1" />
+                <input type="text" placeholder="Search by Project Name or Location..."
+                    class="md:text-[16px] text-[10px] md:placeholder:text-[16px] placeholder:text-[10px] px-[5px] w-full placeholder:text-bgSecondary outline-none text-sm bg-transparent border-none focus:border-none focus:outline-none md:py-2 py-0" />
             </div>
 
             <!-- Button - Search -->
@@ -109,16 +110,9 @@
         </div>
 
     </div>
-
-
-    
-
-
-
-
 </section>
 
-<section class="px-4 max-w-6xl bg-white pb-8 m-auto">
+<section class="px-4 md:px-6 max-w-[1100px] bg-white pb-4 m-auto">
 
     <div class="grid grid-cols-2 md:grid-cols-3 md:gap-6 gap-3 mx-auto">
         @foreach ($properties as $property)
@@ -134,26 +128,20 @@
 </section>
 
 @if(isset($primeLocation) && $primeLocation->count() > 0)
-<section class="px-4 md:py-12 sm:py-2 bg-white">
-    <div class="container max-w-6xl  mx-auto text-center">
-
+<section class="px-4 md:px-6 md:py-4 py-4 bg-white">
+    <div class="container max-w-[1100px] mx-auto text-center">
         <x-heading-subheading heading="Projects on prime location" subheading=" Discover top-tier properties situated in the most sought-after locations." headingClass="heading m-heading" subHeadingClass="subheading m-subheading" />
 
-        <div class="grid grid-cols-2 md:grid-cols-4 md:gap-3 gap-4 max-w-full mx-auto ">
-
-          
+        <div class="grid grid-cols-2 md:grid-cols-4 md:gap-5 gap-2 pt-1 max-w-full mx-auto ">
             @foreach ($primeLocation as $property)
             <!-- Card 1 -->
-            <a href="{{ route('projects.each', $property->property_slug) }}" class="relative rounded-[15px] overflow-hidden group md:h-[245px] md:w-[265px] w-[180px] h-[180px]  ">
+            <a href="{{ route('projects.each', $property->property_slug) }}" class="relative rounded-[15px] overflow-hidden group md:min-h-[230px] md:max-h-[245px] md:w-[100%] md:h-[100%] md:min-w-[250px] w-[100%] h-[100%] min-w-[160px] min-h-[160px]  ">
                 <img src="{{ asset($property->property_featured_image) }}" alt="{{ $property->property_name }}" class="prime-location-image" />
                 <div class="prime-location-overlay">
                     <span class="prime-location-name">{{ $property->property_city }}</span>
                 </div>
             </a>
             @endforeach
-
-
-
         </div>
     </div>
 </section>

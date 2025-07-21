@@ -65,7 +65,7 @@
                     <li>SSL Secure Website Icon</li>
                 </ul>
                 <p class="text-goldenColor font-semibold mt-4 text-[16px]">CORPORATE OFFICE</p>
-                <address class="mt-1 text-sm">Ground floor 4, DEEP SHIKHA BUILDING, Rajendra Place, New Delhi, Delhi, 110008</address>
+                <p class="mt-1 md:text-[14px] text-[12px]">Ground floor 4, DEEP SHIKHA BUILDING, Rajendra Place, New Delhi, Delhi, 110008</p>
             </div>
 
             <!-- Newsletter -->

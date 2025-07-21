@@ -9,33 +9,33 @@
 
 @section('content')
 
-<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
+<section class="max-w-[1100px] mx-auto px-4 md:px-0 pb-2 pt-1">
     <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('event-and-media') }}">Events and Media</a></div>
 </section>
-<section class="md:px-0 px-0  md:max-w-6xl w-full  mx-auto md:py-8 sm:py-2 bg-white">
+<section class="md:px-0 mb-8 px-4 md:max-w-[1100px] w-full mx-auto bg-white">
     <x-heading-subheading heading="Events and Media" subheading="Discover the moments that define XYZ’s journey" headingClass="heading text-center !mt-0" subHeadingClass="subheading text-sm mb-4" />
 
-    <div class="py-0 bg-white">
+    <div class=" py-0 md:mt-4 bg-white">
         <!-- Featured Event Section -->
-        <h2 class="md:text-2xl font-bold text-[16px] md:text-start text-center md:mb-6 mb-3 md:mt-0 mt-10">Featured Event</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 md:gap-4 gap-3 mx-auto px-6 !place-items-center justify-center grid-items-center">
+        <h2 class="md:text-2xl font-bold text-[16px] md:text-start text-center md:mb-6 mb-3 md:mt-0 mt-6">Featured Event</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 md:gap-4 gap-3 mx-auto md:px-6 !place-items-start justify-center grid-items-center">
             <x-event eventCard="eventcard" eventCardImgDiv="eventcard-img" image="{{ asset('assets/images/events/investor-connect.png') }}" alt="Investor Connect 2025" class="featured-investment-img" title="Investor Connect 2025" dateTime="June 10, 2025" buttonText="Watch" />
             <x-event eventCard="eventcard" eventCardImgDiv="eventcard-img" image="{{ asset('assets/images/events/property-power-meet.png') }}" alt="Property Power Meet" class="featured-investment-img" title="Property Power Meet" dateTime="June 18, 2025" buttonText="Watch" />
             <x-event eventCard="eventcard" eventCardImgDiv="eventcard-img" image="{{ asset('assets/images/events/realty-roundtable.png') }}" alt="The Realty Roundtable" class="featured-investment-img" title="The Realty Roundtable" dateTime="June 20, 2025" buttonText="Watch" />
         </div>
 
         <!-- Past Event Section -->
-        <h2 class="md:text-2xl font-bold text-[16px] md:text-start text-center md:mb-6 mb-3 mt-10">Past Event</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 md:gap-4 gap-3 mx-auto px-6">
-            <x-event eventCard="eventcard" eventCardImgDiv="eventcard-img"  image="{{ asset('assets/images/events/skyline-launch.png') }}" alt="Grand Launch of Skyline Residences" class="featured-investment-img" title="Grand Launch of Skyline Residences" dateTime="February 10, 2025" buttonText="Watch" />
-            <x-event eventCard="eventcard" eventCardImgDiv="eventcard-img"  image="{{ asset('assets/images/events/women-in-real-estate.png') }}" alt="Women in Real Estate: Breaking Barriers" class="featured-investment-img" title="Women in Real Estate: Breaking Barriers" dateTime="January 26, 2025" buttonText="Watch" />
-            <x-event eventCard="eventcard" eventCardImgDiv="eventcard-img"  image="{{ asset('assets/images/events/annual-meet.png') }}" alt="Adon Realty Annual Meet 2024" class="featured-investment-img" title="Adon Realty Annual Meet 2024" dateTime="December 10, 2024" buttonText="Watch" />
-            <x-event eventCard="eventcard" eventCardImgDiv="eventcard-img"  image="{{ asset('assets/images/events/csr-drive.png') }}" alt="CSR Drive: Homes of Hope Initiative" class="featured-investment-img" title="CSR Drive: Homes of Hope Initiative" dateTime="November 07, 2025" buttonText="Watch" />
-            <x-event eventCard="eventcard" eventCardImgDiv="eventcard-img"  image="{{ asset('assets/images/events/investment-seminar.png') }}" alt="Real Estate Investment Seminar" class="featured-investment-img" title="Real Estate Investment Seminar" dateTime="October 10, 2025" buttonText="Watch" />
-            <x-event eventCard="eventcard" eventCardImgDiv="eventcard-img"  image="{{ asset('assets/images/events/tech-summit.png') }}" alt="Tech in Real Estate – 2024 Summit" class="featured-investment-img" title="Tech in Real Estate – 2024 Summit" dateTime="September 10, 2025" buttonText="Watch" />
-            <x-event eventCard="eventcard" eventCardImgDiv="eventcard-img"  image="{{ asset('assets/images/events/celebration-gala.png') }}" alt="Adon’s 10+ Year Celebration Gala" class="featured-investment-img" title="Adon’s 10+ Year Celebration Gala" dateTime="August 10, 2025" buttonText="Watch" />
-            <x-event eventCard="eventcard" eventCardImgDiv="eventcard-img"  image="{{ asset('assets/images/events/skyline-launch-2.png') }}" alt="Grand Launch of Skyline Residences" class="featured-investment-img" title="Grand Launch of Skyline Residences" dateTime="July 16, 2025" buttonText="Watch" />
-            <x-event eventCard="eventcard" eventCardImgDiv="eventcard-img"  image="{{ asset('assets/images/events/future-living.png') }}" alt="Future Living Expo 2025" class="featured-investment-img" title="Future Living Expo 2025" dateTime="May 10, 2025" buttonText="Watch" />
+        <h2 class="md:text-[24px] font-bold text-[16px] md:text-start text-center md:mb-6 mb-3 mt-10">Past Event</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 md:gap-4 gap-3 mx-auto md:px-6 !place-items-start justify-center grid-items-center">
+            <x-event eventCard="eventcard" eventCardImgDiv="eventcard-img" image="{{ asset('assets/images/events/skyline-launch.png') }}" alt="Grand Launch of Skyline Residences" class="featured-investment-img" title="Grand Launch of Skyline Residences" dateTime="February 10, 2025" buttonText="Watch" />
+            <x-event eventCard="eventcard" eventCardImgDiv="eventcard-img" image="{{ asset('assets/images/events/women-in-real-estate.png') }}" alt="Women in Real Estate: Breaking Barriers" class="featured-investment-img" title="Women in Real Estate: Breaking Barriers" dateTime="January 26, 2025" buttonText="Watch" />
+            <x-event eventCard="eventcard" eventCardImgDiv="eventcard-img" image="{{ asset('assets/images/events/annual-meet.png') }}" alt="Adon Realty Annual Meet 2024" class="featured-investment-img" title="Adon Realty Annual Meet 2024" dateTime="December 10, 2024" buttonText="Watch" />
+            <x-event eventCard="eventcard" eventCardImgDiv="eventcard-img" image="{{ asset('assets/images/events/csr-drive.png') }}" alt="CSR Drive: Homes of Hope Initiative" class="featured-investment-img" title="CSR Drive: Homes of Hope Initiative" dateTime="November 07, 2025" buttonText="Watch" />
+            <x-event eventCard="eventcard" eventCardImgDiv="eventcard-img" image="{{ asset('assets/images/events/investment-seminar.png') }}" alt="Real Estate Investment Seminar" class="featured-investment-img" title="Real Estate Investment Seminar" dateTime="October 10, 2025" buttonText="Watch" />
+            <x-event eventCard="eventcard" eventCardImgDiv="eventcard-img" image="{{ asset('assets/images/events/tech-summit.png') }}" alt="Tech in Real Estate – 2024 Summit" class="featured-investment-img" title="Tech in Real Estate – 2024 Summit" dateTime="September 10, 2025" buttonText="Watch" />
+            <x-event eventCard="eventcard" eventCardImgDiv="eventcard-img" image="{{ asset('assets/images/events/celebration-gala.png') }}" alt="Adon’s 10+ Year Celebration Gala" class="featured-investment-img" title="Adon’s 10+ Year Celebration Gala" dateTime="August 10, 2025" buttonText="Watch" />
+            <x-event eventCard="eventcard" eventCardImgDiv="eventcard-img" image="{{ asset('assets/images/events/skyline-launch-2.png') }}" alt="Grand Launch of Skyline Residences" class="featured-investment-img" title="Grand Launch of Skyline Residences" dateTime="July 16, 2025" buttonText="Watch" />
+            <x-event eventCard="eventcard" eventCardImgDiv="eventcard-img" image="{{ asset('assets/images/events/future-living.png') }}" alt="Future Living Expo 2025" class="featured-investment-img" title="Future Living Expo 2025" dateTime="May 10, 2025" buttonText="Watch" />
         </div>
     </div>
 
@@ -56,11 +56,9 @@
                 h-[55vh] mx-4 flex">
         <!-- close icon -->
         <button id="closeModal"
-            class="absolute -right-4 -top-4 w-6 h-6     
-                       rounded-full bg-red-400 text-white text-2xl
-                       flex items-center justify-center
-                       shadow-lg hover:bg-red-500
-                       hover:ring-2 hover:ring-red-300 transition">
+            class="absolute top-2 z-20 right-3 text-gray-500 text-3xl 
+           hover:text-red-500 transition duration-200 ease-in-out
+           focus:outline-none">
             &times;
         </button>
 

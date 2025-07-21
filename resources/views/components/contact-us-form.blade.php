@@ -5,7 +5,7 @@
             {{ $heading }}
         </h2>
 
-        <p class="subheading m-subheading text-[8px] text-gray-700  md:text-base md:max-w-[90%] w-full mx-auto mb-6">
+        <p class="subheading m-subheading form-subheading text-[8px] tracking-tight text-gray-700  md:text-[14px] md:max-w-[90%] w-full mx-auto mb-6">
             {{ $subheading }}
         </p>
 

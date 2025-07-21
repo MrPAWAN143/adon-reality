@@ -33,7 +33,7 @@
 }
 
 .banner-button {
-    @apply mt-6 border-2 border-white text-white px-10 py-3 rounded-2xl hover:bg-bgSecondary/30;
+    @apply md:mt-4 mt-2 border-2 border-white text-white md:px-10 px-5 md:py-2 py-1.5 rounded-2xl hover:bg-bgSecondary/30;
 }
 
 .search-input-homepage-herosection {
@@ -313,7 +313,7 @@
 }
 
 .marketing-insights-card h4 {
-    @apply font-bold mb-1 text-[16px] text-left;
+    @apply font-semibold mb-1 text-[16px] text-left;
 }
 
 .marketing-insights-card p {
@@ -334,7 +334,7 @@
 }
 
 .single-page-blog h3 {
-    @apply text-[24px] font-semibold mb-1 text-left;
+    @apply font-semibold mb-1 text-left;
 
 }
 
@@ -398,8 +398,64 @@ textarea:focus {
 
 
 .legacy-card {
+    max-width: 350px;
+    width: 100%;
+    min-height: 200px;
+    height: 100%;
     @apply border-2 border-primary rounded-lg py-8 px-3;
 }
+
+.legacy-card p {
+    @apply text-txBlack text-[16px] font-normal mb-0;
+}
+
+.legacy-card.verified-property{
+    @apply bg-white rounded-lg p-6 transition duration-300 flex flex-col items-center justify-center;
+
+}
+
+
+.legacy-card.verified-property img {
+    display: none;
+}
+
+.legacy-card.verified-property h3 {
+    @apply text-[24px] font-semibold mb-2;
+}
+
+.legacy-card.verified-property p {
+    @apply text-[12px] font-normal mb-0;
+}
+
+.open-roles {
+    max-width: 300px;
+    width: 100%;
+    min-height: 200px;
+    height: 100%;
+    @apply bg-gradient-to-b from-[#380B2A]/[10%] to-secondary/10 py-4 px-4 rounded-[15px] shadow hover:shadow-md transition border hover:border-primary;
+    box-shadow: 0px 0px 4px rgba(85, 4, 19, 0.25);
+}
+
+.open-roles .first-p {
+    @apply text-[16px] font-medium text-txBlack mb-1;
+}
+
+.open-roles:hover {
+    @apply border-primary border;
+}
+
+.open-roles h3 {
+    @apply text-[20px] font-bold text-txBlack mb-1;
+}
+
+.open-roles p {
+    @apply text-[14px] font-light text-txBlack mb-1;
+}
+
+.open-roles a {
+    @apply bg-primary mt-2 inline-flex items-center justify-center hover:bg-white border hover:text-primary hover:border-primary text-white py-2 rounded-[15px] w-full transition duration-300;
+}
+
 
 .legacy-card-why-choose {}
 
@@ -425,7 +481,6 @@ textarea:focus {
     max-height: 480px;
     height: 100%;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
-    background-color: rgba(240, 240, 240, 0.32);
     margin: 20px 10px 20px 10px !important;
     padding: 12px !important;
 
@@ -441,7 +496,7 @@ textarea:focus {
 
 
 .marketing-insights-card-single-page {
-    @apply bg-white rounded-lg p-2 transition duration-300;
+    @apply rounded-lg p-2 transition duration-300;
     max-width: 335px;
     width: 100%;
     max-height: 400px;
@@ -507,17 +562,17 @@ textarea:focus {
 }
 
 .slick-prev {
-    top: -20px;
-    left: 80%;
+    top: -16px;
+    left: 79%;
     z-index: 1;
-    color: #550413 !important;
+    color: #550413;
 
 }
 
 .slick-next {
-    right: 20px;
-    top: -20px;
-    color: #550413 !important;
+    right: 25px;
+    top: -16px;
+    color: #550413 !;
 
 }
 
@@ -617,9 +672,77 @@ textarea:focus {
 }
 
 .marketing-insights-card-event.eventcard h4 {
-    @apply font-bold mb-2 text-[16px] text-left;
+    @apply font-semibold mb-1.5 text-[16px] text-left;
+}
+
+.marketing-insights-card-event.eventcard p {
+    @apply text-[14px] mb-1 text-left font-normal leading-5;
 }
 
 .marketing-insights-card-event.eventcard a {
-    @apply font-medium text-[16px] text-left py-3;
+    @apply font-medium text-[16px] text-left py-2.5;
+}
+
+
+.featured-investment-card.m-featured-page-card.simmilar-project-card {
+    @apply bg-white rounded-[20px] p-3 transition duration-300 flex flex-col items-start justify-start;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.25);
+    max-width: 345px;
+    width: 100%;
+
+
+}
+
+.featured-investment-card.m-featured-page-card.simmilar-project-card .project-page-image-dev {
+    width: 100% !important;
+    max-height: 140px !important;
+    height: 140px !important;
+}
+
+.featured-investment-card.m-featured-page-card.simmilar-project-card h3 {
+    @apply text-[20px] font-semibold mb-1 text-left;
+}
+
+.featured-investment-card.m-featured-page-card.simmilar-project-card p {
+    @apply text-[12px] font-normal mb-1 text-left leading-5;
+}
+
+.featured-investment-card.m-featured-page-card.simmilar-project-card .featured-investment-button {
+    @apply mt-2 w-full border-2 border-primary text-primary rounded-full py-2 transition hover:bg-primary hover:text-white;
+}
+
+
+
+.marketing-insights-card.arawds-card {
+    @apply bg-white rounded-[15px] shadow-md p-4 transition duration-300 flex flex-col items-start justify-between;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 355px;
+    height: 100%;
+    max-height: auto;
+
+}
+
+.featured-investment-image-dev.arwards-card-img-div {
+    width: 100%;
+    max-height: 220px !important;
+    height: 220px !important;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.featured-investment-image-dev.arwards-card-img-div img {
+    width: 100%;
+    height: 100%;
+    max-height: 220px !important;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.marketing-insights-card.arawds-card h4 {
+    @apply !font-semibold mb-2 text-[16px] text-left;
+}
+
+.marketing-insights-card.arawds-card p {
+    @apply !text-[12px] mb-2 text-left font-normal leading-4;
 }
