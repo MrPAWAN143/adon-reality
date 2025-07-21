@@ -6,25 +6,25 @@
 <link rel="stylesheet" href="{{ asset('assets/css/homepage.css') }}">
 @endsection
 @section('content')
-<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
-     <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('faq') }}">FAQs for investors</a></div>
+<section class="max-w-[1100px] mx-auto px-4 md:px-0 pb-2 pt-1">
+    <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('faq') }}">FAQs for investors</a></div>
 </section>
 
-<x-banner-section class="px-4 relative h-[30vh] md:h-[50vh] md:max-h-[50vh] object-cover bg-center" image="{{ asset('assets/images/bannerImages/faq-banner.webp') }}" title="FAQs for Real Estate Investors" subtitle="Everything you need to know before investing in verified, high-value properties with XYZ Realty." />
+<x-banner-section class="px-4 relative h-[20vh] md:h-[50vh] md:max-h-[50vh] object-cover bg-center" mobileBanner="{{ asset('assets/images/bannerImages/faq-banner.webp') }}" image="{{ asset('assets/images/bannerImages/faq-banner.webp') }}" title="FAQs for Real Estate Investors" subtitle="Everything you need to know before investing in verified, high-value properties with XYZ Realty." />
 
 
 <!-- FAQ Accordion Matching Design -->
 <section class="px-4  bg-white">
-    <div class="container max-w-5xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 md:py-10 py-4 gap-8">
+    <div class="container max-w-[1100px] mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 md:py-10 py-4 gap-3 place-items-start justify-center items-start">
 
             <!-- Left Navigation -->
-            <div class="md:space-y-4 space-x-2 text-sm font-medium text-gray-600">
-                <div class="text-primary font-bold text-lg md:block hidden">Company & Vision</div>
-                  <div class="md:hidden flex items-center justify-start cursor-pointer hover:text-primary transition-colors" id="mobile-nav-toggle">
-                        <div class="text-primary font-bold text-lg mr-2">Company & Vision</div>
-                        <x-forkawesome-angle-down id="mobile-nav-arrow" class="w-5 h-5 transform transition-transform duration-300 text-gray-500" />
-                    </div>
+            <div class="md:space-y-4 space-x-2 text-sm font-medium text-txBlack ">
+                <div class="text-primary font-bold text-lg md:block hidden ">Company & Vision</div>
+                <div class="md:hidden flex items-center justify-start cursor-pointer hover:text-primary transition-colors" id="mobile-nav-toggle">
+                    <div class="text-primary font-bold text-lg mr-2">Company & Vision</div>
+                    <x-forkawesome-angle-down id="mobile-nav-arrow" class="w-5 h-5 transform transition-transform duration-300 text-gray-500" />
+                </div>
 
                 <!-- Mobile Dropdown Button -->
                 <div class="md:hidden">
@@ -53,7 +53,7 @@
             </div>
 
             <!-- Right FAQ Accordion -->
-            <div class="md:col-span-2 md:space-y-6 space-y-2">
+            <div class="md:col-span-2 md:space-y-6 space-y-2 ">
 
                 <!-- 1 -->
                 <button class="w-full text-left group focus:outline-none border-b border-bgSecondary md:pb-4 pb-1 !mt-2">

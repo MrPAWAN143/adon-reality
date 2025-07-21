@@ -8,15 +8,15 @@
 @endsection
 
 @section('content')
-<section class="max-w-[1100px] mx-auto md:px-0 pb-2">
+<section class="max-w-[1100px] mx-auto px-4 md:px-0 pb-2">
     <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="md:w-4 md:h-4 w-3 h-3 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('projects') }}">Projects</a> <x-forkawesome-angle-right class="md:w-4 md:h-4 w-3 h-3 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('projects.each', $property->property_slug) }}">{{ $property->property_name }}</a></div>
 </section>
 
-<x-banner-section class="px-4 relative md:h-[55vh] md:max-h-[45vh] h-[20vh] max-h-[20vh]" image="{{ asset('assets/images/bannerImages/single-project-banner.jpg') }}" title="DLF Prime Towers
-Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-[38%] !w-full tracking-wide leading-8" buttonLink="#" buttonClass=" " buttonText="" />
+<x-banner-section class="px-4 relative md:h-[55vh] md:max-h-[55vh] h-[20vh] max-h-[20vh]" mobileBanner="{{ asset('assets/images/bannerImages/project-banner-image.jpg') }}" image="{{ asset('assets/images/bannerImages/single-project-banner.jpg') }}" title="DLF Prime Towers
+Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-[38%] !w-full tracking-wide leading-6" buttonLink="#" buttonClass=" " buttonText="" />
 
 <div class="w-full py-6 px-4 md:px-0">
-    <div class="max-w-[1100px] mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-start gap-6">
+    <div class="max-w-[1100px] mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-start md:gap-6 gap-4">
 
         <!-- Left Content -->
         <div class="space-y-3 md:space-y-2 md:inline-flex flex-col md:items-start items-center md:gap-2 w-full md:w-auto">
@@ -30,16 +30,16 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
             <!-- Title and Developer -->
             <div class="text-center md:text-left space-y-1">
                 <h2 class="md:text-[32px] text-[16px] font-semibold text-txBlack ">DLF Cyber City Tower</h2>
-                <p class="md:text-[24px] text-[12px] font-medium text-txBlack">By <span class="font-bold">DLF</span></p>
+                <p class="md:text-[24px] text-[12px] font-noraml text-txBlack">By <span class="font-semibold">DLF</span></p>
             </div>
 
             <!-- Meta Info -->
-            <div class="md:text-[12px] text-[8px] md:text-left text-center text-txBlack flex flex-wrap items-center justify-center gap-x-3 gap-y-1 md:gap-y-0 !md:mt-0">
+            <div class="md:text-[12px] font-normal text-[8px] md:text-left text-center text-txBlack flex flex-wrap items-center justify-center gap-x-3 gap-y-1 md:gap-y-0 !md:mt-0">
                 <span>Noida, Sector 62</span>
                 <span class="text-txBlack">|</span>
                 <span>5000 sq. ft.</span>
                 <span class="text-txBlack">|</span>
-                <span>STATUD - NL/RTM</span>
+                <span>STATUS - NL/RTM</span>
             </div>
         </div>
 
@@ -95,15 +95,15 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
 
 
 
-<section class="pb-10 pt-0  max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0">
+<section class="md:pb-10  pt-0  max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0">
 
 
 
     <!-- Left Column (Blog Content) -->
-    <div class="md:col-span-2 md:pe-10 border-r  border-txBlack">
+    <div class="md:col-span-2 md:pe-10 md:border-r  border-txBlack">
 
         <x-heading-subheading heading="Property Description" subheading="DLF Cyber City Tower in Sector 62, Noida, is a premium commercial project by DLF, spanning 5000 sq. ft. Designed for modern businesses, it offers flexible spaces for multiplexes, offices, co-working, and more. With top-notch amenities, excellent connectivity, and sustainable architecture, it’s perfect for corporates and entertainment setups. Backed by DLF’s trusted legacy, the project promises high returns and a future-ready workspace." headingClass="heading project-each " subHeadingClass="subheading project-each mb-4 text-start !text-md" />
-        <ul class="text-txBlack md:text-[16px] text-[12px] md:ml-4 space-y-0">
+        <ul class="text-txBlack md:text-[16px] text-[12px] md:ml-4 ml-4 space-y-0">
             <li class="flex items-center gap-2">
                 <span class="w-1 h-1 mt-1 bg-txBlack rounded-full shrink-0"></span>
                 <span>Located in Noida’s prime IT & business hub</span>
@@ -126,51 +126,51 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
             </li>
         </ul>
 
-        <div class="max-w-xl mr-auto py-8">
+        <div class="max-w-xl mr-auto md:py-6 py-4">
             <h3 class="md:text-[24px] text-[16px] mb-4 font-semibold text-txBlack md:mb-2 text-center md:text-start">Quick Summary of Project</h3>
             <div class="border border-primary rounded-lg overflow-hidden text-txBlack">
                 <div class="grid grid-cols-3 border-b border-primary">
-                    <div class="px-4 md:py-2 py-2 border-r md:font-medium border-primary md:text-[16px] text-[10px] font-light">Address</div>
+                    <div class="px-4 md:py-2 py-2 border-r md:font-medium border-primary md:text-[16px] text-[10px] font-normal">Address</div>
                     <div class="px-4 md:py-2 py-2 col-span-2 md:font-light md:text-[16px] text-[10px] font-light">DLF Cyber City Tower, Sector-62, Noida</div>
                 </div>
 
                 <div class="grid grid-cols-3 border-b border-primary">
-                    <div class="px-4 md:py-2 py-2 border-r md:font-medium border-primary md:text-[16px] text-[10px] font-light">Pincode</div>
+                    <div class="px-4 md:py-2 py-2 border-r md:font-medium border-primary md:text-[16px] text-[10px] font-normal">Pincode</div>
                     <div class="px-4 md:py-2 py-2 col-span-2 md:font-light md:text-[16px] text-[10px] font-light">201309</div>
                 </div>
 
                 <div class="grid grid-cols-3 border-b border-primary">
-                    <div class="px-4 md:py-2 py-2 border-r md:font-medium border-primary md:text-[16px] text-[10px] font-light">Builder Name</div>
+                    <div class="px-4 md:py-2 py-2 border-r md:font-medium border-primary md:text-[16px] text-[10px] font-normal">Builder Name</div>
                     <div class="px-4 md:py-2 py-2 col-span-2 md:font-light md:text-[16px] text-[10px] font-light">DLF</div>
                 </div>
 
                 <div class="grid grid-cols-3 border-b border-primary">
-                    <div class="px-4 md:py-2 py-2 border-r md:font-medium border-primary md:text-[16px] text-[10px] font-light">Property Status</div>
+                    <div class="px-4 md:py-2 py-2 border-r md:font-medium border-primary md:text-[16px] text-[10px] font-normal">Property Status</div>
                     <div class="px-4 md:py-2 py-2 col-span-2 md:font-light md:text-[16px] text-[10px] font-light">Under Development</div>
                 </div>
 
                 <div class="grid grid-cols-3 border-b border-primary">
-                    <div class="px-4 md:py-2 py-2 border-r md:font-medium border-primary md:text-[16px] text-[10px] font-light">Property Category</div>
+                    <div class="px-4 md:py-2 py-2 border-r md:font-medium border-primary md:text-[16px] text-[10px] font-normal">Property Category</div>
                     <div class="px-4 md:py-2 py-2 col-span-2 md:font-light md:text-[16px] text-[10px] font-light">Commercial Multiplex & Office Complex</div>
                 </div>
 
                 <div class="grid grid-cols-3 border-b border-primary">
-                    <div class="px-4 md:py-2 py-2 border-r md:font-medium border-primary md:text-[16px] text-[10px] font-light">RERA Details</div>
+                    <div class="px-4 md:py-2 py-2 border-r md:font-medium border-primary md:text-[16px] text-[10px] font-normal">RERA Details</div>
                     <div class="px-4 md:py-2 py-2 col-span-2 md:font-light md:text-[16px] text-[10px] font-light">UPRERAPRJ000000/02/2025</div>
                 </div>
 
                 <div class="grid grid-cols-3 border-b border-primary">
-                    <div class="px-4 md:py-2 py-2 border-r md:font-medium border-primary md:text-[16px] text-[10px] font-light">Possession by</div>
+                    <div class="px-4 md:py-2 py-2 border-r md:font-medium border-primary md:text-[16px] text-[10px] font-normal">Possession by</div>
                     <div class="px-4 md:py-2 py-2 col-span-2 md:font-light md:text-[16px] text-[10px] font-light">Expected by 2025</div>
                 </div>
 
                 <div class="grid grid-cols-3 border-b border-primary">
-                    <div class="px-4 md:py-2 py-2 border-r md:font-medium border-primary md:text-[16px] text-[10px] font-light">Starting Price*</div>
+                    <div class="px-4 md:py-2 py-2 border-r md:font-medium border-primary md:text-[16px] text-[10px] font-normal">Starting Price*</div>
                     <div class="px-4 md:py-2 py-2 col-span-2 md:font-light md:text-[16px] text-[10px] font-light">On Request</div>
                 </div>
 
                 <div class="grid grid-cols-3">
-                    <div class="px-4 md:py-2 py-2 border-r md:font-medium border-primary md:text-[16px] text-[10px] font-light">Strategic Location</div>
+                    <div class="px-4 md:py-2 py-2 border-r md:font-medium border-primary md:text-[16px] text-[10px] font-normal">Strategic Location</div>
                     <div class="px-4 md:py-2 py-2 col-span-2 md:font-light md:text-[16px] text-[10px] font-light">Sector-62, Noida</div>
                 </div>
             </div>
@@ -197,10 +197,10 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
         <div class="max-w-4xl mx-auto md:px-4 py-4 text-tx`Black ">
 
             <!-- Amenities Section -->
-            <div class="mb-8">
-                <h3 class="md:text-[24px] text-[16px] font-semibold mb-2">Amenities</h3>
+            <div class="md:mb-6 mb-4">
+                <h3 class="md:text-[24px] text-[16px] font-semibold mb-1">Amenities</h3>
 
-                <ul class="text-txBlack md:text-[16px] text-[12px] md:ml-4 space-y-0">
+                <ul class="text-txBlack md:text-[16px] text-[12px] ml-4  space-y-0">
                     <li class="flex items-center gap-2">
                         <span class="w-1 h-1 mt-1 bg-txBlack rounded-full shrink-0"></span>
                         <span>Modern Multi-level Parking Facility</span>
@@ -241,7 +241,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
             <div class="mb-0">
                 <h3 class="md:text-[24px] text-[16px] font-semibold mb-2">Location Advantages</h3>
 
-                <ul class="text-txBlack md:text-[16px] text-[12px] md:ml-4 space-y-0">
+                <ul class="text-txBlack md:text-[16px] text-[12px] ml-4 space-y-0">
                     <li class="flex items-center gap-2">
                         <span class="w-1 h-1 mt-1 bg-txBlack rounded-full shrink-0"></span>
                         <span>Prime location in Sector 62, Noida — a thriving commercial hub</span>
@@ -267,7 +267,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
 
         </div>
 
-        <div class="max-w-5xl mx-auto md:px-4 py-4 md:block hidden">
+        <div class="max-w-5xl mx-auto md:px-4 py-2 md:block hidden">
             <!-- Embedded Map or Image -->
             <div class="rounded-2xl  overflow-hidden md:mb-8">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17383.336479488054!2d77.34828205607775!3d28.623641394275474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5456ef36d9f%3A0x3b7191b1286136c8!2sSector%2062%2C%20Noida%2C%20Uttar%20Pradesh!5e1!3m2!1sen!2sin!4v1751018298195!5m2!1sen!2sin" width="800" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -292,29 +292,29 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
             <!-- Info Table -->
             <div class="border !max-w-3xl border-primary rounded-xl overflow-hidden md:text-[16px] text-[10px]">
                 <div class="grid grid-cols-2 border-b border-primary">
-                    <div class="px-4 py-2 md:font-medium border-r font-light border-primary">Total Area of land</div>
-                    <div class="px-4 py-2  font-light">6.015 Acres</div>
+                    <div class="px-4 md:py-2 py-1.5 md:font-medium border-r font-normal border-primary">Total Area of land</div>
+                    <div class="px-4 py-1.5 md:py-2  font-light">6.015 Acres</div>
                 </div>
                 <div class="grid grid-cols-2 border-b border-primary">
-                    <div class="px-4 py-2 md:font-medium border-r font-light border-primary">Number of Towers</div>
-                    <div class="px-4 py-2 font-light">4</div>
+                    <div class="px-4 md:py-2 py-1.5 md:font-medium border-r font-normal border-primary">Number of Towers</div>
+                    <div class="px-4 py-1.5 md:py-2 font-light">4</div>
                 </div>
                 <div class="grid grid-cols-2 border-b border-primary">
-                    <div class="px-4 py-2 md:font-medium border-r font-light border-primary">Structure of Property</div>
-                    <div class="px-4 py-2 font-light">G+23 Floors</div>
+                    <div class="px-4 md:py-2 py-1.5 md:font-medium border-r font-normal border-primary">Structure of Property</div>
+                    <div class="px-4 md:py-2 py-1.5 font-light">G+23 Floors</div>
                 </div>
                 <div class="grid grid-cols-2 border-b border-primary">
-                    <div class="px-4 py-2 md:font-medium border-r font-light border-primary">Total Units</div>
-                    <div class="px-4 py-2 font-light">To be announced</div>
+                    <div class="px-4 md:py-2 py-1.5 md:font-medium border-r font-normal border-primary">Total Units</div>
+                    <div class="px-4 md:py-2 py-1.5 font-light">To be announced</div>
                 </div>
                 <div class="grid grid-cols-2">
-                    <div class="px-4 py-2 md:font-medium border-r font-light border-primary">Configuration of Units available</div>
-                    <div class="px-4 py-2 font-light">3 BHK and 4 BHK Apartments</div>
+                    <div class="px-4 md:py-2 py-1.5 md:font-medium border-r font-normal border-primary">Configuration of Units available</div>
+                    <div class="px-4 md:py-2 py-1.5 font-light">3 BHK and 4 BHK Apartments</div>
                 </div>
             </div>
         </div>
 
-        <div class="max-w-4xl mx-auto  py-8 text-txBlack space-y-8">
+        <div class="max-w-4xl mx-auto  md:py-6 py-2 text-txBlack md:space-y-4 space-y-3">
 
             <!-- About Builder -->
             <div>
@@ -348,9 +348,9 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
 
             <!-- Who Should Invest -->
             <div class="">
-                <h3 class="md:text-[24px] text-[16px] font-semibold mb-2 md:text-start text-center">Who to invest in this project</h3>
+                <h3 class="md:text-[24px] text-[16px] font-semibold mb-2 text-start">Why to invest in this project</h3>
 
-                <ul class="text-txBlack md:text-[16px] text-[12px] md:ml-4 space-y-0">
+                <ul class="text-txBlack md:text-[16px] text-[12px] ml-4 space-y-0">
                     <li class="flex items-start gap-2">
                         <span class="w-1 h-1 mt-3 bg-txBlack rounded-full shrink-0"></span>
                         <span>Luxury home buyers seeking spacious 3 & 4 BHK apartments with premium finishes and top-notch amenities</span>
@@ -385,7 +385,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
     <aside class="space-y-6 md:col-span-1 sticky top-[100px] self-start">
 
         <!-- Enquiry Form -->
-        <div class="bg-gradient-to-b from-primary/10 to-secondary/10 p-6  rounded-[15px] w-full max-w-sm mx-auto max-h-[80vh] overflow-y-auto">
+        <div class="bg-gradient-to-b from-primary/10 to-secondary/10 p-6  rounded-[15px] w-full max-w-[85%] md:max-w-sm mx-auto max-h-[80vh] overflow-y-auto">
             <form class="space-y-4">
                 <!-- Name -->
                 <div>
@@ -474,12 +474,31 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
 
 
 @if($similarProperties->count() > 0)
-<section class="md:px-8 px-4 pb-8 pt-0 md:mt-8 mt-[-100px] bg-white text-center">
+<section class="md:px-8 px-4 pb-8 pt-0 md:mt-8 mt-[-100px] bg-white text-center md:block hidden">
     <div class="container max-w-6xl mx-auto">
         <x-heading-subheading heading="Similar Projects" subheading="" headingClass="heading mt-[65px]" subHeadingClass="subheading" />
-        <div class="grid grid-cols-2 md:grid-cols-4 md:gap-6 gap-3 mx-auto ">
+        <div class="grid md:grid-cols-4 md:gap-4  mx-auto ">
             @foreach ($similarProperties as $property)
-            <div class="featured-investment-card m-featured-page-card">
+            <div class="featured-investment-card m-featured-page-card simmilar-project-card">
+                <x-featured-investment-section featuredCardClass="project-page-image-dev" src="{{ asset($property->property_featured_image) }}" alt="{{ $property->property_name }}" imageClass="project-page-image" heading="{{ $property->property_name }}" location="{{ $property->property_location }}" url="{{ $property->property_rera_url }}" rera="{{ $property->property_rera_number }}" status="{{ $property->property_status }}" roi="{{ $property->property_expected_roi }}" developer="{{ $property->developmentPartner->developer_name }}" variety="{{ $property->category->name }}" size="{{ $property->property_size }}" price="{{ $property->starting_price }}" />
+                <x-button class="featured-investment-button !py-2" url="{{ route('projects.each' , $property->property_slug) }}" text="View Details" />
+            </div>
+            @endforeach
+        </div>
+
+    </div>
+</section>
+@endif
+
+
+
+@if($similarProperties->count() > 0)
+<section class="md:px-8 px-4 pb-0 pt-0 md:mt-4 bg-white text-center block md:hidden">
+    <div class="container max-w-6xl mx-auto ">
+        <x-heading-subheading heading="Similar Projects" subheading="" headingClass="heading mt-[65px]" subHeadingClass="subheading" />
+        <div class=" gap-2 mx-auto project-each-slider-mobile">
+            @foreach ($similarProperties as $property)
+            <div class="featured-investment-card m-featured-page-card ">
                 <x-featured-investment-section featuredCardClass="project-page-image-dev" src="{{ asset($property->property_featured_image) }}" alt="{{ $property->property_name }}" imageClass="project-page-image" heading="{{ $property->property_name }}" location="{{ $property->property_location }}" url="{{ $property->property_rera_url }}" rera="{{ $property->property_rera_number }}" status="{{ $property->property_status }}" roi="{{ $property->property_expected_roi }}" developer="{{ $property->developmentPartner->developer_name }}" variety="{{ $property->category->name }}" size="{{ $property->property_size }}" price="{{ $property->starting_price }}" />
                 <x-button class="featured-investment-button !py-2" url="{{ route('projects.each' , $property->property_slug) }}" text="View Details" />
             </div>
@@ -506,12 +525,45 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: true,
-            autoplay: false,
-            autoplaySpeed: 2000,
+            autoplay: true,
+            loop: true,
+            autoplaySpeed: 3000,
+        });
+    });
+
+
+
+    $(document).ready(function() {
+        $(document).ready(function() {
+            $('.project-each-slider-mobile').slick({
+                 slidesToShow: 1.2,
+                slidesToScroll: 1,
+                infinite: false,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                dots: false,
+                arrows: false,
+                responsive: [{
+                    breakpoint: 768, // sm only
+                    settings: {
+                        slidesToShow: 2.3,
+                        slidesToScroll: 1,
+                        centerMode: false,
+                        variableWidth: false,
+                        autoplay: true,
+                        loop: true,
+                        autoplaySpeed: 3000,
+                        dots: false,
+                    }
+                }]
+            });
+
+
         });
 
 
     });
+
 </script>
 
 @endsection

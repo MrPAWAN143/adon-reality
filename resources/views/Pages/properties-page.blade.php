@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="{{ asset('assets/css/master.css') }}">
 @endsection
 @section('content')
-<section class="max-w-[1100px] mx-auto md:px-0 py-0">
+<section class="max-w-[1100px] mx-auto px-4 md:px-0 py-0">
     <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a href="{{ route('projects') }}" class="ml-[-5px]">Projects</a></div>
 </section>
 <section class="px-4 md:px-8 max-w-[1100px] mx-auto bg-white py-6">
@@ -14,7 +14,7 @@
 
         <x-heading-subheading heading="Explore project that you need" subheading="Filter,short,and find the perfect property just the way you want" headingClass="heading text-center m-heading" subHeadingClass="subheading m-subheading mb-2" />
 
-        <div class="max-w-4xl mx-auto px-4 py-4 md:pb-6 pb-3">
+        <div class="max-w-full mx-auto md:px-12 py-4 md:pb-6 pb-3">
             <!-- Filters -->
             <div class="grid md:grid-cols-4 grid-cols-4 md:gap-4 gap-2 md:pb-5">
                 <select class="project-page-filter-btn ">

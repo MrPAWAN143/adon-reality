@@ -8,21 +8,21 @@
 @endsection
 
 @section('content')
-<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
-     <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('development-partners') }}">Developer Partners</a></div>
+<section class="max-w-[1100px] mx-auto px-4 md:px-0 pb-2 pt-1">
+    <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('development-partners') }}">Developer Partners</a></div>
 </section>
-<section class="px-4  bg-white pb-8  max-w-6xl mx-auto ">
+<section class="px-4 md:px-0 bg-white md:pb-8  max-w-[1100px] mx-auto ">
 
-    <div class="flex md:flex-row flex-col md:items-center md:justify-between justify-center items-center mb-8">
-        <div class="flex-1 px-6">
+    <div class="flex md:flex-row flex-col md:items-center md:justify-between justify-center items-center md:mb-8 mb-3">
+        <div class="flex-1 px-0">
             <x-heading-subheading heading="Our Partnered Developers" subheading="Explore top real estate developers and their best projects." headingClass="heading text-start !my-2 m-heading" subHeadingClass="subheading mb-2 dev-start m-subheading" />
         </div>
 
-        
+
     </div>
 
 
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 md:gap-6 gap-4">
+    <div class="grid grid-cols-2 md:grid-cols-3 md:gap-6 gap-4 place-items-center justify-center">
 
 
         @foreach ($developmentPartner as $partner)
@@ -37,7 +37,7 @@
 
 </section>
 
-<section class="md:px-4 px-0 py-8 bg-white">
+<section class="md:px-4 px-0 md:py-6 py-6 bg-white">
     <div class="container max-w-5xl mx-auto px-4">
 
         <x-heading-subheading heading="Hear From Our Investors" subheading="Genuine testimonials and success stories from our valued investors." headingClass="heading text-center" subHeadingClass="subheading text-center !mb-2" />

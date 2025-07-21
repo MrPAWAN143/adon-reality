@@ -25,8 +25,8 @@
   }
 
   #trending {
-    width: 70%;
-    margin: 0 auto;
+    width: 100%;
+    margin: auto;
 
   }
 
@@ -40,7 +40,7 @@
 
   @media (min-width:1100px) {
 
-    .trending-slider{
+    .trending-slider {
       width: 970px !important;
       max-width: 980px;
     }
@@ -60,7 +60,7 @@
 
   .trending-slide {
     width: auto;
-    height: 430px;
+    height: 450px;
     position: relative;
   }
 
@@ -156,19 +156,16 @@
 @endsection
 
 @section('content')
-<section class="max-w-7xl mx-auto px-4 md:px-8">
+<section class="max-w-[1100px] mx-auto px-4 md:px-0 pb-2 pt-1">
   <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('testimonials') }}">Testimonials</a> </div>
 </section>
-<section class=" bg-white ">
-  <x-banner-section class="px-4 relative h-[30vh] md:h-[65vh] md:max-h-[65vh]" image="{{ asset('assets/images/bannerImages/testimonial-banner.jpg') }}" title="What Our Clients Say" subtitle="Real stories from people who trust Adon to find their perfect space." headingClass="text-white text-3xl" subheadingClass="text-white !text-lg" />
-  <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center " style="padding-top: 1rem; padding-bottom: 2rem;">
-
-  </div>
+<section class="bg-white mb-10">
+  <x-banner-section class="px-4 h-[25vh] md:h-[45vh] md:max-h-[45vh]" mobileBanner="{{ asset('assets/images/bannerImages/testimonial-banner.jpg') }}" image="{{ asset('assets/images/bannerImages/testimonial-banner.jpg') }}" title="What Our Clients Say" subtitle="Real stories from people who trust Adon to find their perfect space." headingClass="text-white md:text-[24px] text-[16px]" subheadingClass="text-white !text-[12px]" />
 </section>
 
-<section id="trending" class="md:block hidden">
-  <div class="container">
-    <h2 class="md:text-3xl font-bold mb-4 mt-4 text-center">Video Testimonials</h2>
+<section id="trending" class="md:block hidden ">
+  <div class="container " style="margin-top: 40px !important;">
+    <h2 class="md:text-3xl font-bold md:mb-6 !mt-8 text-center">Video Testimonials</h2>
     <div class="swiper trending-slider">
       <div class="swiper-wrapper">
 
@@ -253,7 +250,7 @@
 
 
 <section id="trendingmobile" class="block md:hidden">
-  <div class="container">
+  <div class="container" style="margin-top: 40px !important;">
     <h2 class="md:text-3xl font-bold mb-4 mt-4 text-center">Video Testimonials</h2>
     <div class="swiper trending-mobile-slider">
       <div class="swiper-wrapper">
@@ -445,8 +442,8 @@
 </section>
 
 
-<section class=" max-w-5xl  mx-auto text-center md:mb-8">
-<x-contact-us-form heading="Still Have a Question?" subheading="Have questions or ready to take the next step? Whether you’re looking to buy, rent, or invest, our team is here to guide you every step of the way." />
+<section class=" max-w-5xl  mx-auto text-center md:my-8">
+  <x-contact-us-form heading="Still Have a Question?" subheading="Have questions or ready to take the next step? Whether you’re looking to buy, rent, or invest, our team is here to guide you every step of the way." />
 </section>
 @endsection
 

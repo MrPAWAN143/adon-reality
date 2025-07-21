@@ -10,18 +10,18 @@
 
 @section('content')
 
-<section class="max-w-7xl mx-auto px-4 md:px-8 py-2">
+<section class="max-w-[1100px] mx-auto px-4 md:px-0 pb-2 pt-1">
     <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('news') }}">News & PR</a></div>
 </section>
-<section class="px-4  pb-0 sm:py-2 bg-white max-w-6xl mx-auto">
-    <div class="container max-w-6xl mx-auto">
+<section class="md:px-0 mb-8 px-4 md:max-w-[1100px] w-full  mx-auto  bg-white">
+    <div class="container max-w-[1100px] mx-auto">
         <x-heading-subheading heading="News & PR" subheading="We provide full articles or story links featuring Adon in reputed publications and PR coverage." headingClass="heading text-center" subHeadingClass="subheading text-sm mb-4" />
     </div>
 
 
 
-    <div class="md:px-6 py-0 mt-8 bg-white">
-        <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-3 md:gap-6 gap-2 place-items-start">
+    <div class="md:px-6 py-0 mt-4 bg-white">
+        <div class="grid grid-cols-2 md:grid-cols-3 md:gap-4 gap-3 mx-auto md:px-6 !place-items-start justify-center grid-items-center">
             <x-awards
                 image="{{ asset('assets/images/news-pr/best-commercial.jpg') }}"
                 alt="Best Commercial Project 2024"
@@ -32,7 +32,7 @@
                 buttonText="Read More"
                 buttonClass="newsAndPrButton"
                 newsAndPrCard="newsAndPrCard"
-                buttonLink="{{ route('news.show') }}"
+                buttonLink="{{ route('news.show', ['slug' => 'best-commercial-project-2024']) }}"
                 newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
 
 
@@ -46,6 +46,7 @@
                 buttonText="Read More"
                 buttonClass="newsAndPrButton"
                 newsAndPrCard="newsAndPrCard"
+                buttonLink="{{ route('news.show', ['slug' => 'the-future-of-sustainable-living-in-urban-india']) }}"
                 newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
 
             <x-awards
@@ -58,6 +59,7 @@
                 buttonText="Read More"
                 buttonClass="newsAndPrButton"
                 newsAndPrCard="newsAndPrCard"
+                buttonLink="{{ route('news.show', ['slug' => 'innovations-in-sustainable-urban-living-in-india']) }}"
                 newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
 
             <x-awards
@@ -70,6 +72,7 @@
                 buttonText="Read More"
                 buttonClass="newsAndPrButton"
                 newsAndPrCard="newsAndPrCard"
+                buttonLink="{{ route('news.show', ['slug' => 'luxury-condo-developments-changing-city-skylines']) }}"
                 newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
 
             <x-awards
@@ -82,6 +85,7 @@
                 buttonText="Read More"
                 buttonClass="newsAndPrButton"
                 newsAndPrCard="newsAndPrCard"
+                buttonLink="{{ route('news.show', ['slug' => 'affordable-housing-initiatives-in-metro-areas']) }}"
                 newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
 
             <x-awards
@@ -94,6 +98,7 @@
                 buttonText="Read More"
                 buttonClass="newsAndPrButton"
                 newsAndPrCard="newsAndPrCard"
+                buttonLink="{{ route('news.show', ['slug' => 'sustainable-real-estate-practices-on-the-rise']) }}"
                 newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
 
             <x-awards
@@ -106,6 +111,7 @@
                 buttonText="Read More"
                 buttonClass="newsAndPrButton"
                 newsAndPrCard="newsAndPrCard"
+                buttonLink="{{ route('news.show', ['slug' => 'sustainable-housing-solutions-for-a-greener-future']) }}"
                 newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
 
             <x-awards
@@ -118,6 +124,7 @@
                 buttonText="Read More"
                 buttonClass="newsAndPrButton"
                 newsAndPrCard="newsAndPrCard"
+                buttonLink="{{ route('news.show', ['slug' => 'smart-home-innovations-revolutionizing-living-spaces']) }}"
                 newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
 
             <x-awards
@@ -130,6 +137,7 @@
                 buttonText="Read More"
                 buttonClass="newsAndPrButton"
                 newsAndPrCard="newsAndPrCard"
+                buttonLink="{{ route('news.show', ['slug' => 'affordable-housing-initiatives-building-communities']) }}"
                 newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
 
             <x-awards
@@ -142,6 +150,7 @@
                 buttonText="Read More"
                 buttonClass="newsAndPrButton"
                 newsAndPrCard="newsAndPrCard"
+                buttonLink="{{ route('news.show', ['slug' => 'serene-suburban-retreat-embrace-tranquility-and-space']) }}"
                 newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
 
             <x-awards
@@ -154,6 +163,7 @@
                 buttonText="Read More"
                 buttonClass="newsAndPrButton"
                 newsAndPrCard="newsAndPrCard"
+                buttonLink="{{ route('news.show', ['slug' => 'coastal-dream-homes-breathe-in-the-ocean-breeze']) }}"
                 newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
 
             <x-awards
@@ -166,6 +176,7 @@
                 buttonText="Read More"
                 buttonClass="newsAndPrButton"
                 newsAndPrCard="newsAndPrCard"
+                buttonLink="{{ route('news.show', ['slug' => 'explore-the-timeless-charm-of-our-neighborhoods']) }}"
                 newsAndPrCardImgDiv="newsAndPrCardImgDiv" />
 
 
