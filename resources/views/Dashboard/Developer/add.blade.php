@@ -72,7 +72,7 @@
                 {{-- Total Completed Area --}}
                 <div>
                     <label for="total_completed_area" class="block font-semibold text-adminTextPrimary mb-1">
-                        Total Completed Area
+                        Total Completed Projects
                     </label>
                     <input type="text" id="total_completed_area" name="total_completed_area"
                         placeholder="e.g., 2.5 million sq.ft"

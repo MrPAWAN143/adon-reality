@@ -3,7 +3,6 @@
 <title> Adon Realty - FAQs page</title>
 @endsection
 @section('styles')
-<link rel="stylesheet" href="{{ asset('assets/css/homepage.css') }}">
 @endsection
 @section('content')
 <section class="max-w-[1100px] mx-auto px-4 md:px-0 pb-2 pt-1">

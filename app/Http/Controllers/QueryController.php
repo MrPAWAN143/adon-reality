@@ -76,6 +76,9 @@ class QueryController extends Controller
         ], 200);
     }
 
+
+
+
     public function destroy($id)
     {
         // Delete the lead from the database
@@ -123,5 +126,47 @@ class QueryController extends Controller
             'message' => 'Lead status updated successfully.',
             'is_read' => $lead->is_read
         ]);
+    }
+
+
+
+    public function additionalEnquiry(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'required|string|max:255',
+            'message' => 'nullable|string|max:1000',
+        ]);
+
+        if (empty($validated['name'])) {
+            return response()->json([
+                'error' => 'Name is required.'
+            ], 422);
+        }
+        if (empty($validated['email'])) {
+            return response()->json([
+                'error' => 'Email is required.'
+            ], 422);
+        }
+        if (empty($validated['phone']) || !preg_match('/^\+?[0-9]{10,15}$/', $validated['phone']) || strlen($validated['phone']) < 13) {
+            return response()->json([
+                'error' => 'Phone number is required and must be valid.'
+            ], 422);
+        }
+
+        Lead::create([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'phone' => $validated['phone'],
+            'message' => $validated['message'] ?? null,
+            'is_new' => true,
+            'is_read' => false,
+        ]);
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Thank you! We’ve received your request. Our team will call you soon.',
+        ], 200);
     }
 }

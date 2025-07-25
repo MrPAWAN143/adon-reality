@@ -1,5 +1,5 @@
 <section class="md:pb-8 py-3 bg-white text-center mb-8">
-    <div class="container sm:max-w-lg md:max-w-5xl mx-auto px-4">
+    <div class="container max-w-lg md:max-w-5xl mx-auto px-4">
 
         <h2 class="heading m-heading">
             {{ $heading }}
@@ -19,37 +19,37 @@
             </div>
         </div>
 
-        <form method="POST" class="queryform contact-form bg-white border border-primary rounded-2xl md:px-6 md:my-3 md:py-6 p-3 shadow-sm mt-6">
+        <form method="POST" class="queryform contact-form bg-white border border-primary rounded-2xl md:px-6 md:my-3 md:py-6 py-3 px-1 shadow-sm mt-6">
             @csrf
-            <div class="form-grid grid grid-cols-1 md:grid-cols-2 md:gap-4 gap-2">
-                <div>
+            <div class="form-grid grid grid-cols-2 md:gap-4">
+                <div class="md:col-span-1 col-span-2">
                     <input type="text" name="first_name" placeholder="First Name" value="{{ old('first_name') }}"
                         class="border-b border-gray-300 focus:outline-none text-sm md:py-2 py-1 placeholder-gray-500" />
                     <div class="error text-start text-base text-red-500 mt-1"></div>
                 </div>
 
-                <div>
+                <div class="md:col-span-1 col-span-2">
                     <input type="text" name="last_name" placeholder="Last Name" value="{{ old('last_name') }}"
-                        class="sm:w-full border-b border-gray-300  text-sm py-2 placeholder-gray-500" />
+                        class="w-full border-b border-gray-300  text-sm py-2 placeholder-gray-500" />
                     <div class="error text-start text-base text-red-500 mt-1"></div>
                 </div>
 
-                <div>
+                <div class="md:col-span-1 col-span-2">
                     <input type="email" name="email" placeholder="Email" value="{{ old('email') }}"
-                        class="sm:w-full border-b border-gray-300 focus:outline-none text-sm py-2 placeholder-gray-500" />
+                        class="w-full border-b border-gray-300 focus:outline-none text-sm py-2 placeholder-gray-500" />
                     <div class="error text-start text-base text-red-500 mt-1"></div>
                 </div>
 
-                <div>
+                <div class="md:col-span-1 col-span-2">
                     <input type="text" name="phone" placeholder="Phone" value="{{ old('phone') }}"
-                        class="sm:w-full border-b border-gray-300 focus:outline-none text-sm py-2 placeholder-gray-500" />
+                        class="w-full border-b border-gray-300 focus:outline-none text-sm py-2 placeholder-gray-500" />
                     <div class="error text-start text-base text-red-500 mt-1"></div>
                 </div>
             </div>
 
-            <div class="mt-4">
+            <div class="mt-4 col-span-2 md:col-span-2">
                 <textarea name="message" rows="3" placeholder="What can we help you?"
-                    class="sm:w-full border-b border-gray-300 focus:outline-none text-sm py-2 placeholder-gray-500 resize-none">{{ old('message') }}</textarea>
+                    class="w-full border-b border-gray-300 focus:outline-none text-sm py-2 placeholder-gray-500 resize-none">{{ old('message') }}</textarea>
                 <div class="error text-start text-base text-red-500 mt-1"></div>
             </div>
 

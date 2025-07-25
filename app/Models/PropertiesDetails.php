@@ -42,6 +42,9 @@ class PropertiesDetails extends Model
     'property_benefits',
     'property_featured_image',
     'property_brochure_url',
+    'prime_thumbnail_image',
+    'explore_virtual_thumbnail_image',
+    'property_banner',
 ];
 
 

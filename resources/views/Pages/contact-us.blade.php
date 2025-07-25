@@ -3,9 +3,6 @@
 <title>Adon Realty - Contact Us</title>
 @endsection
 @section('styles')
-<link rel="stylesheet" href="{{ asset('assets/css/master.css') }}">
-
-
 @endsection
 
 @section('content')

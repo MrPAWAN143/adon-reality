@@ -113,6 +113,50 @@
                     </select>
                 </div>
 
+                {{-- Prime Thumbnail Image --}}
+                <div id="prime_thumbnail_image_container" class="{{ $property->property_type == 'Prime' ? '' : 'hidden' }}">
+                    <label for="prime_thumbnail_image" class="block font-semibold text-adminTextPrimary mb-1">
+                        Prime Thumbnail Image <span class="text-xs text-gray-500">(leave blank to keep current)</span>
+                    </label>
+
+                    {{-- File input --}}
+                    <input type="file" id="prime_thumbnail_image" name="prime_thumbnail_image"
+                        class="w-full border border-adminInputBorder rounded px-3 py-2 bg-white
+                        file:mr-3 file:rounded file:border-0 file:bg-adminPrimary file:px-3 file:py-1 file:text-white
+                        hover:file:bg-adminPrimaryHover"
+                        accept="image/*">
+
+                    {{-- Existing image preview --}}
+                    @if ($property->prime_thumbnail_image)
+                        <div class="mt-2">
+                            <img src="{{ asset($property->prime_thumbnail_image) }}" alt="Prime Thumbnail"
+                                class="w-12 h-12 object-cover rounded-md shadow">
+                        </div>
+                    @endif
+                </div>
+
+                {{-- Explore Virtual Thumbnail Image --}}
+                <div id="explore_virtual_image_container" class="{{ $property->property_type == 'Virtual' ? '' : 'hidden' }}">
+                    <label for="explore_virtual_thumbnail_image" class="block font-semibold text-adminTextPrimary mb-1">
+                        Explore Virtual Thumbnail Image <span class="text-xs text-gray-500">(leave blank to keep current)</span>
+                    </label>
+
+                    {{-- File input --}}
+                    <input type="file" id="explore_virtual_thumbnail_image" name="explore_virtual_thumbnail_image"
+                        class="w-full border border-adminInputBorder rounded px-3 py-2 bg-white
+                        file:mr-3 file:rounded file:border-0 file:bg-adminPrimary file:px-3 file:py-1 file:text-white
+                        hover:file:bg-adminPrimaryHover"
+                        accept="image/*">
+
+                    {{-- Existing image preview --}}
+                    @if ($property->explore_virtual_thumbnail_image)
+                        <div class="mt-2">
+                            <img src="{{ asset($property->explore_virtual_thumbnail_image) }}" alt="Explore Virtual Thumbnail"
+                                class="w-12 h-12 object-cover rounded-md shadow">
+                        </div>
+                    @endif
+                </div>
+
                 <div>
                     <label class="block font-semibold text-adminTextPrimary mb-1" for="property_status">Status</label>
                     <select id="property_status" name="property_status" class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
@@ -317,6 +361,27 @@
                     <input type="hidden" name="property_location_advantages" id="property_location_advantages_hidden" value="{{ $locCsv }}">
                 </div>
 
+                {{-- Property Banner --}}
+                <div class="md:col-span-2">
+                    <label for="property_banner" class="block font-semibold text-adminTextPrimary mb-1">
+                        Property Banner Image <span class="text-xs text-gray-500">(leave blank to keep current)</span>
+                    </label>
+
+                    {{-- File input --}}
+                    <input type="file" id="property_banner" name="property_banner"
+                        class="w-full border border-adminInputBorder rounded px-3 py-2 bg-white
+                        file:mr-3 file:rounded file:border-0 file:bg-adminPrimary file:px-3 file:py-1 file:text-white
+                        hover:file:bg-adminPrimaryHover"
+                        accept="image/*">
+
+                    {{-- Existing image preview --}}
+                    @if ($property->property_banner)
+                        <div class="mt-2">
+                            <img src="{{ asset($property->property_banner) }}" alt="Property Banner"
+                                class="w-32 h-12 object-cover rounded-md shadow">
+                        </div>
+                    @endif
+                </div>
 
                 {{-- Gallery (Multiple Images) --}}
                 <div class="md:col-span-2">
@@ -424,7 +489,7 @@
                 </div>
 
                 <div class="md:col-span-2">
-                    <label class="block font-semibold text-adminTextPrimary mb-1" for="property_benefits">Who to invest in this project</label>
+                    <label class="block font-semibold text-adminTextPrimary mb-1" for="property_benefits">Why to invest in this project</label>
                     <textarea id="property_benefits" name="property_benefits" rows="5" class="forBorder w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">{{ old('property_benefits' , $property->property_benefits) }}</textarea>
                 </div>
 
@@ -615,78 +680,87 @@
         });
 
 
-        $(function() {
-            // Handle form submission
-            $('#updateProject').on('submit', function(e) {
-                e.preventDefault();
-                $('.container').hide();
-                $('.loadingbtn').show();
-                let formData = new FormData(this);
-                // Append CKEditor data
-                const property_description = CKEDITOR.instances['property_description'].getData();
-                formData.append('property_description', property_description);
-                const property_benefits = CKEDITOR.instances['property_benefits'].getData();
-                formData.append('property_benefits', property_benefits);
-                const property_meta_description = CKEDITOR.instances['property_meta_description'].getData();
-                formData.append('property_meta_description', property_meta_description);
-                // Append operating cities as a CSV string
+        $(function () {
+    $('#updateProject').on('submit', function (e) {
+        e.preventDefault();
+        $('.container').hide();
+        $('.loadingbtn').show();
 
-                const $unitSpans = $('#unitTypeList li span');
+        let form = this;
+        let formData = new FormData(form);
 
-                if ($unitSpans.length > 0) {
-                    $unitSpans.each(function() {
-                        formData.append('unit_type[]', $(this).text().trim());
-                    });
-                } else {
-                    formData.append('unit_type[]', '');
-                }
+        // Append CKEditor fields
+        formData.set('property_description', CKEDITOR.instances['property_description'].getData());
+        formData.set('property_benefits', CKEDITOR.instances['property_benefits'].getData());
+        formData.set('property_meta_description', CKEDITOR.instances['property_meta_description'].getData());
 
-                $('#amenitiesList li span').each(function() {
-                    formData.append('property_amenities[]', $(this).text().trim());
-                });
-
-                $('#locationAdvantagesList li span').each(function() {
-                    formData.append('property_location_advantages[]', $(this).text().trim());
-                });
-
-                $.ajax({
-                    url: url.update,
-                    method: 'POST',
-                    data: formData,
-                    processData: false,
-                    contentType: false,
-                    headers: {
-                        _method: 'PUT',
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    success: function(response) {
-                        let status = response.status;
-                        let message = response.message
-                        if (status == 'success') {
-                            $('#messageTitle').text(status).addClass('text-green-600').removeClass('text-red-600');
-                            $('#messageContent').text(message);
-                            $('#messageModal').removeClass('hidden');
-                        }
-                        $('.container').show();
-                        $('.loadingbtn').hide();
-                        setTimeout(() => {
-                            window.location.href = url.list;
-                        }, 1000);
-                    },
-                    error: function(err) {
-                        let error = err.responseJSON.errors;
-                        $.each(error, (field, message) => {
-                            $('#messageTitle').text(field).addClass('text-red-600').removeClass('text-green-600');
-                            $('#messageContent').text(message);
-                            $('#messageModal').removeClass('hidden');
-                        })
-                        $('.container').show();
-                        $('.loadingbtn').hide();
-                    }
-                });
-
+        // Append unit types
+        const $unitSpans = $('#unitTypeList li span');
+        if ($unitSpans.length > 0) {
+            $unitSpans.each(function () {
+                formData.append('unit_type[]', $(this).text().trim());
             });
+        } else {
+            formData.append('unit_type[]', '');
+        }
+
+        // Append amenities
+        $('#amenitiesList li span').each(function () {
+            formData.append('property_amenities[]', $(this).text().trim());
         });
+
+        // Append location advantages
+        $('#locationAdvantagesList li span').each(function () {
+            formData.append('property_location_advantages[]', $(this).text().trim());
+        });
+
+        // Laravel method spoofing + CSRF
+        formData.append('_method', 'PUT');
+
+        $.ajax({
+            url: url.update,
+            method: 'POST', // Spoofing PUT
+            data: formData,
+            contentType: false,
+            processData: false,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function (response) {
+                $('#messageTitle')
+                    .text('Success')
+                    .removeClass('text-red-600')
+                    .addClass('text-green-600');
+                $('#messageContent').text(response.message);
+                $('#messageModal').removeClass('hidden');
+
+                $('.container').show();
+                $('.loadingbtn').hide();
+
+                setTimeout(() => {
+                    window.location.href = url.list;
+                }, 1000);
+            },
+            error: function (err) {
+                let message = 'Something went wrong.';
+                if (err.responseJSON?.errors) {
+                    const firstField = Object.keys(err.responseJSON.errors)[0];
+                    message = err.responseJSON.errors[firstField][0];
+                    $('#messageTitle').text(firstField);
+                } else if (err.responseJSON?.message) {
+                    message = err.responseJSON.message;
+                    $('#messageTitle').text('Error').addClass('text-red-600').removeClass('text-green-600');
+                }
+                $('#messageContent').text(message);
+                $('#messageModal').removeClass('hidden');
+
+                $('.container').show();
+                $('.loadingbtn').hide();
+            }
+        });
+    });
+});
+
     });
 
     // Handle delete confirmation
@@ -745,5 +819,19 @@
         delete: "{{ route('projects.destroy', $property->id) }}",
         list: '{{ route("project.list") }}'
     };
+
+     $('#property_type').on('change', function() {
+        const selectedId = $(this).val();
+        if (selectedId == "Prime") { 
+            $('#prime_thumbnail_image_container').removeClass('hidden').addClass('block');
+            $('#explore_virtual_image_container').addClass('hidden').removeClass('block');
+        } else if (selectedId == "Virtual") { 
+            $('#prime_thumbnail_image_container').addClass('hidden').removeClass('block');
+            $('#explore_virtual_image_container').removeClass('hidden').addClass('block');
+        } else { 
+            $('#prime_thumbnail_image_container').addClass('hidden').removeClass('block');
+            $('#explore_virtual_image_container').addClass('hidden').removeClass('block');
+        }
+    });
 </script>
 @endsection

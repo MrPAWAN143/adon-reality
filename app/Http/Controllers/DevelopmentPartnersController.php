@@ -20,7 +20,7 @@ class DevelopmentPartnersController extends Controller
     {
      
         $developmentPartner = DevelopmentPartners::where('slug', $slug)->firstOrFail();
-        $properties = PropertiesDetails::where('development_partner_id', $developmentPartner->id)
+        $properties = PropertiesDetails::where('development_partner_id' , $developmentPartner->id)
             ->where('is_active', 1)
             ->orderBy('created_at', 'desc')
             ->get();

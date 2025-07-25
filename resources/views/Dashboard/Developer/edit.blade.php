@@ -93,7 +93,7 @@
                 {{-- Total Completed Area --}}
                 <div>
                     <label for="total_completed_area" class="block font-semibold text-adminTextPrimary mb-1">
-                        Total Completed Area
+                        Total Completed Projects
                     </label>
                     <input type="text" id="total_completed_area" name="total_completed_area"
                         value="{{old('total_completed_area', $developmentPartner->total_completed_area)}}"

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\Blogs;
+use App\Models\PropertiesDetails;
 use Illuminate\Support\Facades\Auth;
 
 class BlogsController extends Controller
@@ -19,8 +20,10 @@ class BlogsController extends Controller
     public function show($slug)
     {
         $blog = Blogs::where('slug', $slug)->firstOrFail();
+        $projectOfTheDay = PropertiesDetails::where('is_active', 1)->inRandomOrder()->take(5)->get();
+        $exploreOurBlog = Blogs::where('is_active', 1)->inRandomOrder()->take(5)->get();
 
-        return view('Pages.single-blog', compact('blog'));
+        return view('Pages.single-blog', compact('blog', 'projectOfTheDay', 'exploreOurBlog'));
     }
 
     public function create()

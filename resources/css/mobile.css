@@ -10,6 +10,13 @@
 
     }
 
+    /* Form Card */
+    .contact-form {
+        border: 1px solid #60011E;
+        border-radius: 15px;
+        padding: 20px 10px;
+    }
+
     .mobile-menu-button {
         width: 30px;
         height: 30px;
@@ -19,7 +26,7 @@
     .contact-form input,
     .contact-form textarea {
         border: none;
-        border-bottom: 2px solid #ccc;
+        border-bottom: 1px solid #ccc;
         padding: 5px 10px;
         font-size: 12px;
         width: 100%;
@@ -689,10 +696,11 @@
     }
 
     .project-each-slider-mobile.featured-investment-card .project-page-image-dev {
-        max-height: 100px !important;
-        min-height: 100px;
+        max-height: 80px !important;
+        min-height: 80px;
         object-fit: cover;
         margin-bottom: 0px;
+        border-radius: 10px;
     }
 
 
@@ -772,11 +780,12 @@
         width: 100%;
         height: 100%;
         border-radius: 20px
-
     }
+
     .legacy-card.verified-property h3 {
         @apply text-[24px] font-semibold mb-1;
-    }   
+    }
+
     .legacy-card.verified-property p {
         @apply text-[14px] font-normal mb-1;
     }
@@ -813,6 +822,26 @@
 
     .open-roles a {
         @apply bg-primary mt-1.5 inline-flex items-center justify-center hover:bg-white border hover:text-primary hover:border-primary text-white py-1 rounded-[15px] w-full transition duration-300;
+    }
+
+    .thumbnailSwiper img {
+        @apply w-full h-full object-cover rounded-lg md:max-h-[120px];
+
+    }
+
+    .featured-investment-card-single-page{
+        min-width: 300px;
+    }
+    .featured-investment-card-single-page .featured-investment-image-dev {
+        max-height: 170px !important;
+        min-height: 170px;
+        object-fit: cover;
+    }
+    .featured-investment-card-single-page .featured-investment-image-dev .featured-investment-img {
+        height: 100% !important;
+        object-fit: cover;
+        border-radius: 15px;
+        width: 100%;
     }
 
 }

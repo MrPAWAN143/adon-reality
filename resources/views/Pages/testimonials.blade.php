@@ -66,6 +66,12 @@
 
   @media (max-width:600px) {
 
+    .trending-slide {
+      width: auto;
+      height: 320px;
+      position: relative;
+    }
+
     .trending-slide-img img {
       width: 150px !important;
       height: 273px !important;

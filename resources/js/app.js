@@ -1,13 +1,11 @@
 import './bootstrap';
-import '../../public/assets/css/homepage.css';
-import '../../public/assets/css/faq.css';
-import '../../public/assets/css/master.css';
-import '../../public/assets/css/mobile.css';
-
-
+import '../css/faq.css';
+import '../css/app.css';
+import '../css/homepage.css';
+import '../css/master.css';
+import '../css/mobile.css';
 
 import Alpine from 'alpinejs';
-
 
 
 window.Alpine = Alpine;

@@ -3,8 +3,6 @@
 <title>Adon Reality - Blog</title>
 @endsection
 @section('styles')
-<link rel="stylesheet" href="{{ asset('assets/css/master.css') }}">
-
 @endsection
 
 @section('content')

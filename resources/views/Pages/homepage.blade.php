@@ -16,8 +16,7 @@
         /* Secondary */
     }
 </style>
-<link rel="stylesheet" href="{{ asset('assets/css/homepage.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/mobile.css') }}">
+
 
 @endsection
 @section('homepage')
@@ -192,7 +191,7 @@
             @foreach ($primeLocation as $property)
             <!-- Card 1 -->
             <a href="{{ route('projects.each', $property->property_slug) }}" class="relative rounded-[15px] overflow-hidden group md:min-h-[230px] md:max-h-[245px] md:w-[100%] md:h-[100%] md:min-w-[250px] w-[100%] h-[100%] min-w-[160px] min-h-[160px]  ">
-                <img src="{{ asset($property->property_featured_image) }}" alt="{{ $property->property_name }}" class="prime-location-image" />
+                <img src="{{ asset($property->prime_thumbnail_image ? $property->prime_thumbnail_image : $property->property_featured_image) }}" alt="{{ $property->property_name }}" class="prime-location-image" />
                 <div class="prime-location-overlay">
                     <span class="prime-location-name">{{ $property->property_city }}</span>
                 </div>
@@ -310,7 +309,7 @@
             @foreach ($virtualTours as $property)
             <a href="{{ route('projects.each' , $property->property_slug) }}" class="group w-[350px] h-[480px]">
                 <div class="relative rounded-[15px] overflow-hidden shadow-md ">
-                    <img src="{{ asset($property->property_featured_image) }}" alt="{{ $property->property_name }}" class="w-[350px] h-[450px] object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img src="{{ asset($property->explore_virtual_thumbnail_image ? $property->explore_virtual_thumbnail_image : $property->property_featured_image) }}" alt="{{ $property->property_name }}" class="w-[350px] h-[450px] object-cover group-hover:scale-105 transition-transform duration-300">
                     <div class="absolute bottom-0 left-0 w-full p-3 bg-gradient-to-t from-txBlack via-transparent to-transparent text-white text-left">
                         <h3 class="text-[24px] font-medium mb-1 tracking-tight">{{ $property->property_name }}</h3>
                         <p class="text-[16px] leading-5 tracking-tight">{{ $property->property_location }} , {{ $property->property_city }}</p>
@@ -343,7 +342,7 @@
             @foreach ($virtualTours as $property)
             <a href="{{ route('projects.each' , $property->property_slug) }}">
                 <div class="relative rounded-[15px] overflow-hidden shadow-md group">
-                    <img src="{{ asset($property->property_featured_image) }}" alt="{{ $property->property_name }}" class="w-full  object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img src="{{ asset($property->explore_virtual_thumbnail_image ? $property->explore_virtual_thumbnail_image : $property->property_featured_image) }}" alt="{{ $property->property_name }}" class="w-full  object-cover group-hover:scale-105 transition-transform duration-300">
                     <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-white text-left">
                         <h3 class="text-2xl font-medium mb-2">{{ $property->property_name }}</h3>
                         <p class="text-xs">{{ $property->property_location }} , {{ $property->property_city }}</p>

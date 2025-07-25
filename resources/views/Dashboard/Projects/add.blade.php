@@ -123,6 +123,19 @@
                     </select>
                 </div>
 
+                <div class="hidden" id="prime_thumbnail_image_container">
+                    <label for="prime_thumbnail_image">Prime Thumbnail Image</label>
+                    <input type="file" id="prime_thumbnail_image" name="prime_thumbnail_image"
+                        class="w-full border border-adminInputBorder rounded px-3 py-2 bg-white file:mr-3 file:rounded
+                                  file:border-0 file:bg-adminPrimary file:px-3 file:py-1 file:text-white hover:file:bg-adminPrimaryHover">
+                </div>
+                <div class="hidden" id="explore_virtual_image_container">
+                    <label for="explore_virtual_thumbnail_image">Explore Virtual Thumbnail Image</label>
+                    <input type="file" id="explore_virtual_thumbnail_image" name="explore_virtual_thumbnail_image"
+                        class="w-full border border-adminInputBorder rounded px-3 py-2 bg-white file:mr-3 file:rounded
+                                  file:border-0 file:bg-adminPrimary file:px-3 file:py-1 file:text-white hover:file:bg-adminPrimaryHover">
+                </div>
+
 
                 {{-- Status --}}
                 <div>
@@ -307,6 +320,14 @@
 
                 {{-- gallery upload --}}
                 <div class="md:col-span-2">
+                    <label class="block font-semibold text-adminTextPrimary mb-1" for="property_banner">Property Banner</label>
+                    <input type="file" id="property_banner" name="property_banner"
+                        class="w-full border border-adminInputBorder rounded px-3 py-2 bg-white file:mr-3 file:rounded
+                                  file:border-0 file:bg-adminPrimary file:px-3 file:py-1 file:text-white hover:file:bg-adminPrimaryHover">
+                </div>
+
+                {{-- gallery upload --}}
+                <div class="md:col-span-2">
                     <label class="block font-semibold text-adminTextPrimary mb-1" for="property_gallery">Gallery (Images)</label>
                     <input type="file" id="property_gallery" name="property_gallery[]" multiple
                         class="w-full border border-adminInputBorder rounded px-3 py-2 bg-white file:mr-3 file:rounded
@@ -348,9 +369,9 @@
                         class="forBorder w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary"></textarea>
                 </div>
 
-                {{-- Expected Benefits / Who should invest --}}
+                {{-- Expected Benefits / Why to invest --}}
                 <div class="md:col-span-2">
-                    <label class="block font-semibold text-adminTextPrimary mb-1" for="property_benefits">Who to invest in this project</label>
+                    <label class="block font-semibold text-adminTextPrimary mb-1" for="property_benefits">Why to invest in this project</label>
                     <textarea id="property_benefits" name="property_benefits" rows="5"
                         class="forBorder w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary"></textarea>
                 </div>
@@ -553,37 +574,81 @@
                 processData: false,
                 success: function(response) {
                     let status = response.status;
-                    let message = response.message
-                    if (status == 'success') {
-                        $('#messageTitle').text(status).addClass('text-green-600').removeClass('text-red-600');
+                    let message = response.message;
+
+                    if (status === 'success') {
+                        $('#messageTitle').text('Success').addClass('text-green-600').removeClass('text-red-600');
                         $('#messageContent').text(message);
                         $('#messageModal').removeClass('hidden');
+
+                        // Clear dynamic lists
+                        $('#unitTypeList').empty();
+                        $('#amenitiesList').empty();
+                        $('#locationAdvantagesList').empty();
+
+                        // Clear CKEditor fields
+                        CKEDITOR.instances['property_description'].setData('');
+                        CKEDITOR.instances['property_meta_description'].setData('');
+                        CKEDITOR.instances['property_benefits'].setData('');
+
+                        // Redirect after 1 second
+                        setTimeout(() => {
+                            window.location.href = url.list;
+                        }, 1000);
                     }
+
                     $('.container').show();
                     $('.loadingbtn').hide();
-                    $('#unitTypeList').empty();
-                    $('#amenitiesList').empty();
-                    $('#locationAdvantagesList').empty();
-                    property_description = '';
-                    property_meta_description = '';
-                    property_benefits = '';
-                    setTimeout(() => {
-                        window.location.href = url.list;
-                    }, 1000);
                 },
                 error: function(err) {
-                    let error = err.responseJSON.errors;
-                    $.each(error, (field, message) => {
-                        $('#messageTitle').text(field).addClass('text-red-600').removeClass('text-green-600');
-                        $('#messageContent').text(message);
-                        $('#messageModal').removeClass('hidden');
-                    })
                     $('.container').show();
                     $('.loadingbtn').hide();
+
+                    // Clear previous message contents
+                    $('#messageContent').html('');
+
+                    if (err.responseJSON) {
+                        const res = err.responseJSON;
+
+                        if (res.errors) {
+                            // Laravel validation errors
+                            let allMessages = '';
+                            $.each(res.errors, function(field, messages) {
+                                allMessages += `<div>• ${messages}</div>`;
+                            });
+
+                            $('#messageTitle').text('Validation Error').addClass('text-red-600').removeClass('text-green-600');
+                            $('#messageContent').html(allMessages);
+                            $('#messageModal').removeClass('hidden');
+
+                        } else if (res.message) {
+                            // Laravel caught exception (like duplicate entry)
+                            $('#messageTitle').text('Error').addClass('text-red-600').removeClass('text-green-600');
+                            $('#messageContent').text(res.message);
+                            $('#messageModal').removeClass('hidden');
+
+                        } else {
+                            // Unknown error response format
+                            $('#messageTitle').text('Error').addClass('text-red-600').removeClass('text-green-600');
+                            $('#messageContent').text('An unexpected error occurred.');
+                            $('#messageModal').removeClass('hidden');
+                            console.error('Unknown error:', err);
+                        }
+
+                    } else {
+                        // Network or server error
+                        $('#messageTitle').text('Server Error').addClass('text-red-600').removeClass('text-green-600');
+                        $('#messageContent').text('Something went wrong. Please check your connection or try again later.');
+                        $('#messageModal').removeClass('hidden');
+                        console.error('AJAX Fatal Error:', err);
+                    }
                 }
             });
+
+
         });
     });
+
 
 
     $(document).ready(function() {
@@ -599,5 +664,19 @@
         list: "{{ route('project.list') }}"
 
     }
+
+    $('#property_type').on('change', function() {
+        const selectedId = $(this).val();
+        if (selectedId == "Prime") {
+            $('#prime_thumbnail_image_container').removeClass('hidden').addClass('block');
+            $('#explore_virtual_image_container').addClass('hidden').removeClass('block');
+        } else if (selectedId == "Virtual") {
+            $('#prime_thumbnail_image_container').addClass('hidden').removeClass('block');
+            $('#explore_virtual_image_container').removeClass('hidden').addClass('block');
+        } else {
+            $('#prime_thumbnail_image_container').addClass('hidden').removeClass('block');
+            $('#explore_virtual_image_container').addClass('hidden').removeClass('block');
+        }
+    });
 </script>
 @endsection
