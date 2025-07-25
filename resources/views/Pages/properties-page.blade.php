@@ -3,7 +3,6 @@
 <title>Adon Reality - Project</title>
 @endsection
 @section('styles')
-<link rel="stylesheet" href="{{ asset('assets/css/master.css') }}">
 @endsection
 @section('content')
 <section class="max-w-[1100px] mx-auto px-4 md:px-0 py-0">

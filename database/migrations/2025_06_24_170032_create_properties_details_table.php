@@ -36,6 +36,9 @@ return new class extends Migration
             $table->text('property_benefits')->nullable();
             $table->json('property_amenities')->nullable();
             $table->json('property_location_advantages')->nullable();
+            $table->string('prime_thumbnail_image')->nullable();
+            $table->string('explore_virtual_thumbnail_image')->nullable();
+
 
             // ─── Area Breakdown ───────────────────────────────────────
             $table->string('total_area_of_land')->nullable();   // acres
@@ -50,6 +53,7 @@ return new class extends Migration
             $table->string('starting_price')->nullable();
 
             // ─── Media ────────────────────────────────────────────────
+            $table->string('property_banner')->nullable();
             $table->string('property_video_url')->nullable();
             $table->string('property_brochure_url')->nullable();
 

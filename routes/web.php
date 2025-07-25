@@ -45,6 +45,7 @@ Route::get('/testimonials', [MasterController::class, 'testimonials'])->name('te
 Route::get('/terms-and-conditions', [MasterController::class, 'termsAndConditions'])->name('terms-and-conditions');
 
 Route::post('/leads/store', [QueryController::class, 'store'])->name('leads.store');
+Route::post('/enquery', [QueryController::class, 'additionalEnquiry'])->name('additionalEnquiry.store');
 
 
 

@@ -3,8 +3,6 @@
 <title>Adon Realty - Terms and Conditions</title>
 @endsection
 @section('styles')
-<link rel="stylesheet" href="{{ asset('assets/css/master.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/homepage.css') }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 @endsection

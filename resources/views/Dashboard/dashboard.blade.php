@@ -18,53 +18,61 @@
 
             <!-- Stats Cards -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-                <div class="bg-gradient-to-r from-green-100 to-green-200 p-5 rounded-xl shadow hover:shadow-lg transition">
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-green-500 text-white p-3 rounded-full">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-700">Total Projects</p>
-                            <p class="text-xl font-bold text-green-900">128</p>
+                <a href="{{ route('project.list') }}">
+                    <div class="bg-gradient-to-r from-green-100 to-green-200 p-5 rounded-xl shadow hover:shadow-lg transition">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-green-500 text-white p-3 rounded-full">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-700">Total Projects</p>
+                                <p class="text-xl font-bold text-green-900">{{ $totalProperties }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="bg-gradient-to-r from-blue-100 to-blue-200 p-5 rounded-xl shadow hover:shadow-lg transition">
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-blue-500 text-white p-3 rounded-full">
-                            <i class="fas fa-blog"></i>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-700">Blog Posts</p>
-                            <p class="text-xl font-bold text-blue-900">24</p>
+                <a href="{{ route('blog.list') }}">
+                    <div class="bg-gradient-to-r from-blue-100 to-blue-200 p-5 rounded-xl shadow hover:shadow-lg transition">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-blue-500 text-white p-3 rounded-full">
+                                <i class="fas fa-blog"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-700">Blog Posts</p>
+                                <p class="text-xl font-bold text-blue-900">{{ $totalBlogPosts }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="bg-gradient-to-r from-purple-100 to-purple-200 p-5 rounded-xl shadow hover:shadow-lg transition">
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-purple-500 text-white p-3 rounded-full">
-                            <i class="fas fa-photo-video"></i>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-700">Event Media</p>
-                            <p class="text-xl font-bold text-purple-900">12</p>
+                <a href="{{ route('event.list') }}">
+                    <div class="bg-gradient-to-r from-purple-100 to-purple-200 p-5 rounded-xl shadow hover:shadow-lg transition">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-purple-500 text-white p-3 rounded-full">
+                                <i class="fas fa-photo-video"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-700">Event Media</p>
+                                <p class="text-xl font-bold text-purple-900">{{ $totalEvents }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="bg-gradient-to-r from-yellow-100 to-yellow-200 p-5 rounded-xl shadow hover:shadow-lg transition">
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-yellow-500 text-white p-3 rounded-full">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-700">Awards</p>
-                            <p class="text-xl font-bold text-yellow-900">6</p>
+                <a href="{{ route('award.list') }}">
+                    <div class="bg-gradient-to-r from-yellow-100 to-yellow-200 p-5 rounded-xl shadow hover:shadow-lg transition">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-yellow-500 text-white p-3 rounded-full">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-700">Awards</p>
+                                <p class="text-xl font-bold text-yellow-900">{{ $totalAwards }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -76,13 +84,13 @@
                         <div class="flex items-center space-x-4 mb-4">
                             <div class="flex-1">
                                 <p class="text-sm text-gray-700">New Leads</p>
-                                <p class="text-xl font-bold text-green-600">{{ $newLeads }}</p>
+                                <p class="text-xl font-bold text-green-600"><a href="{{ route('index.leads') }}">{{ $newLeads }}</a></p>
                             </div>
                             <div class="flex-1">
                                 <p class="text-sm text-gray-700">Leads Converted</p>
-                                <p class="text-xl font-bold text-blue-600">5</p>
+                                <!-- <p class="text-xl font-bold text-blue-600">5</p> -->
                             </div>
-                    </div>
+                        </div>
                     </div>
                 </div>
                 <!-- Welcome Message -->

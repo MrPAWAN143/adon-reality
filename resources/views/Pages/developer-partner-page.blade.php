@@ -3,7 +3,6 @@
 <title>Adon Reality - Developer Partners</title>
 @endsection
 @section('styles')
-<link rel="stylesheet" href="{{ asset('assets/css/master.css') }}">
 
 @endsection
 

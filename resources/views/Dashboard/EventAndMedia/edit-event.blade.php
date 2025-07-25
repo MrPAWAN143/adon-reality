@@ -1,4 +1,4 @@
-@extends('Dashboard.Layouts.app')
+@extends('Dashboard.layouts.app')
 
 @section('metadata')
 <title>Edit Media and Event – {{ $blog->title ?? 'Demo Title' }}</title>

@@ -3,9 +3,6 @@
 <title>Adon Realty - News and PR</title>
 @endsection
 @section('styles')
-<link rel="stylesheet" href="{{ asset('assets/css/homepage.css') }}">
-
-
 @endsection
 
 @section('content')

@@ -3,9 +3,7 @@
 <title> Adon Realty - Careers</title>
 @endsection
 @section('styles')
-<link rel="stylesheet" href="{{ asset('assets/css/homepage.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/master.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/mobile.css') }}">
+
 @endsection
 @section('content')
 <section class="max-w-[1100px] mx-auto px-4 md:px-0 pb-2 pt-1">

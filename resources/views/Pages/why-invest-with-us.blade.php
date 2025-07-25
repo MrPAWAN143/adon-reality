@@ -3,7 +3,6 @@
 <title> Adon Realty - Why Invest With Us</title>
 @endsection
 @section('styles')
-<link rel="stylesheet" href="{{ asset('assets/css/homepage.css') }}">
 @endsection
 @section('content')
 <section class="max-w-7xl mx-auto px-4 md:px-8 py-2">

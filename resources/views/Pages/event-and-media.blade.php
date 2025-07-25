@@ -3,8 +3,6 @@
 <title>Adon Realty - Events and Media</title>
 @endsection
 @section('styles')
-<link rel="stylesheet" href="{{ asset('assets/css/master.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/mobile.css') }}">
 @endsection
 
 @section('content')

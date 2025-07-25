@@ -3,9 +3,6 @@
 <title> Adon Realty - Verified Properties</title>
 @endsection
 @section('styles')
-<link rel="stylesheet" href="{{ asset('assets/css/homepage.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/master.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/mobile.css') }}">
 
 @endsection
 @section('content')
