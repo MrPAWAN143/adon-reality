@@ -760,13 +760,21 @@
     .legacy-card {
         min-width: 150px;
         width: 100%;
-        min-height: 150px;
+        min-height: 140px;
         height: 100%;
         @apply border-2 border-primary rounded-lg py-8 px-3;
     }
 
     .legacy-card img {
         @apply w-8 h-8 rounded-lg mb-2;
+        
+    }
+
+    .legacy-card.career img{
+        display: block
+    }
+    .legacy-card h3 {
+        @apply text-[20px] font-bold mb-1;
     }
 
     .legacy-card p {

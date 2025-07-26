@@ -16,10 +16,10 @@
 
 
     <div class="max-w-[1100px] mx-auto grid grid-cols-2 md:grid-cols-4 md:gap-6 gap-4 md:px-0 px-4 place-items-center">
-        <x-legacy-card class="legacy-card flex flex-col items-center justify-center gap-3 " imgClass="w-10 h-10 rounded-lg mb-4" image="{{ asset('assets/images/icons/collaboration.svg') }}" description="Collaboration" descriptionClass="!text-lg" />
-        <x-legacy-card class="legacy-card flex flex-col items-center justify-center gap-3 !py-4" imgClass="w-10 h-10 rounded-lg mb-4" image="{{ asset('assets/images/icons/innovation.svg') }}" description="Innovation" descriptionClass="!text-lg" />
-        <x-legacy-card class="legacy-card flex flex-col items-center justify-center gap-3 !py-4" imgClass="w-10 h-10 rounded-lg mb-4" image="{{ asset('assets/images/icons/work-life-balance.svg') }}" description="Work-Life Balance" descriptionClass="!text-lg" />
-        <x-legacy-card class="legacy-card flex flex-col items-center justify-center gap-3 !py-4" imgClass="w-10 h-10 rounded-lg mb-4" image="{{ asset('assets/images/icons/growth.svg') }}" description="Growth" descriptionClass="!text-lg" />
+        <x-legacy-card class="legacy-card career flex flex-col items-center justify-center gap-3 " imgClass="w-10 h-10 rounded-lg mb-4" image="{{ asset('assets/images/icons/collaboration.svg') }}" description="Collaboration" descriptionClass="!text-lg" />
+        <x-legacy-card class="legacy-card career flex flex-col items-center justify-center gap-3 !py-4" imgClass="w-10 h-10 rounded-lg mb-4" image="{{ asset('assets/images/icons/innovation.svg') }}" description="Innovation" descriptionClass="!text-lg" />
+        <x-legacy-card class="legacy-card career flex flex-col items-center justify-center gap-3 !py-4" imgClass="w-10 h-10 rounded-lg mb-4" image="{{ asset('assets/images/icons/work-life-balance.svg') }}" description="Work-Life Balance" descriptionClass="!text-lg" />
+        <x-legacy-card class="legacy-card career flex flex-col items-center justify-center gap-3 !py-4" imgClass="w-10 h-10 rounded-lg mb-4" image="{{ asset('assets/images/icons/growth.svg') }}" description="Growth" descriptionClass="!text-lg" />
     </div>
 </section>
 

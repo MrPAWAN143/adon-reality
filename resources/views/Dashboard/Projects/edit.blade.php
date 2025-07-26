@@ -470,12 +470,12 @@
 
                 <div class="md:col-span-2">
                     <label class="block font-semibold text-adminTextPrimary mb-1" for="property_meta_title">Meta Title</label>
-                    <input value="{{ old('property_meta_title', 'Best Luxury Apartments in Mumbai – Sunshine Group') }}" id="property_meta_title" name="property_meta_title" type="text" class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
+                    <input value="{{ old('property_meta_title', $property->property_meta_title) }}" id="property_meta_title" name="property_meta_title" type="text" class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
                 </div>
 
                 <div class="md:col-span-2">
                     <label class="block font-semibold text-adminTextPrimary mb-1" for="property_meta_keywords">Meta Keywords</label>
-                    <input value="{{ old('property_meta_keywords', 'apartments, mumbai, luxury, real estate') }}" id="property_meta_keywords" name="property_meta_keywords" type="text" class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
+                    <input value="{{ old('property_meta_keywords', $property->property_meta_keywords) }}" id="property_meta_keywords" name="property_meta_keywords" type="text" class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
                 </div>
 
                 <div class="md:col-span-2">

@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="w-full -mt-2">
-        <p class="md:pr-[15%] pr-0 text-[8px] md:text-sm pb-3">DLF Limited is one of India's most prestigious and trusted real estate developers, with over seven decades of excellence. Known for creating iconic residential, commercial, and retail properties across the country, DLF has redefined urban living through thoughtful design, unmatched construction quality, and world-class amenities. With a legacy built on innovation and integrity, DLF continues to shape skylines and create vibrant communities that stand the test of time.</p>
+        <p class="md:pr-[15%] pr-0 text-[8px] md:text-sm pb-3">{!! $developmentPartner->description !!}</p>
     </div>
 
     <div class="md:max-w-5xl w-full mx-auto px-4 md:py-4 py-1 md:pb-4">

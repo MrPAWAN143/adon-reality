@@ -23,10 +23,10 @@ return new class extends Migration
             $table->timestamp('published_date')->nullable();
             $table->boolean('is_featured')->default(false);
             $table->boolean('is_active')->default(true);
-            $table->string('meta_title')->nullable();
-            $table->string('meta_description')->nullable();
-            $table->string('meta_keywords')->nullable();
-            $table->string('canonical_url')->nullable();
+            $table->longText('meta_title')->nullable();
+            $table->longText('meta_description')->nullable();
+            $table->longText('meta_keywords')->nullable();
+            $table->longText('canonical_url')->nullable();
             $table->timestamps();
         });
     }

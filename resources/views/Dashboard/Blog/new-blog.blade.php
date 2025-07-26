@@ -60,7 +60,13 @@
                               file:border-0 file:bg-adminPrimary file:px-3 file:py-1 file:text-white hover:file:bg-adminPrimaryHover">
                 </div>
 
-
+                {{-- Banner Image --}}
+                <div>
+                    <label class="block font-semibold text-adminTextPrimary mb-1" for="banner_image">Banner Image</label>
+                    <input type="file" id="banner_image" name="banner_image"
+                        class="forBorder w-full border border-adminInputBorder rounded px-3 py-2 bg-white file:mr-3 file:rounded
+                              file:border-0 file:bg-adminPrimary file:px-3 file:py-1 file:text-white hover:file:bg-adminPrimaryHover">
+                </div>
 
                 {{-- Summary --}}
                 <div class="md:col-span-2">

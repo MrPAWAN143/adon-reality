@@ -44,6 +44,7 @@ class NewsAndPrController extends Controller
             'meta_description' => 'nullable|string|max:500',
             'meta_keywords' => 'nullable|string|max:255',
             'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'banner_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
             'author' => 'nullable|exists:users,id', // Assuming you have a users table
         ]);
 
@@ -59,6 +60,14 @@ class NewsAndPrController extends Controller
             $validated['featured_image'] = null; // Set to null if no file is uploaded
         }
 
+        if ($request->hasFile('banner_image')) {
+            $image = $request->file('banner_image');
+            $filename = uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->move('uploads/NewsAndPr', $filename);
+            $validated['banner_image'] = 'uploads/NewsAndPr/' . $filename;
+        } else {
+            $validated['banner_image'] = null; // Set to null if no file is uploaded
+        }
 
         $validated['author'] = Auth::user()->id; // Set the user_id to the currently authenticated user
 
@@ -99,6 +108,7 @@ class NewsAndPrController extends Controller
             'meta_description' => 'nullable|string|max:500',
             'meta_keywords' => 'nullable|string|max:255',
             'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'banner_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
 
         $validated['slug'] = Str::slug(strtolower($validated['slug'])) ?: Str::slug(strtolower($validated['title']));
@@ -116,6 +126,21 @@ class NewsAndPrController extends Controller
         } else {
             // Keep the old featured image if no new file is uploaded
             $validated['featured_image'] = $news->featured_image;
+        }
+
+        if ($request->hasFile('banner_image')) {
+            // Delete the old banner image if it exists
+            if ($news->banner_image && file_exists($news->banner_image)) {
+                unlink($news->banner_image);
+            }
+
+            $image = $request->file('banner_image');
+            $filename = uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->move('uploads/NewsAndPr', $filename);
+            $validated['banner_image'] = 'uploads/NewsAndPr/' . $filename;
+        } else {
+            // Keep the old banner image if no new file is uploaded
+            $validated['banner_image'] = $news->banner_image;
         }
 
         $validated['user_id'] = Auth::user()->id;

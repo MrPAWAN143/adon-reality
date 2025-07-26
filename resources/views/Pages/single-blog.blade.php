@@ -15,7 +15,7 @@
     <!-- Featured Image -->
     <div class="w-full overflow-hidden rounded-[15px] mt-2">
         <img
-            src="{{ asset($blog->bannerImage ?? 'assets/images/bannerImages/single-blog-page-banner.jpg') }}"
+            src="{{ asset($blog->banner_image ?? ' ') }}"
             alt="{{ $blog->title }}"
             class="w-full h-auto object-cover" />
     </div>
@@ -186,9 +186,15 @@
     <div class="container max-w-[1100px] mx-auto">
         <x-heading-subheading heading="Similar Blogs" subheading="" headingClass="heading" subHeadingClass="subheading" />
         <div class="grid md:grid-cols-3 gap-6 mx-auto place-items-center">
-            <x-blog-card cardCls="marketing-insights-card" class="featured-investment-img" src="{{asset('assets/images/allImages/marketing2.png')}}" alt="DLF Cyber City Tower" h4="Top Cities for Real Estate Investment in 2025" p="Discover where smart investors are putting their money this year." />
-            <x-blog-card cardCls="marketing-insights-card" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing3.png') }}" alt="M3M Corporate Heights" h4="5 Mistakes Every Property Investor Should Avoid" p="Learn common pitfalls and how to protect your real estate investment" />
-            <x-blog-card cardCls="marketing-insights-card" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing1.png') }}" alt="M3M Atrium" h4="Rental Income: Which Strategy Wins?" p="Compare long-term rental income with short-term property flipping profits." />
+          @if($similarBlogs && $similarBlogs->count() > 0)
+            @foreach ($similarBlogs as $blog)
+            <x-blog-card cardCls="marketing-insights-card" class="featured-investment-img" src="{{ asset($blog->featured_image) }}" alt="{{ $blog->title }}" h4="{{ $blog->title }}" p="{{ Str::limit($blog->excerpt, 100) }}" url="{{ route('blog.each', $blog->slug) }}" />
+            @endforeach
+          @else
+            <div class="text-center text-txBlack md:text-[16px] text-[12px] font-light">
+                No similar blogs available.
+            </div>
+          @endif
         </div>
 
     </div>
@@ -222,7 +228,7 @@
         $('.slick-slider-single-page').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
-            autoplay: false,
+            autoplay: true,
             autoplaySpeed: 2000
         });
     });

@@ -15,7 +15,7 @@
     <!-- Featured Image -->
     <div class="w-full overflow-hidden rounded-[15px] mt-2">
         <img
-            src="{{ asset('assets/images/bannerImages/news-and-pr-single-page-banner.jpg') }}"
+            src="{{ asset($news->banner_image ?? 'assets/images/bannerImages/news-and-pr-single-page-banner.jpg') }}"
             alt="Top Cities for Real Estate Investment"
             class="w-full h-auto object-cover" />
     </div>

@@ -17,6 +17,7 @@ class Blogs extends Model
         'meta_description',
         'meta_keywords',
         'featured_image',
+        'banner_image', // New field for banner image
         'user_id', // Assuming this is the author ID
     ];
 

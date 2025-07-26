@@ -423,9 +423,16 @@ textarea:focus {
 .legacy-card {
     max-width: 350px;
     width: 100%;
-    min-height: 200px;
+    min-height: 160px;
     height: 100%;
     @apply border-2 border-primary rounded-lg py-8 px-3;
+}
+.legacy-card img {
+   display: none
+}
+
+.legacy-card h3 {
+    @apply md:text-[32px]  font-bold mb-2;
 }
 
 .legacy-card p {

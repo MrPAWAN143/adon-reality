@@ -17,6 +17,7 @@ class NewsAndPr extends Model
         'meta_description',
         'meta_keywords',
         'featured_image',
+        'banner_image', // New field for banner image
         'author',
     ];
 

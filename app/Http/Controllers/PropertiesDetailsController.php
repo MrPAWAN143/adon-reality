@@ -21,6 +21,7 @@ class PropertiesDetailsController extends Controller
 
     public function index()
     {
+        
         $properties = PropertiesDetails::with('category', 'developmentPartner')
             ->orderBy('created_at', 'desc')
             ->get();
@@ -113,8 +114,8 @@ class PropertiesDetailsController extends Controller
                 'property_zip_code' => 'nullable|string|max:20',
                 'property_amenities' => 'nullable|array',
                 'property_location_advantages' => 'nullable|array',
-                'property_meta_title' => 'nullable|string|max:255',
-                'property_meta_keywords' => 'nullable|string|max:255',
+                'property_meta_title' => 'nullable|string',
+                'property_meta_keywords' => 'nullable|string',
                 'property_meta_description' => 'nullable|string',
                 'property_description' => 'nullable|string',
                 'property_benefits' => 'nullable|string',
@@ -281,8 +282,8 @@ class PropertiesDetailsController extends Controller
                 'property_zip_code' => 'nullable|string|max:20',
                 'property_amenities' => 'nullable|array',
                 'property_location_advantages' => 'nullable|array',
-                'property_meta_title' => 'nullable|string|max:255',
-                'property_meta_keywords' => 'nullable|string|max:255',
+                'property_meta_title' => 'nullable|string',
+                'property_meta_keywords' => 'nullable|string',
                 'property_meta_description' => 'nullable|string',
                 'property_description' => 'nullable|string',
                 'property_benefits' => 'nullable|string',
