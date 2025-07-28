@@ -2,18 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Testimony;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Models\DevelopmentPartners; // Assuming you have a model named DevelopmentPartner
 use App\Models\PropertiesDetails; // Assuming you have a model named PropertiesDetails
+use App\Models\DevelopmentPartners; // Assuming you have a model named DevelopmentPartner
 
 class DevelopmentPartnersController extends Controller
 {
     public function index()
     {
         $developmentPartner = DevelopmentPartners::all();
-        return view('Pages.developer-partner-page', compact('developmentPartner'));
+        $testimonials = Testimony::where('is_active', 1)
+            ->orderBy('created_at', 'desc')
+            ->get();
+        return view('Pages.developer-partner-page', compact('developmentPartner', 'testimonials'));
     }
 
     public function show(Request $request, $slug)

@@ -3,8 +3,13 @@
 @section('metadata')
 <title>Create New Award / Recognition</title>
 <style>
-    .forBorder {
-        border-color: #49717B !important
+      .forBorder {
+        border: 1px solid #49717B !important;
+        border-color: #49717B !important;
+    }
+    .forBorder:focus {
+        border-color: #49717B !important;
+     border: 1px solid #49717B !important;
     }
 </style>
 @endsection
@@ -50,7 +55,7 @@
                 <div>
                     <label class="block font-semibold text-adminTextPrimary mb-1" for="by">Presented By</label>
                     <input id="by" name="by" type="text"
-                        placeholder="CNBC, CREDAI, etc."
+                        placeholder="e.g. 1 April 2023"
                         class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
                 </div>
 
@@ -126,6 +131,9 @@
                 data: formData,
                 processData: false,
                 contentType: false,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
                 success: function(response) {
                     let status = response.status;
                     let message = response.message

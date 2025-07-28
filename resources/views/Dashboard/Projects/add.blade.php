@@ -103,6 +103,15 @@
                         class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
                 </div>
 
+                {{-- Property Location --}}
+                  <div>
+                    <label class="block font-semibold text-adminTextPrimary mb-1" for="google_map">Google Map Url</label>
+                    <input type="url" id="google_map" name="google_map"
+                        placeholder="Official Google Map link"
+                        class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
+                </div>
+
+
                 {{-- Size --}}
                 <div>
                     <label class="block font-semibold text-adminTextPrimary mb-1" for="property_size">Size (sq ft)</label>
@@ -572,6 +581,9 @@
                 data: formData,
                 contentType: false,
                 processData: false,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
                 success: function(response) {
                     let status = response.status;
                     let message = response.message;

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blogs;
 use App\Models\NewsAndPr;
+use App\Models\PropertiesDetails;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,15 +13,17 @@ class NewsAndPrController extends Controller
 {
     public function index()
     {
-        return view('Pages.news-and-pr');
+        $news = NewsAndPr::where('is_active', 1)->get();
+        return view('Pages.news-and-pr', compact('news'));
     }
 
     public function show($slug)
     {
-        // $news = NewsAndPr::where('slug', $slug)->firstOrFail();
-        
-
-        return view('Pages.single-news');
+        $projects = PropertiesDetails::where('is_active', 1)->with('developmentPartner' , 'category')->orderBy('created_at', 'desc')->get();
+        $blogs = Blogs::where('is_active', 1)->orderBy('created_at', 'desc')->get();
+        $similarNews = NewsAndPr::where('is_active', 1)->where('slug', '!=', $slug )->orderBy('created_at', 'desc')->inRandomOrder()->get();
+        $news = NewsAndPr::where('slug', $slug)->with('user')->firstOrFail();
+        return view('Pages.single-news', compact('news', 'projects', 'blogs', 'similarNews'));
     }
 
     public function create()
@@ -44,6 +48,7 @@ class NewsAndPrController extends Controller
             'meta_description' => 'nullable|string|max:500',
             'meta_keywords' => 'nullable|string|max:255',
             'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'banner_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
             'author' => 'nullable|exists:users,id', // Assuming you have a users table
         ]);
 
@@ -59,6 +64,14 @@ class NewsAndPrController extends Controller
             $validated['featured_image'] = null; // Set to null if no file is uploaded
         }
 
+        if ($request->hasFile('banner_image')) {
+            $image = $request->file('banner_image');
+            $filename = uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->move('uploads/NewsAndPr', $filename);
+            $validated['banner_image'] = 'uploads/NewsAndPr/' . $filename;
+        } else {
+            $validated['banner_image'] = null; // Set to null if no file is uploaded
+        }
 
         $validated['author'] = Auth::user()->id; // Set the user_id to the currently authenticated user
 
@@ -99,6 +112,9 @@ class NewsAndPrController extends Controller
             'meta_description' => 'nullable|string|max:500',
             'meta_keywords' => 'nullable|string|max:255',
             'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'banner_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'author' => 'nullable|exists:users,id', // Assuming you have a users table
+
         ]);
 
         $validated['slug'] = Str::slug(strtolower($validated['slug'])) ?: Str::slug(strtolower($validated['title']));
@@ -118,7 +134,22 @@ class NewsAndPrController extends Controller
             $validated['featured_image'] = $news->featured_image;
         }
 
-        $validated['user_id'] = Auth::user()->id;
+        if ($request->hasFile('banner_image')) {
+            // Delete the old banner image if it exists
+            if ($news->banner_image && file_exists($news->banner_image)) {
+                unlink($news->banner_image);
+            }
+
+            $image = $request->file('banner_image');
+            $filename = uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->move('uploads/NewsAndPr', $filename);
+            $validated['banner_image'] = 'uploads/NewsAndPr/' . $filename;
+        } else {
+            // Keep the old banner image if no new file is uploaded
+            $validated['banner_image'] = $news->banner_image;
+        }
+
+        $validated['author'] = Auth::user()->id;
 
         // Update the news article
         $news = $news->update($validated);

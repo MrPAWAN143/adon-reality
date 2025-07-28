@@ -9,7 +9,8 @@ class FeaturedAndAwardController extends Controller
 {
     public function index()
     {
-        return view('Pages.awards-and-recognitions');
+        $awards = FeaturedAndAward::where('is_active', 1)->get();
+        return view('Pages.awards-and-recognitions', compact('awards'));
     }
     public function createAwards()
     {

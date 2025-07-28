@@ -15,9 +15,9 @@
     <!-- Featured Image -->
     <div class="w-full overflow-hidden rounded-[15px] mt-2">
         <img
-            src="{{ asset($blog->bannerImage ?? 'assets/images/bannerImages/single-blog-page-banner.jpg') }}"
+            src="{{ asset($blog->banner_image ?? ' ') }}"
             alt="{{ $blog->title }}"
-            class="w-full h-auto object-cover" />
+            class="w-full h-auto object-cover md:max-h-[50vh] max-h-[30vh]" />
     </div>
 </section>
 
@@ -130,10 +130,10 @@
         <div class=" project-of-the-day md:px-0 px-4 ">
             <h3 class="md:text-[24px] text-[16px] font-semibold mx-5">Project of the Day</h3>
             <div class=" slick-slider-single-page" id="slick-slider">
-                  @if($projectOfTheDay && $projectOfTheDay->count() > 0)
+                @if($projectOfTheDay && $projectOfTheDay->count() > 0)
                 @foreach ($projectOfTheDay as $property)
                 <div class="featured-investment-card-single-page">
-                    <x-featured-investment-section imageClass=" " src="{{ asset($property->property_featured_image) }}" featuredCardClass="featured-investment-card-single-page-div" alt="{{ $property->property_name }}" heading="{{ $property->property_name }}" location="{{ $property->property_location ?? 'N/A' }}" rera="{{ $property->property_rera ?? 'N/A' }}" status="{{ $property->property_status ?? 'N/A' }}" roi="{{ $property->property_roi ?? 'N/A' }}" developer="{{ $property->property_developer ?? 'N/A' }}" variety="{{ $property->property_variety ?? 'N/A' }}" size="{{ $property->property_size ?? 'N/A' }}" price="{{ $property->property_price ?? 'N/A' }}" />
+                    <x-featured-investment-section imageClass=" " src="{{ asset($property->property_featured_image) }}" featuredCardClass="featured-investment-card-single-page-div" alt="{{ $property->property_name }}" heading="{{ $property->property_name }}" location="{{ $property->property_location }}" url="{{ $property->property_rera_url }}" rera="{{ $property->property_rera_number }}" status="{{ $property->property_status }}" roi="{{ $property->property_expected_roi }}" developer="{{ $property->developmentPartner->developer_name }}" variety="{{ $property->category->name }}" size="{{ $property->property_size }}" price="{{ $property->starting_price }}" />
                     <x-button class="featured-investment-button-single-page" url="{{ route('projects.each' , $property->property_slug) }}" text="View Details" />
                 </div>
                 @endforeach
@@ -149,7 +149,7 @@
         <div class="single-page-blog md:px-0 px-4">
             <h3 class="md:text-[24px] text-[16px] font-semibold mx-5">Explore our blogs</h3>
             <div class="pt-2 slick-slider-single-page" id="slick-slider2">
-                 @if($exploreOurBlog && $exploreOurBlog->count() > 0)
+                @if($exploreOurBlog && $exploreOurBlog->count() > 0)
                 @foreach ($exploreOurBlog as $blog)
                 <div class="marketing-insights-card-single-page">
                     <x-blog-card cardCls="marketing-insights-card  heading-h4 !p-3" imageWrapperClass="!h-52 w-full mb-2 overflow-hidden rounded-[15px]" class="featured-investment-img !mb-0" src="{{ asset($blog->featured_image) }}" alt="{{ $blog->title }}" h4="{{ $blog->title }}" p="{{ $blog->excerpt }}" url="{{ route('blog.each', $blog->slug) }}" />
@@ -167,18 +167,48 @@
 </section>
 
 
+@php
+$shareUrl = urlencode(url()->current());
+$shareText = urlencode("Check out this great read on Addon Reality!");
+@endphp
+
 
 <!-- Share Section -->
 <div class="text-center py-0 md:block hidden">
     <h3 class="text-[16px] md:text-[24px] text-txBlack font-semibold md:mb-4 mb-2">
         Enjoyed the article? Share it with your friends
     </h3>
-    <div class="flex justify-center gap-6 text-[#560018] text-[16px] md:text-[24px]">
-        <a href="#" aria-label="LinkedIn" class="hover:scale-110 transition"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" aria-label="Telegram" class="hover:scale-110 transition"><i class="fab fa-telegram-plane"></i></a>
-        <a href="#" aria-label="WhatsApp" class="hover:scale-110 transition"><i class="fab fa-whatsapp"></i></a>
-        <a href="#" aria-label="X (Twitter)" class="hover:scale-110 transition"><i class="fab fa-x-twitter"></i></a>
-        <a href="#" aria-label="Instagram" class="hover:scale-110 transition"><i class="fab fa-instagram"></i></a>
+
+    <div class="flex justify-center flex-wrap gap-5 text-[#560018] text-xl md:text-2xl">
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ $shareUrl }}"
+            target="_blank" aria-label="LinkedIn" class="hover:scale-110 transition transform">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+
+        <!-- Telegram -->
+        <a href="https://t.me/share/url?url={{ $shareUrl }}&text={{ $shareText }}"
+            target="_blank" aria-label="Telegram" class="hover:scale-110 transition transform">
+            <i class="fab fa-telegram-plane"></i>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://api.whatsapp.com/send?text={{ $shareText }}%20{{ $shareUrl }}"
+            target="_blank" aria-label="WhatsApp" class="hover:scale-110 transition transform">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <!-- X (Twitter) -->
+        <a href="https://twitter.com/intent/tweet?url={{ $shareUrl }}&text={{ $shareText }}"
+            target="_blank" aria-label="X" class="hover:scale-110 transition transform">
+            <i class="fab fa-x-twitter"></i>
+        </a>
+
+        <!-- Instagram (placeholder link) -->
+        <a href="https://www.instagram.com/addonreality"
+            target="_blank" aria-label="Instagram" class="hover:scale-110 transition transform">
+            <i class="fab fa-instagram"></i>
+        </a>
     </div>
 </div>
 
@@ -186,9 +216,15 @@
     <div class="container max-w-[1100px] mx-auto">
         <x-heading-subheading heading="Similar Blogs" subheading="" headingClass="heading" subHeadingClass="subheading" />
         <div class="grid md:grid-cols-3 gap-6 mx-auto place-items-center">
-            <x-blog-card cardCls="marketing-insights-card" class="featured-investment-img" src="{{asset('assets/images/allImages/marketing2.png')}}" alt="DLF Cyber City Tower" h4="Top Cities for Real Estate Investment in 2025" p="Discover where smart investors are putting their money this year." />
-            <x-blog-card cardCls="marketing-insights-card" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing3.png') }}" alt="M3M Corporate Heights" h4="5 Mistakes Every Property Investor Should Avoid" p="Learn common pitfalls and how to protect your real estate investment" />
-            <x-blog-card cardCls="marketing-insights-card" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing1.png') }}" alt="M3M Atrium" h4="Rental Income: Which Strategy Wins?" p="Compare long-term rental income with short-term property flipping profits." />
+            @if($similarBlogs && $similarBlogs->count() > 0)
+            @foreach ($similarBlogs as $blog)
+            <x-blog-card cardCls="marketing-insights-card" class="featured-investment-img" src="{{ asset($blog->featured_image) }}" alt="{{ $blog->title }}" h4="{{ $blog->title }}" p="{{ Str::limit($blog->excerpt, 100) }}" url="{{ route('blog.each', $blog->slug) }}" />
+            @endforeach
+            @else
+            <div class="text-center text-txBlack md:text-[16px] text-[12px] font-light">
+                No similar blogs available.
+            </div>
+            @endif
         </div>
 
     </div>
@@ -199,9 +235,16 @@
     <div class="container max-w-[1100px] mx-auto">
         <x-heading-subheading heading="Similar Blogs" subheading="" headingClass="heading" subHeadingClass="subheading" />
         <div class="project-slider profist gap-8 mx-auto">
-            <x-blog-card cardCls="marketing-insights-card" class="featured-investment-img" src="{{asset('assets/images/allImages/marketing2.png')}}" alt="DLF Cyber City Tower" h4="Top Cities for Real Estate Investment in 2025" p="Discover where smart investors are putting their money this year." />
-            <x-blog-card cardCls="marketing-insights-card" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing3.png') }}" alt="M3M Corporate Heights" h4="5 Mistakes Every Property Investor Should Avoid" p="Learn common pitfalls and how to protect your real estate investment" />
-            <x-blog-card cardCls="marketing-insights-card" class="featured-investment-img" src="{{ asset('assets/images/allImages/marketing1.png') }}" alt="M3M Atrium" h4="Rental Income: Which Strategy Wins?" p="Compare long-term rental income with short-term property flipping profits." />
+            @if($similarBlogs && $similarBlogs->count() > 0)
+            @foreach ($similarBlogs as $blog)
+            <x-blog-card cardCls="marketing-insights-card" class="featured-investment-img" src="{{asset($blog->featured_image)}}" alt="{{ $blog->title }}" h4="{{ $blog->title }}" p="{{ Str::limit($blog->excerpt, 100) }}" url="{{ route('blog.each', $blog->slug) }}" />
+            @endforeach
+            @else
+            <div class="text-center text-txBlack md:text-[16px] text-[12px] font-light">
+                No similar blogs available.
+            </div>
+            @endif
+
 
         </div>
     </div>
@@ -222,7 +265,7 @@
         $('.slick-slider-single-page').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
-            autoplay: false,
+            autoplay: true,
             autoplaySpeed: 2000
         });
     });

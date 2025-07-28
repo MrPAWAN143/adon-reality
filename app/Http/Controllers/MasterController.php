@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DevelopmentPartners;
+use App\Models\Testimony;
+use App\Models\TeamMember;
 use Illuminate\Http\Request;
+use App\Models\FeaturedAndAward;
+use App\Models\DevelopmentPartners;
 
 class MasterController extends Controller
 {
@@ -14,31 +17,45 @@ class MasterController extends Controller
 
     public function contact()
     {
-        return view('Pages.contact-us');
+        $testimonials = Testimony::where('is_active', 1)
+            ->orderBy('created_at', 'desc')
+            ->get();
+        return view('Pages.contact-us', compact('testimonials'));
     }
 
     public function aboutUs()
     {
+        $awards = FeaturedAndAward::where('is_active', 1)->inRandomOrder()->take(4)->get();
+        $teamMembers = TeamMember::where('is_active', 1)->get();
         $developmentPartner = DevelopmentPartners::where('is_active', 1)
            ->inRandomOrder()
            ->take(3)
            ->get();
-        return view('Pages.about-us', compact('developmentPartner'));
+        return view('Pages.about-us', compact('developmentPartner', 'teamMembers' , 'awards'));
     }
 
     public function service()
     {
-        return view('Pages.service-page');
+        $testimonials = Testimony::where('is_active', 1)
+            ->orderBy('created_at', 'desc')
+            ->get();
+        return view('Pages.service-page' , compact('testimonials'));
     }
 
     public function career()
     {
-        return view('Pages.career');
+        $testimonials = Testimony::where('is_active', 1)
+            ->orderBy('created_at', 'desc')
+            ->get();
+        return view('Pages.career', compact('testimonials'));
     }
 
     public function testimonials()
     {
-        return view('Pages.testimonials');
+        $testimonials = Testimony::where('is_active', 1)
+            ->orderBy('created_at', 'desc')
+            ->get();
+        return view('Pages.testimonials', compact('testimonials'));
     }
 
     public function termsAndConditions()

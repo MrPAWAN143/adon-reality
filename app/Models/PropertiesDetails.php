@@ -16,6 +16,7 @@ class PropertiesDetails extends Model
     'property_slug',
     'property_rera_number',
     'property_rera_url',
+    'google_map',
     'property_size',
     'property_type',
     'property_status',

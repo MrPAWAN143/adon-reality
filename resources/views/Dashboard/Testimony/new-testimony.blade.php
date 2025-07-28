@@ -3,8 +3,13 @@
 @section('metadata')
 <title>Create Testimony</title>
 <style>
-    .forBorder {
-        border-color: #49717B !important
+     .forBorder {
+        border: 1px solid #49717B !important;
+        border-color: #49717B !important;
+    }
+    .forBorder:focus {
+        border-color: #49717B !important;
+     border: 1px solid #49717B !important;
     }
 </style>
 @endsection
@@ -103,6 +108,9 @@
                 data: formData,
                 processData: false,
                 contentType: false,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
                 success: function(response) {
                     let status = response.status;
                     let message = response.message

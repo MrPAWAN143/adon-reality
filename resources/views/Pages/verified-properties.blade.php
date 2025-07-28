@@ -11,99 +11,128 @@
 </section>
 <x-banner-section class="px-4 relative h-[20vh] md:max-h-[45vh] md:h-[45vh]" mobileBanner="{{ asset('assets/images/bannerImages/verified-properties-banner.png') }}" image="{{ asset('assets/images/bannerImages/verified-properties-banner.png') }}" title="Verified Properties You Can Trust" subtitle="Every property listed here has been carefully verified to meet our highest standards of transparency and legal compliance." />
 
-<section class="py-8 md:pb-8 pb-5 bg-white text-center mx-auto">
+<section class="py-8 md:pb-8 pb-5 bg-white text-center mx-auto md:max-w-[1100px]">
     <h2 class="md:text-[24px] font-bold text-[16px] md:mb-8 mb-4 text-center">A Legacy of Trust</h2>
 
-    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 md:gap-6 gap-4 px-4">
-        <x-legacy-card class="legacy-card verified-property" title="10+" description="Years in the Real Estate Market" />
-        <x-legacy-card class="legacy-card verified-property" title="500+" description="Happy Investors" />
-        <x-legacy-card class="legacy-card verified-property" title="₹100 Cr+" description="Investment Managed" />
+    <div class="flex flex-wrap md:justify-between justify-center items-center gap-6 px-4">
+        <div class="w-[45%] md:w-[30%] max-w-xs">
+            <x-legacy-card class="legacy-card" title="17+" description="Years in the Real Estate Market" />
+        </div>
+        <div class=" w-[45%] md:w-[30%] max-w-xs ">
+            <x-legacy-card class="legacy-card" title="2000+" description="Happy Investors" />
+        </div>
+        <div class="w-auto md:w-[30%] max-w-xs flex justify-center">
+            <x-legacy-card class="legacy-card" title="₹1500 Cr+" description="Investment Managed" />
+        </div>
     </div>
 </section>
 
 
-<section class="py-4 bg-white text-center">
+<section class="py-4 bg-white text-center max-w-[1100px] mx-auto px-4 md:px-0">
     <h2 class="md:text-[24px] font-bold text-[16px] md:mb-8 mb-4 text-center">Why Choose Adon Realty</h2>
 
-    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 px-4">
+    
+    <div class=" mx-auto grid grid-cols-2 md:grid-cols-4 md:gap-6 gap-4 justify-between items-center">
+
+
+
         <x-choose-adon-reality>
-            <x-slot name="content">
-                <p class="font-semibold leading-5">Prime<br>Locations</p>
-            </x-slot>
-            <x-slot name="icon">
-                <x-zondicon-location class="w-6 h-6 text-primary" />
-            </x-slot>
+            <div class="flex flex-row-reverse items-center justify-between md:p-0 p-2">
+                <div class="bg-[#f7f2f3] rounded-xl max-h-[20] shadow-xl ">
+                    <x-zondicon-location class="w-6 h-6 text-primary" />
+                </div>
+                <div class="text-txBlack text-start order-1 md:pr-32 pr-20">
+                    <h3 class="font-semibold leading-5 text-[10px] md:text-[14px] ml-1">Prime<br>Locations</h3>
+                </div>
+            </div>
+
         </x-choose-adon-reality>
 
 
-        <!-- Item 2 -->
         <x-choose-adon-reality>
-            <x-slot name="content">
-                <p class="font-semibold leading-5">Pre-approved,<br>RERA-Compliant Projects</p>
-            </x-slot>
-            <x-slot name="icon">
-                <img src="{{ asset('assets/images/icons/pre-aproove-area.svg') }}" alt="Pre-approved Icon" class="w-6 h-6 text-primary">
-            </x-slot>
+            <div class="flex flex-row-reverse items-center justify-between md:p-0 p-2">
+                <div class="bg-[#f7f2f3] rounded-xl max-h-[20] shadow-xl ">
+                    <img src="{{ asset('assets/images/icons/pre-aproove-area.svg') }}" alt="Pre-approved Icon" class="w-6 h-6 text-primary">
+                </div>
+                <div class="text-txBlack text-start order-1 md:pr-32 pr-20">
+                    <h3 class="font-semibold leading-5 text-[10px] md:text-[14px] ml-1">High ROI<br>properties</h3>
+                </div>
+            </div>
+
         </x-choose-adon-reality>
 
-        <!-- Item 3 -->
+
         <x-choose-adon-reality>
-            <x-slot name="content">
-                <p class="font-semibold leading-5">Experienced<br>Advisory Team</p>
-            </x-slot>
-            <x-slot name="icon">
-                <img src="{{ asset('assets/images/icons/experienced-advisory.svg') }}" alt="Experienced Advisory Icon" class="w-6 h-6 text-primary">
-            </x-slot>
+            <div class="flex flex-row-reverse items-center justify-between md:p-0 p-2">
+                <div class="bg-[#f7f2f3] rounded-xl max-h-[20] shadow-xl ">
+                    <img src="{{ asset('assets/images/icons/experienced-advisory.svg') }}" alt="Experienced Advisory Icon" class="w-6 h-6 text-primary">
+                </div>
+                <div class="text-txBlack text-start order-1 md:pr-12 pr-10">
+                    <h3 class="font-semibold leading-5 text-[10px] md:text-[14px] ml-1">Experience <br>dAdvisory Team</h3>
+                </div>
+            </div>
+
         </x-choose-adon-reality>
 
-        <!-- Item 4 -->
         <x-choose-adon-reality>
-            <x-slot name="content">
-                <p class="font-semibold leading-5">Secure & Verified<br>Properties</p>
-            </x-slot>
-            <x-slot name="icon">
-                <img src="{{ asset('assets/images/icons/secure-verified-properties.svg') }}" alt="Experienced Advisory Icon" class="w-6 h-6 text-primary">
-            </x-slot>
+            <div class="flex flex-row-reverse items-center justify-between md:p-0 p-2">
+                <div class="bg-[#f7f2f3] rounded-xl max-h-[20] shadow-xl ">
+                    <img src="{{ asset('assets/images/icons/secure-verified-properties.svg') }}" alt="Experienced Advisory Icon" class="w-6 h-6 text-primary">
+                </div>
+                <div class="text-txBlack text-start order-1 md:pr-12 pr-10">
+                    <h3 class="font-semibold leading-5 text-[10px] md:text-[14px] ml-1">Secure & Verified<br>Properties</h3>
+                </div>
+            </div>
+
         </x-choose-adon-reality>
 
-        <!-- Item 5 -->
         <x-choose-adon-reality>
-            <x-slot name="content">
-                <p class="font-semibold leading-5">High ROI<br>properties</p>
-            </x-slot>
-            <x-slot name="icon">
-                <img src="{{ asset('assets/images/icons/high-roi-porperties.svg') }}" alt="Experienced Advisory Icon" class="w-6 h-6 text-primary">
-            </x-slot>
+            <div class="flex flex-row-reverse items-center justify-between md:p-0 p-2">
+                <div class="bg-[#f7f2f3] rounded-xl max-h-[20] shadow-xl ">
+                    <img src="{{ asset('assets/images/icons/personalised-investment-planning.svg') }}" alt="Experienced Advisory Icon" class="w-6 h-6 text-primary">
+                </div>
+                <div class="text-txBlack text-start order-1 md:pr-12 pr-10">
+                    <h3 class="font-semibold leading-5 text-[10px] md:text-[14px] ml-1">Personalised Investment Planning</h3>
+                </div>
+            </div>
+
         </x-choose-adon-reality>
 
-        <!-- Item 6 -->
         <x-choose-adon-reality>
-            <x-slot name="content">
-                <p class="font-semibold leading-5">Transparent<br>Dealings</p>
-            </x-slot>
-            <x-slot name="icon">
-                <img src="{{ asset('assets/images/icons/transparent-dealings.svg') }}" alt="Experienced Advisory Icon" class="w-6 h-6 text-primary">
-            </x-slot>
+            <div class="flex flex-row-reverse items-center justify-between md:p-0 p-2">
+                <div class="bg-[#f7f2f3] rounded-xl max-h-[20] shadow-xl ">
+                    <img src="{{ asset('assets/images/icons/pre-aproove-area.svg') }}" alt="Pre-approved Icon" class="w-6 h-6 text-primary">
+                </div>
+                <div class="text-txBlack text-start order-1 md:pr-12 pr-10">
+                    <h3 class="font-semibold leading-5 text-[10px] md:text-[14px] ml-1">Pre-approved,<br>RERA-Compliant Projects</h3>
+                </div>
+            </div>
+
         </x-choose-adon-reality>
 
-        <!-- Item 7 -->
         <x-choose-adon-reality>
-            <x-slot name="content">
-                <p class="font-semibold leading-5">Complete<br>Legal Support</p>
-            </x-slot>
-            <x-slot name="icon">
-                <img src="{{ asset('assets/images/icons/complete-legal-support.svg') }}" alt="Experienced Advisory Icon" class="w-6 h-6 text-primary">
-            </x-slot>
+            <div class="flex flex-row-reverse items-center justify-between md:p-0 p-2">
+                <div class="bg-[#f7f2f3] rounded-xl max-h-[20] shadow-xl ">
+                    <img src="{{ asset('assets/images/icons/transparent-dealings.svg') }}" alt="Experienced Advisory Icon" class="w-6 h-6 text-primary">
+                </div>
+                <div class="text-txBlack text-start order-1 md:pr-12 pr-10">
+                    <h3 class="font-semibold leading-5 text-[10px] md:text-[14px] ml-1">Transparent<br>Dealings</h3>
+                </div>
+            </div>
+
         </x-choose-adon-reality>
 
-        <!-- Item 8 -->
+
         <x-choose-adon-reality>
-            <x-slot name="content">
-                <p class="font-semibold leading-5">Personalised<br>Investment Planning</p>
-            </x-slot>
-            <x-slot name="icon">
-                <img src="{{ asset('assets/images/icons/personalised-investment-planning.svg') }}" alt="Experienced Advisory Icon" class="w-6 h-6 text-primary">
-            </x-slot>
+            <div class="flex flex-row-reverse items-center justify-between md:p-0 p-2">
+                <div class="bg-[#f7f2f3] rounded-xl max-h-[20] shadow-xl ">
+                    <img src="{{ asset('assets/images/icons/personalised-investment-planning.svg') }}" alt="Experienced Advisory Icon" class="w-6 h-6 text-primary">
+                </div>
+                <div class="text-txBlack text-start order-1 md:pr-12 pr-10">
+                    <h3 class="font-semibold leading-5 text-[10px] md:text-[14px] ml-1">Complete<br>Legal Support</h3>
+                </div>
+            </div>
+
         </x-choose-adon-reality>
     </div>
 </section>

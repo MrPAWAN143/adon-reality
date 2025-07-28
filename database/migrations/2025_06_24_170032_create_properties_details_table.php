@@ -62,9 +62,9 @@ return new class extends Migration
             $table->string('property_rera_url')->nullable();
 
             // ─── SEO ──────────────────────────────────────────────────
-            $table->string('property_meta_title')->nullable();
-            $table->string('property_meta_keywords')->nullable();
-            $table->string('property_meta_description')->nullable();
+            $table->longText('property_meta_title')->nullable();
+            $table->longText('property_meta_keywords')->nullable();
+            $table->longText('property_meta_description')->nullable();
 
             // ─── Relationships (single declaration each) ──────────────
             $table->foreignId('category_id')

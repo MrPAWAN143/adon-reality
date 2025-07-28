@@ -64,7 +64,7 @@
         </x-choose-adon-reality>
         <x-choose-adon-reality>
 
-             <div class="flex flex-row-reverse items-center justify-between md:p-0 p-2">
+            <div class="flex flex-row-reverse items-center justify-between md:p-0 p-2">
                 <div class="bg-[#f7f2f3] rounded-xl max-h-[20] shadow-xl ">
                     <img src="{{ asset('assets/images/icons/vision.svg')}}" alt="" class="md:w-10 md:h-10 w-8 h-8">
                 </div>
@@ -88,37 +88,37 @@
             <div class="what-we-offer-card ">
                 <h3>Property Investment Solutions</h3>
                 <p>Maximize your returns with our real estate investment.</p>
-                <a href="#" class="what-we-offer-button">Explore Opportunities</a>
+                <a href="{{route('contact')}}" class="what-we-offer-button">Explore Opportunities</a>
             </div>
 
             <div class="what-we-offer-card">
                 <h3>Portfolio Management</h3>
                 <p>Experts maximize profits and minimize risk.</p>
-                <a href="#" class="what-we-offer-button">Schedule a Consultation</a>
+                <a href="{{route('contact')}}" class="what-we-offer-button">Schedule a Consultation</a>
             </div>
 
             <div class="what-we-offer-card ">
                 <h3>Tax and Legal Advisory</h3>
                 <p>Expert tax planning and legal consultation to ensure the compliant.</p>
-                <a href="#" class="what-we-offer-button">Get Professional Advice</a>
+                <a href="{{route('contact')}}" class="what-we-offer-button">Get Professional Advice</a>
             </div>
 
             <div class="what-we-offer-card">
                 <h3>Risk Management & Insurance</h3>
                 <p>Mitigate risks by investing in property insurance.</p>
-                <a href="#" class="what-we-offer-button">Get Insured</a>
+                <a href="{{route('contact')}}" class="what-we-offer-button">Get Insured</a>
             </div>
 
             <div class="what-we-offer-card">
                 <h3>Investment Planning for Startups</h3>
                 <p>Provide tailored investment solutions to help startups.</p>
-                <a href="#" class="what-we-offer-button">Start Your Journey</a>
+                <a href="{{route('contact')}}" class="what-we-offer-button">Start Your Journey</a>
             </div>
 
             <div class="what-we-offer-card">
                 <h3>Property Leasing and Sales</h3>
                 <p>We help lease and sell residential and commercial properties.</p>
-                <a href="#" class="what-we-offer-button">List Your Property</a>
+                <a href="{{route('contact')}}" class="what-we-offer-button">List Your Property</a>
             </div>
         </div>
     </div>
@@ -222,77 +222,42 @@
         <h2 class="text-center text-[16px] md:text-2xl font-semibold md:mt-8 my-4">Meet Our Core Team</h2>
         <div class="max-w-5xl m-auto grid grid-cols-2 md:grid-cols-4 md:gap-6 gap-2">
             <!-- Team Member -->
+            @if($teamMembers && $teamMembers->count() > 0)
+            @foreach ($teamMembers as $member)
             <div class="our-core-team ">
-                <img src="{{ asset('assets/images/allImages/raj-malhotra.jpg') }}" alt="Raj Malhotra" class="w-full h-44 rounded-lg mb-1 object-cover" />
-                <h3 class="font-semibold text-md">Raj Malhotra</h3>
-                <p class="text-sm text-txBlack">Chief Executive Officer</p>
-                <p class="text-[10px] text-gray-500 mt-1">“Driven by purpose. Building with passion.”</p>
+                <img src="{{ asset($member->photo) }}" alt="{{ $member->full_name }}" class="w-full h-44 rounded-lg mb-1 object-cover" />
+                <h3 class="">{{ $member->full_name }}</h3>
+                <p class="text-sm text-txBlack ">{{ $member->position }}</p>
+                <!-- <p class="text-[10px] text-gray-500 mt-1">{{ $member->description }}</p> -->
             </div>
-
-            <div class="our-core-team">
-                <img src="{{ asset('assets/images/allImages/arjun-mehra.jpg') }}" alt="Arjun Mehra" class="w-full h-44 rounded-lg mb-1 object-cover" />
-                <h3 class="font-semibold text-md">Arjun Mehra</h3>
-                <p class="text-xs text-txBlack">Chief Operating Officer</p>
-                <p class="text-[10px] text-gray-500 mt-1">“Every square foot tells a story.”</p>
+            @endforeach
+            @else
+            <div class="text-center text-txBlack md:text-[16px] text-[12px] font-light">
+                No team members available.
             </div>
-
-            <div class="our-core-team">
-                <img src="{{ asset('assets/images/allImages/vikram-desai.jpg') }}" alt="Vikram Desai" class="w-full h-44 rounded-lg mb-1 object-cover" />
-                <h3 class="font-semibold text-md">Vikram Desai</h3>
-                <p class="text-xs text-txBlack">Chief Architect</p>
-                <p class="text-[10px] text-gray-500 mt-1">“Design is where life begins.”</p>
-            </div>
-
-            <div class="our-core-team">
-                <img src="{{ asset('assets/images/allImages/meera-sethi.jpg') }}" alt="Meera Sethi" class="w-full h-48 rounded-lg mb-1 object-cover" />
-                <h3 class="font-semibold text-md">Meera Sethi</h3>
-                <p class="text-xs text-txBlack">Chief Marketing Officer</p>
-                <p class="text-[10px] text-gray-500 mt-1">“Creating connections through spaces.”</p>
-            </div>
+            @endif
         </div>
-
-
 
         <div class="md:px-6 py-8 md:mt-8 bg-white items-center">
             <!-- Featured Awards & Recognitions -->
             <h2 class="text-[16px] md:text-2xl text-center font-bold mb-6">Awards & Recognitions</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 md:gap-6 gap-2 md:mb-12">
-
-                <!-- Card 1 -->
-                <div class="bg-white md:p-4 p-2 rounded-2xl shadow-md hover:shadow-lg transition flex flex-col md:items-start md:text-start text-center about-us-awards-card">
-                    <div class="mb-2">
-                        <img src="{{ asset('assets/images/awards/best-commercial.png') }}" alt="Award 1" class="w-full h-40 object-cover rounded-lg" />
-                    </div>
-                    <h4 class="text-sm font-semibold text-txBlack">Best Commercial Project 2024</h4>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="bg-white md:p-4 p-2 rounded-2xl shadow-md hover:shadow-lg transition flex flex-col md:items-start md:text-start text-center about-us-awards-card">
-                    <div class="mb-2">
-                        <img src="{{ asset('assets/images/awards/sustainable-design.png') }}" alt="Award 2" class="w-full h-40 object-cover rounded-lg" />
-                    </div>
-                    <h4 class="text-sm font-semibold text-txBlack">Best Sustainable Design 2024</h4>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="bg-white md:p-4 p-2 rounded-2xl shadow-md hover:shadow-lg transition flex flex-col md:items-start md:text-start text-center about-us-awards-card">
-                    <div class="mb-2">
-                        <img src="{{ asset('assets/images/awards/realty-brand.png') }}" alt="Award 3" class="w-full h-40 object-cover rounded-lg" />
-                    </div>
-                    <h4 class="text-sm font-semibold text-txBlack">Best Realty Brand 2024</h4>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="bg-white md:p-4 p-2 rounded-2xl shadow-md hover:shadow-lg transition flex flex-col md:items-start md:text-start text-center about-us-awards-card">
-                    <div class="mb-2">
-                        <img src="{{ asset('assets/images/awards/realty-brand.png') }}" alt="Award 4" class="w-full h-40 object-cover rounded-lg" />
-                    </div>
-                    <h4 class="text-sm font-semibold text-txBlack">Best Commercial Project 2024</h4>
-                </div>
-
+                @if($awards->count() > 0)
+                @foreach($awards as $award)
+                <x-awards
+                    image="{{ asset($award->featured_image) }}"
+                    alt="{{ $award->title }}"
+                    class="featured-investment-img"
+                    newsAndPrCard="arawds-card about"
+                    newsAndPrCardImgDiv="arwards-card-img-div about"
+                    title="{{ $award->title }}" />
+                @endforeach
+                @else
+                <p class="text-center text-gray-500">No awards found.</p>
+                @endif
             </div>
 
-            <div class="md:mt-6 justify-center md:flex hidden">
+            <div class="md:mt-4 justify-center md:flex hidden">
                 <a class="view-more-button inline-flex items-center justify-center" href="{{ route('awards-and-recognitions') }}">
                     View More <x-forkawesome-angle-down class="ml-3 w-6 h-6" />
                 </a>

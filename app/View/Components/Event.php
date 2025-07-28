@@ -19,8 +19,9 @@ class Event extends Component
     public string $class;
     public string $eventCard;
     public string $eventCardImgDiv;
+    public string $videoSrc;
 
-    public function __construct(string $image, string $alt, string $title, string $dateTime, string $buttonText, string $class, string $eventCard = "", string $eventCardImgDiv = "")
+    public function __construct(string $image, string $alt, string $title, string $dateTime, string $buttonText, string $class, string $eventCard = "", string $eventCardImgDiv = "", string $videoSrc = "")
     {
         $this->image = $image;
         $this->alt = $alt;
@@ -30,6 +31,7 @@ class Event extends Component
         $this->class = $class;
         $this->eventCard = $eventCard;
         $this->eventCardImgDiv = $eventCardImgDiv;
+        $this->videoSrc = $videoSrc;
     }
 
     /**

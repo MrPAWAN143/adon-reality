@@ -10,7 +10,8 @@ class EventAndMediaController extends Controller
 {
     public function index()
     {
-        return view('Pages.event-and-media');
+        $events = EventAndMedia::where('is_active', true)->get();
+        return view('Pages.event-and-media' , compact('events'));
     }
     public function create()
     {

@@ -20,10 +20,11 @@ class BlogsController extends Controller
     public function show($slug)
     {
         $blog = Blogs::where('slug', $slug)->firstOrFail();
-        $projectOfTheDay = PropertiesDetails::where('is_active', 1)->inRandomOrder()->take(5)->get();
+        $projectOfTheDay = PropertiesDetails::where('is_active', 1)->with('developmentPartner' , 'category')->inRandomOrder()->take(5)->get();
         $exploreOurBlog = Blogs::where('is_active', 1)->inRandomOrder()->take(5)->get();
+        $similarBlogs = Blogs::where('is_active', 1)->where('id', '!=', $blog->id)->inRandomOrder()->take(3)->get();
 
-        return view('Pages.single-blog', compact('blog', 'projectOfTheDay', 'exploreOurBlog'));
+        return view('Pages.single-blog', compact('blog', 'projectOfTheDay', 'exploreOurBlog', 'similarBlogs'));
     }
 
     public function create()
@@ -42,6 +43,7 @@ class BlogsController extends Controller
             'meta_description' => 'nullable|string|max:500',
             'meta_keywords' => 'nullable|string|max:255',
             'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'banner_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
             'user_id' => 'nullable|exists:users,id', // Assuming you have a users table
         ]);
 
@@ -57,6 +59,14 @@ class BlogsController extends Controller
             $validated['featured_image'] = null; // Set to null if no file is uploaded
         }
 
+        if ($request->hasFile('banner_image')) {
+            $image = $request->file('banner_image');
+            $filename = uniqid() .  '.' . $image->getClientOriginalExtension();
+            $image->move('uploads/BlogImages', $filename);
+            $validated['banner_image'] = 'uploads/BlogImages/' . $filename;
+        } else {
+            $validated['banner_image'] = null; // Set to null if no file is uploaded
+        }
 
         $validated['user_id'] = Auth::user()->id; // Set the user_id to the currently authenticated user
 
@@ -89,6 +99,7 @@ class BlogsController extends Controller
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string|max:500',
             'meta_keywords' => 'nullable|string|max:255',
+            'banner_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
             'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
             'user_id' => 'nullable|exists:users,id', // Assuming you have a users table
         ]);
@@ -109,6 +120,21 @@ class BlogsController extends Controller
         } else {
             // Keep the old featured image if no new file is uploaded
             $validated['featured_image'] = $blog->featured_image;
+        }
+
+        if ($request->hasFile('banner_image')) {
+            // Delete the old banner image if it exists
+            if ($blog->banner_image && file_exists($blog->banner_image)) {
+                unlink($blog->banner_image);
+            }
+
+            $image = $request->file('banner_image');
+            $filename = uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->move('uploads/BlogImages', $filename);
+            $validated['banner_image'] = 'uploads/BlogImages/' . $filename;
+        } else {
+            // Keep the old banner image if no new file is uploaded
+            $validated['banner_image'] = $blog->banner_image;
         }
 
         $validated['user_id'] = Auth::user()->id;

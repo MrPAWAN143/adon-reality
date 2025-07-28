@@ -87,6 +87,23 @@
                     @endif
                 </div>
 
+                {{-- Banner Image --}}
+                <div>
+                    <label class="block font-semibold text-adminTextPrimary mb-1" for="banner_image">Banner Image</label>
+                    <input type="file" id="banner_image" name="banner_image"
+                        class="forBorder w-full border border-adminInputBorder rounded px-3 py-2 bg-white file:mr-3 file:rounded
+                              file:border-0 file:bg-adminPrimary file:px-3 file:py-1 file:text-white hover:file:bg-adminPrimaryHover">
+
+                    @if($blog->banner_image)
+                    <div class="mt-2">
+                        <img src="{{ asset($blog->banner_image) }}"
+                            alt="Current Banner Image"
+                            class="w-30 h-12 object-cover rounded-md shadow">
+                    </div>
+                    @else
+                    <p class="mt-2 text-sm text-gray-500">No banner image uploaded</p>
+                    @endif
+                </div>
 
                 {{-- Summary --}}
                 <div class="md:col-span-2">

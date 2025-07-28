@@ -15,14 +15,16 @@ class Button extends Component
     public string $text;
     public string $class;
     public string $url;
+    public string $dataVideo;
 
 
-    public function __construct(string $text, string $class, string $url = '#')
+    public function __construct(string $text, string $class, string $url = '#', string $dataVideo = '')
     {
 
         $this->text = $text;
         $this->class = $class;
         $this->url = $url;
+        $this->dataVideo = $dataVideo;
     }
 
     /**

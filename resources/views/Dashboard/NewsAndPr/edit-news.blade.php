@@ -3,7 +3,14 @@
 @section('metadata')
 <title>Edit news Post – {{ $blog->title ?? 'Demo Title' }}</title>
 <style>
-    .forBorder  { border-color: #49717B !important; }
+    .forBorder {
+        border: 1px solid #49717B !important;
+        border-color: #49717B !important;
+    }
+    .forBorder:focus {
+        border-color: #49717B !important;
+     border: 1px solid #49717B !important;
+    }
 </style>
 @endsection
 
@@ -15,14 +22,14 @@
             <!-- Back • Delete • Update -->
             <div class="flex justify-between items-center mb-2">
                 <a href="{{ route('news.list') }}"
-                   class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-md text-sm font-semibold shadow">
+                    class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-md text-sm font-semibold shadow">
                     &larr; Back to List
                 </a>
 
                 <div class="space-x-2">
                     <form id="deleteNews"
-                          method="POST"
-                          class="inline">
+                        method="POST"
+                        class="inline">
                         @csrf @method('DELETE')
                         <button type="submit"
                             class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md text-sm font-semibold shadow">
@@ -31,7 +38,7 @@
                     </form>
 
                     <button form="updateNews"
-                            class="bg-adminPrimary hover:bg-adminPrimaryHover text-white px-4 py-2 rounded-md text-sm font-semibold shadow">
+                        class="bg-adminPrimary hover:bg-adminPrimaryHover text-white px-4 py-2 rounded-md text-sm font-semibold shadow">
                         Update
                     </button>
                 </div>
@@ -43,28 +50,28 @@
 
             <!-- FORM -->
             <form id="updateNews"
-                  method="POST"
-                  enctype="multipart/form-data"
-                  class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                method="POST"
+                enctype="multipart/form-data"
+                class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 @csrf @method('PUT')
 
                 {{-- Title --}}
                 <div class="md:col-span-2">
                     <label class="block font-semibold text-adminTextPrimary mb-1" for="title">Title</label>
                     <input id="title" name="title" type="text"
-                           value="{{ old('title', $news->title) }}"
-                           class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
+                        value="{{ old('title', $news->title) }}"
+                        class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
                 </div>
 
                 {{-- Slug --}}
                 <div>
                     <label class="block font-semibold text-adminTextPrimary mb-1" for="slug">Slug</label>
                     <input id="slug" name="slug" type="text"
-                           value="{{ old('slug', $news->slug) }}"
-                           class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
+                        value="{{ old('slug', $news->slug) }}"
+                        class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
                 </div>
 
-                 {{-- Featured Image --}}
+                {{-- Featured Image --}}
                 <div>
                     <label class="block font-semibold text-adminTextPrimary mb-1" for="featured_image">
                         Featured Image
@@ -84,6 +91,23 @@
                     @endif
                 </div>
 
+                {{-- Banner Image --}}
+                <div class="md:col-span-2">
+                    <label class="block font-semibold text-adminTextPrimary mb-0" for="banner_image">
+                        Banner Image
+                    </label>
+                    <input type="file" id="banner_image" name="banner_image"
+                        class="forBorder w-full border border-adminInputBorder rounded px-3 py-2 bg-white file:mr-3 file:rounded
+                                  file:border-0 file:bg-adminPrimary file:px-3 file:py-1 file:text-white hover:file:bg-adminPrimaryHover">
+
+                    @if($news->banner_image)
+                    <div class="mt-1">
+                        <img src="{{ asset($news->banner_image) }}"
+                            alt="Current Banner Image"
+                            class="w-32 h-12 object-cover rounded-md shadow">
+                    </div>
+                </div>
+                @endif
 
 
                 {{-- Summary --}}
@@ -91,44 +115,44 @@
                     <label class="block font-semibold text-adminTextPrimary mb-1" for="short_description">Summary</label>
                     <textarea id="short_description" name="short_description" rows="3"
 
-                              class="forBorder w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">{{ old('short_description', $news->short_description) }}</textarea>
+                        class="forBorder w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">{{ old('short_description', $news->short_description) }}</textarea>
                 </div>
 
                 {{-- SEO Title --}}
                 <div class="md:col-span-2">
                     <label class="block font-semibold text-adminTextPrimary mb-1" for="meta_title">Meta Title</label>
                     <input id="meta_title" name="meta_title" type="text"
-                           value="{{ old('meta_title', $news->meta_title) }}"
-                           class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
+                        value="{{ old('meta_title', $news->meta_title) }}"
+                        class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
                 </div>
 
                 {{-- SEO Keywords --}}
                 <div class="md:col-span-2">
                     <label class="block font-semibold text-adminTextPrimary mb-1" for="meta_keywords">Meta Keywords</label>
                     <input id="meta_keywords" name="meta_keywords" type="text"
-                           value="{{ old('meta_keywords', $news->meta_keywords) }}"
-                           class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
+                        value="{{ old('meta_keywords', $news->meta_keywords) }}"
+                        class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
                 </div>
 
                 {{-- SEO Description --}}
                 <div class="md:col-span-2">
                     <label class="block font-semibold text-adminTextPrimary mb-1" for="meta_description">Meta Description</label>
                     <textarea id="meta_description" name="meta_description" rows="3"
-                              class="forBorder w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">{{ old('meta_description', $news->meta_description) }}</textarea>
+                        class="forBorder w-full !border !border-adminInputBorder rounded px-3 py-2 ">{{ old('meta_description', $news->meta_description) }}</textarea>
                 </div>
 
-                 {{-- Content --}}
+                {{-- Content --}}
                 <div class="md:col-span-2">
                     <label class="block font-semibold text-adminTextPrimary mb-1" for="long_description">Content</label>
                     <textarea id="long_description" name="long_description" rows="10"
-                              class="forBorder w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">{{ old('long_description', $news->long_description) }}</textarea>
+                        class="forBorder w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">{{ old('long_description', $news->long_description) }}</textarea>
                     {{-- Replace textarea with CKEditor/TinyMCE if you use a WYSIWYG editor --}}
                 </div>
 
                 {{-- Update --}}
                 <div class="md:col-span-2 flex justify-end">
                     <button type="submit"
-                            class="bg-adminPrimary hover:bg-adminPrimaryHover text-white px-6 py-2 rounded-md text-sm font-semibold shadow">
+                        class="bg-adminPrimary hover:bg-adminPrimaryHover text-white px-6 py-2 rounded-md text-sm font-semibold shadow">
                         Update News Article
                     </button>
                 </div>

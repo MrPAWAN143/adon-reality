@@ -52,6 +52,7 @@ class QueryController extends Controller
                 'error' => 'Phone number is required and must be valid.'
             ], 422);
         }
+        $validated['last_name'] = $validated['last_name'] ?? ''; // Ensure last_name is set to an empty string if not provided
 
         $validated = Lead::create([
             'name' => $validated['first_name'] . ' ' . $validated['last_name'],

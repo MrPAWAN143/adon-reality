@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blogs;
+use App\Models\Testimony;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\PropertiesDetails;
 use App\Models\PropertiesCategory;
 use App\Models\DevelopmentPartners;
-use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\PropertiesGalleryImages;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Storage;
@@ -21,6 +22,7 @@ class PropertiesDetailsController extends Controller
 
     public function index()
     {
+        
         $properties = PropertiesDetails::with('category', 'developmentPartner')
             ->orderBy('created_at', 'desc')
             ->get();
@@ -71,7 +73,10 @@ class PropertiesDetailsController extends Controller
 
     public function whyInvestWithUs()
     {
-        return view('Pages.why-invest-with-us');
+        $testimonials = Testimony::where('is_active', 1)
+            ->orderBy('created_at', 'desc')
+            ->get();
+        return view('Pages.why-invest-with-us', compact('testimonials'));
     }
 
     public function create()
@@ -94,6 +99,7 @@ class PropertiesDetailsController extends Controller
                 'property_slug' => 'nullable|string|max:255|unique:properties_details,property_slug',
                 'property_rera_number' => 'nullable|string|max:255',
                 'property_rera_url' => 'nullable|string',
+                'google_map' => 'nullable|string',
                 'property_size' => 'nullable|string|max:255',
                 'property_type' => 'nullable|string|max:255',
                 'property_status' => 'required|string|max:100',
@@ -113,8 +119,8 @@ class PropertiesDetailsController extends Controller
                 'property_zip_code' => 'nullable|string|max:20',
                 'property_amenities' => 'nullable|array',
                 'property_location_advantages' => 'nullable|array',
-                'property_meta_title' => 'nullable|string|max:255',
-                'property_meta_keywords' => 'nullable|string|max:255',
+                'property_meta_title' => 'nullable|string',
+                'property_meta_keywords' => 'nullable|string',
                 'property_meta_description' => 'nullable|string',
                 'property_description' => 'nullable|string',
                 'property_benefits' => 'nullable|string',
@@ -262,6 +268,7 @@ class PropertiesDetailsController extends Controller
                 'property_slug' => 'nullable|string|max:255',
                 'property_rera_number' => 'nullable|string|max:255',
                 'property_rera_url' => 'nullable|string',
+                'google_map' => 'nullable|string',
                 'property_size' => 'nullable|string|max:255',
                 'property_type' => 'nullable|string|max:255',
                 'property_status' => 'required|string|max:100',
@@ -281,8 +288,8 @@ class PropertiesDetailsController extends Controller
                 'property_zip_code' => 'nullable|string|max:20',
                 'property_amenities' => 'nullable|array',
                 'property_location_advantages' => 'nullable|array',
-                'property_meta_title' => 'nullable|string|max:255',
-                'property_meta_keywords' => 'nullable|string|max:255',
+                'property_meta_title' => 'nullable|string',
+                'property_meta_keywords' => 'nullable|string',
                 'property_meta_description' => 'nullable|string',
                 'property_description' => 'nullable|string',
                 'property_benefits' => 'nullable|string',
