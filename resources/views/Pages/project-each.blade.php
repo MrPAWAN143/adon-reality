@@ -36,7 +36,7 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
             </div>
 
             <!-- Meta Info -->
-            <div class="md:text-[12px] font-normal text-[8px] md:text-left text-center text-txBlack flex flex-wrap items-center justify-center gap-x-3 gap-y-1 md:gap-y-0 !md:mt-0">
+            <div class="md:text-[12px] font-normal text-[8px] md:text-left text-center text-txBlack flex flex-wrap items-center justify-center gap-x-3 gap-y-1 md:gap-y-0 !md:mt-0 md:max-w[400px]">
                 <span>{{ $property->property_location }}</span>
                 <span class="text-txBlack">|</span>
                 <span>{{ $property->property_size }}</span>
@@ -48,8 +48,8 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
         <!-- Right Buttons -->
         <div class=" flex flex-row items-center justify-between md:flex-row md:gap-4 gap-2">
             <!-- WhatsApp -->
-            <a href="https://wa.me/7070482610?text=Hello%20I%20am%20interested%20in%20{{ $property->property_name }}" target="_blank" class="  brochurebtnxx flex items-center justify-center md:gap-2 md:font-normal gap-1 md:border-2 border border-primary text-txBlack md:px-4 md:py-2 py-2 px-2 rounded-full text-[8px] md:text-[12px] hover:bg-primary hover:text-white transition">
-                <svg width="18" height="16" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a href="https://wa.me/7070482610?text=Hello%20I%20am%20interested%20in%20{{ $property->property_name }}" target="_blank" class="single-line-ellipsis-homepage md:min-w-[200px]  brochurebtnxx inline-block  brochurebtnxx items-center justify-center md:gap-2 md:font-normal gap-1 md:border-2 border border-primary text-txBlack md:px-4 md:py-2 py-2 px-2 rounded-full text-[8px] md:text-[12px] hover:bg-primary hover:text-white transition">
+                <svg width="18" height="16" viewBox="0 0 23 22" class="inline-block" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_2521_2859)">
                         <path d="M1.13861 10.9496C1.1381 12.7981 1.62108 14.6029 2.53945 16.1938L1.05078 21.6291L6.6132 20.1706C8.1517 21.0082 9.87546 21.447 11.6272 21.4471H11.6318C17.4144 21.4471 22.1217 16.7416 22.1241 10.9579C22.1252 8.15531 21.0348 5.51991 19.0536 3.53719C17.0728 1.55463 14.4383 0.462217 11.6313 0.460938C5.84798 0.460938 1.14108 5.16621 1.1387 10.9496" fill="url(#paint0_linear_2521_2859)" />
                         <path d="M0.767022 10.947C0.766425 12.8619 1.26671 14.7313 2.21783 16.3791L0.675781 22.0093L6.43765 20.4985C8.02523 21.3641 9.81269 21.8205 11.6315 21.8212H11.6362C17.6264 21.8212 22.5027 16.9464 22.5052 10.9557C22.5063 8.05234 21.3766 5.32221 19.3246 3.26845C17.2724 1.21495 14.5437 0.083225 11.6362 0.0820312C5.64505 0.0820312 0.769409 4.95614 0.767022 10.947ZM4.19842 16.0953L3.98328 15.7538C3.0789 14.3158 2.60155 12.654 2.60223 10.9476C2.60411 5.96823 6.65654 1.91707 11.6396 1.91707C14.0528 1.91809 16.3207 2.85881 18.0264 4.5656C19.7321 6.27256 20.6707 8.54163 20.6701 10.955C20.6679 15.9344 16.6154 19.9861 11.6362 19.9861H11.6326C10.0114 19.9852 8.42132 19.5498 7.03463 18.727L6.70463 18.5313L3.28542 19.4278L4.19842 16.0953Z" fill="url(#paint1_linear_2521_2859)" />
@@ -74,8 +74,8 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
             </a>
 
             <!-- Download Brochure -->
-            <a href="{{ asset( $property->property_brochure_url ) ?? '#' }}" target="_blank" class="brochurebtnxx flex items-center justify-center md:font-normal md:gap-2 gap-1 md:border-2 border border-primary text-black md:px-4 md:py-2 py-2 px-2 rounded-full text-[8px] md:text-[12px] hover:bg-primary hover:text-white transition">
-                <svg width="12" height="12" viewBox="0 0 16 16" fill="black" xmlns="http://www.w3.org/2000/svg">
+            <a href="{{ asset( $property->property_brochure_url ) ?? '#' }}" target="_blank" class="single-line-ellipsis-homepage md:min-w-[200px]  brochurebtnxx inline-block  brochurebtnxx items-center justify-start md:font-normal md:gap-2 gap-1 md:border-2 border border-primary text-black md:px-4 md:py-2 py-2 px-2 rounded-full text-[8px] md:text-[12px] hover:bg-primary hover:text-white transition">
+                <svg width="12" height="12" viewBox="0 0 16 16" class="inline-block" fill="black" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7.83724 11.2745C7.71502 11.2745 7.60043 11.2555 7.49349 11.2176C7.38655 11.1798 7.28724 11.1147 7.19557 11.0224L3.89557 7.7224C3.71224 7.53907 3.62424 7.32518 3.63157 7.08073C3.63891 6.83629 3.72691 6.6224 3.89557 6.43907C4.07891 6.25573 4.29677 6.1604 4.54916 6.15307C4.80155 6.14573 5.0191 6.23343 5.20182 6.41615L6.92057 8.1349V1.58073C6.92057 1.32101 7.00857 1.10345 7.18457 0.928066C7.36057 0.752677 7.57813 0.664677 7.83724 0.664066C8.09635 0.663455 8.31421 0.751455 8.49082 0.928066C8.66743 1.10468 8.75513 1.32223 8.75391 1.58073V8.1349L10.4727 6.41615C10.656 6.23282 10.8739 6.14482 11.1262 6.15215C11.3786 6.15948 11.5962 6.25512 11.7789 6.43907C11.947 6.6224 12.035 6.83629 12.0429 7.08073C12.0508 7.32518 11.9629 7.53907 11.7789 7.7224L8.47891 11.0224C8.38724 11.1141 8.28793 11.1791 8.18099 11.2176C8.07405 11.2561 7.95946 11.2751 7.83724 11.2745ZM2.33724 15.3307C1.83307 15.3307 1.40163 15.1514 1.04291 14.7926C0.684184 14.4339 0.504517 14.0022 0.503906 13.4974V11.6641C0.503906 11.4043 0.591906 11.1868 0.767906 11.0114C0.943906 10.836 1.16146 10.748 1.42057 10.7474C1.67968 10.7468 1.89754 10.8348 2.07416 11.0114C2.25077 11.188 2.33846 11.4056 2.33724 11.6641V13.4974H13.3372V11.6641C13.3372 11.4043 13.4252 11.1868 13.6012 11.0114C13.7772 10.836 13.9948 10.748 14.2539 10.7474C14.513 10.7468 14.7309 10.8348 14.9075 11.0114C15.0841 11.188 15.1718 11.4056 15.1706 11.6641V13.4974C15.1706 14.0016 14.9912 14.4333 14.6325 14.7926C14.2738 15.152 13.842 15.3313 13.3372 15.3307H2.33724Z" />
                 </svg>
 
@@ -83,8 +83,8 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
             </a>
 
             <!-- RERA -->
-            <a href="{{ asset( $property->property_rera_url ) ?? '#' }}" target="_blank" class="brochurebtnxx flex items-center justify-center md:gap-2 gap-1 md:border-2 border border-primary md:font-normal text-black md:px-4 md:py-2 py-2 px-2 rounded-full text-[8px] md:text-[12px] hover:bg-primary hover:text-white transition">
-                <svg width="16" height="16" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a href="{{ asset( $property->property_rera_url ) ?? '#' }}" target="_blank" class="single-line-ellipsis-homepage md:min-w-[200px] max-w-[140px] brochurebtnxx inline-block items-center justify-start md:gap-2 gap-1 md:border-2 border border-primary md:font-normal text-black md:py-2 py-2 px-2 rounded-full text-[8px] md:text-[12px] hover:bg-primary hover:text-white transition ">
+                <svg width="16" height="16" class="inline-block" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8.33594 11.917C8.7296 12.4432 9.23185 12.8787 9.80861 13.1938C10.3854 13.5089 11.0232 13.6963 11.6787 13.7433C12.3342 13.7902 12.9922 13.6956 13.608 13.4659C14.2238 13.2362 14.783 12.8768 15.2476 12.412L17.9976 9.66196C18.8325 8.79753 19.2945 7.63977 19.284 6.43804C19.2736 5.2363 18.7916 4.08675 17.9418 3.23696C17.092 2.38717 15.9424 1.90515 14.7407 1.8947C13.539 1.88426 12.3812 2.34624 11.5168 3.18113L9.9401 4.74863" stroke="black" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M11.999 10.0841C11.6054 9.55782 11.1031 9.12236 10.5264 8.80725C9.94961 8.49214 9.31183 8.30475 8.65628 8.2578C8.00073 8.21085 7.34276 8.30544 6.72698 8.53514C6.1112 8.76485 5.55202 9.1243 5.08738 9.58911L2.33738 12.3391C1.50249 13.2035 1.04051 14.3613 1.05095 15.563C1.0614 16.7648 1.54342 17.9143 2.39321 18.7641C3.243 19.6139 4.39255 20.0959 5.59429 20.1064C6.79602 20.1168 7.95378 19.6548 8.81821 18.8199L10.3857 17.2524" stroke="black" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
@@ -250,7 +250,11 @@ Elevating Commercial Real Estate" subtitle="7.30 Cr. Onwards" titleClass="md:!w-
         <div class="max-w-5xl mx-auto md:px-4 py-2 md:block hidden">
             <!-- Embedded Map or Image -->
             <div class="rounded-2xl  overflow-hidden md:mb-8">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17383.336479488054!2d77.34828205607775!3d28.623641394275474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5456ef36d9f%3A0x3b7191b1286136c8!2sSector%2062%2C%20Noida%2C%20Uttar%20Pradesh!5e1!3m2!1sen!2sin!4v1751018298195!5m2!1sen!2sin" width="800" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                @if($property->google_map)
+                <iframe src="{{ $property->google_map }}" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                @else
+                <p class="text-txBlack md:text-[16px] text-[12px] font-light"> No map available for this property.</p>
+                @endif
                 <!-- Or replace the <img> with an <iframe> for an actual embedded map -->
             </div>
 

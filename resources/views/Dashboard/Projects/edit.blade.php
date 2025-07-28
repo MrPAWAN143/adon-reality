@@ -96,6 +96,14 @@
                     <input value="{{ old('property_rera_url', $property->property_rera_url) }}" id="property_rera_url" name="property_rera_url" type="url" class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
                 </div>
 
+                   {{-- Property Location --}}
+                  <div>
+                    <label class="block font-semibold text-adminTextPrimary mb-1" for="google_map">Google Map Url</label>
+                    <input value="{{ old('google_map', $property->google_map) }}" type="url" id="google_map" name="google_map"
+                        placeholder="Official Google Map link"
+                        class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">
+                </div>
+
                 <div>
                     <label class="block font-semibold text-adminTextPrimary mb-1" for="property_size">Size (sq ft)</label>
                     <input value="{{ old('property_size', $property->property_size) }}" id="property_size" name="property_size" type="text" class="w-full border border-adminInputBorder rounded px-3 py-2 focus:border-adminPrimary focus:ring-adminPrimary">

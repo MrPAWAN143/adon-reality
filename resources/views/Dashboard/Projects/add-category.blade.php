@@ -104,6 +104,9 @@
                 processData: false,
                 contentType: false,
                 data: formData,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
                 success: function(response) {
                     let status = response.status;
                     let message = response.message

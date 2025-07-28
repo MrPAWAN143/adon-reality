@@ -3,8 +3,6 @@
 <title>Adon Realty - Testimonials</title>
 @endsection
 @section('styles')
-<link rel="stylesheet" href="{{ asset('assets/css/master.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/homepage.css') }}">
 <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 <style>
   .container {
@@ -12,6 +10,15 @@
     padding: 0 1rem;
     margin: 0 auto;
   }
+
+  .trending-slide video {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    background: #000;
+  }
+
 
   .text-center {
     text-align: center;
@@ -72,7 +79,7 @@
       position: relative;
     }
 
-    .trending-slide-img img {
+    .trending-slide-img video {
       width: 150px !important;
       height: 273px !important;
       border-radius: 10px !important;
@@ -126,7 +133,7 @@
     position: relative;
   }
 
-  .trending-slide-img img {
+  .trending-slide-img video {
     width: 280px;
     height: 400px;
     border-radius: 10px;
@@ -162,6 +169,18 @@
 @endsection
 
 @section('content')
+
+@php
+$videoList = [
+'1753604457371-16911-82edf6a9480644d82ce564ae9efddad3.mp4',
+'testimonal final.mp4',
+'1753604457371-16911-82edf6a9480644d82ce564ae9efddad3.mp4',
+'testimonal final.mp4',
+'1753604457371-16911-82edf6a9480644d82ce564ae9efddad3.mp4',
+'testimonal final.mp4',
+];
+
+@endphp
 <section class="max-w-[1100px] mx-auto px-4 md:px-0 pb-2 pt-1">
   <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('testimonials') }}">Testimonials</a> </div>
 </section>
@@ -175,81 +194,23 @@
     <div class="swiper trending-slider">
       <div class="swiper-wrapper">
 
-        <!-- SLide start -->
+
+        @foreach ($videoList as $video)
         <div class="swiper-slide trending-slide">
           <div class="trending-slide-img">
-
-            <img src="{{ asset('assets/images/allImages/property1.png') }}" alt="">
+            <video
+              muted
+              playsinline
+              preload="metadata"
+              class="w-full h-auto rounded-lg bg-black">
+              <source src="{{ asset('assets/images/videoTestimonials/' . $video) }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
-
         </div>
-        <!-- SLide end -->
-        <!-- SLide start -->
-        <div class="swiper-slide trending-slide">
-          <div class="trending-slide-img">
+        @endforeach
 
-            <img src="{{ asset('assets/images/allImages/property2.png') }}" alt="">
-          </div>
-
-        </div>
-        <!-- SLide end -->
-        <!-- SLide start -->
-        <div class="swiper-slide trending-slide">
-          <div class="trending-slide-img">
-
-            <img src="{{ asset('assets/images/allImages/property3.png') }}" alt="">
-          </div>
-
-        </div>
-        <!-- SLide end -->
-        <!-- SLide start -->
-        <div class="swiper-slide trending-slide">
-          <div class="trending-slide-img">
-
-            <img src="{{ asset('assets/images/allImages/property1.png') }}" alt="">
-          </div>
-
-        </div>
-        <!-- SLide end -->
-        <!-- SLide start -->
-        <div class="swiper-slide trending-slide">
-          <div class="trending-slide-img">
-
-            <img src="{{ asset('assets/images/allImages/property2.png') }}" alt="">
-          </div>
-
-        </div>
-        <!-- SLide end -->
-        <!-- SLide start -->
-        <div class="swiper-slide trending-slide">
-          <div class="trending-slide-img">
-
-            <img src="{{ asset('assets/images/allImages/property3.png') }}" alt="">
-          </div>
-
-        </div>
-        <!-- SLide end -->
-        <!-- SLide start -->
-        <div class="swiper-slide trending-slide">
-          <div class="trending-slide-img">
-
-            <img src="{{ asset('assets/images/allImages/property1.png') }}" alt="">
-          </div>
-
-        </div>
-        <!-- SLide end -->
-        <!-- SLide start -->
-        <div class="swiper-slide trending-slide">
-          <div class="trending-slide-img">
-
-            <img src="{{ asset('assets/images/allImages/property2.png') }}" alt="">
-          </div>
-
-        </div>
-        <!-- SLide end -->
       </div>
-
-
     </div>
   </div>
 </section>
@@ -261,80 +222,21 @@
     <div class="swiper trending-mobile-slider">
       <div class="swiper-wrapper">
 
-        <!-- SLide start -->
+        @foreach ($videoList as $video)
         <div class="swiper-slide trending-slide">
           <div class="trending-slide-img">
-            <img src="{{ asset('assets/images/allImages/property1.png') }}" alt="">
+            <video
+              muted
+              playsinline
+              preload="metadata"
+              class="w-full h-auto rounded-lg bg-black">
+              <source src="{{ asset('assets/images/videoTestimonials/' . $video) }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
-
         </div>
-        <!-- SLide end -->
-        <!-- SLide start -->
-        <div class="swiper-slide trending-slide">
-          <div class="trending-slide-img">
-
-            <img src="{{ asset('assets/images/allImages/property2.png') }}" alt="">
-          </div>
-
-        </div>
-        <!-- SLide end -->
-        <!-- SLide start -->
-        <div class="swiper-slide trending-slide">
-          <div class="trending-slide-img">
-
-            <img src="{{ asset('assets/images/allImages/property3.png') }}" alt="">
-          </div>
-
-        </div>
-        <!-- SLide end -->
-        <!-- SLide start -->
-        <div class="swiper-slide trending-slide">
-          <div class="trending-slide-img">
-
-            <img src="{{ asset('assets/images/allImages/property1.png') }}" alt="">
-          </div>
-
-        </div>
-        <!-- SLide end -->
-        <!-- SLide start -->
-        <div class="swiper-slide trending-slide">
-          <div class="trending-slide-img">
-
-            <img src="{{ asset('assets/images/allImages/property2.png') }}" alt="">
-          </div>
-
-        </div>
-        <!-- SLide end -->
-        <!-- SLide start -->
-        <div class="swiper-slide trending-slide">
-          <div class="trending-slide-img">
-
-            <img src="{{ asset('assets/images/allImages/property3.png') }}" alt="">
-          </div>
-
-        </div>
-        <!-- SLide end -->
-        <!-- SLide start -->
-        <div class="swiper-slide trending-slide">
-          <div class="trending-slide-img">
-
-            <img src="{{ asset('assets/images/allImages/property1.png') }}" alt="">
-          </div>
-
-        </div>
-        <!-- SLide end -->
-        <!-- SLide start -->
-        <div class="swiper-slide trending-slide">
-          <div class="trending-slide-img">
-
-            <img src="{{ asset('assets/images/allImages/property2.png') }}" alt="">
-          </div>
-
-        </div>
-        <!-- SLide end -->
+        @endforeach
       </div>
-
-
     </div>
   </div>
 </section>
@@ -348,101 +250,25 @@
 
 
   <div class="testimonial-slider max-w-5xl mx-auto px-3 !flex !gap-5 justify-center items-center overflow-x-auto">
+    @if(isset($testimonials) && $testimonials->count() > 0)
+    @foreach ($testimonials as $testimonial)
     <div class="review-card">
       <div class="bg-white rounded-xl text-sm p-3 text-txBlack overflow-hidden">
         <div class="flex items-center md:mb-3 mb-2">
           <div class="text-primary md:text-xl text-base">★★★★★</div>
         </div>
-        <p class="md:mb-4 mb-2 md:text-md text-xs">A trusted investment experience with great support.</p>
+        <p class="md:mb-4 mb-2 md:text-md text-xs clamp-2-lines">{{ $testimonial->review_text }}</p>
         <div class="flex items-center">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Nathan" class="w-10 h-10 rounded-[6px] mr-3">
+          <img src="{{ asset($testimonial->photo) }}" alt="{{ $testimonial->name }}" class="w-10 h-10 rounded-[6px] mr-3">
           <div>
-            <p class="font-semibold md:text-md text-xs">Nathan Kapoor</p>
-            <p class="text-[8px] md:text-xs text-txBlack">Software Developer</p>
+            <p class="font-semibold md:text-md text-xs">{{ $testimonial->name }}</p>
+            <p class="text-[8px] md:text-xs text-txBlack single-line-ellipsis-homepage">{{ $testimonial->role }}</p>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="review-card">
-      <div class="bg-white rounded-xl text-sm p-3 text-txBlack overflow-hidden">
-        <div class="flex items-center md:mb-3 mb-2">
-          <div class="text-primary md:text-xl text-base">★★★★★</div>
-        </div>
-        <p class="md:mb-4 mb-2 md:text-md text-xs">A trusted investment experience with great support.</p>
-        <div class="flex items-center">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Nathan" class="w-10 h-10 rounded-[6px] mr-3">
-          <div>
-            <p class="font-semibold md:text-md text-xs">Nathan Kapoor</p>
-            <p class="text-[8px] md:text-xs text-txBlack">Software Developer</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="review-card">
-      <div class="bg-white rounded-xl text-sm p-3 text-txBlack overflow-hidden">
-        <div class="flex items-center md:mb-3 mb-2">
-          <div class="text-primary md:text-xl text-base">★★★★★</div>
-        </div>
-        <p class="md:mb-4 mb-2 md:text-md text-xs">A trusted investment experience with great support.</p>
-        <div class="flex items-center">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Nathan" class="w-10 h-10 rounded-[6px] mr-3">
-          <div>
-            <p class="font-semibold md:text-md text-xs">Nathan Kapoor</p>
-            <p class="text-[8px] md:text-xs text-txBlack">Software Developer</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="review-card">
-      <div class="bg-white rounded-xl text-sm p-3 text-txBlack overflow-hidden">
-        <div class="flex items-center md:mb-3 mb-2">
-          <div class="text-primary md:text-xl text-base">★★★★★</div>
-        </div>
-        <p class="md:mb-4 mb-2 md:text-md text-xs">A trusted investment experience with great support.</p>
-        <div class="flex items-center">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Nathan" class="w-10 h-10 rounded-[6px] mr-3">
-          <div>
-            <p class="font-semibold md:text-md text-xs">Nathan Kapoor</p>
-            <p class="text-[8px] md:text-xs text-txBlack">Software Developer</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="review-card">
-      <div class="bg-white rounded-xl text-sm p-3 text-txBlack overflow-hidden">
-        <div class="flex items-center md:mb-3 mb-2">
-          <div class="text-primary md:text-xl text-base">★★★★★</div>
-        </div>
-        <p class="md:mb-4 mb-2 md:text-md text-xs">A trusted investment experience with great support.</p>
-        <div class="flex items-center">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Nathan" class="w-10 h-10 rounded-[6px] mr-3">
-          <div>
-            <p class="font-semibold md:text-md text-xs">Nathan Kapoor</p>
-            <p class="text-[8px] md:text-xs text-txBlack">Software Developer</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="review-card">
-      <div class="bg-white rounded-xl text-sm p-3 text-txBlack overflow-hidden">
-        <div class="flex items-center md:mb-3 mb-2">
-          <div class="text-primary md:text-xl text-base">★★★★★</div>
-        </div>
-        <p class="md:mb-4 mb-2 md:text-md text-xs">A trusted investment experience with great support.</p>
-        <div class="flex items-center">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Nathan" class="w-10 h-10 rounded-[6px] mr-3">
-          <div>
-            <p class="font-semibold md:text-md text-xs">Nathan Kapoor</p>
-            <p class="text-[8px] md:text-xs text-txBlack">Software Developer</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    @endforeach
+    @endif
   </div>
 
 </section>
@@ -457,13 +283,65 @@
 
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 <script>
+  function handleVideoPlayback(swiperInstance) {
+  swiperInstance.on('slideChangeTransitionEnd', function () {
+    swiperInstance.slides.forEach(slide => {
+      const video = slide.querySelector('video');
+      if (video && !video.paused) {
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+
+    setTimeout(() => {
+      const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
+      if (activeSlide) {
+        const activeVideo = activeSlide.querySelector('video');
+        if (activeVideo) {
+          activeVideo.play().catch(err =>
+            console.warn("Video play blocked:", err)
+          );
+        }
+      }
+    }, 300);
+  });
+
+  swiperInstance.on('init', function () {
+    setTimeout(() => {
+      const firstSlide = swiperInstance.slides[swiperInstance.activeIndex];
+      if (firstSlide) {
+        const firstVideo = firstSlide.querySelector('video');
+        if (firstVideo) {
+          firstVideo.play().catch(err =>
+            console.warn("Initial video play blocked:", err)
+          );
+        }
+      }
+    }, 500);
+  });
+
+  swiperInstance.init();
+
+  // 🔊 Click to unmute
+  swiperInstance.slides.forEach(slide => {
+    const video = slide.querySelector('video');
+    if (video) {
+      video.addEventListener('click', () => {
+        video.muted = false;
+        video.controls = true;
+      });
+    }
+  });
+}
+
+  // Desktop Swiper
   let TrendingSlider = new Swiper('.trending-slider', {
     effect: 'coverflow',
     grabCursor: true,
     centeredSlides: true,
     loop: true,
     autoplay: {
-      delay: 2500,
+      delay: 8000,
       disableOnInteraction: false,
     },
     slidesPerView: 3,
@@ -474,21 +352,20 @@
       depth: 100,
       modifier: 2.5,
       slideShadows: false,
-      blur: true,
     },
-
+    init: false
   });
 
+  // Mobile Swiper
   let trendingMobileSlider = new Swiper('.trending-mobile-slider', {
     effect: 'coverflow',
     grabCursor: true,
     centeredSlides: true,
     loop: true,
     autoplay: {
-      delay: 2500,
+      delay: 8000,
       disableOnInteraction: false,
     },
-
     slidesPerView: 1,
     spaceBetween: 20,
     coverflowEffect: {
@@ -497,8 +374,14 @@
       depth: 100,
       modifier: 2.5,
       slideShadows: false,
-      blur: true,
     },
+    init: false
   });
+
+  // Attach video playback logic
+  handleVideoPlayback(TrendingSlider);
+  handleVideoPlayback(trendingMobileSlider);
 </script>
+
+
 @endsection

@@ -119,104 +119,39 @@
 
 
     <div class="testimonial-slider max-w-5xl mx-auto px-3 !flex !gap-5 justify-center items-center overflow-x-auto">
+        @if(isset($testimonials) && $testimonials->count() > 0)
+        @foreach ($testimonials as $testimonial)
         <div class="review-card">
             <div class="bg-white rounded-xl text-sm p-3 text-txBlack overflow-hidden">
                 <div class="flex items-center md:mb-3 mb-2">
                     <div class="text-primary md:text-xl text-base">★★★★★</div>
                 </div>
-                <p class="md:mb-4 mb-2 md:text-md text-xs">A trusted investment experience with great support.</p>
+                <p class="md:mb-4 mb-2 md:text-md text-xs clamp-2-lines">{{ $testimonial->review_text }}</p>
                 <div class="flex items-center">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Nathan" class="w-10 h-10 rounded-[6px] mr-3">
+                    <img src="{{ asset($testimonial->photo) }}" alt="{{ $testimonial->name }}" class="w-10 h-10 rounded-[6px] mr-3">
                     <div>
-                        <p class="font-semibold md:text-md text-xs">Nathan Kapoor</p>
-                        <p class="text-[8px] md:text-xs text-txBlack">Software Developer</p>
+                        <p class="font-semibold md:text-md text-xs">{{ $testimonial->name }}</p>
+                        <p class="text-[8px] md:text-xs text-txBlack single-line-ellipsis-homepage">{{ $testimonial->role }}</p>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="review-card">
-            <div class="bg-white rounded-xl text-sm p-3 text-txBlack overflow-hidden">
-                <div class="flex items-center md:mb-3 mb-2">
-                    <div class="text-primary md:text-xl text-base">★★★★★</div>
-                </div>
-                <p class="md:mb-4 mb-2 md:text-md text-xs">A trusted investment experience with great support.</p>
-                <div class="flex items-center">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Nathan" class="w-10 h-10 rounded-[6px] mr-3">
-                    <div>
-                        <p class="font-semibold md:text-md text-xs">Nathan Kapoor</p>
-                        <p class="text-[8px] md:text-xs text-txBlack">Software Developer</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="review-card">
-            <div class="bg-white rounded-xl text-sm p-3 text-txBlack overflow-hidden">
-                <div class="flex items-center md:mb-3 mb-2">
-                    <div class="text-primary md:text-xl text-base">★★★★★</div>
-                </div>
-                <p class="md:mb-4 mb-2 md:text-md text-xs">A trusted investment experience with great support.</p>
-                <div class="flex items-center">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Nathan" class="w-10 h-10 rounded-[6px] mr-3">
-                    <div>
-                        <p class="font-semibold md:text-md text-xs">Nathan Kapoor</p>
-                        <p class="text-[8px] md:text-xs text-txBlack">Software Developer</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="review-card">
-            <div class="bg-white rounded-xl text-sm p-3 text-txBlack overflow-hidden">
-                <div class="flex items-center md:mb-3 mb-2">
-                    <div class="text-primary md:text-xl text-base">★★★★★</div>
-                </div>
-                <p class="md:mb-4 mb-2 md:text-md text-xs">A trusted investment experience with great support.</p>
-                <div class="flex items-center">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Nathan" class="w-10 h-10 rounded-[6px] mr-3">
-                    <div>
-                        <p class="font-semibold md:text-md text-xs">Nathan Kapoor</p>
-                        <p class="text-[8px] md:text-xs text-txBlack">Software Developer</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="review-card">
-            <div class="bg-white rounded-xl text-sm p-3 text-txBlack overflow-hidden">
-                <div class="flex items-center md:mb-3 mb-2">
-                    <div class="text-primary md:text-xl text-base">★★★★★</div>
-                </div>
-                <p class="md:mb-4 mb-2 md:text-md text-xs">A trusted investment experience with great support.</p>
-                <div class="flex items-center">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Nathan" class="w-10 h-10 rounded-[6px] mr-3">
-                    <div>
-                        <p class="font-semibold md:text-md text-xs">Nathan Kapoor</p>
-                        <p class="text-[8px] md:text-xs text-txBlack">Software Developer</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="review-card">
-            <div class="bg-white rounded-xl text-sm p-3 text-txBlack overflow-hidden">
-                <div class="flex items-center md:mb-3 mb-2">
-                    <div class="text-primary md:text-xl text-base">★★★★★</div>
-                </div>
-                <p class="md:mb-4 mb-2 md:text-md text-xs">A trusted investment experience with great support.</p>
-                <div class="flex items-center">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Nathan" class="w-10 h-10 rounded-[6px] mr-3">
-                    <div>
-                        <p class="font-semibold md:text-md text-xs">Nathan Kapoor</p>
-                        <p class="text-[8px] md:text-xs text-txBlack">Software Developer</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @endforeach
+        @endif
 
     </div>
 
 </section>
+
+      <!-- Thank You Modal -->
+        <div id="thankYouModal"
+            class="fixed inset-0 hidden bg-black bg-opacity-50 z-50 justify-center items-center">
+            <div class="bg-white rounded-xl shadow-xl max-w-sm w-full p-6 text-center">
+                <h3 class="text-xl font-semibold text-green-600 mb-2">Thank You!</h3>
+                <p class="text-gray-700 text-sm">Your message has been received. Our team will contact you shortly.</p>
+                    <button id="closeModal" class="mt-2 px-4 py-2 text-white bg-primary rounded hover:bg-primary-dark">Close</button>
+            </div>
+        </div>
 @endsection
 
 

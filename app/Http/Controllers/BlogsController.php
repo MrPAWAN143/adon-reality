@@ -20,7 +20,7 @@ class BlogsController extends Controller
     public function show($slug)
     {
         $blog = Blogs::where('slug', $slug)->firstOrFail();
-        $projectOfTheDay = PropertiesDetails::where('is_active', 1)->inRandomOrder()->take(5)->get();
+        $projectOfTheDay = PropertiesDetails::where('is_active', 1)->with('developmentPartner' , 'category')->inRandomOrder()->take(5)->get();
         $exploreOurBlog = Blogs::where('is_active', 1)->inRandomOrder()->take(5)->get();
         $similarBlogs = Blogs::where('is_active', 1)->where('id', '!=', $blog->id)->inRandomOrder()->take(3)->get();
 

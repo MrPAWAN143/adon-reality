@@ -115,7 +115,7 @@
                 <div class="bg-[#f7f2f3] rounded-xl max-h-[20] shadow-xl ">
                     <img src="{{ asset('assets/images/icons/transparent-dealings.svg') }}" alt="Experienced Advisory Icon" class="w-6 h-6 text-primary">
                 </div>
-                <div class="text-txBlack text-start order-1 md:pr-20 pr-10">
+                <div class="text-txBlack text-start order-1 md:pr-12 pr-10">
                     <h3 class="font-semibold leading-5 text-[10px] md:text-[14px] ml-1">Transparent<br>Dealings</h3>
                 </div>
             </div>
@@ -128,7 +128,7 @@
                 <div class="bg-[#f7f2f3] rounded-xl max-h-[20] shadow-xl ">
                     <img src="{{ asset('assets/images/icons/personalised-investment-planning.svg') }}" alt="Experienced Advisory Icon" class="w-6 h-6 text-primary">
                 </div>
-                <div class="text-txBlack text-start order-1 md:pr-20 pr-10">
+                <div class="text-txBlack text-start order-1 md:pr-12 pr-10">
                     <h3 class="font-semibold leading-5 text-[10px] md:text-[14px] ml-1">Complete<br>Legal Support</h3>
                 </div>
             </div>

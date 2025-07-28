@@ -4,7 +4,12 @@
 <title>Edit Award / Recognition</title>
 <style>
     .forBorder {
-        border-color: #49717B !important
+        border: 1px solid #49717B !important;
+        border-color: #49717B !important;
+    }
+    .forBorder:focus {
+        border-color: #49717B !important;
+     border: 1px solid #49717B !important;
     }
 </style>
 @endsection

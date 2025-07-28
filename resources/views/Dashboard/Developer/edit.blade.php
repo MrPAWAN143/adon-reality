@@ -358,7 +358,6 @@
             $('.container').hide();
             $('.loadingbtn').show();
             const formData = new FormData(this);
-            // Append CKEditor data
             const editorData = CKEDITOR.instances['developer_description'].getData();
             formData.append('developer_description', editorData);
             const $unitSpans = $('#operatingCitiesList li span');
