@@ -13,6 +13,7 @@ use App\Http\Controllers\TestimonyController;
 use App\Http\Controllers\JobAppliedController;
 use App\Http\Controllers\TeamMemberController;
 use App\Http\Controllers\EventAndMediaController;
+use App\Http\Controllers\PropertySearchController;
 use App\Http\Controllers\FeaturedAndAwardController;
 use App\Http\Controllers\PropertiesDetailsController;
 use App\Http\Controllers\PropertiesCategoryController;
@@ -44,6 +45,11 @@ Route::get('/faq', [MasterController::class, 'faq'])->name('faq');
 Route::get('/contact', [MasterController::class, 'contact'])->name('contact');
 Route::get('/testimonials', [MasterController::class, 'testimonials'])->name('testimonials');
 Route::get('/terms-and-conditions', [MasterController::class, 'termsAndConditions'])->name('terms-and-conditions');
+Route::get('/privacy-policy', [MasterController::class, 'privacyPolicy'])->name('privacy-policy');
+Route::get('/disclaimer', [MasterController::class, 'disclaimer'])->name('disclaimer');
+Route::get('/rera-disclosures', [MasterController::class, 'reraDisclosures'])->name('rera-disclosures');
+Route::get('/anti-fraud', [MasterController::class, 'antiFraud'])->name('anti-fraud');
+Route::get('/cookie-policy', [MasterController::class, 'cookiesPolicy'])->name('cookie-policy');
 
 Route::post('/leads/store', [QueryController::class, 'store'])->name('leads.store');
 Route::post('/enquery', [QueryController::class, 'additionalEnquiry'])->name('additionalEnquiry.store');
@@ -134,7 +140,12 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/leads/{lead}/message',   [QueryController::class, 'storeMessage']);
     Route::post('/leads/{lead}/toggle-read', [QueryController::class, 'toggleRead']);
+
+    Route::get('/dashboard/jobs', [JobAppliedController::class, 'index'])->name('profile.index');
 });
+
+
+Route::get('/property-suggestions', [PropertySearchController::class, 'suggestions'])->name('property.suggestions');
 
 
 

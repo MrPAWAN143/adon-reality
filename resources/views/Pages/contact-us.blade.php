@@ -57,10 +57,10 @@
 
 
             <div class="mt-4 text-center flex justify-center items-center gap-5">
-                <a href=""><x-forkawesome-facebook-square class="text-primary w-5 h-5" /></a>
-                <a href=""><x-forkawesome-youtube-play class="text-primary w-5 h-5" /></a>
-                <a href=""><x-forkawesome-instagram class="text-primary w-5 h-5" /></a>
-                <a href=""><x-forkawesome-linkedin-square class="text-primary w-5 h-5" /></a>
+                <a href="https://www.facebook.com/people/ADON-Realty/61575972506637/"><x-forkawesome-facebook-square class="text-primary w-5 h-5" /></a>
+                <a href="https://www.youtube.com/@adonrealty"><x-forkawesome-youtube-play class="text-primary w-5 h-5" /></a>
+                <a href="https://www.instagram.com/adonrealty_/"><x-forkawesome-instagram class="text-primary w-5 h-5" /></a>
+                <a href="https://www.linkedin.com/company/adon-realty-real-estate-channel-partners/"><x-forkawesome-linkedin-square class="text-primary w-5 h-5" /></a>
                 <a href=""><x-si-x class="text-primary w-5 h-5" /></a>
             </div>
         </div>

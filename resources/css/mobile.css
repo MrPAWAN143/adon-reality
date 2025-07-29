@@ -10,7 +10,14 @@
 
     }
 
-    
+    .property_description ul {
+        @apply text-txBlack bg-white text-[12px] ml-4 space-y-0;
+    }
+
+    .property_description ul li {
+        @apply list-disc text-txBlack/80;
+    }
+
 
 
     /* Form Card */
