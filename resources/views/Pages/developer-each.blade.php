@@ -3,7 +3,11 @@
 <title>Adon Reality - Projects Each Brand</title>
 @endsection
 @section('styles')
+<style>
+ 
+</style>
 @endsection
+
 
 @section('content')
 <section class="max-w-[1100px] mx-auto px-4 md:px-0 pb-2 pt-1">
@@ -12,8 +16,8 @@
 
 <section class="px-4  md:px-0 max-w-[1100px] mx-auto bg-white pb-0">
     <div class="flex md:flex-row flex-col-reverse items-center justify-between mb-0">
-        <div class="flex-1">
-            <x-heading-subheading heading="{{ 'Explore Projects by ' . $developmentPartner->developer_name }}" subheading="" headingClass="heading " subHeadingClass="devsubheading mb-0" />
+        <div class="flex-2">
+            <x-heading-subheading heading="{{ 'Explore Projects by ' . $developmentPartner->developer_name }}" subheading="{!! $developmentPartner->developer_description !!}" headingClass="heading " subHeadingClass="devsubheading mb-0" />
         </div>
 
         <div class="flex-1 flex justify-end items-center">
