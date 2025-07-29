@@ -28,10 +28,10 @@ class MasterController extends Controller
         $awards = FeaturedAndAward::where('is_active', 1)->inRandomOrder()->take(4)->get();
         $teamMembers = TeamMember::where('is_active', 1)->get();
         $developmentPartner = DevelopmentPartners::where('is_active', 1)
-           ->inRandomOrder()
-           ->take(3)
-           ->get();
-        return view('Pages.about-us', compact('developmentPartner', 'teamMembers' , 'awards'));
+            ->inRandomOrder()
+            ->take(3)
+            ->get();
+        return view('Pages.about-us', compact('developmentPartner', 'teamMembers', 'awards'));
     }
 
     public function service()
@@ -39,7 +39,7 @@ class MasterController extends Controller
         $testimonials = Testimony::where('is_active', 1)
             ->orderBy('created_at', 'desc')
             ->get();
-        return view('Pages.service-page' , compact('testimonials'));
+        return view('Pages.service-page', compact('testimonials'));
     }
 
     public function career()
@@ -61,5 +61,28 @@ class MasterController extends Controller
     public function termsAndConditions()
     {
         return view('Pages.terms-and-conditions');
+    }
+
+    public function privacyPolicy()
+    {
+        return view('Pages.privacy-policy');
+    }
+
+    public function disclaimer()
+    {
+        return view('Pages.disclaimer');
+    }
+    public function reraDisclosures()
+    {
+        return view('Pages.rera-disclosures');
+    }
+    public function antiFraud()
+    {
+        return view('Pages.anti-fraud');
+    }
+
+    public function cookiesPolicy()
+    {
+        return view('Pages.cookie-policy');
     }
 }

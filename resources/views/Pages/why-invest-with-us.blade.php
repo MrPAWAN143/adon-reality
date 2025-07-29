@@ -29,7 +29,7 @@ carefully planned real estate opportunities." />
 
 
 <section class="py-4 bg-white text-center max-w-[1100px] mx-auto md:px-0 px-4">
-    <h2 class="text-[16px] md:text-[24px] text-txBlack font-semibold mb-10">Why Choose Adon Realty</h2>
+    <h2 class="text-[16px] md:text-[24px] text-txBlack font-semibold md:mb-6 mb-4">Why Choose Adon Realty</h2>
 
     <div class=" mx-auto grid grid-cols-2 md:grid-cols-4 md:gap-6 gap-4 justify-between items-center">
 
@@ -136,8 +136,8 @@ carefully planned real estate opportunities." />
 
     </div>
 
-    <div class="py-8 mt-4">
-        <h2 class="text-[16px] md:text-[24px] text-txBlack font-semibold mb-10">
+    <div class="md:py-8 py-2 md:mt-4">
+        <h2 class="text-[16px] md:text-[24px] text-txBlack font-semibold md:mb-10 mb-6">
             Traditional Investments vs. Real Estate
         </h2>
 
@@ -180,7 +180,7 @@ carefully planned real estate opportunities." />
 </section>
 
 
-<section class="px-4 py-8 bg-white">
+<section class="px-4 md:py-8 py-0 bg-white">
     <div class="container max-w-5xl mx-auto px-4">
 
         <x-heading-subheading heading="Hear From Our Investors" subheading="Genuine testimonials and success stories from our valued investors." headingClass="heading text-center" subHeadingClass="subheading text-center" />

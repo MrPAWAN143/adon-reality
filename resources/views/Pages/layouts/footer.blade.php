@@ -39,15 +39,15 @@
             <div class="">
                 <p class="text-sm font-semibold text-goldenColor mb-1 text-[16px]">DEVELOPER WE WORK WITH</p>
                 <div class="flex flex-wrap gap-x-2 gap-y-1 md:text-base sm:text-[12px] md:text-[16px]">
-                    <a href="{{route('development-partners.show', ['slug' => 'dlf'])}}" target="_blank" class="text-white">DLF</a>
-                    <a href="{{route('development-partners.show', ['slug' => 'prime'])}}" target="_blank" class="text-white">Prime</a>
-                    <a href="{{route('development-partners.show', ['slug' => 'space'])}}" target="_blank" class="text-white">Space</a>
-                    <a href="{{route('development-partners.show', ['slug' => 'godrej'])}}" target="_blank" class="text-white">Godrej</a>
-                    <a href="{{route('development-partners.show', ['slug' => 'arena'])}}" target="_blank" class="text-white">Arena</a>
-                    <a href="{{route('development-partners.show', ['slug' => '2a-company'])}}" target="_blank" class="text-white">2A Company</a>
-                    <a href="{{route('development-partners.show', ['slug' => 'aura'])}}" target="_blank" class="text-white">Aura</a>
-                    <a href="{{route('development-partners.show', ['slug' => 'wave'])}}" target="_blank" class="text-white">Wave</a>
-                    <a href="{{route('development-partners.show', ['slug' => 'm3m'])}}" target="_blank" class="text-white">M3M</a>
+                    <a href="{{route('development-partners.show', ['slug' => 'dlf-limited'])}}" target="_blank" class="text-white">DLF</a>
+                    <a href="#" target="_blank" class="text-white">Prime</a>
+                    <a href="#" target="_blank" class="text-white">Space</a>
+                    <a href="{{route('development-partners.show', ['slug' => 'godrej-properties'])}}" target="_blank" class="text-white">Godrej</a>
+                    <a href="#" target="_blank" class="text-white">Arena</a>
+                    <a href="#" target="_blank" class="text-white">2A Company</a>
+                    <a href="#" target="_blank" class="text-white">Aura</a>
+                    <a href="#" target="_blank" class="text-white">Wave</a>
+                    <a href="{{route('development-partners.show', ['slug' => 'm3m-group'])}}" target="_blank" class="text-white">M3M</a>
                 </div>
             </div>
         </div>
@@ -115,11 +115,11 @@
                 <p class="text-goldenColor font-semibold text-sm md:text-base mb-2">Legal & Compliance</p>
                 <ul class="space-y-1 text-base">
                     <li><a href="{{route('terms-and-conditions')}}" target="_blank" class="hover:underline">Terms & Conditions</a></li>
-                    <li><a href="#" target="_blank" class="hover:underline">Privacy Policy</a></li>
-                    <li><a href="#" target="_blank" class="hover:underline">Disclaimer</a></li>
-                    <li><a href="#" target="_blank" class="hover:underline">RERA Disclosures</a></li>
-                    <li><a href="#" target="_blank" class="hover:underline">Anti-Fraud Notice</a></li>
-                    <li><a href="#" target="_blank" class="hover:underline">Cookie Policy</a></li>
+                    <li><a href="{{route('privacy-policy')}}" target="_blank" class="hover:underline">Privacy Policy</a></li>
+                    <li><a href="{{route('disclaimer')}}" target="_blank" class="hover:underline">Disclaimer</a></li>
+                    <li><a href="{{route('rera-disclosures')}}" target="_blank" class="hover:underline">RERA Disclosures</a></li>
+                    <li><a href="{{route('anti-fraud')}}" target="_blank" class="hover:underline">Anti-Fraud Notice</a></li>
+                    <li><a href="{{route('cookie-policy')}}" target="_blank" class="hover:underline">Cookie Policy</a></li>
                 </ul>
             </div>
 
@@ -138,10 +138,10 @@
             <div class="flex flex-col md:flex-col items-left gap-0 md:gap-1 ">
                 <p class="text-sm font-semibold text-white">Follow us.</p>
                 <div class="mt-1 text-center flex justify-center items-center md:gap-2 gap-1">
-                    <a href="#"><x-forkawesome-facebook-square class="text-secondary w-5 h-5" /></a>
-                    <a href="#"><x-forkawesome-youtube-play class="text-secondary w-5 h-5" /></a>
-                    <a href="#"><x-forkawesome-instagram class="text-secondary w-5 h-5" /></a>
-                    <a href="#"><x-forkawesome-linkedin-square class="text-secondary w-5 h-5" /></a>
+                    <a href="https://www.facebook.com/people/ADON-Realty/61575972506637/"><x-forkawesome-facebook-square class="text-secondary w-5 h-5" /></a>
+                    <a href="https://www.youtube.com/@adonrealty"><x-forkawesome-youtube-play class="text-secondary w-5 h-5" /></a>
+                    <a href="https://www.instagram.com/adonrealty_/"><x-forkawesome-instagram class="text-secondary w-5 h-5" /></a>
+                    <a href="https://www.linkedin.com/company/adon-realty-real-estate-channel-partners/"><x-forkawesome-linkedin-square class="text-secondary w-5 h-5" /></a>
                     <a href="#"><x-si-x class="text-secondary w-5 h-5" /></a>
                 </div>
             </div>

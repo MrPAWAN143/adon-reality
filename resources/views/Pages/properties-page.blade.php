@@ -17,10 +17,10 @@
             <!-- Filters -->
             <div class="grid md:grid-cols-4 grid-cols-4 md:gap-4 gap-2 md:pb-5">
                 <select class="project-page-filter-btn ">
-                    <option>Location</option>
-                    <option>Architecture</option>
-                    <option>Interior</option>
-                    <option>Exterior</option>
+                    <option disabled selected>Location</option>
+                    @foreach ($properties as $property)
+                    <option value="{{ $property->id }}">{{ $property->property_location }}</option>
+                    @endforeach
                 </select>
 
                 <select class="project-page-filter-btn">

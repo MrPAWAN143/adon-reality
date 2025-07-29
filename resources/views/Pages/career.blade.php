@@ -122,7 +122,7 @@
 
     <h3 id="formJobTitle" class="text-lg font-semibold mb-4">Apply for Job</h3>
 
-    <form id="jobApplicationForm" enctype="multipart/form-data" class="space-y-4">
+    <form id="jobApplicationForm" method="POST" enctype="multipart/form-data" class="space-y-4">
       @csrf
       <input type="hidden" name="job_title" id="hiddenJobTitle">
 
@@ -344,14 +344,12 @@
   });
 </script>
 
-<script>
+<script type="module">
   $(document).ready(function() {
     $('#jobApplicationForm').on('submit', function(e) {
       e.preventDefault();
-
       const formData = new FormData(this);
 
-      // Add job title from DOM
       const jobTitle = $('#jobTitle').text().trim();
       $('#hiddenJobTitle').val(jobTitle);
       formData.set('job_title', jobTitle);
@@ -368,6 +366,7 @@
         success: function(res) {
           if (res.success) {
             $('#jobApplyModal').addClass('hidden'); // Close the apply form
+            $('#thankYouModal p').text('Thank you for your application!'); // Show thank you modal
             $('#thankYouModal').removeClass('hidden'); // Show thank you modal
             $('#jobApplicationForm')[0].reset(); // Reset form
           }
