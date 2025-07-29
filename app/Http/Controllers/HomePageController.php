@@ -12,13 +12,13 @@ class HomePageController extends Controller
 {
     public function index($slug = null)
     {
-        $developmentPartner = DevelopmentPartners::where('is_active', 1)->limit(3)->orderBy('created_at', 'asc')->get();
+        $developmentPartner = DevelopmentPartners::where('is_active', 1)->limit(3)->orderBy('created_at', 'desc')->get();
         $properties = PropertiesDetails::where('is_active', 1)->where('property_type', 'Featured')->with(['category', 'developmentPartner'])
-            ->orderBy('created_at', 'asc')
+            ->orderBy('created_at', 'desc')
             ->limit(3)
             ->get();
         $primeLocation = PropertiesDetails::where('is_active', 1)->where('property_type', 'Prime')->with(['category', 'developmentPartner'])
-            ->orderBy('created_at', 'asc')
+            ->orderBy('created_at', 'desc')
             ->limit(4)
             ->get();
 
@@ -26,7 +26,7 @@ class HomePageController extends Controller
         $virtualTours = PropertiesDetails::where('is_active', 1)
             ->where('property_type', 'Virtual')
             ->with(['category', 'developmentPartner'])
-            ->orderBy('created_at', 'asc')
+            ->orderBy('created_at', 'desc')
             ->limit(3)
             ->get();
         $blogs = Blogs::where('is_active', 1)->limit(3)->orderBy('created_at', 'desc')->get();
