@@ -470,14 +470,15 @@ textarea:focus {
 .open-roles {
     max-width: 300px;
     width: 100%;
-    min-height: 200px;
+    min-height: 170px;
     height: 100%;
     @apply bg-gradient-to-b from-[#380B2A]/[10%] to-secondary/10 py-4 px-4 rounded-[15px] shadow hover:shadow-md transition border hover:border-primary;
     box-shadow: 0px 0px 4px rgba(85, 4, 19, 0.25);
 }
 
 .open-roles .first-p {
-    @apply text-[16px] font-medium text-txBlack mb-1;
+    @apply text-[16px] !font-semibold text-txBlack mb-1;
+        font-weight: 600;
 }
 
 .open-roles:hover {

@@ -10,6 +10,7 @@ use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NewsAndPrController;
 use App\Http\Controllers\TestimonyController;
+use App\Http\Controllers\JobAppliedController;
 use App\Http\Controllers\TeamMemberController;
 use App\Http\Controllers\EventAndMediaController;
 use App\Http\Controllers\FeaturedAndAwardController;
@@ -46,8 +47,7 @@ Route::get('/terms-and-conditions', [MasterController::class, 'termsAndCondition
 
 Route::post('/leads/store', [QueryController::class, 'store'])->name('leads.store');
 Route::post('/enquery', [QueryController::class, 'additionalEnquiry'])->name('additionalEnquiry.store');
-
-
+Route::post('/apply-job', [JobAppliedController::class, 'store'])->name('new.job.apply');
 
 
 Route::middleware('auth')->group(function () {
