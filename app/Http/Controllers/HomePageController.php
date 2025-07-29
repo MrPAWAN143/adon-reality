@@ -34,6 +34,14 @@ class HomePageController extends Controller
         $testimonials = Testimony::where('is_active', 1)
             ->orderBy('created_at', 'desc')
             ->get();
-        return view('Pages.homepage', compact('developmentPartner', 'properties', 'blogs', 'primeLocation', 'virtualTours', 'testimonials'));
+
+        // Fetch cities for the dropdown
+        $cities = PropertiesDetails::where('is_active', 1)
+            ->distinct()
+            ->pluck('property_city')
+            ->filter(function ($city) {
+                return !empty($city);
+            });
+        return view('Pages.homepage', compact('developmentPartner', 'properties', 'blogs', 'primeLocation', 'virtualTours', 'testimonials', 'cities'));
     }
 }

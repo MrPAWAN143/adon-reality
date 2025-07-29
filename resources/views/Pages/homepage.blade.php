@@ -46,10 +46,10 @@
                 </div>
             </div>
 
-            <div class="swiper-slide relative m-hero_section" style="background-image: url('assets/images/bannerImages/hero-banner.webp');
+            <div class="swiper-slide relative m-hero_section" style="background-image: url('assets/images/bannerImages/homepage-first-banner.webp');
                 background-size: cover; background-position: center;
                 background-repeat: no-repeat;">
-                <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+                <div class="absolute inset-0 bg-black bg-opacity-0"></div>
                 <div class="relative md:top-[-100px] top-[-30px] z-10 flex flex-col items-center justify-center h-full text-white px-4 py-0 md:py-16">
                     <h1 class="md:text-[24px] text-[16px] md:max-w-3xl font-bold mb-4 text-center">
                         Invest in High-Return, Legally Verified Real Estate Projects
@@ -66,10 +66,11 @@
                 <div class="absolute inset-0 bg-black bg-opacity-50"></div>
                 <div class="relative md:top-[-100px] top-[-30px] z-10 flex flex-col items-center justify-center h-full text-white px-4 py-0 md:py-16">
                     <h1 class="md:text-[24px] text-[16px] md:max-w-3xl font-bold mb-4 text-center">
-                        Invest in High-Return, Legally Verified Real Estate Projects
+                        Trusted Real Estate Projects | Legally Approved | High ROI
                     </h1>
                     <p class="text-lg md:text-xl mb-6 text-center">
                         Discover the best ROI-driven properties across India
+
                     </p>
 
                 </div>
@@ -84,17 +85,29 @@
 
     <div class="absolute left-1/2 md:top-1/2 top-[62%] transform -translate-x-1/2 -translate-y-1/2  z-10 m-hero-search flex flex-row items-center justify-between md:w-full  md:max-w-[700px] md:h-[60px] h-auto bg-white rounded-full md:py-2 py-1 px-2 shadow-md !w-[calc(100%-80px)]">
 
-        <div class=" w-auto !sm:w-[10%] md:w-[16%] z-10">
-            <select class="hero-section-select home py-1 md:py-2">
-                <option>City</option>
-                <option>Delhi</option>
-                <option>Mumbai</option>
-                <option>Bangalore</option>
+        <div class="w-auto !sm:w-[10%] md:w-[16%] z-10 !max-w-[150px]">
+            <select id="cityFilter" class="hero-section-select home py-1 md:py-2 !max-w-[120px]">
+                <option value="">City</option>
+                @if(isset($cities) && $cities->count() > 0)
+                    @foreach ($cities as $city)
+                        <option value="{{ $city }}">{{ $city }}</option>
+                    @endforeach
+                @endif
             </select>
         </div>
-        <div class=" w-full z-0">
-            <input type="text" placeholder="Search by city, ROI, project name..." class="search-input-homepage-herosection md:ml-2 md:placeholder:text-[16px] placeholder:text-[10px] md:text-[16px]" />
+        <div class="w-full relative z-0">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search by project name..."
+                class="search-input-homepage-herosection md:ml-2 md:placeholder:text-[16px] placeholder:text-[10px] md:text-[16px] w-full"
+                autocomplete="off" />
+
+            <ul
+                id="suggestions"
+                class="absolute bg-white border border-gray-300 w-full mt-2 rounded shadow-lg text-left hidden z-20 max-h-48 overflow-y-auto"></ul>
         </div>
+
 
         <button class="herosearchBtn bg-primary border-primary hover:bg-white border-2 hover:border-primary text-white hover:text-txBlack font-semibold md:py-2 md:px-10 px-2 py-1 ml-[-20px] rounded-full  md:mt-0 md:ml-2 transition duration-300">
             Search
@@ -311,7 +324,7 @@
                 <div class="relative rounded-[15px] overflow-hidden shadow-md ">
                     <img src="{{ asset($property->explore_virtual_thumbnail_image ? $property->explore_virtual_thumbnail_image : $property->property_featured_image) }}" alt="{{ $property->property_name }}" class="w-[350px] h-[450px] object-cover group-hover:scale-105 transition-transform duration-300">
                     <div class="absolute bottom-0 left-0 w-full p-3 bg-gradient-to-t from-txBlack via-transparent to-transparent text-white text-left">
-                        <h3 class="text-[24px] font-medium mb-1 tracking-tight">{{ $property->property_name }}</h3>
+                        <h3 class="text-[24px] font-medium mb-1 tracking-tight single-line-ellipsis-homepage ">{{ $property->property_name }}</h3>
                         <p class="text-[16px] leading-5 tracking-tight">{{ $property->property_location }} , {{ $property->property_city }}</p>
                     </div>
                 </div>
@@ -344,7 +357,7 @@
                 <div class="relative rounded-[15px] overflow-hidden shadow-md group">
                     <img src="{{ asset($property->explore_virtual_thumbnail_image ? $property->explore_virtual_thumbnail_image : $property->property_featured_image) }}" alt="{{ $property->property_name }}" class="w-full  object-cover group-hover:scale-105 transition-transform duration-300">
                     <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-white text-left">
-                        <h3 class="text-2xl font-medium mb-2">{{ $property->property_name }}</h3>
+                        <h3 class="text-2xl font-medium mb-2 single-line-ellipsis-homepage">{{ $property->property_name }}</h3>
                         <p class="text-xs">{{ $property->property_location }} , {{ $property->property_city }}</p>
                     </div>
                 </div>
@@ -453,7 +466,7 @@
     <div class="testimonial-slider max-w-5xl mx-auto px-3 !flex !gap-5 justify-center items-center overflow-x-auto">
         @if(isset($testimonials) && $testimonials->count() > 0)
         @foreach ($testimonials as $testimonial)
-           <div class="review-card">
+        <div class="review-card">
             <div class="bg-white rounded-xl text-sm p-3 text-txBlack overflow-hidden">
                 <div class="flex items-center md:mb-3 mb-2">
                     <div class="text-primary md:text-xl text-base">★★★★★</div>
@@ -470,7 +483,7 @@
         </div>
         @endforeach
         @endif
-       
+
 
     </div>
 
@@ -481,6 +494,56 @@
 
 
 @section('scripts')
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const input = document.getElementById("searchInput");
+        const suggestions = document.getElementById("suggestions");
+        const cityFilter = document.getElementById("cityFilter");
+
+        if (cityFilter) {
+            cityFilter.addEventListener("change", function() {
+                input.dispatchEvent(new Event("input")); // re-trigger suggestion filter
+            });
+        }
+
+        input.addEventListener("input", function() {
+            const query = input.value.trim();
+            const city = cityFilter ? cityFilter.value : "";
+
+            if (query.length < 2) {
+                suggestions.classList.add("hidden");
+                suggestions.innerHTML = "";
+                return;
+            }
+
+            fetch(`/property-suggestions?query=${encodeURIComponent(query)}&city=${encodeURIComponent(city)}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (!data.length) {
+                        suggestions.innerHTML = `<li class="px-4 py-2 text-gray-500">No suggestions found</li>`;
+                    } else {
+                        suggestions.innerHTML = data.map(item => `
+            <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <a href="/projects/${item.property_slug}" class="block w-full h-full">
+                    ${item.property_name} — ${item.property_city || 'N/A'}
+                    ${item.property_expected_roi ? ` – ROI: ${item.property_expected_roi}` : ''}
+                </a>
+            </li>
+        `).join('');
+                    }
+                    suggestions.classList.remove("hidden");
+                });
+        });
+
+        // Hide suggestions on outside click
+        document.addEventListener("click", function(e) {
+            if (!e.target.closest("#searchInput") && !e.target.closest("#suggestions")) {
+                suggestions.classList.add("hidden");
+            }
+        });
+    });
+</script>
+
 
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

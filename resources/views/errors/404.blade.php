@@ -1,5 +1,9 @@
 @extends('Pages.layouts.app')
 
+@section('metadata')
+<title>Adon Realty - 404 Error</title>
+@endsection
+
 @section('content')
    <!-- 404 Error Page - Full Height with Your Theme -->
 <section class="min-h-72 flex items-center justify-center bg-gradient-to-br from-gradientFrom to-gradientTo px-6 py-20">

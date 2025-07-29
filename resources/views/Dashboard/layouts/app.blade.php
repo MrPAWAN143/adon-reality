@@ -103,6 +103,23 @@
 
                 </div>
 
+                <!-- ── Leads ─────────────────────────────────────────── -->
+                <div class="relative block w-full">
+                    <a href="{{ route('profile.index') }}">
+                        <div
+                            class="flex items-center w-full p-0 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80">
+                            <button type="button"
+                                class="flex items-center justify-between w-full p-3 font-sans text-xl antialiased font-semibold leading-snug text-left border-b-0 select-none text-blue-gray-700 hover:text-blue-gray-900">
+                                <div class="grid mr-4 place-items-center">
+                                    <x-ri-dashboard-fill class="w-6 h-6 text-white" />
+                                </div>
+                                <p class="mr-auto text-base font-normal leading-relaxed">Jobs</p>
+                            </button>
+                        </div>
+                    </a>
+
+                </div>
+
                 <!-- ── Development Partner ───────────────────────────── -->
                 <div class="relative block w-full">
                     <div role="button"

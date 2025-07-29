@@ -113,19 +113,11 @@
 }
 
 .property_description ul {
-    @apply text-txBlack md:text-[16px] text-[12px] md:ml-4 ml-4 space-y-0;
+    @apply text-txBlack bg-white md:text-[16px] text-[12px] md:ml-8 ml-4 space-y-0;
 }
 
 .property_description ul li {
-    @apply flex items-center gap-2;
-}
-
-.property_description ul li span:nth-child(1) {
-    @apply w-1 h-1 mt-1 bg-txBlack rounded-full shrink-0;
-}
-
-.property_description ul li span:nth-child(2) {
-    @apply text-txBlack;
+    @apply list-disc text-txBlack/80 ;
 }
 
 .dev-start {
