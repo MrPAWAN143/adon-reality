@@ -270,7 +270,7 @@
 
         <div class="md:max-w-xl mr-auto md:px-4 pb-4 px-6">
             <!-- Section Heading -->
-            <h2 class="md:text-[24px] text-[16px] font-semibold mb-2 md:text-start text-center">DLF Riverine Size & Area Break–Down</h2>
+            <h2 class="md:text-[24px] text-[16px] font-semibold mb-2 md:text-start text-center">Size & Area Break–Down</h2>
 
             <!-- Info Table -->
             <div class="border !max-w-3xl border-primary rounded-xl overflow-hidden md:text-[16px] text-[10px]">
@@ -311,7 +311,7 @@
 
             <!-- Project Snapshot (Right aligned table on larger screens if needed) -->
             <div class="md:max-w-full max-w-[85%] m-auto text-txBlack">
-                <h3 class="md:text-[16px] text-[12px] font-semibold mb-2 md:text-start text-center">At raising sector 44, Noida</h3>
+                <!-- <h3 class="md:text-[16px] text-[12px] font-semibold mb-2 md:text-start text-center">At raising sector 44, Noida</h3> -->
                 <div class="border border-primary rounded-lg overflow-hidden w-full md:w-2/3 text-[10px] md:text-[16px]">
                     <div class="grid grid-cols-2 border-b border-primary">
                         <div class="px-4 py-2 md:font-medium font-normal border-r border-primary">Unit Type</div>
@@ -342,7 +342,7 @@
             <div class="">
                 <h3 class="md:text-[24px] text-[16px] font-semibold mb-2 text-start">Why to invest in this project</h3>
 
-                <div class="text-txBlack md:text-[16px] text-[12px] leading-relaxed ml-4 space-y-0">
+                <div class="text-txBlack md:!text-[16px] !text-[12px] !font-poppins leading-relaxed ml-4 space-y-0">
                     {!! $property->property_benefits ?? 'No rationale available.' !!}
                 </div>
 

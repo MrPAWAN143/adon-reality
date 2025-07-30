@@ -168,7 +168,7 @@
 
         <!-- Founder Image -->
         <div class="w-[40%] md:w-1/3 flex justify-end items-center">
-            <img src="{{ asset('assets/images/allImages/founder.png') }}" alt="Founder" class="rounded-xl md:w-48 w-36 h-36 md:h-48 object-cover shadow-md" />
+            <img src="{{ asset('assets/images/allImages/founder-image.jpeg') }}" alt="Founder" class="rounded-xl md:w-48 w-36 h-36 md:h-48 object-cover shadow-md" />
         </div>
 
         <!-- Content -->
@@ -181,7 +181,7 @@
             <!-- Signature -->
             <div class="text-center mt-1 md:text-right inline-block rotate-[-8deg] ml-[50px] md:ml-[250px] md:mt-[20px]">
                 <div class="signature  text-emerald-950">
-                    <img src="{{ asset('assets/images/icons/signature.png') }}" alt="signature" class="w-8 h-auto object-contain">
+                    <img src="{{ asset('assets/images/allImages/founder-signature.png') }}" alt="signature" class="w-28 h-auto object-contain bg-transparent">
                 </div>
             </div>
         </div>

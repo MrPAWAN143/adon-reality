@@ -746,6 +746,9 @@ textarea:focus {
     @apply mt-2 w-full border-2 border-primary text-primary rounded-full py-2 transition hover:bg-primary hover:text-white;
 }
 
+.marketing-insights-card.arawds-card.about{
+    padding: 8px !important;
+}
 
 
 .marketing-insights-card.arawds-card {

@@ -508,6 +508,7 @@
         max-height: 95px !important;
         min-height: 95px;
         object-fit: cover;
+        margin-bottom: 3px;
     }
 
     .m-featured-page-card .project-page-image-dev .project-page-image {
