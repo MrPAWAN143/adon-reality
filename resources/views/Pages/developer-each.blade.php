@@ -4,29 +4,30 @@
 @endsection
 @section('styles')
 <style>
- 
+
 </style>
 @endsection
 
 
 @section('content')
 <section class="max-w-[1100px] mx-auto px-4 md:px-0 pb-2 pt-1">
-     <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('development-partners') }}">Developer Partners</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('development-partners.show', $developmentPartner->slug) }}">{{ $developmentPartner->developer_name }}</a></div>
+    <x-page-path class="path" path=<div><a href="{{ route('home') }}">Home</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('development-partners') }}">Developer Partners</a> <x-forkawesome-angle-right class="w-4 h-4 inline mr-[-5px] ml-0 text-center items-center" /> <a class="ml-[-5px]" href="{{ route('development-partners.show', $developmentPartner->slug) }}">{{ $developmentPartner->developer_name }}</a></div>
 </section>
 
 <section class="px-4  md:px-0 max-w-[1100px] mx-auto bg-white pb-0">
-    <div class="flex md:flex-row flex-col-reverse items-center justify-between mb-0">
-        <div class="flex-2">
-            <x-heading-subheading heading="{{ 'Explore Projects by ' . $developmentPartner->developer_name }}" subheading="{!! $developmentPartner->developer_description !!}" headingClass="heading " subHeadingClass="devsubheading mb-0" />
+    <div class="flex md:flex-row flex-col-reverse items-start justify-between mb-0">
+        <div class=" md:max-w-[85%] max-w-full md:mb-0 mb-4">
+            <x-heading-subheading heading="{{ 'Explore Projects by ' . $developmentPartner->developer_name }}" subheading="" headingClass="heading " subHeadingClass="devsubheading mb-0" />
+            <div class="w-full -mt-2">
+                <p class="md:pr-[15%] pr-0 text-[8px] md:text-sm pb-3">{!! $developmentPartner->developer_description !!}</p>
+            </div>
         </div>
 
-        <div class="flex-1 flex justify-end items-center">
+        <div class="flex justify-end items-center">
             <img src="{{ asset( $developmentPartner->logo) }}" alt="{{$developmentPartner->developer_name }}" class="md:w-24 md:h-24 w-16 h-16 object-cover rounded-full shadow-md" />
         </div>
     </div>
-    <div class="w-full -mt-2">
-        <p class="md:pr-[15%] pr-0 text-[8px] md:text-sm pb-3">{!! $developmentPartner->description !!}</p>
-    </div>
+
 
     <div class="md:max-w-5xl w-full mx-auto px-4 md:py-4 py-1 md:pb-4">
         <table class="min-w-full border border-gray-300 text-left md:text-sm text-[12px]">
@@ -46,7 +47,7 @@
                 <tr class="bg-gray-50">
                     <th class="font-bold md:p-4 p-2 align-top border-r">Owner of Group</th>
                     <th class="md:p-4 p-2 font-normal text-gray-700">
-                    {{ $developmentPartner->group_owners ?? 'N/A' }}
+                        {{ $developmentPartner->group_owners ?? 'N/A' }}
                     </th>
                 </tr>
                 <tr class="bg-white">

@@ -29,7 +29,7 @@ class JobAppliedController extends Controller
         if ($request->hasFile('resume')) {
             $file = $request->file('resume');
             $filename = uniqid() . '_resume.' . $file->getClientOriginalExtension();
-            $path = public_path('uploads/Resumes');
+            $path = 'uploads/Resumes';
 
             if (!file_exists($path)) {
                 mkdir($path, 0755, true);

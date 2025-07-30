@@ -203,7 +203,7 @@
             @if(isset($primeLocation) && $primeLocation->count() > 0)
             @foreach ($primeLocation as $property)
             <!-- Card 1 -->
-            <a href="{{ route('projects.each', $property->property_slug) }}" class="relative rounded-[15px] overflow-hidden group md:min-h-[230px] md:max-h-[245px] md:w-[100%] md:h-[100%] md:min-w-[250px] w-[100%] h-[100%] min-w-[160px] min-h-[160px]  ">
+            <a href="{{ route('projects.each', $property->property_slug) }}" class="relative rounded-[15px] overflow-hidden group md:min-h-[230px] md:max-h-[245px] md:w-[100%] md:h-[100%] md:min-w-[250px] w-[100%] h-[100%] min-w-[160px] max-h-[160px] min-h-[160px]  ">
                 <img src="{{ asset($property->prime_thumbnail_image ? $property->prime_thumbnail_image : $property->property_featured_image) }}" alt="{{ $property->property_name }}" class="prime-location-image" />
                 <div class="prime-location-overlay">
                     <span class="prime-location-name">{{ $property->property_city }}</span>
