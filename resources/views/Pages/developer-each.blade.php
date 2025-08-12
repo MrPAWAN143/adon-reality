@@ -24,7 +24,7 @@
         </div>
 
         <div class="flex justify-end items-center">
-            <img src="{{ asset( $developmentPartner->logo) }}" alt="{{$developmentPartner->developer_name }}" class="md:w-24 md:h-24 w-16 h-16 object-cover rounded-full shadow-md" />
+            <img src="{{ asset( $developmentPartner->logo) }}" alt="{{$developmentPartner->developer_name }}" class="md:w-24 md:h-24 w-16 h-16 object-contain bg-white rounded-full shadow-[0_0_10px_rgba(0,0,0,0.2)]" />
         </div>
     </div>
 

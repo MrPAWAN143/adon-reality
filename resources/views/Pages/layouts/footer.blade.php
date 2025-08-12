@@ -40,14 +40,14 @@
                 <p class="text-sm font-semibold text-goldenColor mb-1 text-[16px]">DEVELOPER WE WORK WITH</p>
                 <div class="flex flex-wrap gap-x-2 gap-y-1 md:text-base sm:text-[12px] md:text-[16px]">
                     <a href="{{route('development-partners.show', ['slug' => 'dlf-limited'])}}" target="_blank" class="text-white">DLF</a>
-                    <a href="#" target="_blank" class="text-white">Prime</a>
-                    <a href="#" target="_blank" class="text-white">Space</a>
+                    <a href="{{route('development-partners.show', ['slug' => 'ithum-world-group'])}}" target="_blank" class="text-white">IThum</a>
+                    <a href="{{route('development-partners.show', ['slug' => 'signature-global-india-limited'])}}" target="_blank" class="text-white">Signature</a>
                     <a href="{{route('development-partners.show', ['slug' => 'godrej-properties'])}}" target="_blank" class="text-white">Godrej</a>
-                    <a href="#" target="_blank" class="text-white">Arena</a>
-                    <a href="#" target="_blank" class="text-white">2A Company</a>
-                    <a href="#" target="_blank" class="text-white">Aura</a>
-                    <a href="#" target="_blank" class="text-white">Wave</a>
-                    <a href="{{route('development-partners.show', ['slug' => 'm3m-group'])}}" target="_blank" class="text-white">M3M</a>
+                    <a href="{{route('development-partners.show', ['slug' => 'tarc-limited'])}}" target="_blank" class="text-white">TARC</a>
+                    <a href="{{route('development-partners.show', ['slug' => 'whiteland-corporation'])}}" target="_blank" class="text-white">Whiteland</a>
+                    <a href="{{route('development-partners.show', ['slug' => 'elan-group'])}}" target="_blank" class="text-white">Elan</a>
+                    <a href="{{route('development-partners.show', ['slug' => 'the-house-of-abhinandan-lodha-hoabl'])}}" target="_blank" class="text-white">The House</a>
+                    <a href="{{route('development-partners.show', ['slug' => 'rof-group'])}}" target="_blank" class="text-white">ROF</a>
                 </div>
             </div>
         </div>
@@ -142,7 +142,7 @@
                     <a href="https://www.youtube.com/@adonrealty"><x-forkawesome-youtube-play class="text-secondary w-5 h-5" /></a>
                     <a href="https://www.instagram.com/adonrealty_/"><x-forkawesome-instagram class="text-secondary w-5 h-5" /></a>
                     <a href="https://www.linkedin.com/company/adon-realty-real-estate-channel-partners/"><x-forkawesome-linkedin-square class="text-secondary w-5 h-5" /></a>
-                    <a href="#"><x-si-x class="text-secondary w-5 h-5" /></a>
+                    <a href="https://x.com/adon_realty"><x-si-x class="text-secondary w-5 h-5" /></a>
                 </div>
             </div>
 

@@ -13,7 +13,8 @@ class DevelopmentPartnersController extends Controller
 {
     public function index()
     {
-        $developmentPartner = DevelopmentPartners::all();
+        $developmentPartner = DevelopmentPartners::where('is_active', 1)
+            ->orderBy('created_at', 'asc')->get();
         $testimonials = Testimony::where('is_active', 1)
             ->orderBy('created_at', 'desc')
             ->get();
