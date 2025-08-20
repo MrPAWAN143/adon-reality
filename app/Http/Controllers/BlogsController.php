@@ -17,6 +17,25 @@ class BlogsController extends Controller
         return view('Pages.blog', compact('blogs'));
     }
 
+    public function search(Request $request)
+    {
+        // Validate the search input
+        $request->validate([
+            'search' => 'nullable|string|max:255',
+        ]);
+        $query = Blogs::where('is_active', 1)->with('user');
+        if ($request->filled('search')) {
+            $search = '%' . $request->search . '%';
+            $query->where(function ($q) use ($search) {
+                $q->where('title', 'like', $search)
+                    ->orWhere('summary', 'like', $search);
+            });
+        }
+        $blogs = $query->orderBy('created_at', 'desc')->get();
+        $html = view('Pages.projects.filter-blog', compact('blogs'))->render();
+        return response()->json(['html' => $html]);
+    }
+
     public function show($slug)
     {
         $blog = Blogs::where('slug', $slug)->firstOrFail();

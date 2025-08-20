@@ -67,35 +67,42 @@
     </div>
 
 
-    <div class="max-w-4xl mx-auto px-4 py-4 pb-8 mt-0">
+    <form class="max-w-4xl mx-auto px-4 py-4 pb-8 mt-0 propertyFilterForm" >
         <!-- Filters -->
-        <div class="grid grid-cols-4 md:grid-cols-4 md:gap-6 gap-4">
-            <select class="project-page-filter-btn ">
-                <option>Location</option>
-                <option>Architecture</option>
-                <option>Interior</option>
-                <option>Exterior</option>
+        @csrf
+        <div class="grid grid-cols-4 md:grid-cols-4 md:gap-6 gap-4 ">
+            <select class="project-page-filter-btn " name="location">
+                <option value="" disabled selected>Location</option>
+                @foreach ($properties->pluck('property_city')->unique() as $location)
+                    <option value="{{ $location }}">{{ $location }}</option>
+                @endforeach
             </select>
 
-            <select class="project-page-filter-btn">
-                <option>Project</option>
-                <option>2025</option>
-                <option>2024</option>
-                <option>2023</option>
+            <select class="project-page-filter-btn" name="project">
+                <option value="" disabled >Project</option>
+                 @foreach ($properties->pluck('developmentPartner.developer_name')->unique() as $developer)
+                    <option selected value="{{ $developer }}">{{ $developer }}</option>
+                    @endforeach
             </select>
 
-            <select class="project-page-filter-btn">
-                <option>Status</option>
-                <option>Modern</option>
-                <option>Luxury</option>
-                <option>Minimal</option>
+            <select class="project-page-filter-btn" name="status">
+                <option value="" disabled selected>Status</option>
+                @foreach ($properties->pluck('property_status')->unique() as $status)
+                    <option value="{{ $status }}">{{ $status }}</option>
+                    @endforeach
             </select>
 
-            <select class="project-page-filter-btn">
-                <option>Budget</option>
-                <option>Modern</option>
-                <option>Luxury</option>
-                <option>Minimal</option>
+            <select class="project-page-filter-btn" name="budget">
+                     <option value="" selected>Budget</option>
+                    <option value="Below 20 Lacks">Below 20 Lacks</option>
+                    <option value="20 Lacks - 40 Lacks">20 Lacks - 40 Lacks</option>
+                    <option value="40 Lacks - 60 Lacks">40 Lacks - 60 Lacks</option>
+                    <option value="60 Lacks - 80 Lacks">60 Lacks - 80 Lacks</option>
+                    <option value="80 Lacks - 1 Cr">80 Lacks - 1 Cr</option>
+                    <option value="1 Cr - 1.5 Cr">1 Crore - 1.5 Crore</option>
+                    <option value="1.5 Cr - 2 Cr">1.5 Crore - 2 Crore</option>
+                    <option value="2 Cr - 5 Cr">2 Crore - 5 Crore</option>
+                    <option value="5 Cr +">5 Crore +</option>
             </select>
         </div>
 
@@ -103,8 +110,8 @@
 
             <div class="flex w-full items-center justify-start rounded-2xl md:px-4 px-2 md:py-1 py-0 ">
                 <x-zondicon-search class="md:w-6 md:h-6 w-4 h-4 text-bgSecondary" />
-                <input type="text" placeholder="Search by Project Name or Location..."
-                    class="md:text-[16px] text-[10px] md:placeholder:text-[16px] placeholder:text-[10px] px-[5px] w-full placeholder:text-bgSecondary outline-none text-sm bg-transparent border-none focus:border-none focus:outline-none md:py-2 py-0" />
+                <input type="text" placeholder="Search by Project Name or Location..." name="search"
+                    class="propertysearchBar md:text-[16px] text-[10px] md:placeholder:text-[16px] placeholder:text-[10px] px-[5px] w-full placeholder:text-bgSecondary outline-none text-sm bg-transparent border-none focus:border-none focus:outline-none md:py-2 py-0" />
             </div>
 
             <!-- Button - Search -->
@@ -113,19 +120,13 @@
             </button>
         </div>
 
-    </div>
+    </form>
 </section>
 
 <section class="px-4 md:px-6 max-w-[1100px] bg-white pb-4 m-auto">
 
-    <div class="grid grid-cols-2 md:grid-cols-3 md:gap-6 gap-3 mx-auto">
-        @foreach ($properties as $property)
-        <div class="featured-investment-card m-featured-page-card">
-            <x-featured-investment-section featuredCardClass="project-page-image-dev" src="{{ asset($property->property_featured_image) }}" alt="{{ $property->property_name }}" imageClass="project-page-image" heading="{{ $property->property_name }}" location="{{ $property->property_location }}" url="{{ $property->property_rera_url }}" rera="{{ $property->property_rera_number }}" status="{{ $property->property_status }}" roi="{{ $property->property_expected_roi }}" developer="{{ $property->developmentPartner->developer_name }}" variety="{{ $property->category->name }}" size="{{ $property->property_size }}" price="{{ $property->starting_price }}" />
-            <x-button class="featured-investment-button !py-2" url="{{ route('projects.each' , $property->property_slug) }}" text="View Details" />
-        </div>
-
-        @endforeach
+    <div class="grid grid-cols-2 md:grid-cols-3 md:gap-6 gap-3 mx-auto propertysSection">
+    @include('Pages.projects.filtered-properties', ['properties' => $properties])
 
     </div>
 
@@ -154,5 +155,36 @@
 
 <x-contact-us-form heading="Still Have a Question?"
     subheading="Have questions or ready to take the next step? Whether you're looking to buy, rent, or invest, our team is here to guide you every step of the way." />
+
+@endsection
+
+@section('scripts')
+<script type="module">
+    $(document).ready(function() {
+        $('.propertyFilterForm select, .propertyFilterForm input[type="text"]').on('change input', function(e) {
+            e.preventDefault();
+            console.log($(this).val());
+
+            let formData = new FormData($('.propertyFilterForm')[0]);
+
+            $.ajax({
+                url: "{{ route('developer.filter') }}",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                headers: {
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
+                },
+                success: function(response) {
+                    $(".propertysSection").html(response.html);
+                },
+                error: function(xhr) {
+                    console.error("Error fetching filtered properties:", xhr.responseText);
+                }
+            });
+        });
+    });
+</script>
 
 @endsection

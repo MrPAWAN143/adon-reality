@@ -19,14 +19,16 @@
     </div>
 
 
-    <div class="md:max-w-lg w-full md:px-0 px-4 mx-auto md:pb-5 mt-4">
+    <form class="md:max-w-lg w-full md:px-0 px-4 mx-auto md:pb-5 mt-4 propertyFilterForm block">
+        @csrf
         <!-- Filters -->
-        <div class="flex justify-center m-auto">
-            <select class="border-2 border-primary bg-white text-txBlack-gray rounded-full px-4 m-auto md:py-2 py-1 w-36 focus:outline-none focus:ring-2 focus:ring-primary transition duration-300">
-                <option>Year</option>
-                <option>Architecture</option>
-                <option>Interior</option>
-                <option>Exterior</option>
+        <div class="flex justify-center m-auto ">
+            <select name="year" class="border-2  border-primary bg-white text-txBlack-gray rounded-full px-4 m-auto md:py-2 py-1 w-36 focus:outline-none focus:ring-2 focus:ring-primary transition duration-300">
+                <option selected disabled>Year</option>
+                <option value="">All Years</option>
+                @foreach ($awards->pluck('year')->unique() as $year)
+                <option value="{{ $year }}">{{ $year }}</option> 
+                @endforeach
             </select>
 
         </div>
@@ -35,7 +37,7 @@
 
             <div class="flex w-full items-center rounded-2xl px-2 md:py-1 ">
                 <x-zondicon-search class="md:w-6 w-4 md:h-6 h-4 text-gray" />
-                <input type="text" placeholder="Search Awards & Recognitions..."
+                <input type="text" placeholder="Search Awards & Recognitions..." name="search"
                     class="w-full placeholder:text-[10px] md:placeholder:text-[14px] text-[10px] md:text-[14px] outline-none bg-transparent border-none focus:border-none focus:outline-none" />
             </div>
 
@@ -45,57 +47,42 @@
             </button>
         </div>
 
-    </div>
+    </form>
 
-    <div class=" py-0 md:mt-4 bg-white">
+    <div class=" py-0 md:mt-4 bg-white awardShowSection">
         <!-- Featured Awards & Recognitions -->
-        <h2 class="md:text-2xl font-bold text-[16px] md:text-start text-center md:mb-6 mb-3 md:mt-0 mt-6">Featured Awards & Recognitions</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 md:gap-4 gap-3 mx-auto md:px-6 !place-items-start justify-center grid-items-center">
-            @if($awards->where('is_featured', 1)->count() > 0)
-            @foreach($awards->where('is_featured', 1) as $award)
-            <x-awards
-                image="{{ asset($award->featured_image) }}"
-                alt="{{ $award->title }}"
-                class="featured-investment-img"
-                newsAndPrCard="arawds-card"
-                newsAndPrCardImgDiv="arwards-card-img-div"
-                title="{{ $award->title }}"
-                by="{{ $award->by }}"
-                description="{{ $award->short_description }}" />
-            @endforeach
-            @else
-            <p class="text-center text-gray-500">No awards found.</p>
-            @endif
-
-
-        </div>
-
-        <!-- Past Awards & Recognitions -->
-        <h2 class="md:text-[24px] font-bold text-[16px] md:text-start text-center md:mb-6 mb-3 mt-10">Past Awards & Recognitions</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 md:gap-4 gap-3 mx-auto md:px-6 !place-items-start justify-center grid-items-center">
-            @if( $awards->where('is_featured', 0)->count() > 0)
-            @foreach($awards->where('is_featured', 0) as $award)
-            <x-awards
-                image="{{ asset($award->featured_image) }}"
-                alt="{{ $award->title }}"
-                class="featured-investment-img"
-                newsAndPrCard="arawds-card"
-                newsAndPrCardImgDiv="arwards-card-img-div"
-                title="{{ $award->title }}"
-                by="{{ $award->by }}"
-                description="{{ $award->short_description }}" />
-            @endforeach
-            @else
-            <p class="text-center text-gray-500">No awards found.</p>
-            @endif
-        </div>
+       @include('Pages.projects.filter-award', ['awards' => $awards])
     </div>
 
-
-
-
-    </div>
 </section>
 
 <x-contact-us-form heading="Still Have a Question?" subheading="Have questions or ready to take the next step? Whether you’re looking to buy, rent, or invest, our team is here to guide you every step of the way." />
+@endsection
+
+@section('scripts')
+<script type="module">
+    $(document).ready(function() {
+        $('input[type="text"], select').on('input change', function(e) {
+            e.preventDefault();
+            let formData = new FormData($('.propertyFilterForm')[0]);
+
+            $.ajax({
+                url: "{{ route('awards.search') }}",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                headers: {
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
+                },
+                success: function(response) {
+                    $(".awardShowSection").html(response.html);
+                },
+                error: function(xhr) {
+                    console.error("Error fetching filtered properties:", xhr.responseText);
+                }
+            });
+        });
+    });
+</script>
 @endsection

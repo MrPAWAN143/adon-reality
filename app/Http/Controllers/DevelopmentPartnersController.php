@@ -21,6 +21,121 @@ class DevelopmentPartnersController extends Controller
         return view('Pages.developer-partner-page', compact('developmentPartner', 'testimonials'));
     }
 
+
+     public function filter(Request $request)
+    {
+        $query = PropertiesDetails::with('category', 'developmentPartner');
+        // Location filter
+        if ($request->filled('location')) {
+            $query->where('property_city', $request->location);
+        }
+
+        // Project filter
+        if ($request->filled('project')) {
+            $query->whereHas('developmentPartner', function ($q) use ($request) {
+                $q->where('developer_name', $request->project);
+            });
+        }
+
+        // Status filter
+        if ($request->filled('status')) {
+            $query->where('property_status', $request->status);
+        }
+
+        // Helper: Convert price strings into numeric value in Lakhs
+        function normalizePriceToLacks($price)
+        {
+            $price = trim(strtolower($price));
+
+            if (strpos($price, 'cr') !== false) {
+                // Handle Crores (1 Cr = 100 Lakhs)
+                $num = floatval(str_replace(['cr', ' '], '', $price));
+                return $num * 100;
+            } elseif (strpos($price, 'lacks') !== false || strpos($price, 'lakhs') !== false) {
+                // Handle Lacks/Lakhs
+                $num = floatval(str_replace(['lacks', 'lakhs', ' '], '', $price));
+                return $num;
+            }
+
+            return (float) $price; // fallback if plain number
+        }
+
+        // Common SQL expression for filtering
+        $priceExpression = "
+    CAST(
+        CASE 
+            WHEN starting_price LIKE '%Cr%' 
+                THEN REPLACE(REPLACE(starting_price, 'Cr', ''), ' ', '') * 100
+            WHEN starting_price LIKE '%Lacks%' OR starting_price LIKE '%Lakhs%' 
+                THEN REPLACE(REPLACE(REPLACE(starting_price, 'Lakhs', ''), 'Lacks', ''), ' ', '')
+            ELSE starting_price
+        END
+    AS DECIMAL(10,2)
+)";
+
+        if ($request->filled('budget')) {
+            $budget = $request->budget;
+
+            switch ($budget) {
+                case 'Below 20 Lacks':
+                    $query->whereRaw("$priceExpression < 20");
+                    break;
+
+                case '20 Lacks - 40 Lacks':
+                    $query->whereRaw("$priceExpression BETWEEN 20 AND 40");
+                    break;
+
+                case '40 Lacks - 60 Lacks':
+                    $query->whereRaw("$priceExpression BETWEEN 40 AND 60");
+                    break;
+
+                case '60 Lacks - 80 Lacks':
+                    $query->whereRaw("$priceExpression BETWEEN 60 AND 80");
+                    break;
+
+                case '80 Lacks - 1 Cr':
+                    $query->whereRaw("$priceExpression BETWEEN 80 AND 100");
+                    break;
+
+                case '1 Cr - 1.5 Cr':
+                    $query->whereRaw("$priceExpression BETWEEN 100 AND 150");
+                    break;
+
+                case '1.5 Cr - 2 Cr':
+                    $query->whereRaw("$priceExpression BETWEEN 150 AND 200");
+                    break;
+                case '2 Cr - 5 Cr':
+                    $query->whereRaw("$priceExpression BETWEEN 200 AND 500");
+                    break;
+
+                case '5 Cr +':
+                    $query->whereRaw("$priceExpression > 500");
+                    break;
+            }
+        }
+
+        // Search filter
+        if ($request->filled('search')) {
+            $search = '%' . $request->search . '%';
+            $query->where(function ($q) use ($search) {
+                $q->where('property_name', 'like', $search)
+                    ->orWhere('property_city', 'like', $search);
+                $q->orWhereHas('developmentPartner', function ($q) use ($search) {
+                    $q->where('developer_name', 'like', $search);
+                });
+            });
+        }
+
+        $properties = $query->orderBy('created_at', 'desc')->get();
+
+        // Render only the property cards
+        $html = view('Pages.projects.filtered-properties', compact('properties'))->render();
+
+        return response()->json(['html' => $html]);
+    }
+
+
+
     public function show(Request $request, $slug)
     {
      

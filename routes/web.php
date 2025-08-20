@@ -55,6 +55,10 @@ Route::post('/leads/store', [QueryController::class, 'store'])->name('leads.stor
 Route::post('/enquery', [QueryController::class, 'additionalEnquiry'])->name('additionalEnquiry.store');
 Route::post('/apply-job', [JobAppliedController::class, 'store'])->name('new.job.apply');
 
+Route::post('/projects/filter', [PropertiesDetailsController::class, 'filter'])->name('projects.filter');
+Route::post('/developer/filter', [DevelopmentPartnersController::class, 'filter'])->name('developer.filter');
+Route::post('/blog/search', [BlogsController::class, 'search'])->name('blog.search');
+Route::post('/awards/search', [FeaturedAndAwardController::class, 'search'])->name('awards.search');
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
