@@ -50,12 +50,12 @@
 }
 
 .hero-section-select {
-    @apply font-semibold appearance-none bg-white text-txBlack hover:text-white px-6 hover:bg-primary border-2 border-primary py-2 rounded-full focus:outline-none focus:ring-0 focus:border-primary transition duration-300 font-medium;
+    @apply font-semibold appearance-none bg-white text-txBlack hover:text-white px-6 hover:bg-primary border-2 border-primary py-2 rounded-full focus:outline-none focus:ring-0 focus:border-primary transition duration-300;
     padding-right: 0.5rem;
 }
 
 .project-page-filter-btn {
-    @apply font-semibold appearance-none focus:bg-primary focus:text-white bg-white text-txBlack hover:text-white px-6 hover:bg-primary border-2 border-primary py-2 rounded-[20px] focus:outline-none focus:ring-0 focus:border-primary transition duration-300 font-medium;
+    @apply font-semibold appearance-none focus:bg-primary focus:text-white bg-white text-txBlack hover:text-white px-6 hover:bg-primary border-2 border-primary py-2 rounded-[20px] focus:outline-none focus:ring-0 focus:border-primary transition duration-300 ;
     padding-right: 0.5rem;
 
 }

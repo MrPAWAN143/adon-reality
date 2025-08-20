@@ -12,6 +12,34 @@ class FeaturedAndAwardController extends Controller
         $awards = FeaturedAndAward::where('is_active', 1)->get();
         return view('Pages.awards-and-recognitions', compact('awards'));
     }
+
+    public function search(Request $request)
+    {
+        $request->validate([
+            'search' => 'nullable|string|max:255',
+            'year' => 'nullable|integer|between:1900,' . date('Y'),
+        ]);
+
+        $query = FeaturedAndAward::where('is_active', 1);
+
+        if ($request->filled('search')) {
+            $search = '%' . $request->search . '%';
+            $query->where(function ($q) use ($search) {
+                $q->where('title', 'like', $search)
+                    ->orWhere('short_description', 'like', $search);
+            });
+        }
+
+        if ($request->filled('year')) {
+            $query->where('year', $request->year);
+        }
+
+        $awards = $query->orderBy('created_at', 'desc')->get();
+        $html = view('Pages.projects.filter-award', compact('awards'))->render();
+        return response()->json(['html' => $html]);
+    }
+
+    
     public function createAwards()
     {
         return view('Dashboard.Award.new-awards');

@@ -69,7 +69,7 @@
 
           <!-- Studio Apartments with Submenu -->
           <li class="relative group/item">
-            <a href="#" class="flex justify-between items-center px-4 py-2 text-sm text-txBlack hover:bg-gray-100">
+            <a href="{{ route('projects' , ['category' => 'studio-apartments']) }}" class="flex justify-between items-center px-4 py-2 text-sm text-txBlack hover:bg-gray-100">
               Studio Apartments
               <svg class="ml-2 h-3 w-3 text-gray-500 group-hover/item:text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path d="M9 18l6-6-6-6" />

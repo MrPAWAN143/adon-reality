@@ -89,9 +89,9 @@
             <select id="cityFilter" class="hero-section-select home py-1 md:py-2 !max-w-[120px]">
                 <option value="">City</option>
                 @if(isset($cities) && $cities->count() > 0)
-                    @foreach ($cities as $city)
-                        <option value="{{ $city }}">{{ $city }}</option>
-                    @endforeach
+                @foreach ($cities as $city)
+                <option value="{{ $city }}">{{ $city }}</option>
+                @endforeach
                 @endif
             </select>
         </div>
@@ -105,7 +105,7 @@
 
             <ul
                 id="suggestions"
-                class="absolute bg-white border border-gray-300 w-full mt-2 rounded shadow-lg text-left hidden z-20 max-h-48 overflow-y-auto"></ul>
+                class="absolute md:text-[16px] text-[10px] bg-white border border-gray-300 w-full mt-2 rounded shadow-lg text-left hidden z-20 max-h-48 overflow-y-auto"></ul>
         </div>
 
 

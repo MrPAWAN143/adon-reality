@@ -199,6 +199,7 @@
 
     }
 
+   
     .m-hero_section_badges {
         @apply grid grid-cols-2 gap-2 mt-2;
     }
@@ -466,7 +467,7 @@
     }
 
     .project-page-filter-btn {
-        @apply font-light text-[10px] appearance-none bg-white text-txBlack hover:text-white px-2 hover:bg-primary border border-primary py-0 rounded-[20px] focus:outline-none focus:ring-0 focus:border-primary transition duration-300 font-medium;
+        @apply !text-[10px] appearance-none bg-white text-txBlack hover:text-white px-2 hover:bg-primary border border-primary py-0 rounded-[20px] focus:outline-none focus:ring-0 focus:border-primary transition duration-300 font-medium;
         padding-right: 0.5rem;
 
     }
@@ -936,6 +937,7 @@
         /* margin-left: -60px !important; */
     }
 
+   
 
 
 }
