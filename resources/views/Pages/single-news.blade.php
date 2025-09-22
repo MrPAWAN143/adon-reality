@@ -1,6 +1,8 @@
 @extends('Pages.layouts.app')
 @section('metadata')
-<title>Adon Reality - News</title>
+<title>{{ $news->meta_title }}</title>
+<meta name="description" content="{{ Str::limit(strip_tags($news->meta_description), 164, '...') }}">
+<meta name="keywords" content="{{ Str::limit(strip_tags($news->meta_keywords), 164, '...') }}">
 @endsection
 @section('styles')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">

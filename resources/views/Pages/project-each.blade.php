@@ -1,6 +1,8 @@
 @extends('Pages.layouts.app')
 @section('metadata')
-<title>Adon Reality - Single Project</title>
+<title>{{ $property->property_meta_title }}</title>
+<meta name="description" content="{{ Str::limit(strip_tags($property->property_meta_description), 164, '...') }}">
+<meta name="keywords" content="{{ Str::limit(strip_tags($property->property_meta_keywords), 164, '...') }}">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 @endsection
 @section('styles')

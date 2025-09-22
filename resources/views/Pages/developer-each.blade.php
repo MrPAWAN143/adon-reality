@@ -1,6 +1,7 @@
 @extends('Pages.layouts.app')
 @section('metadata')
-<title>Adon Reality - Projects Each Brand</title>
+<title>{{ $developmentPartner->developer_name }}</title>
+<meta name="description" content="{{ Str::limit(strip_tags($developmentPartner->developer_description), 164 , '...') }}">
 @endsection
 @section('styles')
 <style>
